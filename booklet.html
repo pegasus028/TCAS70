@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TCAS70 Mock Paper — print</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+:root{--pad:0}
+body{background:#fff;color:#111;font:11pt/1.45 "Sarabun","Figtree",system-ui,sans-serif;margin:0}
+.page{max-width:780px;margin:0 auto;padding:24px}
+h1{font:700 20pt/1.2 var(--f-display);margin:0 0 4px}
+.sub{color:#555;margin-bottom:10px}
+.rules{border:1px solid #999;border-radius:8px;padding:10px 14px;margin:12px 0 18px;font-size:10pt}
+.sec{font:700 12pt var(--f-display);margin:22px 0 2px;border-bottom:2px solid #111;padding-bottom:3px;break-after:avoid}
+.part{font-weight:700;margin:10px 0 0}.dir{font-style:italic;margin:2px 0 10px}
+.ctx{margin:10px 0;break-inside:auto}
+.ctx .dialogue .dline{display:flex;gap:10px;margin:3px 0}.ctx .who{font-weight:700;min-width:90px}
+.ctx .passage p{margin:0 0 6px;white-space:pre-wrap}
+.q{margin:8px 0 10px;break-inside:avoid}
+.q .stem{margin:0 0 3px;font-size:11pt;font-weight:400;line-height:1.45}.q .n{font-weight:700;margin-right:6px}
+.q ol{margin:2px 0 0 26px;padding:0}.q li{margin:1px 0}
+.orderblock{background:none;border:none;padding:0;margin:2px 0 4px}.orderblock p{margin:2px 0}
+.gap{font-weight:700}
+.key{break-before:page}
+.key table{border-collapse:collapse;width:100%;font-size:10pt}.key td,.key th{border:1px solid #bbb;padding:3px 6px;text-align:center}
+.why{margin:6px 0;font-size:10pt;break-inside:avoid}.why b{margin-right:6px}
+.tag{color:#666;font:8.5pt var(--f-mono)}
+.adcard{box-shadow:none}.visual{break-inside:avoid}
+@media print{.noprint{display:none}.page{padding:0}}
+@page{size:A4;margin:16mm 15mm}
+</style></head><body><div class="page" id="out"></div>
+<script src="content.js"></script><script src="lexicon.js"></script><script src="topic-t1.js"></script><script src="topic-t2.js"></script><script src="topic-t3.js"></script><script src="topic-t4.js"></script><script src="topic-t5.js"></script><script src="topic-t6.js"></script><script src="topic-t7.js"></script><script src="topic-t8.js"></script><script src="topic-t9.js"></script><script src="topic-t10.js"></script><script src="topic-t11.js"></script><script src="topic-t12.js"></script><script src="topic-t13.js"></script>
+<script src="mock-1.js"></script><script src="mock-2.js"></script><script src="mock-3.js"></script><script src="mock-4.js"></script><script src="mock-5.js"></script>
+<script>window.CONTENT={CEFR:CEFR,RANKS:RANKS,BADGES:BADGES,REMEDIATION:REMEDIATION,TOPICS:TOPICS,MOCKS:MOCKS};</script>
+<script src="engine.js"></script>
+<script>
+(function(){
+  var q=new URLSearchParams(location.search), id=q.get('m')||'m1', mode=q.get('key')||'both';
+  var m=MOCKS.filter(function(x){return x.id===id;})[0], E=window.Engine;
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function gaps(t){return esc(t).replace(/___\((\d+)\)___/g,'<span class="gap">____(&#8203;$1)____</span>');}
+  function ctxKey(it){return JSON.stringify([it.lines||0,it.passage||0,it.ad||0,it.visual||0,it.given||0]);}
+  var h=mode==='key'?'':'<h1>TCAS70 A-Level English · '+esc(m.name)+'</h1><div class="sub">80 items · 4 options · 90 minutes · 1.25 points each (100 points) · Practice paper written for TCAS70 Launchpad</div>';
+  if(mode!=='key'){
+    h+='<div class="rules">Choose the ONE best answer for each item and mark it on your answer sheet. Do not use a dictionary. Section I: 20 items (25 pts) · Section II: 40 items (50 pts) · Section III: 20 items (25 pts).</div>';
+    var lastPart='', last='', n=0;
+    m.sections.forEach(function(s){
+      if(s.part!==lastPart){h+='<div class="sec">'+esc(s.part)+'</div>';lastPart=s.part;}
+      h+='<div class="part">'+esc(s.title)+'</div><div class="dir">Directions: '+esc(s.instructions)+'</div>';
+      last='';
+      s.items.forEach(function(it){
+        n++; var k=ctxKey(it);
+        if(k!==last && k!=='[0,0,0,0,0]'){
+          last=k; h+='<div class="ctx">';
+          if(it.lines) h+='<div class="dialogue">'+it.lines.map(function(l){return '<div class="dline"><span class="who">'+esc(l.who)+(l.who==='Situation'?':':'')+'</span><span>'+gaps(l.text)+'</span></div>';}).join('')+'</div>';
+          if(it.ad) h+=E.adHtml(it.ad);
+          if(it.visual) h+=E.visualHtml(it.visual);
+          if(it.passage) h+='<div class="passage">'+it.passage.split(/\n\n/).map(function(p){return '<p>'+gaps(p)+'</p>';}).join('')+(it.source?'<p><i>Source: '+esc(it.source)+'</i></p>':'')+'</div>';
+          if(it.given) h+='<div>'+it.given+'</div>';
+          h+='</div>';
+        }
+        var stem=(it.type==='gap'||it.type==='cloze')?'':(it.stem||'');
+        h+='<div class="q"><div class="stem"><span class="n">'+n+'.</span>'+stem+'</div><ol>'+it.options.map(function(o){return '<li>'+esc(o)+'</li>';}).join('')+'</ol></div>';
+      });
+    });
+  }
+  if(mode!=='paper'){
+    h+='<div class="key"'+(mode==='key'?' style="break-before:auto"':'')+'><h1>Answer key · '+esc(m.name)+'</h1><table><tr>';
+    var all=[];m.sections.forEach(function(s){all=all.concat(s.items);});
+    for(var c=0;c<4;c++){h+='<th>Item</th><th>Ans</th>';} h+='</tr>';
+    for(var r=0;r<20;r++){h+='<tr>';for(var c2=0;c2<4;c2++){var i=c2*20+r;h+='<td>'+(i+1)+'</td><td><b>'+(all[i].answer+1)+'</b></td>';}h+='</tr>';}
+    h+='</table><h2 style="font:700 13pt var(--f-display);margin-top:18px">Explanations</h2>';
+    all.forEach(function(it,i){var rem=REMEDIATION[it.tag];h+='<div class="why"><b>'+(i+1)+'. ('+(it.answer+1)+')</b>'+it.why+' <span class="tag">['+esc(rem?rem.name:it.tag)+' · '+esc(it.level)+']</span></div>';});
+    h+='</div>';
+  }
+  document.getElementById('out').innerHTML=h;
+  document.title='TCAS70 '+m.name;
+})();
+</script></body></html>
