@@ -23,6 +23,8 @@
   var LS_SESSION = 'tc70.session';
   var LS_OUTBOX = 'tc70.outbox.v1';
   var LS_TOKEN = 'tc70.token';
+  var LS_ME = 'tc70.me';            /* {id, name} of the signed-in student */
+  var LS_PROG = 'tc70.progress.';   /* + studentId → last progress we held */
 
   /* A stored address overrides the one built into the page. The sentinel
      'off' means "no server at all" — that is how the teacher console's empty
@@ -41,7 +43,8 @@
     sessionId: null,
     sessionStart: 0,
     token: null,
-    lastError: null
+    lastError: null,
+    lastCloudSave: 0               /* ms timestamp of the last save the server acknowledged */
   };
   try { state.token = localStorage.getItem(LS_TOKEN) || null; } catch (e) {}
 
@@ -89,6 +92,12 @@
     }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
+    }).then(function (j) {
+      /* Mark what really came from the server, so a local fallback can never
+         be mistaken for an acknowledgement (that mistake used to delete the
+         outbox after a dropped connection). */
+      if (j && typeof j === 'object') j._cloud = true;
+      return j;
     });
     var guard = new Promise(function (_, reject) {
       timer = setTimeout(function () {
@@ -100,6 +109,21 @@
       function (v) { clearTimeout(timer); return v; },
       function (e) { clearTimeout(timer); throw e; }
     );
+  }
+
+  /* Signing in is the one place where a local fallback does harm: a student
+     told "No account with that ID" would create a local-only account the
+     teacher never sees. So while a server address is configured, a failed
+     login or register is reported as unreachable, never answered locally.
+     The local store is used only when the address is deliberately 'off'. */
+  var UNREACHABLE = 'Can\'t reach the class server. Check your internet and try again.';
+  function callStrict(action, payload, localFn) {
+    if (!state.url) return Promise.resolve(localFn());
+    state.mode = 'cloud';
+    return post(action, payload).catch(function (err) {
+      state.lastError = String(err.message || err);
+      return { ok: false, error: UNREACHABLE, unreachable: true };
+    });
   }
 
   function call(action, payload, localFn) {
@@ -221,13 +245,28 @@
     },
 
     register: function (id, pw, name) {
-      return call('register', { id: id, pw: pw, name: name }, function () { return localRegister(id, pw, name); })
+      return callStrict('register', { id: id, pw: pw, name: name }, function () { return localRegister(id, pw, name); })
         .then(keepToken);
     },
     login: function (id, pw) {
-      return call('login', { id: id, pw: pw }, function () { return localLogin(id, pw); })
+      return callStrict('login', { id: id, pw: pw }, function () { return localLogin(id, pw); })
         .then(keepToken);
     },
+
+    /* ---- staying signed in across a reload ----------------------------
+       me() says who was signed in; cachedProgress() is the last progress
+       this device held for them. Together with the stored token that is
+       enough to re-enter the app without a password; the first save then
+       brings back the server's copy if it is newer. */
+    me: function () {
+      try { return JSON.parse(localStorage.getItem(LS_ME)) || null; } catch (e) { return null; }
+    },
+    hasToken: function () { return !!state.token; },
+    cachedProgress: function (id) {
+      try { return JSON.parse(localStorage.getItem(LS_PROG + id)) || null; } catch (e) { return null; }
+    },
+    cacheProgress: cacheProgress,
+    get lastCloudSave() { return state.lastCloudSave; },
 
     enqueue: function (rows) {
       if (!rows || !rows.length) return;
@@ -240,9 +279,14 @@
       return call('save', { progress: progress, attempts: rows },
         function () { return localSave(progress, rows); })
         .then(function (r) {
+          cacheProgress(progress);
+          if (r && r.ok && r._cloud) state.lastCloudSave = Date.now();
           /* Remove exactly the rows that were sent (a beacon may have cleared
-             or reshaped the queue meanwhile), never "the first n". */
-          if (r && r.ok) {
+             or reshaped the queue meanwhile), never "the first n". Only a
+             reply from the server counts — or the local store when there is
+             deliberately no server at all. A local fallback after a dropped
+             connection keeps the rows queued for the next attempt. */
+          if (r && r.ok && (r._cloud || !state.url)) {
             var sent = {};
             rows.forEach(function (x) { sent[JSON.stringify(x)] = 1; });
             setOutbox(outbox().filter(function (x) { return !sent[JSON.stringify(x)]; }));
@@ -259,9 +303,11 @@
         var body = new Blob([JSON.stringify({
           action: 'save', payload: { progress: progress, attempts: rows, token: state.token }
         })], { type: 'text/plain;charset=utf-8' });
-        var ok = navigator.sendBeacon(state.url, body);
-        if (ok) setOutbox([]);
-        return ok;
+        /* A queued beacon is not an acknowledgement, so the outbox is left
+           alone; the next successful save() clears it. The server ignores a
+           row it has already stored (same timestamp, student, item and mode),
+           so a row that goes up twice is harmless. */
+        return navigator.sendBeacon(state.url, body);
       } catch (e) { return false; }
     },
 
@@ -303,16 +349,25 @@
     localCount: function () { return Object.keys(db().students).length; }
   };
 
+  function cacheProgress(progress) {
+    if (!progress || !progress.studentId) return;
+    try { localStorage.setItem(LS_PROG + progress.studentId, JSON.stringify(progress)); } catch (e) {}
+  }
   function keepToken(r) {
     if (r && r.ok && r.token) {
       state.token = r.token;
       try { localStorage.setItem(LS_TOKEN, r.token); } catch (e) {}
     }
+    if (r && r.ok && r.progress && r.progress.studentId) {
+      try { localStorage.setItem(LS_ME, JSON.stringify({ id: r.progress.studentId, name: r.progress.displayName || r.progress.studentId })); } catch (e) {}
+      cacheProgress(r.progress);
+    }
     return r;
   }
   API.clearToken = function () {
     state.token = null;
-    try { localStorage.removeItem(LS_TOKEN); } catch (e) {}
+    state.lastCloudSave = 0;
+    try { localStorage.removeItem(LS_TOKEN); localStorage.removeItem(LS_ME); } catch (e) {}
   };
 
   global.API = API;

@@ -179,8 +179,16 @@ input::placeholder{color:var(--ink-3)}
   color:var(--accent);font-weight:700;
 }
 
-.tbl-scroll{overflow-x:auto;margin-bottom:16px;border-radius:var(--r-m);border:1px solid var(--rule)}
+.tbl-scroll{overflow-x:auto;margin-bottom:16px;border-radius:var(--r-m);border:1px solid var(--rule);position:relative}
+/* A table that still overflows on a narrow phone gets a fade on its right
+   edge, so the hidden column is signalled rather than silently cut off. */
+.tbl-scroll.more{box-shadow:inset -34px 0 24px -24px var(--surface-3)}
 .tbl{border-collapse:collapse;width:100%;min-width:360px;font-size:.92rem}
+@media (max-width:480px){
+  .tbl{min-width:0;font-size:.82rem}
+  .tbl th,.tbl td{padding:6px 8px}
+  .tbl td:first-child,.tbl th:first-child{white-space:normal}
+}
 .tbl th{
   font-family:var(--f-mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink-3);text-align:left;padding:9px 14px;background:var(--surface-2);white-space:nowrap;

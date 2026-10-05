@@ -124,7 +124,9 @@
     Object.keys(C.REMEDIATION).forEach(function (tag) {
       total++;
       var st = p.stats && p.stats.byTag && p.stats.byTag[tag];
-      if (st && st.a) seen++;
+      /* Answered correctly at least once. Merely meeting a rule and getting
+         it wrong is not cover; one mock at 34% used to show "67 of 117". */
+      if (st && st.c) seen++;
     });
     return { seen: seen, total: total };
   }
@@ -895,10 +897,16 @@
         check: function () {
           var ok = picked.length === item.items.length &&
             picked.every(function (v, i) { return v === i; });
+          /* The cards carry no letters on screen, so "A-B-C-D" meant nothing
+             to a student. Name each sentence by its opening words instead. */
+          var head = function (i) {
+            var w = String(item.items[i]).replace(/<[^>]+>/g, '').split(/\s+/).slice(0, 3).join(' ');
+            return '\u201c' + w + '\u2026\u201d';
+          };
           return {
             correct: ok,
-            givenText: picked.map(function (i) { return 'ABCD'[i] || (i + 1); }).join('-') || '(no answer)',
-            expectedText: item.items.map(function (x, i) { return 'ABCD'[i] || (i + 1); }).join('-')
+            givenText: picked.map(head).join(' \u2192 ') || '(no answer)',
+            expectedText: item.items.map(function (x, i) { return head(i); }).join(' \u2192 ')
           };
         },
         lock: function () {
@@ -916,8 +924,21 @@
     host.innerHTML = '';
     host.dataset.type = item.type;
     var fn = RENDER[item.type] || RENDER.choose;
-    return fn(host, item);
+    var r = fn(host, item);
+    markOverflow();
+    return r;
   }
+  /* Tables that are still wider than the card (a four-column table on a
+     narrow phone) get a right-edge fade so the hidden column is signalled. */
+  function markOverflow() {
+    var run = function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.tbl-scroll'), function (sc) {
+        sc.classList.toggle('more', sc.scrollWidth > sc.clientWidth + 2);
+      });
+    };
+    if (typeof requestAnimationFrame === 'function') requestAnimationFrame(run); else run();
+  }
+  if (typeof window !== 'undefined') window.addEventListener('resize', markOverflow);
 
   var TYPE_LABEL = {
     choose: 'Choose the best option',
@@ -936,7 +957,10 @@
   /* ------------------------------------------------------------- progress */
   var XP_CORRECT = 10, XP_HINT_PENALTY = 4, XP_SUB = 40, XP_CHECK = 120, XP_MOCK = 250;
   var XP_SPEED = 6, SPEED_MS = 7000;
-  var PASS_SUB = 0.6, PASS_CHECK = 0.75;
+  /* Five questions a module: 80% means four right. At 60% (three of five) a
+     module was ticked off the mock checklist and counted toward opening the
+     next paper on what was close to a coin toss. */
+  var PASS_SUB = 0.8, PASS_CHECK = 0.75;
 
   function blank(id, name) {
     return {
@@ -1105,6 +1129,9 @@
     if (!p.mocks) p.mocks = {};
     var r = p.mocks[mockId] || (p.mocks[mockId] = { best: 0, attempts: 0 });
     r.attempts++;
+    /* The first sitting is the honest benchmark: a retake of the same paper
+       rises from memory, so it is kept apart from best. */
+    if (r.first == null) r.first = scored.pct;
     if (scored.pct > r.best) r.best = scored.pct;
     r.last = scored.pct;
     r.marks = scored.got; r.total = scored.total;

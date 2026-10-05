@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="theme.css?v=2026-10-01a">
+<link rel="stylesheet" href="theme.css?v=2026-10-06a">
 <style>
 /* ======================= STUDENT CONSOLE ============================== */
 .wrap{max-width:900px;margin:0 auto;padding-inline:16px}
@@ -591,6 +591,8 @@ main{padding-block:22px 72px}
 }
 .examnav button.ans{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent);font-weight:600}
 .examnav button.here{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+.examnav button.flag{box-shadow:inset 0 -3px 0 var(--gold)}
+.flagbtn.on{color:var(--gold);border-color:var(--gold)}
 .instr{
   font-size:.9rem;color:var(--ink-2);background:var(--surface-2);border-radius:var(--r-m);
   padding:10px 13px;margin-bottom:14px;line-height:1.5;
@@ -769,7 +771,7 @@ body{padding-top:var(--ribbon-h)}
         <button class="btn sm" id="btn-out" title="Log out">Log out</button>
       </div>
     </div>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main">
       <button data-view="plan" class="on">Exam plan</button>
       <button data-view="map">Systems</button>
       <button data-view="speed">Speed Lab</button>
@@ -799,7 +801,7 @@ body{padding-top:var(--ribbon-h)}
   </main>
 </div>
 
-<div id="toast-slot"></div>
+<div id="toast-slot" role="status" aria-live="polite"></div>
 <div id="modal-slot"></div>
 
 <!-- ===================================================================
@@ -808,31 +810,31 @@ body{padding-top:var(--ribbon-h)}
      =================================================================== -->
 <script>window.MC_API_URL = 'https://script.google.com/macros/s/AKfycbwQu4t9pC-2polOGFPn6bWmD1wA9Jp93n6RszywAP5E1OHQdAmtTL4-0oz78lkR5kLP/exec';</script>
 
-<script src="roster.js?v=2026-10-01a"></script>
-<script src="content.js?v=2026-10-01a"></script>
-<script src="lexicon.js?v=2026-10-01a"></script>
-<script src="topic-t1.js?v=2026-10-01a"></script>
-<script src="topic-t2.js?v=2026-10-01a"></script>
-<script src="topic-t3.js?v=2026-10-01a"></script>
-<script src="topic-t4.js?v=2026-10-01a"></script>
-<script src="topic-t5.js?v=2026-10-01a"></script>
-<script src="topic-t6.js?v=2026-10-01a"></script>
-<script src="topic-t7.js?v=2026-10-01a"></script>
-<script src="topic-t8.js?v=2026-10-01a"></script>
-<script src="topic-t9.js?v=2026-10-01a"></script>
-<script src="topic-t10.js?v=2026-10-01a"></script>
-<script src="topic-t11.js?v=2026-10-01a"></script>
-<script src="topic-t12.js?v=2026-10-01a"></script>
-<script src="topic-t13.js?v=2026-10-01a"></script>
-<script src="media.js?v=2026-10-01a"></script>
-<script src="mock-1.js?v=2026-10-01a"></script>
-<script src="mock-2.js?v=2026-10-01a"></script>
-<script src="mock-3.js?v=2026-10-01a"></script>
-<script src="mock-4.js?v=2026-10-01a"></script>
-<script src="mock-5.js?v=2026-10-01a"></script>
-<script src="content-export.js?v=2026-10-01a"></script>
-<script src="engine.js?v=2026-10-01a"></script>
-<script src="api.js?v=2026-10-01a"></script>
-<script src="student.js?v=2026-10-01a"></script>
+<script src="roster.js?v=2026-10-06a"></script>
+<script src="content.js?v=2026-10-06a"></script>
+<script src="lexicon.js?v=2026-10-06a"></script>
+<script src="topic-t1.js?v=2026-10-06a"></script>
+<script src="topic-t2.js?v=2026-10-06a"></script>
+<script src="topic-t3.js?v=2026-10-06a"></script>
+<script src="topic-t4.js?v=2026-10-06a"></script>
+<script src="topic-t5.js?v=2026-10-06a"></script>
+<script src="topic-t6.js?v=2026-10-06a"></script>
+<script src="topic-t7.js?v=2026-10-06a"></script>
+<script src="topic-t8.js?v=2026-10-06a"></script>
+<script src="topic-t9.js?v=2026-10-06a"></script>
+<script src="topic-t10.js?v=2026-10-06a"></script>
+<script src="topic-t11.js?v=2026-10-06a"></script>
+<script src="topic-t12.js?v=2026-10-06a"></script>
+<script src="topic-t13.js?v=2026-10-06a"></script>
+<script src="media.js?v=2026-10-06a"></script>
+<script src="mock-1.js?v=2026-10-06a"></script>
+<script src="mock-2.js?v=2026-10-06a"></script>
+<script src="mock-3.js?v=2026-10-06a"></script>
+<script src="mock-4.js?v=2026-10-06a"></script>
+<script src="mock-5.js?v=2026-10-06a"></script>
+<script src="content-export.js?v=2026-10-06a"></script>
+<script src="engine.js?v=2026-10-06a"></script>
+<script src="api.js?v=2026-10-06a"></script>
+<script src="student.js?v=2026-10-06a"></script>
 </body>
 </html>

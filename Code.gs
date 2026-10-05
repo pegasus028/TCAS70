@@ -342,8 +342,12 @@ function roster_(p) {
   if (who === 'denied') return { ok: false, error: 'Teacher sign-in required.' };
   var list = allStudents_();
   if (who === 'teacher') {
+    /* lastLogin lets the console spot a stuck sync: a student who has signed
+       in since their last successful save has answers that never arrived. */
+    var logins = lastLogins_();
     return { ok: true, students: list.map(function (s) {
       return { id: s.id, name: s.name, created: s.created, lastSeen: s.lastSeen,
+               lastLogin: logins[s.id] || '',
                progress: s.progress || blankProgress_(s.id, s.name) };
     }) };
   }
@@ -659,6 +663,21 @@ function readStudent_(sh, row) {
   if (json) { try { prog = JSON.parse(json); } catch (e) { prog = null; } }
   return { id: str_(v[0]), name: str_(v[1]), pwHash: str_(v[2]), salt: str_(v[3]),
            created: str_(v[4]), lastSeen: str_(v[5]), progress: prog };
+}
+
+/* studentId → latest loginTs on the Sessions tab (one read of two columns). */
+function lastLogins_() {
+  var out = {};
+  try {
+    var sh = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sessions');
+    if (!sh || sh.getLastRow() < 2) return out;
+    var v = sh.getRange(2, 2, sh.getLastRow() - 1, 2).getValues();
+    v.forEach(function (r) {
+      var id = str_(r[0]), ts = str_(r[1]);
+      if (id && ts && (!out[id] || ts > out[id])) out[id] = ts;
+    });
+  } catch (e) {}
+  return out;
 }
 
 function allStudents_() {

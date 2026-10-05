@@ -49,7 +49,22 @@
     if (!S.p) return Promise.resolve();
     S.p._readiness = P.readiness(S.p);
     S.p._rank = P.rank(S.p).name;
-    return api.save(S.p).catch(function () { return { ok: false }; });
+    return api.save(S.p).then(function (r) {
+      if (!r) return r;
+      /* The token has expired or been revoked: nothing more can be saved
+         under it, so send the student back to the sign-in screen. */
+      if (r.ok === false && r.auth === false && r._cloud) { signOut('Please sign in again.'); return r; }
+      /* The server holds a newer copy (the student has worked on another
+         device since this one last saved). Adopt it, but never in the middle
+         of a lesson run or a mock, where it would pull the floor away. */
+      if (r.ok && r.kept === 'server' && r.progress && !S.run && !S.exam) {
+        S.p = fillProgress(r.progress);
+        api.cacheProgress(S.p);
+        paintHeader();
+        if (!$('#view-plan').classList.contains('hidden')) paintPlan();
+      }
+      return r;
+    }).catch(function () { return { ok: false }; });
   }
   var syncSoon = (function () {
     var t;
@@ -200,34 +215,50 @@
   /* =====================================================================
      START
      ===================================================================== */
-  function start(progress) {
-    S.p = progress;
-    if (!S.p.stats) S.p.stats = { seen: 0, correct: 0, byTag: {} };
-    if (!S.p.review) S.p.review = {};
-    if (!S.p.badges) S.p.badges = [];
-    if (!S.p.subs) S.p.subs = {};
-    if (!S.p.checks) S.p.checks = {};
-    if (!S.p.mocks) S.p.mocks = {};
-    if (!S.p.media) S.p.media = {};
+  function fillProgress(p) {
+    if (!p.stats) p.stats = { seen: 0, correct: 0, byTag: {} };
+    if (!p.review) p.review = {};
+    if (!p.badges) p.badges = [];
+    if (!p.subs) p.subs = {};
+    if (!p.checks) p.checks = {};
+    if (!p.mocks) p.mocks = {};
+    if (!p.media) p.media = {};
+    return p;
+  }
+  /* Screens that only make sense mid-activity cannot be opened from a link:
+     a reload during a lesson or a mock used to land on an empty #play. */
+  var NO_DEEP_LINK = ['play', 'review'];
+  function start(progress, resumed) {
+    S.p = fillProgress(progress);
     var newDay = P.touchDay(S.p);
     $('#screen-login').classList.add('hidden');
     $('#screen-app').classList.remove('hidden');
+    hideEmptyMedia();
     paintHeader();
     /* A link may name the screen to open: index.html#pods drops a student
        straight on the episodes without passing the exam plan first. */
     var want = String(location.hash || '').replace('#', '');
+    if (NO_DEEP_LINK.indexOf(want) >= 0 || !mediaAvailable() && (want === 'pods' || want === 'vids')) want = 'plan';
     show(VIEWS.indexOf(want) >= 0 ? want : 'plan');
     api.startSession(S.p.studentId);
     var earned = P.checkBadges(S.p);
     sync();
-    if (newDay && S.p.streak > 1) toast('Day ' + S.p.streak + ' in a row. Keep the streak alive.');
-    if (earned.length) S.celebrateTimer = setTimeout(function () { celebrate(earned[0]); }, 900);
+    if (!resumeExam()) {
+      if (newDay && S.p.streak > 1) toast('Day ' + S.p.streak + ' in a row. Keep the streak alive.');
+      if (earned.length) S.celebrateTimer = setTimeout(function () { celebrate(earned[0]); }, 900);
+    }
   }
 
+  function signOut(msg) {
+    api.clearToken();
+    try { sessionStorage.setItem('tc70.loginMsg', msg || ''); } catch (e) {}
+    location.reload();
+  }
   function logout() {
-    if (S.exam && !askSure('You are in the middle of a simulation. Leaving now will lose it. Log out anyway?')) return;
+    if (S.exam && !askSure('You are in the middle of a mock. Leaving now will lose it. Log out anyway?')) return;
+    abandonExam();
     api.endSession(S.p.studentId, S.sessItems, S.sessCorrect);
-    sync().then(function () { api.clearToken(); location.reload(); });
+    sync().then(function () { signOut(''); }, function () { signOut(''); });
   }
   $('#btn-out').addEventListener('click', logout);
   function flushOnExit() {
@@ -282,8 +313,8 @@
   }
   document.querySelectorAll('.nav button[data-view]').forEach(function (b) {
     b.addEventListener('click', function () {
-      if (S.exam && !askSure('Leave the simulation? Your answers so far will be lost.')) return;
-      S.exam = null;
+      if (S.exam && !askSure('Leave the mock? Your answers so far will be lost.')) return;
+      abandonExam();
       show(b.dataset.view);
     });
   });
@@ -330,11 +361,22 @@
     var sp = SPRINTS.filter(function (x) { return x.key === key; })[0];
     var pool = sprintPool(sp);
     /* Items that share a passage travel together, so a reading sprint never
-       shows paragraph 3 of an article you have not seen. */
+       shows paragraph 3 of an article you have not seen: when an item is
+       picked, its passage-mates from the same pool come with it. */
     var picked = [], used = {};
+    var textOf = function (it) { return it.passage || (it.ad && JSON.stringify(it.ad)) || (it.visual && JSON.stringify(it.visual)) || ''; };
     pool.some(function (id) {
-      if (picked.length >= sp.n || used[id]) return picked.length >= sp.n;
-      picked.push(id); used[id] = 1; return false;
+      if (picked.length >= sp.n) return true;
+      if (used[id]) return false;
+      picked.push(id); used[id] = 1;
+      var key = textOf(E.Bank.item(id));
+      if (key && key.length > 200) {
+        pool.forEach(function (other) {
+          if (picked.length >= sp.n || used[other]) return;
+          if (textOf(E.Bank.item(other)) === key) { picked.push(other); used[other] = 1; }
+        });
+      }
+      return false;
     });
     if (!picked.length) return toast('No questions for this sprint yet.');
     startRun('sprint', picked.map(E.Bank.item), { title: sp.name, limitSec: sp.sec, sprintKey: sp.key });
@@ -363,7 +405,7 @@
     if (!e) return finishCards();
     var st = (S.p.flash || {})[cardKey(e)];
     var host = $('#view-speed');
-    host.innerHTML = '<div class="play"><div class="play-top"><button class="btn ghost sm" id="fc-quit">✕</button>' +
+    host.innerHTML = '<div class="play"><div class="play-top"><button class="btn ghost sm" id="fc-quit" aria-label="Quit flashcards">✕</button>' +
       '<div class="bar-line thin"><span style="width:' + Math.round(100 * c.i / c.deck.length) + '%"></span></div>' +
       '<span class="qcount">' + (c.i + 1) + ' / ' + c.deck.length + '</span></div>' +
       '<div class="flashcard' + (c.flipped ? ' flipped' : '') + '" id="fc" tabindex="0" role="button" aria-label="Flip card">' +
@@ -412,7 +454,7 @@
     var rec = S.p.sprints || {};
     var html = '<div class="card speedlab">' + E.artBand('clock') +
       '<p class="kicker">Speed Lab</p><h3>Beat the clock before the clock beats you</h3>' +
-      '<p class="muted">The real paper gives you 90 minutes for 80 questions. A good split: <b>15 min</b> conversations · <b>50 min</b> reading · <b>20 min</b> writing · <b>5 min</b> to check your answer sheet. Sprints train each part at that pace.</p></div>';
+      '<p class="muted">The real paper gives you 90 minutes for 80 questions. A good split: <b>15 min</b> conversations · <b>50 min</b> reading · <b>18 min</b> writing · <b>7 min</b> to check your answer sheet. Sprints train each part at that pace.</p></div>';
     html += '<div class="sprint-grid">' + SPRINTS.map(function (sp) {
       var r = rec[sp.key];
       return '<div class="card sprint-card"><div class="sp-h"><b>' + esc(sp.name) + '</b><span class="pill">' + sp.n + ' Q · ' + mmss(sp.sec) + '</span></div>' +
@@ -598,6 +640,20 @@
      out to YouTube where the next thing is never grammar. Same shape as the
      podcast screen: the name of the stage and a player, nothing else to read.
      ===================================================================== */
+  /* Until an episode or video exists, the tabs and buttons that lead to them
+     are hidden: an empty screen that says "Listen instead" is worse than no
+     screen at all. */
+  function mediaAvailable() {
+    var M = (typeof MEDIA !== 'undefined' && MEDIA) || {};
+    return Object.keys(M).some(function (k) { return !!(M[k].podcast || M[k].video); });
+  }
+  function hideEmptyMedia() {
+    var has = mediaAvailable();
+    document.querySelectorAll('.nav button[data-view="vids"], .nav button[data-view="pods"]').forEach(function (b) {
+      b.classList.toggle('hidden', !has);
+    });
+  }
+
   function paintVids() {
     var p = S.p;
     var withVideo = C.TOPICS.filter(function (t) { return t.video; });
@@ -952,20 +1008,27 @@
     startRun('speed', ids.map(E.Bank.item), { title: 'Speed round' });
   }
 
+  /* The cram card belongs to the last fortnight. Months out, "Start the
+     diagnostic" and the checklist should be the only calls to action. */
+  function cramTime() {
+    var h = hoursToExam();
+    return h !== null && h <= 14 * 24;
+  }
   function sprintCard(p) {
+    if (!cramTime()) return '';
     var cov = P.tagsCovered(p);
     var pctCov = Math.round(100 * cov.seen / Math.max(1, cov.total));
     var words = countdownWords();
     var html = '<div class="sprint">';
     html += '<div class="sprint-h">' +
       (words ? '<span class="kicker">' + esc(words) + '</span>' : '') +
-      '<span class="sprint-n">' + cov.seen + ' of ' + cov.total + ' rules covered</span>' +
+      '<span class="sprint-n">' + cov.seen + ' of ' + cov.total + ' rules answered correctly</span>' +
       '<span class="sprint-s">' +
         (cov.seen === 0
-          ? 'You have not met any of them yet. A speed round covers twenty in about six minutes.'
+          ? 'None answered right yet. A speed round covers twenty rules in about six minutes.'
           : cov.seen >= cov.total
-            ? 'Every rule on the paper has been in front of you at least once. Read the revision sheet again and sit a paper.'
-            : 'A speed round covers twenty more, one question each, no reading first. It is the quickest way to meet the rest.') +
+            ? 'Every rule on the paper has been answered correctly at least once. Read the revision sheet again and sit a paper.'
+            : 'A speed round covers twenty more, one question each, no reading first. It is the quickest way to tick off the rest.') +
       '</span></div>';
     html += '<div class="sprint-bar"><span style="width:' + pctCov + '%"></span></div>';
     html += '<div class="sprint-r">' +
@@ -1064,8 +1127,8 @@
         'answer the way you would on 14 March. Every question you miss adds a lesson to your checklist, ' +
         'and when 80% of that checklist is cleared, Mock 2 opens.</p>' +
         '<button class="btn primary lg" data-sim="' + papers[0].id + '">Start the diagnostic</button>' +
-        '<p class="gate-alt"><button class="btn sm" data-go-pods>Podcasts</button>' +
-        '<span>Not somewhere you can answer questions? Listen instead.</span></p>' +
+        (mediaAvailable() ? '<p class="gate-alt"><button class="btn sm" data-go-pods>Podcasts</button>' +
+        '<span>Not somewhere you can answer questions? Listen instead.</span></p>' : '') +
         '</div>';
       html += '<div id="board" class="boardwrap"></div>';
       $('#view-plan').innerHTML = html;
@@ -1078,7 +1141,7 @@
     html += '<div class="sect-h"><div><h2>Your exam plan</h2>' +
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Sit a paper, clear what it finds, ' +
       'sit the next one. Each step is here because you got something wrong, not because it was next on a list.</p></div>' +
-      '<button class="btn sm" data-go-pods>Podcasts</button></div>';
+      (mediaAvailable() ? '<button class="btn sm" data-go-pods>Podcasts</button>' : '') + '</div>';
 
     papers.forEach(function (m, idx) {
       var rec = (p.mocks || {})[m.id];
@@ -1090,11 +1153,13 @@
       html += '<div class="step-h"><span class="step-n">' + (idx + 1) + '</span>' +
         '<span class="step-t"><span class="step-name">' + esc(m.name) + '</span>' +
         '<span class="step-s">' +
-          (rec ? 'Sat ' + esc(new Date(rec.at).toLocaleDateString()) + ' · ' + rec.marks + ' of ' + rec.total + ' marks'
+          (rec ? 'Sat ' + esc(new Date(rec.at).toLocaleDateString()) + ' · ' + rec.marks + ' of ' + rec.total + ' marks' +
+                 (rec.attempts > 1 ? ' · best ' + pct(rec.best) + '% over ' + rec.attempts + ' sittings' : '')
                : open ? '80 questions · ' + m.minutes + ' minutes'
                : 'Clear 80% of the checklist above to open this paper') +
         '</span></span>' +
-        (rec ? '<span class="step-pct' + (rec.best >= 0.7 ? ' good' : '') + '">' + pct(rec.best) + '%</span>'
+        (rec ? '<span class="step-pct' + ((rec.first != null ? rec.first : rec.best) >= 0.7 ? ' good' : '') + '" title="First sitting">' +
+                 pct(rec.first != null ? rec.first : rec.best) + '%</span>'
              : open ? '<button class="btn primary sm" data-sim="' + m.id + '">Start</button>'
              : '<span class="step-lock">●</span>') +
         '</div>';
@@ -1177,7 +1242,7 @@
       html += '</div>';
     });
 
-    html += '<p class="tiny" style="margin-top:14px">A module counts as cleared at 60%. Everything on the ' +
+    html += '<p class="tiny" style="margin-top:14px">A module counts as cleared at ' + pct(E.PASS_SUB) + '%. Everything on the ' +
       'systems map stays open the whole time — the checklist is the shortest route, not the only one.</p>';
 
     html += '<div id="board" class="boardwrap"></div>';
@@ -1306,7 +1371,7 @@
       html += '<div class="resume done"><span class="resume-t">' +
         '<span class="kicker">Every system green</span>' +
         '<span class="resume-n">Admitted</span>' +
-        '<span class="resume-s">Nothing is outstanding. Replay a simulation to push the score higher.</span>' +
+        '<span class="resume-s">Nothing is outstanding. Sit a mock again to push the score higher.</span>' +
         '</span></div>';
     }
 
@@ -1714,7 +1779,7 @@
 
     $('#view-play').innerHTML = '<div class="play">' +
       '<div class="play-top">' +
-        '<button class="btn ghost sm" id="p-quit">✕</button>' +
+        '<button class="btn ghost sm" id="p-quit" aria-label="Quit this run">✕</button>' +
         '<div class="bar-line thin"><span style="width:' + prog + '%"></span></div>' +
         (combo >= 3 ? '<span class="combo">▲ ' + combo + ' in a row</span>' : '') +
         '<span class="qcount">' + (r.i + 1) + ' / ' + r.items.length + '</span>' +
@@ -1850,8 +1915,8 @@
       passed = score >= E.PASS_SUB;
       head = passed ? 'Module cleared' : 'Not yet — run it again';
       note = passed
-        ? 'You need 60% to clear a module, and you have it. Anything you missed has gone onto your fault list and will come back.'
-        : 'You need 60% to clear this one. Read the explanation again and retry — the questions stay the same, so the misses are worth studying.';
+        ? 'You need ' + pct(E.PASS_SUB) + '% to clear a module, and you have it. Anything you missed has gone onto your fault list and will come back.'
+        : 'You need ' + pct(E.PASS_SUB) + '% to clear this one. Read the explanation again and retry — the questions stay the same, so the misses are worth studying.';
     } else if (r.kind === 'check') {
       P.finishCheck(S.p, r.checkId, score, r.hintedAny);
       passed = score >= E.PASS_CHECK;
@@ -1989,13 +2054,25 @@
   /* =====================================================================
      MOCK PAPERS
      ===================================================================== */
+  /* A retake of the same paper would otherwise be a memory test of where the
+     key sat. Like the real exam's second booklet, Set 2 prints every item's
+     options in reverse order. Papers alternate: first sitting Set 1, second
+     Set 2, third Set 1 again. Answers are always stored in Set 1 positions,
+     so marking and the answer review are unchanged. */
+  function setFor(p, mockId) {
+    var rec = (p.mocks || {})[mockId];
+    return rec && rec.attempts && rec.attempts % 2 === 1 ? 2 : 1;
+  }
   function confirmSim(mockId) {
-    var m = E.Bank.mock(mockId);
+    var m = E.Bank.mock(mockId), set = setFor(S.p, mockId);
     modal('<p class="kicker">Before you start</p>' +
-      '<h3 style="font-size:1.25rem">' + esc(m.name) + '</h3>' +
+      '<h3 style="font-size:1.25rem">' + esc(m.name) + (set === 2 ? ' \u00b7 Set 2' : '') + '</h3>' +
       '<p style="color:var(--ink-2);font-size:.93rem">' + m.minutes + ' minutes for 80 questions. ' +
       'The clock runs from the moment you press start and does not stop. You can move between questions freely, ' +
-      'and the paper submits itself when the time is up.</p>' +
+      'and the paper submits itself when the time is up.' +
+      (set === 2 ? ' This is the Set 2 booklet: the same questions, with the options printed in the opposite order, as in the real exam.' : '') +
+      '</p>' +
+      '<p class="tiny">If the page closes, your paper is kept on this device and the clock keeps running \u2014 come back and resume it.</p>' +
       '<button class="btn primary wide" id="sim-start">Start the clock</button>' +
       '<button class="btn ghost wide" data-close>Not now</button>');
     $('#sim-start').addEventListener('click', function () {
@@ -2004,12 +2081,79 @@
     });
   }
 
-  function startExam(mockId) {
+  /* ---- keeping the paper safe across a reload --------------------------
+     Everything the exam needs to continue is written to this device after
+     every answer and move. A closed tab, a phone that discards the page or
+     a reload lands the student back on the same question with the clock
+     still running. */
+  function examKey() { return 'tc70.exam.' + S.p.studentId; }
+  function saveExamState() {
+    var x = S.exam;
+    if (!x || !S.p) return;
+    try {
+      localStorage.setItem(examKey(), JSON.stringify({
+        mockId: x.mock.id, answers: x.answers, flags: x.flags, endAt: x.endAt,
+        startedAt: x.startedAt, i: x.i, spent: x.spent, set: x.set
+      }));
+    } catch (e) {}
+  }
+  function clearExamState() {
+    if (!S.p) return;
+    try { localStorage.removeItem(examKey()); } catch (e) {}
+  }
+  function savedExam() {
+    if (!S.p) return null;
+    try {
+      var x = JSON.parse(localStorage.getItem(examKey()));
+      return x && x.mockId && E.Bank.mock(x.mockId) ? x : null;
+    } catch (e) { return null; }
+  }
+  /* Leaving a paper through the nav or logout: stop the clock and forget it. */
+  function abandonExam() {
+    if (!S.exam) return;
+    clearInterval(S.exam.tick);
+    S.exam = null;
+    clearExamState();
+  }
+  /* On entry: a paper saved mid-way is offered back; one whose time has run
+     out is marked as it stands. Returns true when it took over the screen. */
+  function resumeExam() {
+    var saved = savedExam();
+    if (!saved) return false;
+    var m = E.Bank.mock(saved.mockId);
+    var left = Math.max(0, Math.round((saved.endAt - Date.now()) / 1000));
+    if (left <= 0) {
+      startExam(saved.mockId, saved);
+      submitExam(true);
+      return true;
+    }
+    var answered = (saved.answers || []).filter(function (a) { return a != null; }).length;
+    modal('<p class="kicker">You were in the middle of a paper</p>' +
+      '<h3 style="font-size:1.25rem">Resume ' + esc(m.name) + ' \u2014 ' + mmss(left) + ' left</h3>' +
+      '<p style="color:var(--ink-2);font-size:.93rem">' + answered + ' of ' + (saved.answers || []).length +
+      ' answered. The clock has kept running since you started.</p>' +
+      '<button class="btn primary wide" id="x-resume">Resume the paper</button>' +
+      '<button class="btn ghost wide" id="x-discard">Discard it</button>');
+    $('#x-resume').addEventListener('click', function () {
+      $('#modal-slot').innerHTML = '';
+      startExam(saved.mockId, saved);
+    });
+    $('#x-discard').addEventListener('click', function () {
+      if (!askSure('Discard this paper? Nothing from it will be marked.')) return;
+      $('#modal-slot').innerHTML = '';
+      clearExamState();
+    });
+    return true;
+  }
+
+  function startExam(mockId, saved) {
     var m = E.Bank.mock(mockId);
     var items = E.Bank.mockItems(m);
     S.exam = {
       mock: m, items: items, i: 0,
       answers: new Array(items.length),
+      flags: {},
+      set: saved && saved.set ? saved.set : setFor(S.p, mockId),
       endAt: Date.now() + m.minutes * 60000,
       startedAt: Date.now(), tick: null,
       /* Where the minutes actually go. Students lose this paper on the clock
@@ -2017,6 +2161,15 @@
       spent: new Array(items.length), onQ: Date.now()
     };
     for (var z = 0; z < items.length; z++) S.exam.spent[z] = 0;
+    if (saved) {
+      var x = S.exam;
+      x.endAt = saved.endAt; x.startedAt = saved.startedAt || saved.endAt - m.minutes * 60000;
+      x.i = Math.min(items.length - 1, Math.max(0, saved.i || 0));
+      x.flags = saved.flags || {};
+      (saved.answers || []).forEach(function (a, k) { if (a != null && k < items.length) x.answers[k] = a; });
+      (saved.spent || []).forEach(function (t, k) { if (k < items.length) x.spent[k] = t || 0; });
+    }
+    saveExamState();
     show('play');
     renderExam();
     S.exam.tick = setInterval(function () {
@@ -2083,17 +2236,28 @@
     var sec = sectionFor(item);
     var left = Math.max(0, Math.round((x.endAt - Date.now()) / 1000));
 
-    var nav = '<div class="examnav">' + x.items.map(function (it, i) {
-      var cls = i === x.i ? 'here' : (x.answers[i] != null ? 'ans' : '');
-      return '<button class="' + cls + '" data-jump="' + i + '">' + (i + 1) + '</button>';
+    var nav = '<div class="examnav" aria-label="Go to question">' + x.items.map(function (it, i) {
+      var cls = (i === x.i ? 'here' : (x.answers[i] != null ? 'ans' : '')) + (x.flags[i] ? ' flag' : '');
+      return '<button class="' + cls.trim() + '" data-jump="' + i + '" aria-label="Question ' + (i + 1) +
+        (x.answers[i] != null ? ', answered' : '') + (x.flags[i] ? ', flagged' : '') + '">' + (i + 1) + '</button>';
     }).join('') + '</div>';
+    /* Set 2: the same four options, printed in the opposite order. The
+       engine marks against the item as written, so the item it draws is a
+       copy with the options reversed and the key remapped. */
+    var shown = item;
+    if (x.set === 2 && Array.isArray(item.options) && item.options.length === 4) {
+      shown = Object.create(item);
+      shown.options = item.options.slice().reverse();
+      shown.answer = 3 - item.answer;
+    }
+    var pos = function (k) { return x.set === 2 && shown !== item ? 3 - k : k; };
 
     $('#view-play').innerHTML = '<div class="play">' +
       '<div class="examtop">' +
         '<span class="sec">' + esc(sec.part) + ' · ' + esc(sec.title) + '</span>' +
-        '<span class="qcount">Question ' + (x.i + 1) + ' of ' + x.items.length + '</span>' +
-        '<span class="clock' + (left <= 300 ? ' low' : '') + '" id="exam-clock">' + mmss(left) + '</span>' +
-        '<span class="pace" id="exam-pace"></span>' +
+        '<span class="qcount">Question ' + (x.i + 1) + ' of ' + x.items.length + (x.set === 2 ? ' \u00b7 Set 2' : '') + '</span>' +
+        '<span class="clock' + (left <= 300 ? ' low' : '') + '" id="exam-clock" role="timer" aria-live="off" aria-label="Time left">' + mmss(left) + '</span>' +
+        '<span class="pace" id="exam-pace" aria-live="polite"></span>' +
       '</div>' +
       '<div class="instr"><b>Instructions</b>' + esc(sec.instructions) + '</div>' +
       '<div class="card qcard">' +
@@ -2102,6 +2266,8 @@
         '<div id="qhost"></div>' +
         '<div class="qfoot">' +
           '<button class="btn sm" id="x-prev"' + (x.i === 0 ? ' disabled' : '') + '>← Back</button>' +
+          '<button class="btn sm ghost flagbtn' + (x.flags[x.i] ? ' on' : '') + '" id="x-flag" aria-pressed="' + (x.flags[x.i] ? 'true' : 'false') + '" title="Mark this question to come back to">' +
+            (x.flags[x.i] ? '\u2691 Flagged' : '\u2690 Flag') + '</button>' +
           '<span class="grow"></span>' +
           '<button class="btn sm ghost" id="x-submit">Submit paper</button>' +
           '<button class="btn primary" id="x-next">' + (x.i + 1 >= x.items.length ? 'Review' : 'Next →') + '</button>' +
@@ -2110,41 +2276,78 @@
 
     paintPace();
     var host = $('#qhost');
-    E.mount(item, host);
+    E.mount(shown, host);
     /* Restore a previous choice. Every mock item is a four-option or
        four-segment click, so the selection can simply be replayed. */
     var buttons = host.querySelectorAll('.opt, .seg');
-    if (x.answers[x.i] != null && buttons[x.answers[x.i]]) buttons[x.answers[x.i]].click();
+    if (x.answers[x.i] != null && buttons[pos(x.answers[x.i])]) buttons[pos(x.answers[x.i])].click();
     host.addEventListener('respond', function () {
       var bs = host.querySelectorAll('.opt.sel, .seg.sel');
       if (!bs.length) return;
       var all = host.querySelectorAll('.opt, .seg');
-      for (var i = 0; i < all.length; i++) if (all[i] === bs[0]) x.answers[x.i] = i;
+      for (var i = 0; i < all.length; i++) if (all[i] === bs[0]) x.answers[x.i] = pos(i);
       document.querySelectorAll('.examnav button')[x.i].classList.add('ans');
+      saveExamState();
     });
 
-    $('#x-prev').addEventListener('click', function () { if (x.i > 0) { chargeTime(); x.i--; renderExam(); } });
+    function move(to) { chargeTime(); x.i = to; saveExamState(); renderExam(); }
+    $('#x-prev').addEventListener('click', function () { if (x.i > 0) move(x.i - 1); });
     $('#x-next').addEventListener('click', function () {
-      chargeTime();
-      if (x.i + 1 >= x.items.length) reviewExam(); else { x.i++; renderExam(); }
+      chargeTime(); saveExamState();
+      if (x.i + 1 >= x.items.length) reviewExam(); else move(x.i + 1);
     });
-    $('#x-submit').addEventListener('click', function () { chargeTime(); reviewExam(); });
+    $('#x-flag').addEventListener('click', function () {
+      if (x.flags[x.i]) delete x.flags[x.i]; else x.flags[x.i] = 1;
+      saveExamState();
+      this.classList.toggle('on', !!x.flags[x.i]);
+      this.setAttribute('aria-pressed', x.flags[x.i] ? 'true' : 'false');
+      this.textContent = x.flags[x.i] ? '\u2691 Flagged' : '\u2690 Flag';
+      document.querySelectorAll('.examnav button')[x.i].classList.toggle('flag', !!x.flags[x.i]);
+    });
+    $('#x-submit').addEventListener('click', function () { chargeTime(); saveExamState(); reviewExam(); });
     $('#view-play').querySelectorAll('[data-jump]').forEach(function (b) {
-      b.addEventListener('click', function () { chargeTime(); x.i = +b.dataset.jump; renderExam(); });
+      b.addEventListener('click', function () { move(+b.dataset.jump); });
     });
     window.scrollTo({ top: 0 });
   }
 
+  /* Desktop shortcuts: 1–4 pick an option, ← → move between mock questions,
+     F flags. Practice runs get 1–4 too (Enter already checks). Nothing fires
+     while a dialog is open or the focus is in a text box. */
+  document.addEventListener('keydown', function (ev) {
+    if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    var tag = (ev.target && ev.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    if ($('#modal-slot').innerHTML) return;
+    if ($('#view-play').classList.contains('hidden')) return;
+    var host = $('#qhost');
+    if (!host) return;
+    if (/^[1-4]$/.test(ev.key)) {
+      var opts = host.querySelectorAll('.opt, .seg');
+      var b = opts[+ev.key - 1];
+      if (b && !b.disabled && opts.length === 4) { b.click(); ev.preventDefault(); }
+      return;
+    }
+    if (!S.exam) return;
+    if (ev.key === 'ArrowLeft') { var pv = $('#x-prev'); if (pv && !pv.disabled) { pv.click(); ev.preventDefault(); } }
+    else if (ev.key === 'ArrowRight') { var nx = $('#x-next'); if (nx) { nx.click(); ev.preventDefault(); } }
+    else if (ev.key === 'f' || ev.key === 'F') { var fl = $('#x-flag'); if (fl) { fl.click(); ev.preventDefault(); } }
+  });
+
   function reviewExam() {
     var x = S.exam;
-    var blank = [];
+    var blank = [], flagged = [];
     x.answers.forEach(function (a, i) { if (a == null) blank.push(i + 1); });
+    Object.keys(x.flags).forEach(function (k) { flagged.push(+k + 1); });
+    flagged.sort(function (a, b) { return a - b; });
     modal('<p class="kicker">Before you submit</p>' +
       '<h3 style="font-size:1.2rem">' + (blank.length ? blank.length + ' unanswered' : 'All 80 answered') + '</h3>' +
       '<p style="color:var(--ink-2);font-size:.92rem">' +
       (blank.length ? 'Questions ' + blank.slice(0, 14).join(', ') + (blank.length > 14 ? '…' : '') +
         ' are still blank. In the real paper there is no penalty for a guess.'
         : 'Nothing is blank. You can still go back and change an answer.') + '</p>' +
+      (flagged.length ? '<p style="color:var(--ink-2);font-size:.92rem">\u2691 Flagged to look at again: ' +
+        flagged.slice(0, 14).join(', ') + (flagged.length > 14 ? '…' : '') + '.</p>' : '') +
       '<button class="btn primary wide" id="x-final">Submit and mark</button>' +
       '<button class="btn ghost wide" data-close>Keep working</button>');
     $('#x-final').addEventListener('click', function () {
@@ -2157,6 +2360,7 @@
     var x = S.exam;
     if (!x) return;
     clearInterval(x.tick);
+    clearExamState();
     var rows = [], results = [];
     x.items.forEach(function (item, i) {
       var given = x.answers[i];
@@ -2186,7 +2390,7 @@
       kind: 'mock', ts: new Date().toISOString(), studentId: S.p.studentId,
       mockId: x.mock.id, marks: scored.got, total: scored.total,
       pct: Math.round(scored.pct * 1000) / 1000, durationSec: durationSec,
-      sections: scored.bySection
+      sections: scored.bySection, set: x.set || 1, timedOut: timedOut ? 1 : 0
     });
     api.enqueue(rows);
     S.sessItems += x.items.length;
@@ -2221,7 +2425,7 @@
       '<p>' + (timedOut ? 'Time ran out and the paper submitted itself. ' : '') +
       'You took ' + mmss(durationSec) + ' of the ' + mock.minutes + ' minutes allowed. ' +
       (scored.pct >= 0.8 ? 'That is a strong paper.' : scored.pct >= 0.6 ? 'A solid pass with clear gaps — see the breakdown.' :
-       'Work through the weakest section below before sitting another simulation.') + '</p>';
+       'Work through the weakest section below before sitting another mock.') + '</p>';
 
     html += '<table class="sectable"><thead><tr><th>Section</th><th>Marks</th><th>Correct</th><th>%</th></tr></thead><tbody>';
     order.forEach(function (o) {
@@ -2354,9 +2558,12 @@
         (S.simple ? 'Explanations are in simple English — switch back' : 'Use simpler English in the explanations') + '</button></div>' +
         '<div class="field"><label>Saving</label>' +
         '<p style="font-size:.9rem;color:var(--ink-2)">' +
-        (!pending ? 'Everything you have answered has been sent to your teacher.'
-          : 'You have ' + pending + ' answer' + (pending === 1 ? '' : 's') +
-            ' waiting to be sent. They are saved on this device and go up on their own — you do not need to do anything.') +
+        (!pending && api.mode === 'cloud' && api.lastCloudSave
+          ? 'Everything you have answered has been sent to your teacher (last sent ' + new Date(api.lastCloudSave).toLocaleTimeString() + ').'
+          : !pending
+            ? 'Your answers are saved on this device and upload to your teacher when you are online.'
+            : 'You have ' + pending + ' answer' + (pending === 1 ? '' : 's') +
+              ' waiting to be sent. They are saved on this device and go up on their own — you do not need to do anything.') +
         '</p></div>' +
         '<div class="field"><label>Account</label>' +
         '<button class="btn sm" id="s-out" style="align-self:flex-start">Log out</button></div>' +
@@ -2379,4 +2586,21 @@
      one tap instead of a typed ID. A class list that is empty or missing
      falls back to the ordinary sign-in. */
   setMode((typeof ROSTER !== 'undefined' && ROSTER && ROSTER.length) ? 'fast' : 'in');
+  try {
+    var loginMsg = sessionStorage.getItem('tc70.loginMsg');
+    if (loginMsg) { sessionStorage.removeItem('tc70.loginMsg'); say(loginMsg, true); }
+  } catch (e) {}
+
+  /* Stay signed in across a reload. The stored token plus the last copy of
+     the student's progress is enough to re-enter the app; the first save
+     then fetches the server's copy if it is newer, and an expired token
+     drops the student back here with a message. */
+  (function restoreSession() {
+    var me = api.me();
+    /* The cloud needs the token; the local store (address 'off') has none. */
+    if (!me || (api.mode === 'cloud' && !api.hasToken())) return;
+    var prog = api.cachedProgress(me.id);
+    if (!prog || prog.studentId !== me.id) return;
+    start(prog, true);
+  })();
 })();

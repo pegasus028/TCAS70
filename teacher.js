@@ -111,12 +111,12 @@
       '<div class="stat"><b>' + active + '</b><span>Active this week</span></div>' +
       '<div class="stat"><b>' + ready + '%</b><span>Mean readiness</span></div>' +
       '<div class="stat"><b>' + acc + '%</b><span>Class accuracy</span></div>' +
-      '<div class="stat"><b>' + (sat.length ? simMean + '%' : '—') + '</b><span>Mean best simulation</span></div>';
+      '<div class="stat"><b>' + (sat.length ? simMean + '%' : '—') + '</b><span>Mean best mock</span></div>';
   }
 
   var COLS = [
     { k: 'name', t: 'Student' }, { k: 'rank', t: 'Rank' }, { k: 'ready', t: 'Readiness' },
-    { k: 'acc', t: 'Accuracy' }, { k: 'sim', t: 'Best sim' }, { k: 'seen', t: 'Items' },
+    { k: 'acc', t: 'Accuracy' }, { k: 'sim', t: 'Best mock' }, { k: 'seen', t: 'Items' },
     { k: 'streak', t: 'Streak' }, { k: 'seen2', t: 'Last seen' }, { k: null, t: '' }
   ];
 
@@ -131,7 +131,16 @@
       var stale = p.lastActiveDate ? E.daysBetween(p.lastActiveDate, E.today()) : 999;
       var cleared = P.checksCleared(p);
       var flag = '';
-      if (!p.stats || p.stats.seen < 5) flag = '<span class="flag new">new</span>';
+      /* Students never see connection state, so a sync that has stopped
+         working surfaces here: signed in more than a day after the last
+         successful save, or no save at all a day after signing in. */
+      var stuck = false;
+      if (s.lastLogin) {
+        var li = new Date(s.lastLogin).getTime(), ls = s.lastSeen ? new Date(s.lastSeen).getTime() : 0;
+        stuck = li > 0 && (li - ls) > 86400000 && (Date.now() - li) > 3600000;
+      }
+      if (stuck) flag = '<span class="flag stall" title="Signed in ' + esc(ago(s.lastLogin)) + ' but nothing has saved since ' + esc(s.lastSeen ? ago(s.lastSeen) : 'they joined') + '. Ask them to open the app online.">sync stuck</span>';
+      else if (!p.stats || p.stats.seen < 5) flag = '<span class="flag new">new</span>';
       else if (stale > 7) flag = '<span class="flag stall">stalled</span>';
       else if (cleared >= 18) flag = '<span class="flag fly">flying</span>';
       return {
@@ -292,17 +301,19 @@
 
       /* ---- simulations ---- */
       var mk = p.mocks || {};
-      h += '<details class="disc" open><summary>Full simulations<span class="count">' +
+      h += '<details class="disc" open><summary>Mock papers<span class="count">' +
         Object.keys(mk).length + ' of ' + (C.MOCKS || []).length + ' sat</span></summary><div class="disc-body">';
       if (!Object.keys(mk).length) {
-        h += '<p class="tiny" style="padding-top:10px">No simulation sat yet. The section breakdown here is the single most useful page in this console once they have.</p>';
+        h += '<p class="tiny" style="padding-top:10px">No mock sat yet. The section breakdown here is the single most useful page in this console once they have.</p>';
       } else {
-        h += '<table class="mocktable"><thead><tr><th>Paper</th><th>Marks</th><th>%</th><th>Attempts</th><th>Last sat</th></tr></thead><tbody>';
+        h += '<table class="mocktable"><thead><tr><th>Paper</th><th>Marks</th><th>First</th><th>Best</th><th>Attempts</th><th>Last sat</th></tr></thead><tbody>';
         (C.MOCKS || []).forEach(function (m) {
           var r = mk[m.id];
           if (!r) return;
-          h += '<tr' + (r.best < 0.6 ? ' class="low"' : '') + '><td>' + esc(m.name) + '</td>' +
+          var first = r.first != null ? r.first : r.best;
+          h += '<tr' + (first < 0.6 ? ' class="low"' : '') + '><td>' + esc(m.name) + '</td>' +
             '<td class="n">' + r.marks + '/' + r.total + '</td>' +
+            '<td class="n">' + pct(first) + '%</td>' +
             '<td class="n">' + pct(r.best) + '%</td>' +
             '<td class="n">' + r.attempts + '</td>' +
             '<td>' + esc(new Date(r.at).toLocaleDateString()) + '</td></tr>';

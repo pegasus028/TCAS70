@@ -26,6 +26,16 @@ Built on the Mission Control engine. Everything is static (GitHub Pages) plus an
    - The teacher PIN is `1234` until you set the Script Property `TEACHER_PIN`.
    - Remember: saving the script does not update the live endpoint. Use Deploy → Manage deployments → pencil → New version → Deploy.
 3. Without a server the app still works, but progress stays in each student's browser.
+4. **Every push:** run `node bump-version.js` (or `node bump-version.js 2026-10-06b`) first. It sets one new `?v=` string on every script and stylesheet tag in `index.html`, `teacher.html`, `booklet.html` and `podcasts.html`, so phones stop serving stale files.
+
+### How saving works (Oct 2026)
+
+- Students stay signed in across a reload. A mock in progress is kept on the device (`tc70.exam.<id>`) with its clock still running; on return the app offers to resume it, or marks it if time has run out.
+- Answers queue in `tc70.outbox.v1` and are removed only when the class server acknowledges them. A dropped connection never discards them. The server ignores a row it already holds, so a row that goes up twice is harmless.
+- If the server is unreachable at sign-in, the student is told so; no local-only account is created.
+- The teacher console flags **sync stuck** for any student who has signed in more than a day after their last successful save (needs the `lastLogin` field, added to `Code.gs` in Oct 2026 — redeploy the script).
+- Retakes of a mock alternate Set 1 / Set 2 (options in reverse order, as in the real exam). The first sitting is kept as `first` and shown as the benchmark.
+- A module is cleared at 80% (4 of 5); "rules covered" counts only rules answered correctly.
 
 Storage keys are `tc70.*`, so this app never collides with Mission Control or Fine Tuning on the same `pegasus028.github.io` origin.
 
@@ -39,6 +49,6 @@ Storage keys are `tc70.*`, so this app never collides with Mission Control or Fi
 
 ## Editing content
 
-- Format rules are in `SPEC.md`. Run `node verify.js topic-t4.js` (or `mock-2.js`) after any edit; it must print `PASS`.
+- Format rules are in `SPEC.md`. Run `node verify.js topic-t4.js` (or `mock-2.js`, or several files at once) after any edit; it must print `PASS`. Besides structure it checks: hints that contain the key, options not in shortest→longest order, mock key-position balance (18–22 each), the longest-option-is-key rate (≤25%), `why` texts that refer to an option by position, empty sort bins, and build items whose tiles allow other orderings (`--build-all` prints them all).
 - Each lesson owns one tag. Mock items carry the same tags, which is how a wrong answer finds its lesson.
 - Mock items must keep ids `mN-Q` (Q = question number).
