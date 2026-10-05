@@ -99,7 +99,12 @@ Every multiple-choice item must pass ALL of these:
 1. **Natural stem** — sounds like real English a teacher or examiner would write.
 2. **Exactly one defensible answer.** Read each distractor against the context: if any could be argued
    right, rewrite it.
-3. **The hint (practice items only) must not reveal the answer.** Point to the clue, not the key.
+3. **The hint (practice items only) must not reveal the answer.** A hint may name *where* to look
+   ("the line after the blank", "paragraph 3, the sentence with *however*") or *what job the slot does*
+   ("the gap needs a noun after *the*"). It may never give a definition, a synonym of the key, the key
+   word itself, or a question whose answer is the key ("Whose grandmother is it?" for a *whose* gap).
+   Test: could a student who does not know the skill pick the key from the hint alone? If yes, rewrite.
+   `verify.js` fails any hint that contains the key's text.
 4. **The key is the longest option no more than about 25% of the time.** Vary lengths deliberately: in
    about a quarter of items make the key the SHORTEST option. Don't make the key the most detailed or
    most "complete-sounding" option by habit.
