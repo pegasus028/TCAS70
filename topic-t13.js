@@ -116,7 +116,7 @@ T13.levels.push({
             'It begins with “Because”, which cannot start a sentence.',
             'It contains a number, and openers never contain numbers.'
           ], answer: 0,
-          hint: 'Look for the word that asks the reader “which one?”.',
+          hint: 'Test each reason against the theory: can a sentence start with “Because”? Do openers really avoid numbers?',
           why: '“This system” is a pointer: the reader would ask “which system?”, so a sentence that names it (B) must come first. “Because” can start a sentence when the main clause follows, as it does here, so that is not the problem. Length and numbers do not decide the opener either; TCAS openers are often long and may contain figures.' }
       ]
     },
@@ -137,7 +137,7 @@ T13.levels.push({
           'Look for <em>Ultimately, Thus, Therefore, In the long run, In the end</em>, or <em>should / it is important to</em>.',
           'Be careful: <em>As a result</em> can be in the middle. Ask: “Does this sentence talk about the whole paragraph?”'
         ],
-        thai: 'ประโยคปิด (closer) มองย้อนกลับไปที่ทั้งย่อหน้าและตอบคำถามว่า “แล้วไงต่อ” โดยสรุป (Ultimately, Thus, Therefore, In the long run) ให้คำแนะนำ (should, it is crucial to) หรือชั่งน้ำหนักทุกอย่างรวมกัน (both approaches, these benefits and challenges) กับดักคือ As a result หรือ Consequently ไม่จำเป็นต้องอยู่ท้ายเสมอ ในย่อหน้าแบบเหตุ-ผลต่อเนื่อง มันอาจเป็นแค่ข้อต่อกลางย่อหน้า ให้ถามว่าประโยคนี้พูดถึงภาพรวมหรือแค่ผลของประโยคก่อนหน้า',
+        thai: 'ประโยคปิด (closer) มองย้อนกลับไปที่ทั้งย่อหน้าและตอบคำถามว่า “แล้วยังไง” โดยสรุป (Ultimately, Thus, Therefore, In the long run) ให้คำแนะนำ (should, it is crucial to) หรือชั่งน้ำหนักทุกอย่างรวมกัน (both approaches, these benefits and challenges) กับดักคือ As a result หรือ Consequently ไม่จำเป็นต้องอยู่ท้ายเสมอ ในย่อหน้าแบบเหตุ-ผลต่อเนื่อง มันอาจเป็นแค่ข้อต่อกลางย่อหน้า ให้ถามว่าประโยคนี้พูดถึงภาพรวมหรือแค่ผลของประโยคก่อนหน้า',
         examples: [
           { s: '<strong>Ultimately</strong>, both approaches can work; the best choice depends on the learner.', g: 'Conclusion word + “both” looks back at the whole paragraph.' },
           { s: 'Schools <strong>should therefore</strong> teach students how to check a source.', g: 'A recommendation: a natural last line.' },
@@ -232,7 +232,7 @@ T13.levels.push({
           { s: 'Options: C-B-A-D · C-B-D-A · C-D-A-B · C-D-B-A', g: 'Same opener in all four: split at place 2 (B or D).' },
           { s: 'Locked pair: “Following fermentation…” must come right after “…they are fermented”.', g: 'Cross out every option that separates the pair.' }
         ],
-        trap: 'Students find the right opener and then pick the FIRST option that starts with it, without testing the second link. TCAS always gives two options with the correct opener, so the opener alone never finishes the job. Dodge: after the opener, always compare the two survivors and test the place where they differ.',
+        trap: 'Students find the right opener and then pick the FIRST option that starts with it, without testing the second link. TCAS always gives at least two options with the correct opener, so the opener alone never finishes the job. Dodge: after the opener, always compare the two survivors and test the place where they differ.',
         analogy: { title: 'The group-stage table', text: 'In a football tournament you do not play every team; the draw cuts the field. The opener is the group stage: half the options go home. Then there is one knockout match between the two survivors, played at the one position where they differ. Win that match and you have your champion.' },
         map: { center: 'Using the options', branches: [
           { label: 'Step 1: opener', leaves: ['usually a 2+2 split', 'cross out two options'] },
@@ -303,14 +303,14 @@ T13.levels.push({
       hint: 'Every option opens the same way. Look at what each option puts last.',
       why: 'B states the promise, A contrasts it with “However… surprisingly inaccurate”, C adds a worse problem with “even”, and D closes with “Ultimately” and a balanced lesson. B-A-D-C puts the conclusion before the last problem. B-C-D-A and B-D-C-A both leave “However” in A until the end, where it contrasts with the conclusion instead of with the watches’ promise.' },
     { id: 't13l1ck-3', type: 'choose', tag: 'po-options', level: 'B2+',
-      stem: '<div class="orderblock"><p>A. Yet the same things that make these jokes harmless fun, humour and easy sharing, also let memes spread a political or health claim much faster than a news article.</p><p>B. A meme is an image, video or phrase, usually humorous, that is copied and changed as it spreads online.</p><p>C. This speed becomes a problem when the claim inside the joke is false, because few people stop to check a picture they are laughing at.</p><p>D. Most are harmless jokes about school, pets or everyday life.</p></div>',
+      stem: '<div class="orderblock"><p>A. Yet the same things that make these jokes harmless fun — humour and easy sharing — also let memes spread a political or health claim much faster than a news article.</p><p>B. A meme is an image, video or phrase, usually humorous, that is copied and changed as it spreads online.</p><p>C. This speed becomes a problem when the claim inside the joke is false, because few people stop to check a picture they are laughing at.</p><p>D. Most are harmless jokes about school, pets or everyday life.</p></div>',
       options: ['B-A-C-D', 'B-D-A-C', 'D-A-B-C', 'D-B-A-C'], answer: 1,
       hint: 'Decide the opener to halve the options. Then ask what “Yet” in A is contrasting with.',
       why: 'B defines a meme and opens. D says most are harmless, A turns with “Yet the same things that make these jokes harmless fun… also let memes spread a political or health claim”, and C picks up “This speed” and explains the danger. D cannot open because “Most” needs a group already named. B-A-C-D puts A straight after the definition, where “these jokes” and “harmless” have nothing to point back to, and ends with the weak “Most are harmless jokes”.' },
     { id: 't13l1ck-4', type: 'choose', tag: 'po-close', level: 'B2+',
       stem: '<div class="orderblock"><p>A. As a result, thousands of broken bicycles ended up piled in empty lots, and several companies went out of business.</p><p>B. In the late 2010s, bike-sharing companies filled many Asian cities with millions of brightly coloured bicycles.</p><p>C. Many were parked carelessly or damaged, because riders felt no responsibility for bikes they did not own.</p><p>D. Cities that want the benefits of shared bikes need to limit the number of bikes and make riders pay a deposit.</p></div><p>Which sentence should close the paragraph?</p>',
       options: ['Sentence A', 'Sentence B', 'Sentence C', 'Sentence D'], answer: 3,
-      hint: 'One sentence has a result word; another has no signal word at all. Which one gives the lesson?',
+      hint: 'One sentence has a result word, but is it the end of the chain or only the next link?',
       why: 'D closes: it steps back from the story and recommends a solution (“Cities… need to limit… and make riders pay a deposit”). A is the trap: “As a result” is only the next link in the chain (careless parking → piles of broken bikes), and the lesson still has to follow. The order is B-C-A-D.' },
     { id: 't13l1ck-5', type: 'choose', tag: 'po-close', level: 'B2+',
       stem: '<div class="orderblock"><p>A. Playing also teaches a lesson that textbooks rarely do: that steady practice turns something impossible into something ordinary.</p><p>B. Learning to play a musical instrument trains far more than the fingers.</p><p>C. Reading music, keeping time and listening to other players all exercise memory and attention at once.</p><p>D. Thus, schools that cut music lessons to make room for exam preparation may be removing one of their most effective learning tools.</p></div>',
@@ -318,7 +318,7 @@ T13.levels.push({
       hint: 'After the opener, the two survivors differ only in the last two places. Which sentence can close?',
       why: 'B opens with the broad claim, C gives the first set of benefits, A adds another with “also”, and D closes with “Thus” and a lesson for schools. B-C-D-A draws the conclusion too early and then adds a new benefit after it. A cannot open, because “also” needs an earlier benefit.' },
     { id: 't13l1ck-6', type: 'choose', tag: 'po-options', level: 'B2+',
-      stem: '<div class="orderblock"><p>A. Kittens do this while feeding, pressing their mother’s belly to help the milk flow.</p><p>B. Many cat owners have noticed their pets rhythmically pushing their paws into a soft blanket or a lap, a behaviour known as “kneading”.</p><p>C. Adult cats seem to keep the habit because it reminds them of that early comfort, which is why they often knead when they are relaxed.</p><p>D. Some experts also believe it marks territory, since cats have scent glands in the pads of their paws.</p></div>',
+      stem: '<div class="orderblock"><p>A. Kittens do this while feeding, pressing their mother’s belly to help the milk flow in a moment of warmth and safety.</p><p>B. Many cat owners have noticed their pets rhythmically pushing their paws into a soft blanket or a lap, a behaviour known as “kneading”.</p><p>C. Adult cats seem to keep the habit because it reminds them of that early comfort, which is why they often knead when they are relaxed.</p><p>D. Some experts also believe it marks territory, since cats have scent glands in the pads of their paws.</p></div>',
       options: ['B-A-C-D', 'B-A-D-C', 'B-C-A-D', 'B-D-C-A'], answer: 0,
       hint: 'The opener will not help here. Find a pointer that must sit right after its partner.',
       why: 'All four options open with B, so test the links. “That early comfort” in C must come right after A, which describes kittens feeding, so A-C is a locked pair: only B-A-C-D keeps it. D adds a second explanation with “also” and ends the paragraph. B-A-D-C and B-D-C-A separate A from C, and B-C-A-D mentions “that early comfort” before it has been described.' }
@@ -414,7 +414,7 @@ T13.levels.push({
             'the noise at break time',
             'contacting parents in an emergency'
           ], answer: 1,
-          hint: 'A ban is a rule that stops people doing something. What stops students using their phones?',
+          hint: '“Such” relabels an idea already described. Is a ban an object, a policy, or a result?',
           why: '“Such a strict ban” relabels the “phone-free day” rule in B, described in A. The pouches are the near miss: they are the tool the rule uses, not the ban itself. The noise at break time is a result, and contacting parents is what the critics say the ban prevents.' },
 
         { id: 't13l2s1-5', type: 'choose', tag: 'po-ref', level: 'B2+',
@@ -447,10 +447,10 @@ T13.levels.push({
           { s: 'AI can explain grammar. <strong>For example</strong>, it can show why “an hour” takes “an”.', g: 'For example demands a general claim before it.' },
           { s: '<strong>In addition to its low price</strong>, the app is easy to use.', g: 'Names the previous point (price) for you.' },
           { s: 'Students should <strong>also</strong> check the campus facilities.', g: 'Hidden addition signal: a first point must come before.' },
-          { s: 'The drains overflowed. <strong>Consequently</strong>, 37 roads were closed.', g: 'Consequently demands a cause before it.' }
+          { s: 'The drains overflowed. <strong>Consequently</strong>, traffic was blocked at 37 locations.', g: 'Consequently demands a cause before it.' }
         ],
         trap: 'The signal is hidden in the middle of the sentence (“should additionally consider”, “also exert influence”, “has therefore been suggested”), so students treat the sentence as an opener or place it too early. Dodge: read every sentence to the end and circle signals wherever they are.',
-        analogy: { title: 'BTS Skytrain announcements', text: 'On the Skytrain, “Next station: Siam, interchange station” only makes sense if you are between Ratchathewi and Siam. Signal words are the station announcements: “However” is announced only after a station going one way; “Lastly” only near the end of the line. Hear the announcement, and you know where the train has just been.' },
+        analogy: { title: 'BTS Skytrain announcements', text: 'On the Skytrain, “Next station: Siam, interchange station” only makes sense if the train has just left the station before Siam. Signal words are the station announcements: “However” is announced only after a station going one way; “Lastly” only near the end of the line. Hear the announcement, and you know where the train has just been.' },
         map: { center: 'Signal words', branches: [
           { label: 'Addition', leaves: ['Additionally, Moreover', 'also, another', 'In addition to X'] },
           { label: 'Contrast', leaves: ['However, Yet', 'Despite this', 'By contrast'] },
@@ -494,10 +494,10 @@ T13.levels.push({
           why: 'Additionally and Moreover add a point of the same kind; Nevertheless and By contrast turn the other way; To illustrate and For instance introduce an example; Consequently and As a result give a result; Initially and Following this stage mark steps in time. Knowing the family tells you what must come before each one.' },
 
         { id: 't13l2s2-2', type: 'choose', tag: 'po-signal', level: 'B2+',
-          stem: '<div class="orderblock"><p>A. Additionally, students should mix different subjects in one session, because switching topics strengthens long-term memory.</p><p>B. Lastly, a full night’s sleep before the exam allows the brain to store everything that has been practised.</p><p>C. Initially, it is wise to test yourself instead of rereading notes, as recalling an answer makes it easier to find again.</p><p>D. Research on learning suggests that a few simple habits can make revision far more effective.</p></div>',
+          stem: '<div class="orderblock"><p>A. Additionally, students should mix different subjects in one session, because switching topics strengthens long-term memory.</p><p>B. Lastly, a full night’s sleep before the exam allows the brain to store everything that has been practised.</p><p>C. First, it is wise to test yourself instead of rereading notes, as recalling an answer makes it easier to find again.</p><p>D. Research on learning suggests that a few simple habits can make revision far more effective.</p></div>',
           options: ['C-A-D-B', 'C-D-A-B', 'D-A-C-B', 'D-C-A-B'], answer: 3,
           hint: 'Three sentences carry sequence or addition signals. Which one has none?',
-          why: 'D is the only sentence without a signal, so it opens by announcing “a few simple habits”. Then the signals give the order: Initially (C) → Additionally (A) → Lastly (B). Options starting with C fail because “Initially” needs a topic to belong to, and D-A-C-B puts “Additionally” before the first habit.' },
+          why: 'D is the only sentence without a signal, so it opens by announcing “a few simple habits”. Then the signals give the order: First (C) → Additionally (A) → Lastly (B). Options starting with C fail because “First” needs a topic to belong to, and D-A-C-B puts “Additionally” before the first habit.' },
 
         { id: 't13l2s2-3', type: 'choose', tag: 'po-signal', level: 'B2+',
           stem: T13_B_COLOUR + '<p>Which word or phrase in sentence B shows that another sentence must come before it?</p>',
@@ -527,7 +527,7 @@ T13.levels.push({
         body: [
           'English sentences have a natural shape: the beginning is the <strong>given</strong> (the topic we already share) and the end is the <strong>new</strong> (the information the writer wants to add). Good writers chain them: the new end of sentence 1 becomes the given start of sentence 2. <em>“…they are <strong>fermented</strong> to develop their rich flavor.” → “<strong>Following fermentation</strong>, the beans are dried and roasted, … revealing the valuable <strong>nibs</strong> inside.” → “Ultimately, these <strong>nibs</strong> are ground…”</em> (TCAS68). Each link hooks onto the one before.',
           '<strong>This is the tool for items with no connectors.</strong> Some TCAS paragraphs have almost no signal words. Then compare the <strong>end</strong> of each sentence with the <strong>start</strong> of the others. In TCAS69’s white coat syndrome item: the opener ends with “<em>the anxiety a patient experiences</em>” → “<em>This anxiety</em> causes an increase in stress hormones, which… leads to a temporary elevation in <em>blood pressure</em>” → “Because the <em>blood pressure reading</em> is artificially high…”. End → start, end → start.',
-          '<strong>The echo can be disguised.</strong> The start of the next sentence may repeat the word (<em>fibres → These fibres</em>), change its form (<em>fermented → fermentation</em>), use a synonym (<em>tuition → fees</em>), or summarise (<em>blocked 37 roads → Such widespread disruption</em>). Look for the <em>idea</em>, not the exact word.',
+          '<strong>The echo can be disguised.</strong> The start of the next sentence may repeat the word (<em>fibres → These fibres</em>), change its form (<em>fermented → fermentation</em>), use a synonym (<em>tuition → fees</em>), or summarise (<em>blocked at 37 locations → Such widespread disruption</em>). Look for the <em>idea</em>, not the exact word.',
           '<strong>Procedure.</strong> Step 1: after finding the opener, underline the last few words (the new information) of each sentence. Step 2: look for another sentence whose first few words pick that up. Step 3: chain end → start until all four sentences are linked. If two sentences could follow, choose the one whose start echoes the <em>end</em> of the previous sentence, not just a word in its middle.'
         ],
         simple: [
@@ -571,18 +571,18 @@ T13.levels.push({
           words: [
             'In late September 2026, more than 300 millimetres of rain fell on parts of Bangkok in just 48 hours.',
             'Traffic at 37 locations across the city was blocked by this water.',
-            'Such widespread disruption led the city to declare a flood disaster zone on 26 September.',
+            'Amid such widespread disruption, the city declared a flood disaster zone on 26 September.',
             'A declaration of this kind allows officials to move emergency staff and equipment more quickly.'
           ],
           answer: 1, fix: 'This water blocked traffic at 37 locations across the city.',
           hint: 'Which sentence starts with brand-new information and leaves the known part until the end?',
-          why: 'Sentence 2 begins with new information (traffic at 37 locations) and hides the known information (“this water”) at the end. Rewritten as “This water blocked traffic at 37 locations”, it starts with the rain from sentence 1 and ends with the disruption that sentence 3 picks up with “Such widespread disruption”.' },
+          why: 'Sentence 2 begins with new information (traffic at 37 locations) and hides the known information (“this water”) at the end. Rewritten as “This water blocked traffic at 37 locations”, it starts with the rain from sentence 1 and ends with the disruption that sentence 3 picks up with “such widespread disruption”.' },
 
         { id: 't13l2s3-3', type: 'choose', tag: 'po-given', level: 'B2+',
-          stem: '<div class="orderblock"><p>A. This sudden rise in demand puts heavy pressure on the power grid, especially in the late afternoon.</p><p>B. When temperatures climb above 40°C, millions of homes switch on their air conditioners at almost the same time.</p><p>C. If the grid cannot handle this pressure, some areas may face power cuts at the very moment people most need cooling.</p><p>D. Such cuts are especially dangerous for elderly people, whose bodies struggle to control their temperature in extreme heat.</p></div><p>B is the opener. Which sentence should come directly after it?</p>',
+          stem: '<div class="orderblock"><p>A. This sudden rise in demand puts heavy pressure on the power grid, especially in the late afternoon.</p><p>B. When temperatures climb above 40°C, millions of homes switch on their air conditioners at almost the same time.</p><p>C. If the grid cannot handle this pressure, some areas may face power cuts at the very moment people most need cooling.</p><p>D. Such cuts are especially dangerous for elderly people, whose bodies struggle to control their temperature in extreme heat.</p></div><p>Which sentence should come second in the correct order?</p>',
           options: ['Sentence A', 'Sentence B', 'Sentence C', 'Sentence D'], answer: 0,
-          hint: 'B ends with millions of air conditioners switching on. Which sentence begins by naming that idea?',
-          why: 'B ends with millions of air conditioners going on at once, and A begins by summarising exactly that: “This sudden rise in demand”. C is the near miss because it mentions the grid, but its start (“this pressure”) needs A’s ending (“heavy pressure on the power grid”). D’s “Such cuts” needs C. The order is B-A-C-D.' },
+          hint: 'Find the opener first, then underline its last words. Which sentence starts from them?',
+          why: 'B opens, because it is the only sentence with no pointer. It ends with millions of air conditioners going on at once, and A begins by summarising exactly that: “This sudden rise in demand”. C is the near miss because it mentions the grid, but its start (“this pressure”) needs A’s ending (“heavy pressure on the power grid”). D’s “Such cuts” needs C. The order is B-A-C-D.' },
 
         { id: 't13l2s3-4', type: 'choose', tag: 'po-given', level: 'B2+',
           stem: '<div class="orderblock"><p>A. A single rumour posted in a large group chat can reach hundreds of people within minutes.</p><p>B. Each of those people may forward it to several other groups without checking whether it is true.</p><p>C. By the time a correction is posted, the original rumour has already travelled far beyond the first chat.</p><p>D. Within an hour, a rumour forwarded in this way can reach tens of thousands of phones.</p></div>',
@@ -687,7 +687,7 @@ T13.levels.push({
           'Harvest first, then let it ferment,',
           'Following fermentation, that’s where it went.',
           'Roast it, crack it, nibs inside,',
-          'These nibs are ground, the liquid’s applied.',
+          'These nibs are ground till they’re liquefied.',
           'After, once, and since that time,',
           'Each one names the step behind.',
           'Follow the baton, step by step,',
@@ -702,7 +702,7 @@ T13.levels.push({
           why: 'B names the process and its first step (feeding). D follows “After several weeks of feeding” and produces cocoons; A begins “Once the cocoons are complete” and loosens the thread; C ends with “Ultimately, this thread is… woven”. The options with A second put the cocoons in hot water before they exist, and B-D-C-A weaves “this thread” before it has been loosened.' },
 
         { id: 't13l3s1-2', type: 'choose', tag: 'po-process', level: 'C1',
-          stem: '<div class="orderblock"><p>A. Two years later, crabs and small fish had returned to the young forest, and so had the income of local fishing families.</p><p>B. Since then, the project has become a model for other coastal communities facing the same problem.</p><p>C. When the sea began swallowing its shoreline, a small fishing village in Samut Prakan decided to plant mangroves instead of building a concrete wall.</p><p>D. In the first year, volunteers from nearby schools planted more than ten thousand seedlings in the soft mud.</p></div>',
+          stem: '<div class="orderblock"><p>A. Two years later, crabs and small fish had returned to the young forest, and local fishing families were earning a steady income again.</p><p>B. Since then, the project has become a model for other coastal communities facing the same problem.</p><p>C. When the sea began swallowing its shoreline, a small fishing village in Samut Prakan decided to plant mangroves instead of building a concrete wall.</p><p>D. In the first year, volunteers from nearby schools planted more than ten thousand seedlings in the soft mud.</p></div>',
           options: ['A-C-D-B', 'A-D-C-B', 'C-A-B-D', 'C-D-A-B'], answer: 3,
           hint: 'Put the time phrases on a timeline. Which one must come before “Two years later”?',
           why: 'C sets the starting point (the decision to plant mangroves). Then the time phrases run in order: “In the first year” (D) → “Two years later” (A) → “Since then” (B). A cannot open because “Two years later” needs an earlier event. C-A-B-D jumps to “Two years later” before any planting and leaves “In the first year” stranded at the end.' },
@@ -720,10 +720,10 @@ T13.levels.push({
           why: 'Each stage starts from the product of the one before: collected bottles are sorted, “the sorted bottles” are shredded into flakes, “these flakes” become pellets, and “Finally” the pellets become new products.' },
 
         { id: 't13l3s1-4', type: 'choose', tag: 'po-process', level: 'C1',
-          stem: T13_B_HONEY + '<p>B is the opener. Which sentence should come directly after A?</p>',
+          stem: T13_B_HONEY + '<p>Which sentence comes third in the correct order?</p>',
           options: ['Sentence A', 'Sentence B', 'Sentence C', 'Sentence D'], answer: 3,
-          hint: 'A ends with nectar being changed. Which sentence gives that changing liquid a new label?',
-          why: 'A ends with bees adding enzymes to the nectar, and D picks that up with the label “This watery mixture”, which is “then” dried in the honeycomb. C is the near miss: it has “Finally”, but it seals “each cell”, and the cells only appear in D. The order is B-A-D-C.' },
+          hint: 'Find the opener, then follow the nectar: what does each sentence do to it, and in what order?',
+          why: 'B opens with the nectar, A brings it “Back in the hive” and ends with enzymes changing it, and D comes third because it picks that up with the label “This watery mixture”, which is “then” dried in the honeycomb. C is the near miss: it has “Finally”, but it seals “each cell”, and the cells only appear in D, so it must come last. The order is B-A-D-C.' },
 
         { id: 't13l3s1-5', type: 'choose', tag: 'po-process', level: 'C1',
           stem: T13_B_HONEY,
@@ -868,7 +868,7 @@ T13.levels.push({
         { id: 't13l3s3-1', type: 'choose', tag: 'po-argue', level: 'C1',
           stem: '<div class="orderblock"><p>A. This lost sleep, in turn, leaves them tired and less productive the next day, so they finish work even later.</p><p>B. “Revenge bedtime procrastination” describes the habit of staying up late to enjoy free time that a busy day did not allow.</p><p>C. As a result, the cycle repeats itself night after night unless the lack of free time is addressed.</p><p>D. People who do it are not unaware of the cost; they simply trade sleep for a few hours that feel truly their own.</p></div>',
           options: ['B-A-C-D', 'B-C-A-D', 'B-D-A-C', 'B-D-C-A'], answer: 2,
-          hint: 'The opener is fixed. Follow the dominoes: which sentence starts with what D ends with?',
+          hint: 'The opener is fixed. Which sentence produces the “lost sleep” that A picks up? Which one needs a cycle already?',
           why: 'B defines the habit, D explains that people “trade sleep”, A picks up “This lost sleep, in turn” and ends with finishing work later, and C closes with “the cycle repeats”. B-A-C-D mentions “This lost sleep” before any sleep is traded, B-C-A-D gives “the cycle” before it exists, and B-D-C-A describes the cycle before the link that creates it.' },
 
         { id: 't13l3s3-2', type: 'choose', tag: 'po-argue', level: 'C1',
@@ -923,7 +923,7 @@ T13.levels.push({
       hint: 'The opener is the same in every option. Which step does “Once the sheets arrive” need before it?',
       why: 'C names the process. B sends the sheets to the marking centre, A begins “Once the sheets arrive at the marking centre”, and D is the last step (“Finally”). C-B-D-A publishes the scores before the sheets are scanned, and the options with D second put “Finally” at the start of the process.' },
     { id: 't13l3ck-2', type: 'choose', tag: 'po-compare', level: 'C1+',
-      stem: '<div class="orderblock"><p>A. The most overlooked kind, however, is mental rest: short breaks from all information, such as a walk without headphones.</p><p>B. Sleep scientists divide rest into several types, and most students get only one of them.</p><p>C. The most familiar is physical rest, which the body gets mainly through sleep.</p><p>D. A second kind is social rest: time away from group chats and crowds, which many teenagers rarely get.</p></div>',
+      stem: '<div class="orderblock"><p>A. The most overlooked kind, however, is mental rest: short breaks from all information, such as a walk without headphones.</p><p>B. Some wellbeing experts divide rest into several types, and most students get only one of them.</p><p>C. The most familiar is physical rest, which the body gets mainly through sleep.</p><p>D. A second kind is social rest: time away from group chats and crowds, which many teenagers rarely get.</p></div>',
       options: ['B-C-D-A', 'B-D-A-C', 'C-B-A-D', 'C-D-B-A'], answer: 0,
       hint: 'Which sentence announces the groups? Then look for words that number or rank them.',
       why: 'B announces the classification (“several types”) and opens. C gives the first and most familiar type, D “A second kind”, and A the most overlooked kind, contrasting with “most familiar” through “however”. C cannot open because “The most familiar” needs the types to be introduced. B-D-A-C puts “A second kind” before the first.' },
@@ -933,20 +933,20 @@ T13.levels.push({
       hint: 'Find the only sentence with no pointer or result word. Then follow the dominoes.',
       why: 'D describes the city surfaces and opens. C picks them up (“These dark surfaces”) and ends with heat released after sunset; B gives the result (warmer nights); A picks that up (“This extra warmth”) and adds a further effect. B cannot open because “As a result” needs a cause. D-B-C-A gives the result before the surfaces have absorbed any heat.' },
     { id: 't13l3ck-4', type: 'choose', tag: 'po-argue', level: 'C1+',
-      stem: '<div class="orderblock"><p>A. Within a term, the amount of food thrown away fell by nearly half, and the canteen also spent less on ingredients.</p><p>B. Much of it is rice and vegetables left on plates, because portions are fixed and students cannot ask for less.</p><p>C. One school tried a simple solution: letting students choose their own portion size and serve themselves.</p><p>D. School canteens throw away a surprising amount of food every day.</p></div>',
+      stem: '<div class="orderblock"><p>A. By the end of the day, the bins held barely a third of the usual number of bottles, and the school had saved money on drinks as well.</p><p>B. Most of them come from the free drinks handed out at every stall, since few students bring a bottle of their own.</p><p>C. Instead of handing out bottles, one school installed water-refill stations and gave every visitor a reusable cup at the gate.</p><p>D. School sports days leave behind thousands of empty plastic bottles.</p></div>',
       options: ['A-B-C-D', 'A-C-D-B', 'D-B-A-C', 'D-B-C-A'], answer: 3,
       hint: 'Problem, cause, solution, result: which option keeps the result after the solution?',
-      why: 'D states the problem, B gives its cause (“Much of it… because portions are fixed”), C offers a solution aimed at that cause (choose your own portion), and A reports the result (“Within a term…”). A cannot open because it reports a change that has not been explained. D-B-A-C reports the result before the solution that produced it.' },
+      why: 'D states the problem, B gives its cause (“Most of them come from the free drinks handed out”), C offers a solution aimed at that cause (“Instead of handing out bottles…”), and A reports the result (“By the end of the day… barely a third”). A cannot open because “the usual number” and “the school” need a situation already described. D-B-A-C reports the result before the solution that produced it.' },
     { id: 't13l3ck-5', type: 'choose', tag: 'po-compare', level: 'C1+',
-      stem: '<div class="orderblock"><p>A. Unlike this Thai habit, many Western speakers see a direct “no” as honest rather than rude.</p><p>B. Cultures differ greatly in how they refuse an invitation politely.</p><p>C. Both styles aim at the same goal, protecting the relationship, but they reach it by opposite routes.</p><p>D. In Thailand, people often avoid saying “no” directly and prefer a softer phrase such as “I’ll see”, which keeps everyone’s feelings safe.</p></div>',
+      stem: '<div class="orderblock"><p>A. In contrast to this Thai habit, many Western speakers see a direct “no” as honest rather than rude.</p><p>B. Cultures differ greatly in how they refuse an invitation politely.</p><p>C. Both styles aim at the same goal, protecting the relationship, but they reach it by opposite routes.</p><p>D. In Thailand, people often avoid saying “no” directly and prefer a softer phrase such as “I’ll see”, which keeps everyone’s feelings safe.</p></div>',
       options: ['B-A-D-C', 'B-D-A-C', 'D-A-B-C', 'D-B-C-A'], answer: 1,
-      hint: 'D can stand alone, but does it announce the comparison? Then find what “Unlike this Thai habit” needs.',
-      why: 'B frames the comparison, D gives the Thai side, A the Western side (“Unlike this Thai habit”), and C balances “Both styles”. D is the decoy opener: it stands alone but gives only one side, and in D-A-B-C the framing sentence ends up in the middle. B-A-D-C uses “this Thai habit” before it has been described.' },
+      hint: 'Two sentences could stand alone. Which one frames the whole comparison? Then find what “this Thai habit” needs.',
+      why: 'B frames the comparison, D gives the Thai side, A the Western side (“In contrast to this Thai habit”), and C balances “Both styles”. D is the decoy opener: it stands alone but gives only one side, and in D-A-B-C the framing sentence ends up in the middle. B-A-D-C uses “this Thai habit” before it has been described.' },
     { id: 't13l3ck-6', type: 'choose', tag: 'po-process', level: 'C1+',
-      stem: '<div class="orderblock"><p>A. When schools closed in 2020, lessons moved online almost overnight, and many students struggled with weak internet connections.</p><p>B. Since then, most schools have returned to classrooms, but many have kept useful online tools such as digital homework platforms.</p><p>C. Before the pandemic, online learning in Thai schools was mostly limited to optional extra courses.</p><p>D. Over the following year, teachers gradually learned to use video calls, shared documents and online quizzes more effectively.</p></div><p>C is the opener. Which sentence comes second?</p>',
-      options: ['Sentence A', 'Sentence B', 'Sentence C', 'Sentence D'], answer: 0,
+      stem: '<div class="orderblock"><p>A. When schools closed in 2020, lessons moved online almost overnight, and many students struggled with weak internet connections.</p><p>B. Since then, most schools have returned to classrooms, but many have kept useful online tools such as digital homework platforms.</p><p>C. Before the pandemic, online learning in Thai schools was mostly limited to optional extra courses.</p><p>D. Over the following year, teachers gradually learned to use video calls, shared documents and online quizzes more effectively.</p></div><p>Which sentence comes third in the correct order?</p>',
+      options: ['Sentence A', 'Sentence B', 'Sentence C', 'Sentence D'], answer: 3,
       hint: 'Put the time phrases on a timeline: before, when, over the following year, since then.',
-      why: 'The time phrases give a timeline: “Before the pandemic” (C) → “When schools closed in 2020” (A) → “Over the following year” (D) → “Since then” (B). D is the near miss, but “the following year” must follow a year already mentioned, and 2020 appears only in A. The order is C-A-D-B.' }
+      why: 'The time phrases give a timeline: “Before the pandemic” (C) → “When schools closed in 2020” (A) → “Over the following year” (D) → “Since then” (B), so D is third. B is the near miss: “Since then” could seem to follow 2020 directly, but “the following year” must come straight after the year it follows, and B describes a return to classrooms that only makes sense after the online year in D. The order is C-A-D-B.' }
   ] }
 });
 

@@ -10,7 +10,7 @@ var M1_C1 = [
   {who:'Ploy', text:'Mint, you’ve been smiling at your phone for ten minutes. What’s going on?'},
   {who:'Mint', text:'My TGAT results just came out. I got 92 in the English part!'},
   {who:'Ploy', text:'___(1)___ You were so worried about it last week.'},
-  {who:'Mint', text:'Thanks! I honestly thought I’d messed up the critical-thinking section. What about you? Have you checked yours?'},
+  {who:'Mint', text:'Thanks! I honestly thought I’d messed up the reading section. What about you? Have you checked yours?'},
   {who:'Ploy', text:'___(2)___ I’m too nervous to look.'},
   {who:'Mint', text:'Come on, just open the app and look!'},
   {who:'Ploy', text:'___(3)___ My hands are literally shaking. … OK, here goes. (She checks.) Wait … 78! That’s ten points higher than my practice test!'},
@@ -104,11 +104,11 @@ var M1_REVIEW = 'App Review: LingoLeap — Can a cartoon frog teach you Japanese
 '(6) So, is LingoLeap worth it? If you need motivation and want to work on your pronunciation, yes — at least for the first few months. But if you want to understand how the language really works, you will need a good textbook or a teacher as well. I will keep my streak going, but I am not sure I will renew my yearly plan.';
 
 /* ---------------------------------------------------------------- NEWS */
-var M1_NEWS = '(1) Bangkok under water: capital declared disaster zone after record rain\nBy Chronicle reporter Kanyarat Boonmee\n\n' +
+var M1_NEWS = '(1) Bangkok under water: capital declared disaster zone after torrential rain\nBy Chronicle reporter Kanyarat Boonmee\n\n' +
 '(2) Bangkok has been declared a flood disaster zone after more than 300 millimetres of rain fell on parts of the capital in just 48 hours, leaving roads, homes and schools under water.\n\n' +
 '(3) The declaration was made on Saturday, 26 September. A city spokesperson said it would allow help to reach flooded communities more quickly.\n\n' +
 '(4) As of Tuesday, 29 September, about 2.6 million people in 29 provinces had been affected by flooding, including residents of all 50 Bangkok districts. At least 22 people have died nationwide, and around 940,000 households have been hit.\n\n' +
-'(5) At the height of the storm, floodwater blocked traffic at 37 locations across the city. Some commuters said they had spent more than four hours getting home.\n\n' +
+'(5) At the height of the storm, floodwater blocked traffic at 37 locations across the city. Some commuters reported long delays getting home.\n\n' +
 '(6) So why was the flooding so severe? Experts point to two problems arriving at the same time: extremely heavy rain over the city itself and large volumes of water flowing south from the North.\n\n' +
 '(7) “Bangkok is sitting at the bottom of a funnel,” said Dr Pimchanok Wattanasiri, a hydrologist at Chao Phraya University. “When the sky and the river both send you water in the same week, even a good drainage system will struggle.”\n\n' +
 '(8) Warnings were sent directly to mobile phones by cell broadcast, a system that pushes an alert to every phone in an area without the need for an app or a phone number.\n\n' +
@@ -119,7 +119,7 @@ var M1_NEWS = '(1) Bangkok under water: capital declared disaster zone after rec
 '(13) Not everyone was satisfied. Residents’ groups in some low-lying communities complained that the barriers kept main roads dry while pushing water into their narrow sois. “The water has to go somewhere, and it always seems to come to us,” said the head of one community group.\n\n' +
 '(14) Experts say the floods are a warning for the future. “This is no longer a once-in-a-lifetime event,” Dr Pimchanok said. “Cities like Bangkok need to plan for extreme rain as a normal part of life, not as a surprise.”\n\n' +
 '(15) For now, many families are simply waiting for the water to go down. “We have moved everything upstairs,” said a shop owner in Min Buri. “Now all we can do is wait — and hope the sky stays dry.”';
-var M1_NEWS_SRC = 'Source: Adapted for TCAS70 practice (The Bangkok Chronicle, 29 September 2026)';
+var M1_NEWS_SRC = 'Source: Adapted for TCAS70 practice (The Bangkok Chronicle, 29 September 2026; quotations and some local details are illustrative)';
 
 /* ------------------------------------------------------------- VISUALS */
 var M1_V1 = { kind:'table',
@@ -231,8 +231,8 @@ MOCKS.push({
       why:'The student accepts the rule (“That sounds fair”) but then asks for a small exception. <em>Having said that</em> means “although I agree with what was just said…”. “As a result” wrongly shows a consequence, “In other words” repeats the same idea, and checking grammar is not an example of brainstorming, so “For example” fails.' },
     { id:'m1-12', type:'gap', lines:M1_C3, blank:'(12)', tag:'cv-agree', level:'B2',
       stem:'Choose the best option for blank (12).',
-      options:['I disagree. Simple videos always get low marks.','Then we’ll ask the AI to make it perfect for you.','Don’t worry. The machine will do most of the work.','Understood. Our own ideas matter more than perfection.'], answer:3,
-      why:'The teacher values a simple video “full of your own thinking” over a perfect machine-made one, and the student’s reply should show understanding and agreement. The two AI options say the opposite of the teacher’s message, and “I disagree …” is rude and contradicts “That sounds fair” earlier.' }
+      options:['So we can skip the credits, then?','Sorry, could you repeat the deadline?','Great, so grammar checkers are banned too?','Understood. Our own ideas matter more than perfection.'], answer:3,
+      why:'The teacher has just said she would rather see a simple video “full of your own thinking” than a perfect machine-made one, so the student’s reply should show that the message has been understood: <em>Our own ideas matter more than perfection.</em> “Great, so grammar checkers are banned too?” contradicts the teacher’s “Yes” one line earlier, “So we can skip the credits, then?” contradicts the rule about credits, and asking about the deadline ignores what the teacher has just said.' }
   ]},
 
   /* ------------------------------------------------ I-2 Long Conversation */
@@ -260,8 +260,8 @@ MOCKS.push({
       why:'Nan answers <em>I miss you guys too.</em> The word <em>too</em> shows that Fah has just said that she and the family miss Nan. A question about homesickness would get “Yes, I do”, not “I miss you too”, and the other two questions would need completely different answers.' },
     { id:'m1-18', type:'gap', lines:M1_LONG, blank:'(18)', tag:'dm-contrast', level:'B2',
       stem:'Choose the best option for blank (18).',
-      options:['Hold on.','In short.','Likewise.','Fair enough.'], answer:0,
-      why:'Fah notices a contradiction: Nan misses Thai food, but earlier she said she was a great cook. <em>Hold on</em> is used to stop someone because something doesn’t make sense. “Fair enough” accepts what someone said, “Likewise” means “the same for me”, and “In short” summarises.' },
+      options:['Hold on.','Likewise.','Fair enough.','Good for you.'], answer:0,
+      why:'Fah notices a contradiction: Nan misses Thai food, but earlier she said she was a great cook. <em>Hold on</em> is used to stop someone because something doesn’t make sense. “Fair enough” accepts what someone said, “Likewise” means “the same for me”, and “Good for you” congratulates someone, which does not fit a challenge.' },
     { id:'m1-19', type:'gap', lines:M1_LONG, blank:'(19)', tag:'dm-stance', level:'B2',
       stem:'Choose the best option for blank (19).',
       options:['by the way,','to be honest,','as far as I know,','on the other hand,'], answer:1,
@@ -321,7 +321,7 @@ MOCKS.push({
       options:['Its lessons last only five to seven minutes.','It lost the reviewer’s progress when it crashed.','Its listening exercises use a slow, robotic voice.','Its free version shows an advert after every lesson.'], answer:1,
       why:'“Reliable” means working properly every time. Crashing in the middle of lessons and losing progress (paragraph 4) shows the app sometimes fails. The robotic voice is a problem of quality, not reliability; short lessons are a strength, and adverts are part of the free plan’s design.' },
     { id:'m1-31', type:'read', passage:M1_REVIEW, tag:'rd-detail', level:'B2+',
-      stem:'Which statement about LingoLeap’s price is TRUE?',
+      stem:'Which statement about LingoLeap’s free and paid plans is TRUE?',
       options:['Premium users still see adverts after each lesson.','The speaking exercises are available only to paying users.','Paying for a full year costs more than paying month by month.','The free version offers unlimited lessons but no speaking practice.'], answer:1,
       why:'Paragraph 5 says the Premium plan “unlocks the speaking exercises”, so free users cannot use them. Twelve months at ฿349 is ฿4,188, which is more than ฿2,990, so the yearly plan is cheaper. Premium removes the ads, and the free version is limited to five lessons a day.' },
     { id:'m1-32', type:'read', passage:M1_REVIEW, tag:'rd-notexcept', level:'B2',
@@ -335,15 +335,15 @@ MOCKS.push({
     instructions:'Read the following news report and choose the best answer for each question.', points:1.25, items:[
     { id:'m1-33', type:'read', passage:M1_NEWS, source:M1_NEWS_SRC, tag:'rd-main', level:'B2',
       stem:'What is the main idea of the news report?',
-      options:['Older residents were the main victims of the floods.','Bangkok’s drainage system is now the best in the region.','Record rain forced Bangkok to declare a flood disaster zone.','The city plans to stop using cell broadcast after the floods.'], answer:2,
-      why:'The headline and paragraph 2 give the main idea: record rain flooded Bangkok, the city was declared a disaster zone, and life was disrupted. Older residents appear only in one detail (paragraph 9), the drainage system is said to “struggle”, and nothing says cell broadcast will be stopped.' },
+      options:['Older residents were the main victims of the floods.','Bangkok’s drainage system is now the best in the region.','Heavy rain forced Bangkok to declare a flood disaster zone.','The city plans to stop using cell broadcast after the floods.'], answer:2,
+      why:'The headline and paragraph 2 give the main idea: very heavy rain flooded Bangkok, the city was declared a disaster zone, and life was disrupted. Older residents appear only in one detail (paragraph 9), the drainage system is said to “struggle”, and nothing says cell broadcast will be stopped.' },
     { id:'m1-34', type:'read', passage:M1_NEWS, source:M1_NEWS_SRC, tag:'wk-disaster', level:'B2',
       stem:'According to the report, what problem did some people have with the flood warnings?',
       options:['The alerts arrived only after the rain had stopped.','Some older residents misunderstood or did not notice them.','The warnings were sent to the wrong districts of the city.','The alerts could be received only by people who had an app.'], answer:1,
       why:'Paragraph 9 says some older residents “had not understood the messages, or had not noticed them because their phones were on silent.” Paragraph 8 says cell broadcast works “without the need for an app”, and nothing suggests the alerts were late or sent to the wrong districts.' },
     { id:'m1-35', type:'read', passage:M1_NEWS, source:M1_NEWS_SRC, tag:'rd-infer', level:'B2+',
       stem:'What can be inferred from the Lat Krabang resident’s words in paragraph 10?',
-      options:['Adverts on mobile phones increase during floods.','The alert was sent too late to be useful to anyone.','The family’s phones did not receive the alert at all.','Misreading the alert reduced the family’s time to prepare.'], answer:3,
+      options:['Adverts on mobile phones increase during floods.','The alert was sent too late to be useful to anyone.','The family’s mobile phones did not receive the alert at all.','Misreading the alert reduced the family’s time to prepare.'], answer:3,
       why:'The mother saw the alert but thought it was an advert, and by the time her child explained it, “the water was already at our door”. So the misunderstanding cost them valuable time. The phone did receive the message, and one family’s story does not prove the alert was useless for everyone.' },
     { id:'m1-36', type:'read', passage:M1_NEWS, source:M1_NEWS_SRC, tag:'rd-cause', level:'B2',
       stem:'According to the report, why was the flooding so severe?',
@@ -351,7 +351,7 @@ MOCKS.push({
       why:'Paragraph 6 names two causes “arriving at the same time”: heavy rain over the city and water flowing south from the North. The pumps were running “around the clock”, the sea is not mentioned, and the barrier complaint (paragraph 13) is about water in low-lying sois, not the cause of the whole flood.' },
     { id:'m1-37', type:'read', passage:M1_NEWS, source:M1_NEWS_SRC, tag:'rd-views', level:'B2',
       stem:'What opinion do some residents’ groups in low-lying communities express?',
-      options:['They think the cell broadcast alerts were sent too often.','They want the city to build more barriers along main roads.','They believe draining will take far less than two to three days.','They feel the barriers moved the flood problem into their neighbourhoods.'], answer:3,
+      options:['They think the cell broadcast alerts were sent too often.','They want the city to build more barriers along main roads.','They believe draining the water will take far less than two to three days.','They feel the barriers moved the flood problem into their neighbourhoods.'], answer:3,
       why:'Paragraph 13: the barriers kept main roads dry “while pushing water into their narrow sois”, and “it always seems to come to us.” They are unhappy that the water was moved onto them. They do not ask for more barriers or comment on the alerts or the draining time.' },
     { id:'m1-38', type:'read', passage:M1_NEWS, source:M1_NEWS_SRC, tag:'rd-support', level:'B2+',
       stem:'Which detail best supports the idea that the floods affected far more than just the capital?',
@@ -380,7 +380,7 @@ MOCKS.push({
       why:'On the “Yes” path of the first question, the first action is to switch off the electricity at the main switch. Packing a bag and moving valuables upstairs belong to the “No” path (water not yet inside), and leaving by the recommended route comes only if officials order an evacuation.' },
     { id:'m1-43', type:'read', passage:'', visual:M1_V2, tag:'vs-flow', level:'B2',
       stem:'If water has not reached their street and officials have not ordered an evacuation, people should ______.',
-      options:['call the hotline and wait to be rescued','leave the area immediately by the recommended route','switch off the electricity and go to the highest floor','prepare an emergency bag and stay at home while checking alerts'], answer:3,
+      options:['call the hotline and wait to be rescued','leave the area immediately by the recommended route','switch off the main electricity switch and go to the highest floor','prepare an emergency bag and stay at home while checking alerts'], answer:3,
       why:'Follow both “No” paths: water not yet in the street → move valuables, pack an emergency bag, charge your phone; no evacuation order → stay at home and keep checking official alerts. The other three options belong to the “Yes” paths.' },
     { id:'m1-44', type:'read', passage:'', visual:M1_V2, tag:'vs-trap', level:'B2',
       stem:'Which piece of advice is NOT given in the flowchart?',
@@ -393,7 +393,7 @@ MOCKS.push({
     instructions:'Read the following articles and choose the best answer for each question.', points:1.25, items:[
     { id:'m1-45', type:'read', passage:M1_ART1, source:'Source: Adapted for TCAS70 practice', tag:'rd-main', level:'B2',
       stem:'What is the main idea of the article?',
-      options:['Teenagers stay up late mainly because they are addicted to their phones.','Schools in Thailand should start classes two hours later from next year.','Sleeping late at weekends is the best way for teenagers to repay sleep debt.','Teenagers’ late bedtimes are largely biological, and modern habits and school times make them worse.'], answer:3,
+      options:['Teenagers stay up late mainly because they are addicted to their phones.','Schools in Thailand should start classes two hours later from next year.','Sleeping until noon at the weekend is the best way for teenagers to repay the sleep debt they build up.','Teenagers’ late bedtimes are largely biological, and modern habits and school times make them worse.'], answer:3,
       why:'The article says the real explanation “begins inside the brain” (the body clock shifts later in puberty), then shows how screens and early school starts make the problem worse. It rejects the “lazy or addicted” explanation, says weekend catch-up sleep makes things worse, and never demands a specific Thai school start time.' },
     { id:'m1-46', type:'read', passage:M1_ART1, source:'Source: Adapted for TCAS70 practice', tag:'rd-cause', level:'B2',
       stem:'According to paragraph 2, why can a young child fall asleep earlier than a teenager?',
@@ -417,7 +417,7 @@ MOCKS.push({
       why:'Paragraph 4 states a mismatch (“school does not follow the teenage clock”), gives a numerical example (midnight to six = about six hours instead of eight to ten), and names the result: “sleep debt”. Solutions come only in paragraph 6, other countries are not compared here, and the student is a general example, not a story.' },
     { id:'m1-51', type:'read', passage:M1_ART1, source:'Source: Adapted for TCAS70 practice', tag:'rd-infer', level:'B2+',
       stem:'It can be inferred from paragraph 6 that the writer believes ______.',
-      options:['parents are the main cause of teenagers’ sleep problems','teenagers should be allowed to use phones in bed at weekends','Thai schools will soon copy the later start times used abroad','working with the teenage body clock is wiser than blaming teenagers'], answer:3,
+      options:['parents are the main cause of teenagers’ sleep problems','teenagers should be allowed to use phones in bed at weekends','Thai schools will soon copy the later start times being tried abroad','working with the teenage body clock is wiser than blaming teenagers'], answer:3,
       why:'“Nobody can rewrite biology, but it is possible to stop working against it,” and the final question replaces “Why are you so lazy?” with “What time does your body think it is?” The writer wants adults to work with biology, not blame teens. The writer actually advises keeping phones out of bedrooms and makes no prediction about Thai schools.' },
     { id:'m1-52', type:'read', passage:M1_ART1, source:'Source: Adapted for TCAS70 practice', tag:'rd-attitude', level:'B2',
       stem:'What is the writer’s attitude towards teenagers who stay up late?',
@@ -446,7 +446,7 @@ MOCKS.push({
       why:'The mascots succeed “because nobody designed them as national symbols”, so they feel real and natural: <em>genuine</em>. “Official” is almost the opposite, and although the characters are popular and cute, those words do not explain the contrast with being “designed”.' },
     { id:'m1-58', type:'read', passage:M1_ART2, source:'Source: Adapted for TCAS70 practice', tag:'rd-mention', level:'B2+',
       stem:'Why does the writer mention Moo Deng in paragraph 5?',
-      options:['To warn that viral fame can harm animals’ welfare','To argue that zoos are Thailand’s top tourist attractions','To prove that the government’s “five Fs” policy has worked','To show that soft power can come from unplanned, unexpected sources'], answer:3,
+      options:['To warn that viral fame can harm animals’ welfare','To argue that zoos are Thailand’s top tourist attractions','To prove that the government’s “five Fs” policy has been a big success','To show that soft power can come from unplanned, unexpected sources'], answer:3,
       why:'Paragraph 5 opens with “the most unexpected soft-power stars” and ends by saying these characters succeed “because nobody designed them as national symbols”. Moo Deng illustrates unplanned soft power. Animal welfare is not discussed, zoo rankings are not given, and a hippo is not part of a government plan.' },
     { id:'m1-59', type:'read', passage:M1_ART2, source:'Source: Adapted for TCAS70 practice', tag:'rd-org', level:'C1',
       stem:'Which best describes the organisation of the article?',
@@ -467,8 +467,8 @@ MOCKS.push({
       why:'The blank describes <em>how</em> attackers act, so it modifies the verb “act” and needs an adverb: <em>anonymously</em>. “Anonymous” is an adjective (it would need “act as anonymous users”), and “anonymity/anonymousness” are nouns.' },
     { id:'m1-62', type:'cloze', passage:M1_TC1, blank:'(62)', tag:'rc-reduced', level:'B2+',
       stem:'Choose the best option for blank (62).',
-      options:['known','knows','is known','was knowing'], answer:0,
-      why:'“A phenomenon known as …” is a reduced relative clause (= a phenomenon <em>which is</em> known as …). The sentence already has its main verb (“say”), so a full verb such as “is known” or “knows” would create a second clause with no connector.' },
+      options:['known','knows','knowing','is known'], answer:0,
+      why:'“A phenomenon known as …” is a reduced relative clause (= a phenomenon <em>which is</em> known as …). The sentence already has its main verb (“say”), so a full verb such as “is known” or “knows” would create a second clause with no connector. “Knowing” is the near-miss: it is active, but the phenomenon does not know anything; it <em>is known</em>, so the past participle is needed.' },
     { id:'m1-63', type:'cloze', passage:M1_TC1, blank:'(63)', tag:'lk-contrast', level:'B2',
       stem:'Choose the best option for blank (63).',
       options:['Unlike','Despite','However','Although'], answer:0,
@@ -479,8 +479,8 @@ MOCKS.push({
       why:'The pattern is <em>expect + object + to-infinitive</em>, and the attackers receive the action (someone identifies them), so we need the passive infinitive <em>to be identified</em>. “To identify” is active and leaves the verb without an object; the -ing forms do not follow “expect + object”.' },
     { id:'m1-65', type:'cloze', passage:M1_TC1, blank:'(65)', tag:'nc-embedded', level:'B2',
       stem:'Choose the best option for blank (65).',
-      options:['how you feel','how feel you','how do you feel','how are you feeling'], answer:0,
-      why:'After a preposition (“about”), a wh-question becomes an embedded question with normal statement word order: <em>how you feel</em>. “How do you feel” and “how are you feeling” keep question word order, and “how feel you” is not English.' },
+      options:['how you feel','how do you feel','how is your feeling','how are you feeling'], answer:0,
+      why:'After a preposition (“about”), a wh-question becomes an embedded question with normal statement word order: <em>how you feel</em>. “How do you feel” and “how are you feeling” keep question word order, and “how is your feeling” is a common learner error: “feel” is a verb here, not a noun, and it still has question word order.' },
     { id:'m1-66', type:'cloze', passage:M1_TC2, blank:'(66)', tag:'wf-confuse', level:'B2',
       stem:'Choose the best option for blank (66).',
       options:['affect','effect','effective','affection'], answer:1,
@@ -533,9 +533,9 @@ MOCKS.push({
     { id:'m1-77', type:'choose', tag:'po-given', level:'B2+',
       stem:'<div class="orderblock"><p>A. “Phubbing”, a blend of “phone” and “snubbing”, is the habit of ignoring the person you are with in order to look at your phone.</p><p>B. She may think this small act is harmless, but her friend usually notices it immediately.</p><p>C. For example, a student who checks her messages while a friend is sharing a problem is phubbing, even if she is still half-listening.</p><p>D. Over time, such behaviour can damage relationships, as people who are repeatedly phubbed report feeling less valued and less close to their friends.</p></div>',
       options:['A-C-B-D','A-C-D-B','C-A-B-D','C-A-D-B'], answer:0,
-      why:'The pattern is definition → example → consequence. A defines the new term, C gives an example (“For example, a student…”), B continues with “She” and “this small act”, which need the student in C, and D gives the long-term result (“Over time, such behaviour…”). Putting D before B would leave “She” with nobody to refer to.' },
+      why:'The pattern is definition → example → consequence. A defines the new term, C gives an example (“For example, a student…”), B continues with “She” and “this small act”, which need the student in C, and D gives the long-term result (“Over time, such behaviour…”). Putting D before B breaks the example: B still describes the student in C (“She”, “this small act”), so it must follow C directly, while D moves to the long-term consequence and closes the paragraph.' },
     { id:'m1-78', type:'choose', tag:'po-signal', level:'B2+',
-      stem:'<div class="orderblock"><p>A. The most dangerous type is disinformation: false content created deliberately to deceive people, such as AI-generated videos of events that never happened.</p><p>B. The least harmful type is satire, which uses exaggeration for humour and is not meant to be believed, although some readers still take it seriously.</p><p>C. Experts usually divide false information online into three types, according to how much harm it is intended to cause.</p><p>D. A more serious type is misinformation: false content shared by people who genuinely believe it is true.</p></div>',
+      stem:'<div class="orderblock"><p>A. The most dangerous type is disinformation: false content created deliberately to deceive people, such as AI-generated videos of events that never happened.</p><p>B. The least harmful type is satire, which uses exaggeration for humour and is not meant to be believed, although some readers still take it seriously.</p><p>C. One simple way to classify false information online is to divide it into three types, according to how much harm it can cause.</p><p>D. A more serious type is misinformation: false content shared by people who genuinely believe it is true.</p></div>',
       options:['B-C-D-A','B-D-A-C','C-A-D-B','C-B-D-A'], answer:3,
       why:'C introduces the classification (“three types”) and opens. The signal words then climb in importance: <em>The least harmful</em> (B) → <em>A more serious</em> (D) → <em>The most dangerous</em> (A). C-A-D-B reverses the scale, but “A more serious type” must come after a less serious one, so D cannot follow A.' },
     { id:'m1-79', type:'choose', tag:'po-compare', level:'B2',

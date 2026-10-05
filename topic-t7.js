@@ -10,7 +10,7 @@
 /* ---------------------------------------------------------- shared passages */
 var T7_P_PHONEBAN = 'Supporters of phone-free schools argue that keeping smartphones out of classrooms can ___(1)___ concentration and ___(2)___ real, face-to-face friendships. Break times, they say, become noisy again: students play, argue and talk instead of scrolling in silence. Critics, however, worry that a total ban may ___(3)___ students’ digital skills, which they will need at university and at work, and make it harder for parents to reach their children in an emergency.';
 
-var T7_P_GLASSES = 'When a clip of a student apparently reading exam answers through a pair of smart glasses went viral, Chao Phraya University came under intense ___(1)___ . Parents and journalists asked how such a device could go unnoticed in a hall with six invigilators. After two long meetings, the university council reached a ___(2)___ : from next semester, all smart glasses and watches will be collected at the door. Students who need prescription glasses will have their frames checked by staff before they sit down.';
+var T7_P_GLASSES = 'When a clip of a student apparently reading exam answers through a pair of smart glasses went viral, Chao Phraya University came under intense ___(1)___. Parents and journalists asked how such a device could go unnoticed in a hall with six invigilators. After two long meetings, the university council reached a ___(2)___ : from next semester, all smart glasses and watches will be collected at the door. Students who need prescription glasses will have their frames checked by staff before they sit down.';
 
 var T7_P_HEAT = 'Extreme heat is not just uncomfortable; it can ___(1)___ a serious risk to health, especially for young children and the elderly. Doctors say that sleep ___(2)___ a key role in helping the body recover after a hot day, yet many people in crowded city flats struggle to sleep when night-time temperatures stay above 28°C. Public health officials have ___(3)___ concerns that a strong El Niño could make early 2027 even hotter than usual, and they are urging schools to ___(4)___ the heat index into account when planning sports days.';
 
@@ -39,7 +39,7 @@ T7.levels.push({
         key: 'When a word is new, don’t stop at the word: look <strong>around</strong> it, because the writer almost always leaves a clue — a <strong>definition</strong>, a <strong>contrast</strong>, an <strong>example</strong> or a <strong>restatement</strong>.',
         body: [
           'A writer who uses a rare word wants to be understood, so good writers build a ramp up to it. Examiners choose their vocabulary items from exactly those spots: in TCAS66 the phrase <em>set in stone</em> sat in a sentence that went on “<em>whereas</em> their Eastern counterparts … take a more flexible view”. You did not need to know the idiom; you needed to notice that <em>whereas</em> flips it into the opposite of <em>flexible</em>. That is a context clue, and there are four families of them.',
-          '<strong>1 Definition</strong> — the text tells you: <em>is, means, refers to, is known as, that is, or</em>, a pair of commas or a dash straight after the word (<em>burnout, a state of total exhaustion, …</em>). <strong>2 Contrast</strong> — <em>but, unlike, whereas, while, however, instead of, rather than</em>: the new word means roughly the <em>opposite</em> of what sits on the other side. <strong>3 Example</strong> — <em>such as, for example, including, like</em>: ask what the examples have in common (rice, canned fish, noodles → food that lasts). <strong>4 Restatement</strong> — the next phrase or sentence says the same thing in easier words: a dash, a colon, <em>in other words, i.e.</em>, or simply the next sentence (TCAS68: memes help people <em>cope with difficult situations</em> … find humour in <em>trying times</em>).',
+          '<strong>1 Definition</strong> — the text tells you: <em>is, means, refers to, is known as, that is, or</em>, or a pair of commas straight after the word (<em>burnout, a state of total exhaustion, …</em>). <strong>2 Contrast</strong> — <em>but, unlike, whereas, while, however, instead of, rather than</em>: the new word means roughly the <em>opposite</em> of what sits on the other side. <strong>3 Example</strong> — <em>such as, for example, including, like</em>: ask what the examples have in common (rice, canned fish, noodles → food that lasts). <strong>4 Restatement</strong> — the next phrase or sentence says the same thing in easier words: a dash, a colon, <em>in other words, i.e.</em>, or simply the next sentence (TCAS68: memes help people <em>cope with difficult situations</em> … find humour in <em>trying times</em>).',
           '<strong>The procedure.</strong> Step 1: box the unknown word. Step 2: scan one sentence before and one after for a signal word or punctuation (dash, colon, pair of commas). Step 3: name the clue type. Step 4: write your own simple meaning in the margin <em>before</em> you read the options. Step 5: choose the option closest to your note. Predicting first protects you from options that are designed to sound clever.',
           'Clues can hide inside the word too. Parts you already know — <em>chrono-</em> (time), <em>non-</em> (not), <em>-less</em> (without), <em>bio-</em> (life) — narrow the meaning, and the context confirms it. Word parts are the torch; the context is the map. Use both.'
         ],
@@ -58,7 +58,7 @@ T7.levels.push({
         trap: 'You find a clue but read it the wrong way round. After a contrast signal (<em>whereas, unlike, rather than</em>), the new word means the opposite of the other side, so if the other side says “flexible”, the answer is “unchangeable”, not “flexible”. Dodge: circle the signal word and draw an arrow: = for definition/restatement, ≠ for contrast.',
         analogy: { title: 'Detective at the crime scene', text: 'A detective does not need the thief’s name to solve the case; she reads the footprints around the window. The unknown word is the missing thief. The commas, dashes, “such as” and “whereas” around it are the footprints — and they always point somewhere.' },
         map: { center: 'Four context clues', branches: [
-          { label: 'Definition', leaves: ['is / means / refers to', 'that is, or …', 'commas or dash after'] },
+          { label: 'Definition', leaves: ['is / means / refers to', 'that is, or …', 'pair of commas after'] },
           { label: 'Contrast', leaves: ['but, whereas, unlike', 'rather than, instead of', 'meaning = opposite side'] },
           { label: 'Example', leaves: ['such as, including', 'for example, like', 'what do examples share?'] },
           { label: 'Restatement', leaves: ['dash or colon', 'in other words, i.e.', 'the next sentence repeats'] }
@@ -76,9 +76,9 @@ T7.levels.push({
         { id: 't7l1s1-1', type: 'read', tag: 'vc-clue', level: 'B2',
           passage: 'Are you a lark or an owl? Sleep scientists say that each of us has a chronotype — the time of day when our body naturally wants to sleep and wake up. Larks feel sharp at 7 a.m., while owls do their best thinking late at night. Some researchers now argue that schools should start later, because most teenagers are temporary owls.',
           stem: 'The word “chronotype” in the passage refers to ________.',
-          options: ['a common sleep disorder', 'the total number of hours a person sleeps each night', 'a person’s natural daily timing for sleep', 'a method for waking up earlier'], answer: 2,
+          options: ['a common sleep disorder', 'a method for waking up earlier', 'a person’s natural daily timing for sleep', 'the total number of hours a person sleeps each night'], answer: 2,
           hint: 'Look at what comes straight after the dash. The writer is explaining the word for you.',
-          why: 'This is a definition clue: the dash introduces “the time of day when our body naturally wants to sleep and wake up”, i.e. a person’s natural daily timing. The word part <em>chrono-</em> (time) supports it. “The number of hours a person sleeps” is about amount, not timing, and nothing in the passage calls larks or owls a disorder.' },
+          why: 'This is a restatement clue: the dash introduces “the time of day when our body naturally wants to sleep and wake up”, i.e. a person’s natural daily timing. The word part <em>chrono-</em> (time) supports it. “The number of hours a person sleeps” is about amount, not timing, and nothing in the passage calls larks or owls a disorder.' },
 
         { id: 't7l1s1-2', type: 'read', tag: 'vc-clue', level: 'B2',
           passage: 'Nan and Fah are twins, but in class you would never guess it. Unlike her outspoken sister, who runs the debate club, Nan is rather reticent: in group discussions she listens far more than she speaks, and she only raises her hand when she is completely sure.',
@@ -88,11 +88,11 @@ T7.levels.push({
           why: '“Unlike her outspoken sister” is a contrast clue, so Nan is the opposite of outspoken; the restatement “listens far more than she speaks” confirms it: <em>reserved</em>. “Nervous” is the near miss, but the passage never says Nan is afraid; she chooses to speak only when she is sure. “Confident” goes the wrong way, and nothing suggests she is bored.' },
 
         { id: 't7l1s1-3', type: 'equiv', tag: 'vc-clue', level: 'B2',
-          given: 'After the floods, the relief centre asked for <strong>non-perishable</strong> food, such as rice, canned fish, dried noodles and bottled water.',
+          given: 'After the floods, the relief centre asked for <strong>non-perishable</strong> food, such as rice, canned fish, dried noodles and biscuits.',
           stem: 'The word in bold is closest in meaning to ________.',
-          options: ['cheap', 'ready to eat', 'long-lasting', 'grown locally'], answer: 2,
+          options: ['cheap', 'ready to eat', 'grown locally', 'long-lasting'], answer: 3,
           hint: 'Look at the examples after “such as”. What do all four have in common?',
-          why: 'This is an example clue: rice, canned fish, dried noodles and bottled water all last for months without a fridge, so <em>non-perishable</em> means long-lasting: able to keep for a long time (non- = not; perish = go bad). “Ready to eat” is the near miss, but rice and dried noodles must be cooked. The examples say nothing about price or where food is grown.' },
+          why: 'This is an example clue: rice, canned fish, dried noodles and biscuits all last for months without a fridge, so <em>non-perishable</em> means long-lasting: able to keep for a long time (non- = not; perish = go bad). “Ready to eat” is the near miss, but rice and dried noodles must be cooked. The examples say nothing about price or where food is grown.' },
 
         { id: 't7l1s1-4', type: 'sort', tag: 'vc-clue', level: 'B2',
           stem: 'Which kind of clue helps you with the word in CAPITALS?',
@@ -181,7 +181,7 @@ T7.levels.push({
         { id: 't7l1s2-3', type: 'equiv', tag: 'vc-closest', level: 'B2',
           given: 'Engineers have not yet been able to <strong>pinpoint</strong> the exact cause of the power cut that hit three districts last night.',
           stem: 'The word in bold is closest in meaning to ________.',
-          options: ['fix', 'report', 'identify precisely', 'look into'], answer: 2,
+          options: ['fix', 'report', 'look into', 'identify precisely'], answer: 3,
           hint: 'Notice “not yet been able” and “the exact cause”. What have the engineers failed to do so far?',
           why: 'To <em>pinpoint</em> is to find or identify something exactly, which matches “the exact cause”. “Look into” is the near miss: engineers are probably investigating already, but the sentence says they cannot yet <em>find</em> the cause. “Fix” would be about the power cut, not its cause, and “report” changes the message.' },
 
@@ -217,7 +217,7 @@ T7.levels.push({
       theory: {
         key: 'TCAS loves words you <strong>think</strong> you know: <em>trying, address, sound, novel, thanks to, set in stone</em>. When an easy word is being tested, its everyday meaning is usually the <strong>trap</strong> — look for the second sense that fits the context.',
         body: [
-          'English recycles its short words. <em>Trying</em> is the -ing form of “try”, but <em>trying times</em> means difficult, exhausting times (TCAS68). <em>Intake</em> is not “taking in” anything you like; in a health text it is the amount you eat or drink (TCAS67: vitamin D <em>intake</em> → consumption). <em>Thanks to</em> sounds grateful, but it simply means “because of” — even for bad news (<em>thanks to the traffic, we missed the start</em>). This is <strong>polysemy</strong>: one word, several related meanings.',
+          'English recycles its short words. <em>Trying</em> is the -ing form of “try”, but <em>trying times</em> means difficult, exhausting times (TCAS68). <em>Intake</em> does not mean taking in just anything; in a health text it is the amount you eat or drink (TCAS67: vitamin D <em>intake</em> → consumption). <em>Thanks to</em> sounds grateful, but it simply means “because of” — even for bad news (<em>thanks to the traffic, we missed the start</em>). This is <strong>polysemy</strong>: one word, several related meanings.',
           '<strong>Why examiners choose these words.</strong> A rare word like <em>nefarious</em> tests whether you know it. A familiar word tests whether you <em>read</em>. The examiner puts the everyday meaning among the options as the trap: for <em>set in stone</em>, a literal option about rock or carving; for <em>thanks to</em>, “grateful for”; for <em>address</em>, “write the location on”.',
           '<strong>The procedure.</strong> Step 1: if the tested word is easy, get suspicious — why would TCAS test it? Step 2: ask what the word is doing <em>here</em> (with what subject, object, topic?). <em>Address</em> + a problem = deal with it; <em>address</em> + an audience = speak to it. Step 3: predict, then replace and reread (1.2). Useful second senses: <em>sound</em> advice (reliable), a <em>novel</em> idea (new, original), safety <em>measures</em> (actions), a <em>fine</em> (money penalty), <em>summoned</em> (ordered to come), <em>ill-</em> in <em>ill-prepared</em> (badly), a <em>staple</em> food (basic, main).'
         ],
@@ -257,7 +257,7 @@ T7.levels.push({
         { id: 't7l1s3-1', type: 'read', tag: 'vc-polysemy', level: 'B2',
           passage: 'During the trying weeks after the Hat Yai floods, a group of volunteer cooks set up a kitchen in a temple car park. Every evening they served free khanom jeen to anyone who needed a hot meal, and many families who had lost their kitchens came back night after night.',
           stem: 'The word “trying” is closest in meaning to ________.',
-          options: ['difficult', 'busy', 'hopeful', 'experimental'], answer: 0,
+          options: ['busy', 'hopeful', 'difficult', 'experimental'], answer: 2,
           hint: 'Think about what life was like for families who had lost their kitchens.',
           why: 'After a flood, families had lost their kitchens and needed free meals, so the weeks were hard and stressful: <em>difficult</em>. “Experimental” is the trap: it comes from the everyday meaning of <em>try</em> (to test something). The weeks may have been busy for the volunteers, but <em>trying</em> describes how hard the period was, not how full.' },
 
@@ -271,7 +271,7 @@ T7.levels.push({
         { id: 't7l1s3-3', type: 'read', tag: 'vc-polysemy', level: 'B2+',
           passage: 'The day after a video of their prank went viral, the principal summoned the two Grade 10 boys to her office. They waited outside for twenty minutes, and when they finally came out, both had agreed to write a public apology to the teacher they had filmed.',
           stem: 'The word “summoned” is closest in meaning to ________.',
-          options: ['praised', 'invited', 'ordered to come', 'walked along with'], answer: 2,
+          options: ['praised', 'invited', 'walked along with', 'ordered to come'], answer: 3,
           hint: 'Were the boys free to say no? Look at what they had done and what happened next.',
           why: '<em>Summon</em> means to officially order someone to come, and here the boys had done something wrong and were called in: <em>ordered to come</em>. “Invited” is the near miss — right idea, wrong strength, because an invitation can be refused. “Praised” contradicts the apology, and nothing says the principal walked with them.' },
 
@@ -316,7 +316,7 @@ T7.levels.push({
       stem: 'The word “arid” can be best replaced by ________.',
       options: ['windy', 'very dry', 'very hot', 'uncertain'], answer: 1,
       hint: 'The next sentence lists what El Niño usually brings. What do those three things have in common?',
-      why: 'The restatement clue lists “weeks without rain, falling river levels and cracked, dusty fields”, and villages are rationing water: <em>very dry</em>. “Very hot” is the near miss, because El Niño often brings heat too, but every clue in the passage is about the lack of water, not temperature. Wind and uncertainty are not mentioned.' },
+      why: 'The next sentence lists what El Niño brings — “weeks without rain, falling river levels and cracked, dusty fields” — an example clue that restates the idea, and villages are rationing water: <em>very dry</em>. “Very hot” is the near miss, because El Niño often brings heat too, but every clue in the passage is about the lack of water, not temperature. Wind and uncertainty are not mentioned.' },
 
     { id: 't7l1ck-3', type: 'equiv', tag: 'vc-closest', level: 'B2+',
       given: 'Flooded underpasses and stalled cars <strong>hampered</strong> rescue teams trying to reach families in the eastern districts, but by midnight every family had been reached.',
@@ -328,7 +328,7 @@ T7.levels.push({
     { id: 't7l1ck-4', type: 'read', tag: 'vc-closest', level: 'B2+',
       passage: 'During the April heatwave, clean drinking water became scarce in several villages in Buri Ram. Families queued for up to two hours at the one working well, and the district office sent a water truck every other day.',
       stem: 'The word “scarce” is closest in meaning to ________.',
-      options: ['dirty', 'too expensive to buy', 'unavailable', 'in short supply'], answer: 3,
+      options: ['dirty', 'unavailable', 'in short supply', 'too expensive to buy'], answer: 2,
       hint: 'There was still one working well. Was there no water at all?',
       why: 'Families queued at “the one working well” and a truck came every other day, so water existed but there was too little of it: <em>in short supply</em>. “Unavailable” is the wrong-strength trap, because some water was available. “Too expensive to buy” and “dirty” describe other water problems that the passage never mentions.' },
 
@@ -336,7 +336,7 @@ T7.levels.push({
       passage: 'The route for the Grade 11 study trip is not set in stone yet. If the flooding in the North continues into November, the school may replace the visit to Chiang Rai with three days in Hua Hin. Parents will be told the final plan by 20 October.',
       stem: 'The phrase “set in stone” is closest in meaning to ________.',
       options: ['final', 'popular', 'difficult', 'written down'], answer: 0,
-      hint: 'The school may still change the route. What is the route NOT yet?',
+      hint: 'Read the second sentence. What could still happen to the plan before 20 October?',
       why: 'The route could still change (Chiang Rai may be replaced), so it is not yet <em>final</em>, i.e. fixed and unchangeable. “Written down” is the literal trap, from the picture of carving words into stone. Neither popularity nor difficulty is discussed.' },
 
     { id: 't7l1ck-6', type: 'read', tag: 'vc-polysemy', level: 'B2+',
@@ -344,7 +344,7 @@ T7.levels.push({
       stem: 'The word “staple” is closest in meaning to ________.',
       options: ['a side dish', 'a basic food', 'a special treat', 'a local invention'], answer: 1,
       hint: 'How often is sticky rice eaten, according to the second sentence?',
-      why: 'Sticky rice appears “at almost every meal”, so it is a main, basic food: a <em>staple</em>. “A side dish” is the near miss, but the other foods are dipped into the rice, which makes the rice central, not extra. “A special treat” contradicts “every meal”, and the passage says nothing about where the dish was invented.' }
+      why: 'Sticky rice appears “at almost every meal”, so it is a main, basic food: a <em>staple</em>. “A side dish” is the near miss, but sticky rice is eaten with everything, at almost every meal, which makes it the central food, not an extra. “A special treat” contradicts “every meal”, and the passage says nothing about where the dish was invented.' }
   ] }
 });
 
@@ -361,7 +361,7 @@ T7.levels.push({
         key: 'Academic verbs mostly say one thing: what a cause <strong>does</strong> to a situation — makes it <strong>better or stronger</strong> (enhance, foster), <strong>worse or weaker</strong> (undermine, exacerbate), <strong>slower</strong> (impede, hinder) or <strong>less severe</strong> (mitigate, alleviate). Know the direction and you know most of the meaning.',
         body: [
           'Articles in TCAS Part V are full of cause-and-effect: screens and sleep, heat and health, AI and learning. So the verbs that link a cause to an effect are the ones examiners test. The good news: you do not need a dictionary definition for each one. Put them on a compass. <strong>↑ Better/stronger:</strong> <em>enhance</em> (improve quality), <em>foster</em> (help something grow over time: foster friendship, creativity), <em>reinforce, bolster</em> (make stronger). <strong>↓ Worse/weaker:</strong> <em>undermine</em> (weaken gradually, often trust or confidence), <em>exacerbate, aggravate</em> (make an existing problem worse), <em>erode</em> (wear away slowly). <strong>✋ Slower/blocked:</strong> <em>impede, hinder, hamper</em> (slow or block progress), <em>curb</em> (limit, restrain). <strong>↘ Less severe:</strong> <em>mitigate, alleviate</em> (reduce the harm without removing it).',
-          '<strong>Word parts help.</strong> <em>En-</em> makes verbs from adjectives or nouns (<em>enhance, enable, enlarge</em>). <em>Under-mine</em> is literally digging a tunnel under a wall until it falls: slow, hidden weakening. <em>Im-pede</em> contains <em>ped</em> (foot, as in pedestrian): something getting under your feet. <em>Ex-acerbate</em> has <em>acerb</em> (bitter, sharp): making a sore problem sharper.',
+          '<strong>Word parts help.</strong> <em>En-</em> makes verbs from adjectives or nouns (<em>enrich, enable, enlarge</em>). <em>Under-mine</em> is literally digging a tunnel under a wall until it falls: slow, hidden weakening. <em>Im-pede</em> contains <em>ped</em> (foot, as in pedestrian): something getting under your feet. <em>Ex-acerbate</em> has <em>acerb</em> (bitter, sharp): making a sore problem sharper.',
           '<strong>Three checks for the exam.</strong> (1) Direction: does the context say things got better or worse? (2) Timing: <em>exacerbate</em> and <em>mitigate</em> need a problem that <em>already exists</em>; you cannot exacerbate something that has not started. (3) Partners: <em>attribute</em> X <em>to</em> Y (say Y caused X), <em>derive</em> X <em>from</em> Y (get X from a source), <em>encroach on</em> (take over little by little — TCAS67: gaming <em>encroaches on</em> other vital areas of life). Reversing these partners is a classic distractor.',
           'Two more that feel harder than they are: <em>constitute</em> = make up, form (<em>women constitute 60% of the students</em>); <em>perceive</em> = see or understand in a certain way (<em>teenagers perceive risk differently</em>).'
         ],
@@ -391,7 +391,7 @@ T7.levels.push({
           'Enhance and foster, push it up high,',
           'Reinforce the wall so it touches the sky.',
           'Undermine digs from under the ground,',
-          'Exacerbate turns a bad thing around… and down!',
+          'Exacerbate takes a bad thing further down!',
           'Impede and hinder put a foot in the way,',
           'Mitigate the damage, make it lighter today.',
           'Attribute to — that’s pointing at the cause,',
@@ -415,7 +415,7 @@ T7.levels.push({
         { id: 't7l2s1-3', type: 'equiv', tag: 'vc-verbs', level: 'B2+',
           given: 'Scrolling on your phone in bed can <strong>exacerbate</strong> the sleep problems that many teenagers already have.',
           stem: 'The word in bold is closest in meaning to ________.',
-          options: ['cause', 'draw attention to', 'make worse', 'hide'], answer: 2,
+          options: ['hide', 'cause', 'make worse', 'draw attention to'], answer: 2,
           hint: 'Notice the word “already”. Does the problem start with the scrolling?',
           why: 'The sleep problems “already” exist, and scrolling makes them more serious: <em>make worse</em>. “Cause” is the near miss: it has the right negative direction but the wrong timing, since you cannot cause a problem that is already there. “Draw attention to” and “hide” change the message completely.' },
 
@@ -444,8 +444,8 @@ T7.levels.push({
         { id: 't7l2s1-5', type: 'read', tag: 'vc-verbs', level: 'C1',
           passage: 'Short-sightedness is rising fast among Thai schoolchildren. Eye specialists at Chao Phraya University attribute the increase to long hours of close-up screen time and, above all, too little time outdoors in daylight. They recommend at least two hours of outdoor play a day.',
           stem: 'In the passage, the specialists “attribute the increase to” screen time and too little time outdoors. This means they ________.',
-          options: ['compare the increase with these habits', 'say the increase is caused by these habits', 'predict that the increase will cause these habits', 'hope these habits will reduce the increase'], answer: 1,
-          hint: 'Look at their recommendation in the last sentence. What do they think is behind the problem?',
+          options: ['compare the increase with these habits', 'say the increase is caused by these habits', 'hope these habits will reduce the increase', 'predict that the increase will cause these habits'], answer: 1,
+          hint: 'Look at their recommendation in the last sentence. Why would they recommend more outdoor play?',
           why: 'To <em>attribute X to Y</em> is to say that Y causes X, which is why the specialists recommend more outdoor play: they believe these habits cause the rise. The near miss reverses the direction (the increase causing the habits). “Compare with” fits the grammar but loses the idea of cause, and nothing suggests the habits reduce the problem.' }
       ]
     },
@@ -493,7 +493,7 @@ T7.levels.push({
         { id: 't7l2s2-1', type: 'read', tag: 'vc-adjs', level: 'C1',
           passage: 'Five years ago, paying by QR code was a novelty at Thai street stalls. Today it is ubiquitous: from noodle carts in Yaowarat to fruit sellers on country roads in Nan, almost every vendor displays a code, and many no longer keep much change.',
           stem: 'The word “ubiquitous” is closest in meaning to ________.',
-          options: ['popular', 'convenient to use', 'found everywhere', 'modern'], answer: 2,
+          options: ['modern', 'popular', 'found everywhere', 'convenient to use'], answer: 2,
           hint: 'Look at the examples after the colon: from where to where, and how many vendors?',
           why: 'The colon introduces the evidence: from city noodle carts to country fruit sellers, “almost every vendor” uses QR codes, so it is <em>found everywhere</em>. “Popular” is the wrong-strength trap: something can be popular in one place without being everywhere. “Convenient” and “modern” may be true of QR payment, but they are not what the word means.' },
 
@@ -532,7 +532,7 @@ T7.levels.push({
           why: '<em>Bene-</em> means good or well: benevolent (kind), beneficial (helpful). <em>Mal-</em> and <em>mis-</em> mean bad or wrongly: malicious (wanting to harm), malfunctioning (working badly), misleading (giving the wrong idea). <em>Un-, in-</em> and <em>dis-</em> mean not: unprecedented, inconclusive, dishonest.' },
 
         { id: 't7l2s2-5', type: 'read', tag: 'vc-adjs', level: 'C1',
-          passage: 'Most people who receive this year’s flu vaccine feel completely normal afterwards. About one in twenty, however, report adverse effects, such as a sore arm, a headache or a mild fever that disappears within a day. Doctors say these reactions are a sign that the immune system is responding.',
+          passage: 'Most people who receive this year’s flu vaccine feel completely normal afterwards. Some, however, report adverse effects, such as a sore arm, a headache or a mild fever that disappears within a day. Doctors say these reactions are a sign that the immune system is responding.',
           stem: 'The word “adverse” is closest in meaning to ________.',
           options: ['serious', 'unwanted', 'surprising', 'permanent'], answer: 1,
           hint: 'Look at the examples after “such as”. How bad are they, and how long do they last?',
@@ -585,14 +585,14 @@ T7.levels.push({
         { id: 't7l2s3-1', type: 'read', tag: 'vc-nouns', level: 'C1',
           passage: 'In June the school canteen switched to reusable trays and banned plastic bags. However, many students simply bought their snacks in plastic bags from the shop across the road. The upshot was that the school’s plastic waste fell by only 8% in the first term, far less than the 40% it had hoped for.',
           stem: 'The word “upshot” is closest in meaning to ________.',
-          options: ['reason', 'target', 'outcome', 'purpose'], answer: 2,
+          options: ['reason', 'target', 'purpose', 'outcome'], answer: 3,
           hint: 'The sentence with “upshot” comes at the end of a story. What does it tell you?',
           why: '“The upshot was that…” reports what finally happened after the ban and the students’ reaction: an 8% fall. That is the <em>outcome</em>. “Target” is the near miss — the 40% the school hoped for is in the same sentence, but it is the goal, not the result. “Reason” and “purpose” describe why things happened, not what happened in the end.' },
 
         { id: 't7l2s3-2', type: 'read', tag: 'vc-nouns', level: 'C1',
           passage: 'The Pulse 5 earbuds are light, clear and surprisingly cheap at 990 baht. Their one real drawback is the battery, which lasts barely three hours — not enough for a long bus ride to Hua Hin, let alone a full school day. If you can live with that, they are a bargain.',
           stem: 'The word “drawback” can be best replaced by ________.',
-          options: ['danger', 'selling point', 'mistake', 'disadvantage'], answer: 3,
+          options: ['danger', 'mistake', 'selling point', 'disadvantage'], answer: 3,
           hint: 'Look at how the reviewer describes the battery, and the words “If you can live with that”.',
           why: 'The reviewer praises the earbuds but names the short battery life as the one weak point: a <em>disadvantage</em>. “Selling point” reverses the reviewer’s judgement, since a three-hour battery is a weakness. “Mistake” suggests someone did something wrong, and “danger” suggests risk to safety, which the review never mentions.' },
 
@@ -643,9 +643,9 @@ T7.levels.push({
 
     { id: 't7l2ck-2', type: 'cloze', tag: 'vc-verbs', level: 'C1', passage: T7_P_PHONEBAN, blank: '(3)',
       stem: 'Choose the best option for blank (3).',
-      options: ['bolster', 'reinforce', 'undermine', 'exacerbate'], answer: 2,
+      options: ['bolster', 'mitigate', 'exacerbate', 'undermine'], answer: 3,
       hint: 'The paragraph now turns to the critics. What are they afraid will happen to students’ digital skills?',
-      why: '“Critics, however, worry…” signals a negative effect on skills students will need later, so the ban may weaken them: <em>undermine</em>. <em>Exacerbate</em> is the near miss: it is negative too, but it means make an existing <em>problem</em> worse, and digital skills are not a problem. <em>Bolster</em> and <em>reinforce</em> mean strengthen, the supporters’ direction.' },
+      why: '“Critics, however, worry…” signals a negative effect on skills students will need later, so the ban may weaken them: <em>undermine</em>. <em>Exacerbate</em> is the near miss: it is negative too, but it means make an existing <em>problem</em> worse, and digital skills are not a problem. <em>Mitigate</em> fails for the same reason (it reduces a problem that already exists), and <em>bolster</em> means strengthen, the supporters’ direction.' },
 
     { id: 't7l2ck-3', type: 'read', tag: 'vc-adjs', level: 'C1',
       passage: 'In February the smell of smoke from burning sugarcane fields was pervasive in the town. It reached classrooms, buses and even the inside of the new shopping mall, and several schools cancelled outdoor lessons for a week.',
@@ -670,7 +670,7 @@ T7.levels.push({
     { id: 't7l2ck-6', type: 'read', tag: 'vc-nouns', level: 'C1+',
       passage: 'For many Grade 12 students, a weekend job at a café involves a trade-off. They earn their own money and gain real work experience, but they lose two days that could be spent revising — and, often, sleeping.',
       stem: 'The word “trade-off” is closest in meaning to ________.',
-      options: ['a type of contract', 'a difficult decision', 'a fair exchange of goods between sellers', 'a balance of gains and losses'], answer: 3,
+      options: ['a type of contract', 'a difficult decision', 'a balance of gains and losses', 'a fair exchange of goods between sellers'], answer: 2,
       hint: 'Read the second sentence. What do the students get, and what do they give up?',
       why: 'The second sentence lists what students gain (money, experience) and what they lose (revision time, sleep): a <em>balance of gains and losses</em>. “A fair exchange of goods” is the literal trap, built on the everyday meaning of <em>trade</em>. “A difficult decision” is related but misses the idea of gaining one thing by losing another.' }
   ] }
@@ -728,7 +728,7 @@ T7.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['does', 'makes', 'plays', 'takes'], answer: 2,
           hint: 'Look at the noun right after the gap: “a key role”. Which verb normally goes with it?',
-          why: 'The fixed partnership is <em>play a role</em> (or <em>play a part</em>), so sleep <em>plays</em> a key role. “Does” and “makes” are the translation traps from Thai “ทำ”, and “takes” pairs with nouns like action or measures, not role.' },
+          why: 'The fixed partnership is <em>play a role</em> (or <em>play a part</em>), so sleep <em>plays</em> a key role. “Does” and “makes” are the translation traps from Thai “ทำ”, and “takes” is used with role only when a person accepts a part (she took a leading role); for a factor like sleep, the partnership is always <em>play</em> a role.' },
 
         { id: 't7l3s1-2', type: 'cloze', tag: 'vc-colloc', level: 'B2+', passage: T7_P_HEAT, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
@@ -752,7 +752,7 @@ T7.levels.push({
           ],
           items: [
             { text: 'an effort', bin: 'make' },
-            { text: 'a decision', bin: 'make' },
+            { text: 'a mistake', bin: 'make' },
             { text: 'progress', bin: 'make' },
             { text: 'research', bin: 'do' },
             { text: 'harm', bin: 'do' },
@@ -761,11 +761,11 @@ T7.levels.push({
             { text: 'safety measures', bin: 'take' },
             { text: 'a break', bin: 'take' },
             { text: 'attention', bin: 'pay' },
-            { text: 'a compliment', bin: 'pay' },
+            { text: 'a fine', bin: 'pay' },
             { text: 'the price', bin: 'pay' }
           ],
           hint: 'Say each pair aloud with all four verbs. Only one will sound like something you have heard before.',
-          why: 'We <em>make</em> an effort, a decision and progress; <em>do</em> research, harm and our best; <em>take</em> action, safety measures and a break; <em>pay</em> attention, a compliment and the price. These are habits of English, so learn each noun together with its verb.' },
+          why: 'We <em>make</em> an effort, a mistake and progress; <em>do</em> research, harm and our best; <em>take</em> action, safety measures and a break; <em>pay</em> attention, a fine and the price. These are habits of English, so learn each noun together with its verb.' },
 
         { id: 't7l3s1-5', type: 'choose', tag: 'vc-colloc', level: 'B2+',
           stem: 'After analysing 600 survey replies, the debate team ______ the conclusion that most Grade 12 students sleep less than seven hours a night.',
@@ -843,13 +843,13 @@ T7.levels.push({
           tiles: ['The school', 'will', 'phase', 'out', 'single-use', 'plastic cups', 'by the end of the year.'],
           solution: 'The school will phase out single-use plastic cups by the end of the year.',
           alt: ['The school will phase single-use plastic cups out by the end of the year.'],
-          hint: 'Which two tiles together mean “remove gradually”? Keep them as a unit.',
+          hint: 'Which two tiles together mean “remove gradually”?',
           why: '<em>Phase out</em> means remove or stop using something gradually. It is separable, so both “phase out single-use plastic cups” and “phase single-use plastic cups out” are correct, though with a long object the particle usually comes straight after the verb. With a pronoun it must split: <em>phase them out</em>.' },
 
         { id: 't7l3s2-5', type: 'read', tag: 'vc-phrasal', level: 'C1',
           passage: 'After her annual check-up, Mint’s doctor told her to cut down on sugary drinks. She used to buy a large bubble tea every day after school; now she has one small cup on Saturdays and drinks water the rest of the week.',
           stem: 'The phrase “cut down on” means ________.',
-          options: ['reduce the amount of', 'stop completely', 'drink more slowly', 'switch to healthier types of'], answer: 0,
+          options: ['stop completely', 'drink more slowly', 'reduce the amount of', 'switch to healthier types of'], answer: 2,
           hint: 'Does Mint still drink bubble tea at all? Check the second sentence.',
           why: '<em>Cut down on</em> means reduce the amount of something. Mint went from a large tea every day to one small cup a week. “Stop completely” is the wrong-strength trap, because she still has one on Saturdays (that would be <em>cut out</em>). Nothing says she drinks more slowly or switches to healthier versions.' }
       ]
@@ -923,7 +923,7 @@ T7.levels.push({
         { id: 't7l3s3-5', type: 'choose', tag: 'vc-prep', level: 'C1',
           stem: 'Teenagers who sleep less than six hours a night are more prone ______ accidents on the way to school.',
           options: ['to', 'of', 'for', 'with'], answer: 0,
-          hint: 'Find the head word before the gap. Which preposition do similar adjectives such as “vulnerable” and “susceptible” take?',
+          hint: 'Find the head word just before the gap. It owns the preposition.',
           why: 'The adjective <em>prone</em> (likely to suffer from something) takes <em>to</em>: prone to accidents, prone to headaches. “Of” is tempting after words like capable of or aware of, but prone never takes it; “for” and “with” are not used either.' }
       ]
     }
@@ -938,7 +938,7 @@ T7.levels.push({
     { id: 't7l3ck-2', type: 'choose', tag: 'vc-colloc', level: 'C1',
       stem: 'After three hours of discussion, the student council finally ______ a consensus on the new rules for the school’s social media page.',
       options: ['did', 'made', 'kept', 'reached'], answer: 3,
-      hint: 'The council arrived at agreement at the end of a long process. Which verb means “arrive at”?',
+      hint: 'Say each verb aloud with “a consensus”. Which pair have you heard in news reports?',
       why: 'A group <em>reaches</em> a consensus (or an agreement, or a decision) after discussion. “Made” is tempting because we <em>make</em> a decision, but it does not partner consensus. “Did” and “kept” do not form this collocation.' },
 
     { id: 't7l3ck-3', type: 'cloze', tag: 'vc-phrasal', level: 'C1', passage: T7_P_DENGUE, blank: '(3)',
@@ -952,18 +952,18 @@ T7.levels.push({
       stem: 'The phrase in bold is closest in meaning to ________.',
       options: ['rejecting', 'reporting', 'expecting', 'investigating'], answer: 3,
       hint: 'What does an organisation do with claims it has just received but not yet judged?',
-      why: '<em>Look into</em> means examine the facts: <em>investigating</em>. “Expecting” is the particle trap: it is the meaning of <em>look forward to</em>, a different phrasal verb with the same verb. “Rejecting” would mean the university has already decided the claims are false, and “reporting” changes the message.' },
+      why: '<em>Look into</em> means examine the facts: <em>investigating</em>. “Expecting” is the particle trap: it is close to <em>look forward to</em> or <em>look for</em>, different phrasal verbs with the same verb. “Rejecting” would mean the university has already decided the claims are false, and “reporting” changes the message.' },
 
     { id: 't7l3ck-5', type: 'cloze', tag: 'vc-prep', level: 'C1+', passage: T7_P_SCREENS, blank: '(4)',
       stem: 'Choose the best option for blank (4).',
       options: ['in', 'of', 'to', 'from'], answer: 0,
-      hint: 'Is “teenagers hiding what they do online” the cause of the bans or the effect critics fear?',
+      hint: 'Ask what comes first: the bans, or teenagers hiding what they do online?',
       why: 'Critics fear that the bans will produce a new behaviour, so the hiding is the effect: bans may <em>result in</em> teenagers hiding their activity. “From” is the near miss: <em>result from</em> points back to a cause, which would mean the bans were caused by the hiding. “Of” and “to” do not follow the verb result.' },
 
     { id: 't7l3ck-6', type: 'choose', tag: 'vc-prep', level: 'C1+',
-      stem: 'Contrary to a popular myth, bilingual children are not confused by two languages; if anything, they tend to be better ______ switching between tasks than their monolingual classmates.',
+      stem: 'Contrary to a popular myth, bilingual children are not confused by two languages; if anything, some studies suggest they may be better ______ switching between tasks than their monolingual classmates.',
       options: ['in', 'at', 'for', 'with'], answer: 1,
-      hint: 'The head word is “better”, used for a skill. Think of “good ___ maths”.',
+      hint: 'The head word is “better”, used here for a skill. Which preposition does that adjective take before an activity?',
       why: 'For skills and abilities, <em>good</em> and <em>better</em> take <em>at</em>: better at switching between tasks. “With” is the near miss: we say “good with children” or “good with numbers”, but not before an -ing activity like this. “In” and “for” do not form the pattern.' }
   ] }
 });

@@ -203,7 +203,7 @@ T4.levels.push({
             'Notifications: The Hidden Cause of Exam Stress'
           ], answer:1,
           hint:'A good title carries the topic and the angle. Which one points to the whole finding?',
-          why:'The study’s point is that a tiny change, moving the phone “about ten metres”, gave students a better night’s sleep, so <em>Ten Metres to a Better Night</em> captures topic and angle. “Teens and Technology” is too big. “Go to Bed Too Late” contradicts paragraph 4 (the extra sleep did not come from earlier bedtimes), and “Exam Stress” is off target.' },
+          why:'The study’s point is that a tiny change, moving the phone “about ten metres”, gave students a better night’s sleep, so <em>Ten Metres to a Better Night</em> captures topic and angle. “Teens and Technology” is too big. “Why Teenagers Go to Bed Too Late” is off target: the passage never explains late bedtimes, and paragraph 4 says the extra sleep did not come from going to bed earlier. “Exam Stress” is also off target.' },
 
         { id:'t4l1s1-3', type:'judge', tag:'rd-main', level:'B2',
           given:'<em>Paragraph 4:</em> “Interestingly, most of the extra sleep did not come from going to bed earlier. Instead, students woke up less often during the night because notifications no longer disturbed them.”',
@@ -295,7 +295,7 @@ T4.levels.push({
             'describe the night the writer’s home was flooded',
             'explain how emergency alerts are sent to people’s phones'
           ], answer:0,
-          hint:'Read the last paragraph. What does the writer want you to do, and when?',
+          hint:'Read the last paragraph. Is the writer giving facts, telling a story, explaining something, or asking something of the reader?',
           why:'The writer gives three steps and ends with a call to action: “do it this weekend — not on the night the water arrives”, so the purpose is to urge readers to prepare. “Complain” is ruled out by paragraph 2 (“I am not writing this to complain about the rain”). The flood night is only the opening story, and the column never explains how alerts are sent.' },
 
         { id:'t4l1s2-2', type:'read', tag:'rd-purpose', level:'B2', passage:T4_P_COLUMN, source:T4_SRC,
@@ -317,7 +317,7 @@ T4.levels.push({
             'persuade the Thai government to ban social media for under-16s',
             'compare how countries are limiting teenagers’ use of social media'
           ], answer:3,
-          hint:'Count the countries and look for words such as “while” and “lower”.',
+          hint:'Paragraph 2 gives the facts. What does the whole passage do with them? Paragraph 3 tells you.',
           why:'Paragraph 2 sets several countries side by side (Australia under-16, France under-15, Greece, the UK, Malaysia), and paragraph 3 notes that “the rules differ in age and in timing”, so the purpose is to compare. Online risks appear in one sentence only. The passage does not judge whether Australia’s ban has worked, and it never argues for a Thai ban.' },
 
         { id:'t4l1s2-4', type:'choose', tag:'rd-purpose', level:'B2',
@@ -329,7 +329,7 @@ T4.levels.push({
             'The warnings were sent by cell broadcast to phones in the area.'
           ], answer:2,
           hint:'Look for the fingerprints of persuasion: who is being told to do what?',
-          why:'Only the third sentence speaks directly to the reader with an imperative (“do it”) and a deadline, the classic call to action. The others are statements of fact or background: they inform, even if they appear in a persuasive text.' },
+          why:'Only “So do it this weekend…” speaks directly to the reader with an imperative (“do it”) and a deadline, the classic call to action. The others are statements of fact or background: they inform, even if they appear in a persuasive text.' },
 
         { id:'t4l1s2-5', type:'sort', tag:'rd-purpose', level:'B2',
           stem:'Each sentence comes from a different text. What is the most likely purpose of that text?',
@@ -342,7 +342,7 @@ T4.levels.push({
           items:[
             { text:'About 4.7 million accounts had been removed by January 2026, the regulator said.', bin:'inf' },
             { text:'Parts of the city received more than 300 mm of rain in 48 hours.', bin:'inf' },
-            { text:'Because dry air is still, smoke is not blown away and PM2.5 builds up.', bin:'exp' },
+            { text:'Because the air is still in the dry season, smoke is not blown away and PM2.5 builds up.', bin:'exp' },
             { text:'Notifications woke students up, which is why they slept badly.', bin:'exp' },
             { text:'Switch on your emergency alerts today; it takes thirty seconds.', bin:'per' },
             { text:'Parents, you should talk to your children before exam season begins.', bin:'per' },
@@ -416,7 +416,7 @@ T4.levels.push({
           stem:'Put the building blocks of the Bangkok alerts report in the order they appear.',
           items:[
             'Headline and reporter line',
-            'Lead: phones across Bangkok sounded an alarm during record rain',
+            'Lead: phones across Bangkok sounded an alarm during some of the heaviest rain in years',
             'Key facts: 300 mm in 48 hours and a disaster zone',
             'Background: how cell broadcast works',
             'Reaction: a student describes hearing the alarm',
@@ -489,23 +489,23 @@ T4.levels.push({
     { id:'t4l1ck-4', type:'read', tag:'rd-news', level:'C1', passage:T4_P_CK1, source:T4_SRC_CK1,
       stem:'Taken together, paragraphs 6 and 7 mainly serve to ________.',
       options:[
+        'give two opposing reactions',
         'show that the ban is popular',
         'explain how teenagers get around the age check',
-        'present reactions from both sides of the debate',
         'prove that the ban has made children less safe online'
-      ], answer:2,
+      ], answer:0,
       hint:'Look at the first words of each paragraph: who is speaking in each?',
-      why:'Paragraph 6 gives the supporters’ reaction (“Supporters of the ban say…”) and paragraph 7 the critics’ (“Critics see things differently”), so together they present both sides. Nothing measures popularity. How teens get around the check is paragraph 4–5, and the critics only “argued” a risk; nothing is proved.' },
+      why:'Paragraph 6 gives the supporters’ reaction (“Supporters of the ban say…”) and paragraph 7 the critics’ (“Critics see things differently”), so together they give two opposing reactions. Nothing measures popularity. How teens get around the check is covered in paragraphs 4–5, and the critics only “argued” a risk; nothing is proved.' },
 
     { id:'t4l1ck-5', type:'read', tag:'rd-purpose', level:'C1', passage:T4_P_CK1, source:T4_SRC_CK1,
       stem:'Why does the writer include paragraph 8?',
       options:[
+        'To show why the results matter elsewhere',
         'To list countries that have given up on age limits',
         'To argue that the UK should cancel its plans for a ban',
-        'To suggest that France’s rule is stricter than Australia’s',
-        'To show why the Australian results matter to other countries'
-      ], answer:3,
-      hint:'Read the first sentence of the paragraph: it states the paragraph’s job.',
+        'To suggest that France’s rule is stricter than Australia’s'
+      ], answer:0,
+      hint:'Ask what paragraph 8 adds that paragraphs 2 to 7 did not, and how it leads into paragraph 9.',
       why:'Paragraph 8 opens, “The results matter far beyond Australia”, and then names France and the UK as countries with their own rules, so its job is to widen the story. No country has given up on age limits, and the paragraph neither ranks France’s rule as stricter nor argues against the UK plan.' },
 
     { id:'t4l1ck-6', type:'read', tag:'rd-main', level:'C1', passage:T4_P_CK1, source:T4_SRC_CK1,
@@ -618,13 +618,13 @@ T4.levels.push({
           items:[
             { text:'Some farmers have doubts about the advice.', bin:'same' },
             { text:'A switch would involve new costs and new skills.', bin:'same' },
-            { text:'Farmers are being asked to reconsider what they plant.', bin:'same' },
+            { text:'Switching crops would mean learning to farm in a different way.', bin:'same' },
             { text:'All farmers are convinced they should change crops.', bin:'trap' },
             { text:'Farmers have already bought new seeds.', bin:'trap' },
             { text:'Most farmers have already learned the new methods.', bin:'trap' }
           ],
           hint:'For each statement, check the small words: all, some, already, most.',
-          why:'The paraphrases use new words (doubts, costs and skills, reconsider) for the same ideas. The traps reuse “convinced”, “seeds” and “methods” but flip the meaning: “not all” becomes “all”, a future cost becomes a past action (“already bought”), and learning new methods, a future cost, becomes something “most farmers have already” done.' }
+          why:'The paraphrases use new words (doubts, costs and skills, farming in a different way) for the same ideas. The traps reuse “convinced”, “seeds” and “methods” but flip the meaning: “not all” becomes “all”, a future cost becomes a past action (“already bought”), and learning new methods, a future cost, becomes something “most farmers have already” done.' }
       ]
     },
 
@@ -636,7 +636,7 @@ T4.levels.push({
         body:[
           'A normal question asks you to find one true thing. A NOT/EXCEPT question flips it: three options are true (or mentioned), and you must find the odd one out. Your brain keeps wanting to find something true, so halfway through you forget the NOT and choose the first option you recognise. That is why TCAS prints the word in capitals, and why you need a method that does not depend on memory.',
           '<strong>The tick method.</strong> Step 1: circle NOT / EXCEPT / FALSE in the stem. Step 2: turn the question into a checklist: “Which of these did the teachers notice?” Step 3: check each option against the text and mark it ✓ (stated), ✗ (contradicted) or ? (not mentioned). Step 4: three options get a ✓; the answer is the one with ✗ or ?. For a <strong>FALSE</strong> question, the answer must be a ✗ (the text says the opposite), and paraphrased true statements still get a ✓.',
-          '<strong>Why the tick method beats “feeling”.</strong> The true options are usually paraphrased (<em>library borrowing doubled → students borrowed more books</em>), so they look unfamiliar. The key is often built from passage words (<em>students got higher marks in their tests</em>) so it looks familiar. Proof, not familiarity, decides. Note: TCAS66–67 used many NOT/EXCEPT items; TCAS69 fewer, but they still appear in the visuals and ads sections, so the skill transfers.',
+          '<strong>Why the tick method beats “feeling”.</strong> The true options are usually paraphrased (<em>library borrowing doubled → students borrowed more books</em>), so they look unfamiliar. The key is often something that sounds likely or familiar (<em>students got higher marks in their tests</em>), so it feels right. Proof, not familiarity, decides. Note: TCAS66–67 used many NOT/EXCEPT items; TCAS69 fewer, but they still appear in the visuals and ads sections, so the skill transfers.',
           '<strong>Scan the text in order.</strong> The three true options are usually scattered across several paragraphs. Work through the passage once, ticking options as you meet them, instead of hunting for each option separately.'
         ],
         simple:[
@@ -719,7 +719,7 @@ T4.levels.push({
           ],
           items:[
             { text:'Phones were collected in the morning and returned in the afternoon.', bin:'yes' },
-            { text:'Some older students taught others about fake news online.', bin:'yes' },
+            { text:'A group of M5 students ran a quiz about false information online.', bin:'yes' },
             { text:'Nearly two-thirds of students would do it again.', bin:'yes' },
             { text:'The event lasted three days.', bin:'no' },
             { text:'Teachers also handed in their phones.', bin:'no' },
@@ -866,7 +866,7 @@ T4.levels.push({
         'reading river-level warnings',
         'checking on elderly neighbours'
       ], answer:3,
-      hint:'“These” points back to a list. Which item came last in it?',
+      hint:'Find what “these” points back to, then substitute your answer into the sentence and read it aloud.',
       why:'Paragraph 4 lists three skills: reading warnings, packing a bag and checking on elderly neighbours. The last of these is checking on neighbours, and the quotation that follows (older people “did not leave their homes because nobody came to tell them”) confirms it. “The final workshop session” is a near miss built from the word “last”.' },
 
     { id:'t4l2ck-5', type:'read', tag:'rd-detail', level:'C1', passage:T4_P_CK2, source:T4_SRC_CK2,
@@ -886,7 +886,7 @@ T4.levels.push({
         'The floods caused deaths outside Thailand.',
         'About 1,200 students have joined the workshops.',
         'All teachers want the course added to the timetable.',
-        'Graduates receive official warnings in a messaging group.'
+        'Students who finish the course join a group that shares official warnings.'
       ], answer:2,
       hint:'Tick each option against the report. The FALSE one must say the opposite of a sentence in it.',
       why:'Paragraph 8 says “Some teachers” want the course on the timetable while “Others worry” about exam time, so “All teachers” contradicts the text. The other three are true: lives were lost “in neighbouring countries”, around 1,200 students have taken part, and those who finish join a group that “shares official warnings”.' }
@@ -1073,7 +1073,7 @@ T4.levels.push({
         { id:'t4l3s2-4', type:'read', tag:'rd-views', level:'C1', passage:T4_P_DEBATE, source:T4_SRC,
           stem:'The phrase “Even some supporters concede this point” in paragraph 5 means that some supporters ________.',
           options:[
-            'admit a weak point',
+            'admit a weakness',
             'switch to the other side',
             'reject the researchers’ figures',
             'think a ban works well without parents'
@@ -1148,7 +1148,7 @@ T4.levels.push({
             'The city declared a flood disaster zone on 26 September.',
             'About 2.6 million people in 29 provinces were affected nationwide.'
           ], answer:0,
-          hint:'The claim’s key word is “whole”. Which detail covers every part of the city?',
+          hint:'The claim’s key word is “whole”. Use the remove-it check on each option.',
           why:'“Every one of the capital’s 50 districts was affected” proves the key word “whole”. Thirty-seven blocked locations show serious disruption, but not that every area was hit. The disaster-zone declaration is an official response, and the 2.6 million figure is nationwide, so it is the wrong scale for a claim about Bangkok.' },
 
         { id:'t4l3s3-2', type:'read', tag:'rd-support', level:'B2+', passage:T4_P_NUMBERS, source:T4_SRC,
@@ -1159,7 +1159,7 @@ T4.levels.push({
             'Barriers were reinforced in the east.',
             'Water flowed south from the North into the city’s rivers.'
           ], answer:1,
-          hint:'“Intense” rain means a lot of rain in a short time. Which detail gives both?',
+          hint:'Underline the claim’s key word. If each detail were false in turn, which loss would weaken the claim most?',
           why:'Intensity is amount per time, and “more than 300 millimetres… in just 48 hours” gives both. Deaths show how serious the disaster was, not how hard it rained. Water from the North is a second cause of flooding, not a measure of the rain, and the barriers are a response.' },
 
         { id:'t4l3s3-3', type:'read', tag:'rd-support', level:'C1', passage:T4_P_NUMBERS, source:T4_SRC,
@@ -1170,19 +1170,19 @@ T4.levels.push({
             'Every one of the capital’s 50 districts was affected.',
             'Warnings reached residents through cell broadcast alerts.'
           ], answer:1,
-          hint:'Which detail is about places outside the capital?',
+          hint:'Underline the claim’s key words (“far beyond Bangkok”), then run the remove-it check on every option.',
           why:'Twenty-nine provinces is evidence of reach beyond the capital. The 50 districts are the near miss: they show the disaster covered all of Bangkok, not that it went beyond it. The blocked roads are inside the city, and cell broadcast describes how warnings were sent, not how far the damage spread.' },
 
         { id:'t4l3s3-4', type:'read', tag:'rd-support', level:'C1', passage:T4_P_SCREEN, source:T4_SRC,
-          stem:'Which detail best supports the claim that students used their free time more actively during Screen-Free Week?',
+          stem:'Which detail best supports the claim that students found offline ways to spend their free time during Screen-Free Week?',
           options:[
             'Library borrowing doubled.',
             'Fewer students arrived late to afternoon lessons.',
             '64 percent said they would take part in the event again.',
             'The school set up a phone line in the main office for parents.'
           ], answer:0,
-          hint:'The claim is about what students did with their free time. Which detail measures an activity?',
-          why:'Borrowing twice as many library books is a measurable change in what students did with their time, so it supports “used their free time more actively”. Arriving on time supports a different claim (punctuality), 64% supports a claim about popularity, and the phone line is the school’s response to parents.' },
+          hint:'Underline the claim’s key words, then test each detail against them, not just against the passage.',
+          why:'Borrowing twice as many library books is direct evidence of an offline way to fill free time, so it supports the claim. Arriving on time supports a different claim (punctuality), 64% supports a claim about popularity, and the phone line is the school’s response to parents.' },
 
         { id:'t4l3s3-5', type:'sort', tag:'rd-support', level:'C1',
           stem:'Claim: “The September 2026 floods seriously disrupted daily life in Bangkok.” Which details support this claim?',
@@ -1257,7 +1257,7 @@ T4.levels.push({
         'Most lecturers believed that AI misuse had become common.',
         'Final-year students must now present their work in person.'
       ], answer:2,
-      hint:'The claim is about what staff believed. Which detail measures their views?',
+      hint:'Underline the key word in the claim. If each detail were false, which one would make that claim weaker?',
       why:'A faculty survey found that seven in ten lecturers (= most) thought misuse “had become common”: direct evidence of staff views. The 900 students show the scale of the change, the pens show a side effect, and the presentations are part of the new policy: all true, but none measures what staff believed.' },
 
     { id:'t4l3ck-6', type:'read', tag:'rd-support', level:'C1+', passage:T4_P_CK3, source:T4_SRC_CK3,
@@ -1268,7 +1268,7 @@ T4.levels.push({
         'Final-year students will still write long research papers.',
         'Lecturers said they felt like detectives rather than teachers.'
       ], answer:0,
-      hint:'Which detail describes something happening outside the university itself?',
+      hint:'The claim’s key words are “beyond the university’s classrooms”. Test each option against them, not just against the text.',
       why:'Shops near the campus reporting more pen sales is an effect outside the classrooms, and the reporter ends on it for that reason. The representatives’ questions and the research papers are inside the university, and the “detectives” comment describes lecturers’ experience before the change, not an effect of it.' }
   ] }
 });

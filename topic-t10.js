@@ -27,13 +27,13 @@ var T10_P_CAFFEINE = 'Caffeine can sharpen attention when ___(1)___ in small amo
 
 var T10_P_CELL = 'Cell broadcast, ___(1)___ that sends one alert to every phone in an area at the same time, was used to warn residents during the Bangkok floods of September 2026. Alerts ___(2)___ this way do not depend on phone numbers or apps. ___(3)___ correctly, the system can reach millions of people within seconds. Yet experts point out that a warning, however fast, is only useful when ___(4)___ by clear instructions. Families ___(5)___ in low-lying districts, for example, need to know not just that water is coming but where to go.';
 
-var T10_P_VIRAL = 'Media-literacy teachers want students to pause and ask ___(1)___ before they share a shocking video. Since text-to-video apps spread in 2025, the question of ___(2)___ a fake clip has become part of everyday life. Experts say the first step is not to study the clip itself but to check ___(3)___ : an account that appeared last week and has posted nothing but “breaking news” deserves suspicion.';
+var T10_P_VIRAL = 'When a shocking video appears in their feed, media-literacy teachers want students to pause and ask ___(1)___ before they share it. Since text-to-video apps spread in 2025, the question of ___(2)___ a fake clip has become part of everyday life. Experts say the first step is not to study the clip itself but to check ___(3)___: an account that appeared last week and has posted nothing but “breaking news” deserves suspicion.';
 
 var T10_P_BANDEBATE = 'Parents across Asia are asking ___(1)___ a social media ban for under-16s would really protect their children. ___(2)___ the Australian ban has worked is still unclear: millions of accounts were removed, but most under-16s were still online three months later. The real debate, teachers say, is no longer about ___(3)___ to limit screen time but about how. ___(4)___ governments act or not, families will still need rules of their own.';
 
 var T10_P_SLEEP = 'It ___(1)___ that teenagers need eight to ten hours of sleep a night, partly because their body clocks shift later during puberty. Yet it is common ___(2)___ Thai students to sleep less than seven hours before an exam. Sleep scientists agree on one simple rule: it is essential ___(3)___ the same wake-up time every day, even at weekends.';
 
-var T10_P_AICLASS = 'Schools are still deciding ___(1)___ AI chatbots should be allowed in class at all. It ___(2)___ that students who use chatbots to write whole essays learn less, but few teachers are sure ___(3)___ . ___(4)___ AI is banned or welcomed, it is vital ___(5)___ students how to check what a chatbot tells them, because a confident answer is not always a correct one.';
+var T10_P_AICLASS = 'Schools are still deciding ___(1)___ AI chatbots should be allowed in class at all. It ___(2)___ that students who use chatbots to write whole essays learn less, but few teachers are sure ___(3)___. ___(4)___ AI is banned or welcomed, it is vital ___(5)___ students how to check what a chatbot tells them, because a confident answer is not always a correct one.';
 
 var T10 = {
   id: 't10', n: 10, code: 'System 10', art: 'stack',
@@ -86,7 +86,7 @@ T10.levels.push({
           { who: 'Pun', text: 'Bot, who built what? You gave one sentence two drivers and no steering wheel.' },
           { who: 'Mint', text: 'Count the verbs: “built” and “are”. Two finite verbs need a hinge between them.' },
           { who: 'T.Chris', text: 'Put in the hinge. “The students who built the sensors are in the club.” Now “who built the sensors” is one passenger riding inside the noun.' },
-          { who: 'Nong Bot', text: 'Updated! The robot who is very clever is Nong Bot.' },
+          { who: 'Nong Bot', text: 'Updated! The robot that is very clever is Nong Bot.' },
           { who: 'Fah', text: 'Grammatically perfect. Factually… under review.' }
         ], moral: 'Two finite verbs in one sentence? You need a relative word (or a conjunction) to join them.' },
         moves: [
@@ -113,11 +113,11 @@ T10.levels.push({
         { id: 't10l1s1-3', type: 'cloze', tag: 'rc-basic', level: 'B2', passage: T10_P_SENSOR, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
           options: ['who', 'whom', 'who’s', 'whose'], answer: 3,
-          hint: 'Look at the word straight after the gap. Whose grandmother is it?',
+          hint: 'Look at the word straight after the gap. What is the relationship between that noun and the team member?',
           why: 'The gap is followed by a noun, “grandmother”, which belongs to the team member: <em>whose</em> grandmother = her grandmother. “Who’s” sounds the same but means “who is”, which makes no sense here. “Who” and “whom” cannot be followed by a noun like this.' },
 
         { id: 't10l1s1-4', type: 'cloze', tag: 'rc-basic', level: 'B2+',
-          passage: 'Thailand is becoming an aged society, and many families now depend on community volunteers. In Bangkok, many of the volunteers ___(1)___ elderly residents with shopping and hospital visits are university students themselves.',
+          passage: 'Thailand has already become an aged society, and many families now depend on community volunteers. In Bangkok, many of the volunteers ___(1)___ elderly residents with shopping and hospital visits are university students themselves.',
           blank: '(1)', stem: 'Choose the best option for blank (1).',
           options: ['help', 'that help', 'are helping', 'that are helped'], answer: 1,
           hint: 'Find the main verb of the second sentence first. Is it already there?',
@@ -205,15 +205,15 @@ T10.levels.push({
         { id: 't10l1s2-3', type: 'cloze', tag: 'rc-nondef', level: 'B2', passage: T10_P_BAN, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
           options: ['its', 'which', 'whose', 'that its'], answer: 2,
-          hint: 'The word after the gap is a noun phrase: “own limit”. Whose limit?',
+          hint: 'The gap is followed straight away by a noun phrase, “own limit”. Also check the comma before the gap.',
           why: 'The gap is followed by the noun phrase “own limit”, which belongs to France, so we need the possessive relative <em>whose</em>. “Its” would create a second sentence inside the first with no joint (“France, its own limit covers…, began”). “Which” cannot be followed directly by a noun here, and “that” can never follow a comma.' },
 
         { id: 't10l1s2-4', type: 'spot', tag: 'rc-nondef', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The Hat Yai floods of November 2025,', 'that the media called a once-in-300-years event,', 'flooded homes and hospitals', 'across the city.'],
+          words: ['The Hat Yai floods of November 2025,', 'that the media called a once-in-300-years event,', 'swept through homes and hospitals', 'across the city.'],
           answer: 1, fix: 'which the media called a once-in-300-years event,',
           hint: 'Look at the punctuation around the middle of the sentence.',
-          why: 'The clause sits between commas, so it is non-defining: it adds information about floods we have already identified. Non-defining clauses cannot use <em>that</em>; they need <em>which</em>. The main verb “flooded” and the rest of the sentence are correct.' },
+          why: 'The clause sits between commas, so it is non-defining: it adds information about floods we have already identified. Non-defining clauses cannot use <em>that</em>; they need <em>which</em>. The main verb “swept through” and the rest of the sentence are correct.' },
 
         { id: 't10l1s2-5', type: 'build', tag: 'rc-nondef', level: 'B2',
           stem: 'Build one sentence meaning: Mint revised until 2 a.m. This explains why she fell asleep in the exam.',
@@ -281,7 +281,7 @@ T10.levels.push({
         { id: 't10l1s3-3', type: 'cloze', tag: 'rc-prep', level: 'B2+', passage: T10_P_SWITCH, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
           options: ['which', 'to which', 'in which', 'of which'], answer: 1,
-          hint: 'Which preposition goes with “extent” in the phrase “to a large ___”?',
+          hint: 'Rebuild the clause as a plain sentence: they switched ___ a certain extent. Which preposition does “extent” take?',
           why: 'We say “<strong>to</strong> a large extent” or “<strong>to</strong> what extent”, so the relative form is the extent <em>to which</em> they switched (= how much they switched). “Which” alone leaves the preposition out; “in which” and “of which” use prepositions that “extent” does not take.' },
 
         { id: 't10l1s3-4', type: 'choose', tag: 'rc-prep', level: 'B2+',
@@ -297,10 +297,10 @@ T10.levels.push({
 
         { id: 't10l1s3-5', type: 'spot', tag: 'rc-prep', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
-          words: ['The flood barriers,', 'most of them were reinforced', 'in eastern districts,', 'held back the water for two days.'],
-          answer: 1, fix: 'most of which were reinforced',
+          words: ['The flood barriers,', 'most of them had been reinforced', 'after last year’s floods,', 'held back the water for two days.'],
+          answer: 1, fix: 'most of which had been reinforced',
           hint: 'Find the main verb of the whole sentence. How is the middle part joined to it?',
-          why: 'The main verb is “held back”, so the middle part must be a relative clause: <em>most of which</em> were reinforced. “Most of them were reinforced” is a complete sentence dropped in between commas with no joint. Barriers are things, so the form is “of which”, not “of whom”.' }
+          why: 'The main verb is “held back”, so the middle part must be a relative clause: <em>most of which</em> had been reinforced. “Most of them had been reinforced” is a complete sentence dropped in between commas with no joint. Barriers are things, so the form is “of which”, not “of whom”.' }
       ]
     }
   ],
@@ -308,7 +308,7 @@ T10.levels.push({
     { id: 't10l1ck-1', type: 'cloze', tag: 'rc-basic', level: 'B2+', passage: T10_P_FOOD, blank: '(1)',
       stem: 'Choose the best option for blank (1).',
       options: ['its', 'whom', 'which', 'whose'], answer: 3,
-      hint: 'A noun follows the gap straight away. Who does it belong to?',
+      hint: 'Look at the word right after the gap, and at the commas around the clause.',
       why: '“Popularity” belongs to Thai food, so we need <em>whose</em> popularity. “Its” would place a full sentence inside the subject with no joint, “which” cannot be followed directly by a noun like this, and “whom” is for people as objects.' },
     { id: 't10l1ck-2', type: 'cloze', tag: 'rc-prep', level: 'B2+', passage: T10_P_FOOD, blank: '(2)',
       stem: 'Choose the best option for blank (2).',
@@ -353,21 +353,21 @@ T10.levels.push({
     {
       id: 't10l2s1', name: 'Reduced relatives: -ing (active) vs -ed (passive)', cefr: 'B2+', tag: 'rc-reduced',
       theory: {
-        key: 'A reduced relative is a relative clause with <strong>who/which + be</strong> taken out: the noun <strong>does</strong> the action → <strong>-ing</strong>; the noun <strong>receives</strong> it → <strong>-ed / past participle</strong>.',
+        key: 'A reduced relative is a relative clause with <strong>who/which + be</strong> taken out (or with <em>who/which</em> + active verb shrunk to -ing): the noun <strong>does</strong> the action → <strong>-ing</strong>; the noun <strong>receives</strong> it → <strong>-ed / past participle</strong>.',
         body: [
-          'You already use participle clauses in your own writing (<em>Having finished the test, Mint…</em>). A reduced relative is the same machine attached to a noun instead of a sentence. Start with the full clause and delete the relative word and its <em>be</em>: <em>pieces of plastic <s>which are</s> measuring less than 5 mm</em> → <strong>pieces of plastic measuring</strong>; <em>particles <s>which are</s> released by tyres</em> → <strong>particles released by tyres</strong>; <em>a trend <s>which is</s> known as the Flynn Effect</em> → <strong>a trend known as</strong>. Even clauses without <em>be</em> can shrink to -ing: <em>students <s>who live</s></em> → <strong>students living</strong> in dorms.',
+          'You already use participle clauses in your own writing (<em>Having finished the test, Mint…</em>). A reduced relative is the same machine attached to a noun instead of a sentence. Start with the full clause and delete the relative word and its <em>be</em>: <em>particles <s>which are</s> released by tyres</em> → <strong>particles released by tyres</strong>; <em>a trend <s>which is</s> known as the Flynn Effect</em> → <strong>a trend known as</strong>; <em>Pun, <s>who is</s> sleeping in class</em> → <strong>Pun sleeping in class</strong>. Even clauses without <em>be</em> can shrink: an active verb turns into -ing: <em>pieces of plastic <s>which measure</s> less than 5 mm</em> → <strong>pieces of plastic measuring</strong>; <em>students <s>who live</s></em> → <strong>students living</strong> in dorms.',
           '<strong>Active or passive?</strong> Turn the phrase back into a sentence with the noun as subject. <em>The particles release…?</em> No — something releases the particles, so they are <strong>released</strong>. <em>The pieces measure less than 5 mm?</em> Yes — active, so <strong>measuring</strong>. A study <em>published</em> in 2026 (someone published it); students <em>living</em> in dorms (they live there). The -ed form is not about the past here; it is about <strong>receiving</strong> the action.',
           '<strong>Count the verbs.</strong> The reduced form has no tense, so it can never be the main verb. TCAS67 opened Passage 1 with a two-blank sentence: <em>Soft power, ___(61)___ as the ability to influence others…, ___(62)___ a vital role</em>. Options for 61: <em>often describes / is often described / which often describes / which is often described</em>. Blank 62 must be the main verb (<em>plays</em>), so 61 cannot be finite: <em>is often described</em> is out. Soft power does not describe anything; it <em>is described</em>, so the active options are out. That leaves <em>which is often described</em>. (The reduced form <em>often described as</em> would also be correct, but it was not offered — take the correct full form when the short one is missing.)',
           '<strong>Procedure.</strong> Step 1: find or predict the main verb. Step 2: if it exists, the blank is non-finite (-ing/-ed) or a full relative (which is …). Step 3: rebuild with the noun as subject: does it do the action or receive it?'
         ],
         simple: [
-          'Short clauses can drop “who is / which are”: <em>the rules (that were) introduced last year</em>.',
+          'Short clauses can drop “who is / which are”: <em>the rules (that were) introduced last year</em>. An active verb can shrink to -ing too: <em>pieces (which measure) → pieces measuring</em>.',
           'The noun does the action → -ing (<em>students living in dorms</em>). The noun receives the action → -ed (<em>a study published in 2026</em>).',
           'A short -ing or -ed form is never the main verb. Look for the main verb elsewhere.'
         ],
-        thai: 'reduced relative clause คือ relative clause ที่ตัด who/which + be ออก เหลือแค่ V-ing หรือ V3 ถ้าคำนามเป็นผู้ทำ ใช้ V-ing (students living in dorms) ถ้าคำนามเป็นผู้ถูกกระทำ ใช้ V3 (a study published in 2026) V3 ตรงนี้ไม่ได้บอกอดีต แต่บอกความหมายแบบ passive เคล็ดลับคือ “นับกริยา” — รูปย่อไม่ใช่กริยาแท้ ดังนั้นประโยคต้องมีกริยาหลักอยู่ที่อื่น เช่น Soft power, which is often described as …, plays a vital role',
+        thai: 'reduced relative clause คือ relative clause ที่ตัด who/which + be ออก เหลือแค่ V-ing หรือ V3 (และ relative clause ที่ไม่มี be ก็ย่อได้ โดยเปลี่ยนกริยา active เป็น V-ing เช่น pieces which measure → pieces measuring) ถ้าคำนามเป็นผู้ทำ ใช้ V-ing (students living in dorms) ถ้าคำนามเป็นผู้ถูกกระทำ ใช้ V3 (a study published in 2026) V3 ตรงนี้ไม่ได้บอกอดีต แต่บอกความหมายแบบ passive เคล็ดลับคือ “นับกริยา” — รูปย่อไม่ใช่กริยาแท้ ดังนั้นประโยคต้องมีกริยาหลักอยู่ที่อื่น เช่น Soft power, which is often described as …, plays a vital role',
         examples: [
-          { s: 'Microplastics are pieces of plastic <strong>measuring</strong> less than five millimetres.', g: 'the pieces measure (active) → -ing.' },
+          { s: 'Microplastics are pieces of plastic <strong>measuring</strong> less than five millimetres.', g: 'which measure → measuring: the pieces have that size (active) → -ing; main verb “are”.' },
           { s: 'Particles <strong>released</strong> by car tyres reach rivers.', g: 'tyres release the particles (passive) → -ed.' },
           { s: 'Soft power, <strong>which is often described</strong> as the ability to attract, plays a vital role.', g: 'main verb “plays” → blank is a relative clause, passive.' },
           { s: 'The rules <strong>introduced</strong> last year ban phones in class.', g: 'the rules were introduced → -ed; main verb “ban”.' },
@@ -376,7 +376,7 @@ T10.levels.push({
         trap: 'Students treat -ed as “past” and -ing as “now”, so a past-tense passage pulls them towards -ed even when the noun is doing the action, and a present-tense passage pulls them towards -ing (<em>particles releasing by tyres</em> ✗). Dodge: ignore time completely; turn the phrase into “The noun ___s …” and ask whether the noun does or receives the action.',
         analogy: { title: 'The shrink ray', text: 'A reduced relative is a relative clause zapped by a shrink ray: “which are” disappears and only the verb’s costume is left. The costume tells you the role: -ing is the player on the pitch (doing), -ed is the ball (being kicked). A shrunken clause can ride along with a noun, but it can never drive the sentence.' },
         map: { center: 'Reduced relatives', branches: [
-          { label: 'Active → -ing', leaves: ['pieces measuring 5 mm', 'students living in dorms', 'noun does the action'] },
+          { label: 'Active → -ing', leaves: ['which measure → measuring', 'students living in dorms', 'noun does the action'] },
           { label: 'Passive → -ed', leaves: ['a study published in 2026', 'a trend known as', 'noun receives action'] },
           { label: 'Count the verbs', leaves: ['short form ≠ main verb', 'main verb elsewhere', 'Soft power … plays'] },
           { label: 'Full form OK', leaves: ['which is often described', 'pick it if short missing'] }
@@ -400,8 +400,8 @@ T10.levels.push({
         { id: 't10l2s1-1', type: 'cloze', tag: 'rc-reduced', level: 'B2+', passage: T10_P_MICRO, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
           options: ['measure', 'measured', 'measuring', 'are measuring'], answer: 2,
-          hint: 'The main verb is “are”. Do the pieces do the measuring themselves, or does someone measure them?',
-          why: 'The sentence already has its main verb, “are”, so the gap is a reduced relative. The pieces themselves measure (= have a size of) less than five millimetres, which is active: <em>measuring</em>. “Measured” would mean someone measured them. “Measure” and “are measuring” would add a second main verb.' },
+          hint: 'The main verb is “are”. Rebuild the clause with “pieces” as subject: do they do this, or is it done to them?',
+          why: 'The sentence already has its main verb, “are”, so the gap is a reduced relative. The full clause is “which measure less than five millimetres”: the pieces themselves have that size, which is active, so the clause shrinks to <em>measuring</em>. “Measured” would mean someone measured them. “Measure” and “are measuring” would add a second main verb.' },
 
         { id: 't10l2s1-2', type: 'cloze', tag: 'rc-reduced', level: 'B2+', passage: T10_P_MICRO, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
@@ -425,12 +425,12 @@ T10.levels.push({
             { text: 'Tourists ___ Phuket in the rainy season pay less. (visit)', bin: 'ing' },
             { text: 'Volunteers ___ in first aid joined the rescue. (train)', bin: 'ed' },
             { text: 'The rules ___ last year ban phones in class. (introduce)', bin: 'ed' },
-            { text: 'Anyone ___ a mask outdoors breathes less PM2.5. (wear)', bin: 'ing' },
+            { text: 'Anyone ___ a mask outdoors breathes in less PM2.5. (wear)', bin: 'ing' },
             { text: 'Clips ___ with AI often look perfectly real. (make)', bin: 'ed' },
-            { text: 'Rivers ___ south from the North raised the water level. (flow)', bin: 'ing' }
+            { text: 'Water ___ south from the North raised river levels in Bangkok. (flow)', bin: 'ing' }
           ],
           hint: 'Put the noun in front of the verb as a subject. Does it make sense as an action it performs?',
-          why: 'Tourists visit, anyone wears, rivers flow: the noun does the action, so -ing. Volunteers are trained, rules are introduced, clips are made (by someone else): the noun receives the action, so -ed/past participle. Time has nothing to do with it.' },
+          why: 'Tourists visit, anyone wears, water flows: the noun does the action, so -ing. Volunteers are trained, rules are introduced, clips are made (by someone else): the noun receives the action, so -ed/past participle. Time has nothing to do with it.' },
 
         { id: 't10l2s1-5', type: 'cloze', tag: 'rc-reduced', level: 'C1',
           passage: 'Songkran, ___(1)___ as the world’s biggest water fight, has become one of Thailand’s best-known exports. Every April, it draws visitors from all over the world to cities such as Bangkok and Chiang Mai.',
@@ -512,7 +512,7 @@ T10.levels.push({
             'Mint’s cousin, Krit, a keen footballer trains every evening.'
           ], answer: 1,
           hint: 'Each extra name or description in the middle of a sentence needs a comma on both sides.',
-          why: 'Both “Krit” (the only cousin, so non-defining) and “a keen footballer” are appositives in the middle of the sentence, so each needs a comma on both sides, leaving “trains” as the main verb: <em>Mint’s cousin, Krit, a keen footballer, trains…</em> The other options forget a closing comma, so the appositive runs straight into the verb.' },
+          why: 'Both “Krit” (the only cousin, so non-defining) and “a keen footballer” are appositives in the middle of the sentence, so each needs a comma on both sides, leaving “trains” as the main verb: <em>Mint’s cousin, Krit, a keen footballer, trains…</em> The other options forget a closing comma, so the appositive runs straight into the verb. “Mint’s cousin Krit” without a comma would also suggest she has more than one cousin.' },
 
         { id: 't10l2s2-5', type: 'spot', tag: 'rc-appos', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
@@ -548,7 +548,7 @@ T10.levels.push({
           { s: '✗ When cooked too long, Pun’s mother says the noodles go soft.', g: 'dangling: the mother was not cooked. ✓ When cooked too long, noodles go soft.' }
         ],
         trap: 'The -ing form looks “active and alive”, so students write <em>if not preparing correctly</em> or <em>when experiencing in moderation</em> about a thing that cannot act. Dodge: put the main subject back in (<em>if fugu is not ___</em>): fugu cannot prepare anything, so it must be <em>prepared</em>.',
-        analogy: { title: 'The Grab driver who keeps the address', text: 'A shrunken adverbial clause is a Grab rider who travels light: she leaves the subject and “be” at home but always keeps the address pin — the conjunction — so the driver knows the route (when? if? while?). And she can only ride if she is the same person as the account owner: the main subject.' },
+        analogy: { title: 'The Grab rider who keeps the address pin', text: 'A shrunken adverbial clause is a Grab rider who travels light: she leaves the subject and “be” at home but always keeps the address pin — the conjunction — so the driver knows the route (when? if? while?). And she can only ride if she is the same person as the account owner: the main subject.' },
         map: { center: 'Reduced adverbials', branches: [
           { label: 'Keep', leaves: ['the conjunction', 'when / while / if / once', 'although / unless'] },
           { label: 'Drop', leaves: ['subject + be', 'no tense left'] },
@@ -566,7 +566,7 @@ T10.levels.push({
         { id: 't10l2s3-1', type: 'cloze', tag: 'ac-reduced', level: 'C1', passage: T10_P_CAFFEINE, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
           options: ['consume', 'consumed', 'consuming', 'is consumed'], answer: 1,
-          hint: 'Put the main subject back after “when”: when caffeine is ___. Who does the consuming?',
+          hint: 'Which words have been left out after “when”? Put them back and decide whether caffeine does or receives the action.',
           why: 'The hidden words are “it is”: when (caffeine is) <em>consumed</em> in small amounts. Caffeine is taken in by people, so the passive form is needed. “Consuming” would mean caffeine consumes something, “consume” has no subject, and “is consumed” keeps a verb with no subject after the conjunction.' },
 
         { id: 't10l2s3-2', type: 'cloze', tag: 'ac-reduced', level: 'C1', passage: T10_P_CAFFEINE, blank: '(2)',
@@ -584,13 +584,13 @@ T10.levels.push({
         { id: 't10l2s3-4', type: 'choose', tag: 'ac-reduced', level: 'C1',
           stem: 'Which sentence is correct?',
           options: [
+            'Once installed, the app sends flood alerts automatically.',
             'Once installing, the app sends flood alerts automatically.',
-            'Once installed, Krit said the app sends flood alerts automatically.',
             'Once it installed, the app sends flood alerts automatically.',
-            'Once installed, the app sends flood alerts automatically.'
-          ], answer: 3,
+            'Once installed, Krit said the app sends flood alerts automatically.'
+          ], answer: 0,
           hint: 'Check two things: who is the hidden subject, and does that subject do or receive the installing?',
-          why: 'The hidden subject is the app, and the app is installed by the user: <em>Once installed, the app sends…</em> “Once installing” makes the app do the installing. In the second sentence the main subject is Krit, so it says Krit was installed — a dangling modifier. “Once it installed” is active: the app installed something.' },
+          why: 'The hidden subject is the app, and the app is installed by the user: <em>Once installed, the app sends…</em> “Once installing” makes the app do the installing. In “Once installed, Krit said…” the main subject is Krit, so it says Krit was installed — a dangling modifier. “Once it installed” is active: the app installed something.' },
 
         { id: 't10l2s3-5', type: 'sort', tag: 'ac-reduced', level: 'C1',
           stem: 'Complete each reduced clause: -ing (the subject does it) or -ed (the subject receives it)?',
@@ -630,7 +630,7 @@ T10.levels.push({
     { id: 't10l2ck-4', type: 'cloze', tag: 'ac-reduced', level: 'C1', passage: T10_P_CELL, blank: '(4)',
       stem: 'Choose the best option for blank (4).',
       options: ['follow', 'followed', 'following', 'is followed'], answer: 1,
-      hint: 'Rebuild it: a warning is only useful when (it is) ___ by clear instructions.',
+      hint: 'What has been left out after “when”? Rebuild the full clause and check the word after the gap.',
       why: 'The hidden subject is “a warning”, and the word “by” shows that the instructions do the action: when (it is) <em>followed</em> by clear instructions. “Following by” mixes active form with a passive “by”, and “is followed” keeps a finite verb with no subject after “when”.' },
     { id: 't10l2ck-5', type: 'cloze', tag: 'rc-reduced', level: 'C1', passage: T10_P_CELL, blank: '(5)',
       stem: 'Choose the best option for blank (5).',
@@ -719,7 +719,7 @@ T10.levels.push({
           stem: 'Choose the best option for blank (3).',
           options: ['what did the account post before', 'what has the account posted before', 'what the account has posted before', 'what the account has posted it before'], answer: 2,
           hint: 'After “check”, use the order of an answer, not a question. Then make sure nothing is repeated.',
-          why: 'After “check” the question is embedded, so it needs statement order: check <em>what the account has posted before</em>. “What has the account posted” and “what did the account post” keep question order. In the last option “it” fills the object slot that “what” already fills, so the object appears twice.' },
+          why: 'After “check” the question is embedded, so it needs statement order: check <em>what the account has posted before</em>. “What has the account posted” and “what did the account post” keep question order. In “what the account has posted it before”, “it” fills the object slot that “what” already fills, so the object appears twice.' },
 
         { id: 't10l3s1-4', type: 'build', tag: 'nc-embedded', level: 'C1',
           stem: 'Build a polite question to ask a stranger during a flood.',
@@ -743,7 +743,7 @@ T10.levels.push({
       theory: {
         key: '<em>If</em> and <em>whether</em> both mean “yes or no?” after verbs like <em>ask, know, wonder</em>; <strong>everywhere else — at the start, after a preposition, before <em>to</em>, and right before <em>or not</em> — only <em>whether</em> works</strong>.',
         body: [
-          'A yes/no question has no wh-word to carry it into a sentence, so English lends it one: <em>Will the ban protect children?</em> → <em>Parents are asking <strong>whether/if</strong> the ban will protect children.</em> After common verbs (<em>ask, know, wonder, see, check, find out</em>), <em>if</em> and <em>whether</em> are both fine. But <em>if</em> is also the conditional word, so English only lets it introduce a noun clause in that one safe seat — right after the verb. In every other seat, <em>whether</em> is the only choice.',
+          'A yes/no question has no wh-word to carry it into a sentence, so English lends it one: <em>Will the ban protect children?</em> → <em>Parents are asking <strong>whether/if</strong> the ban will protect children.</em> After common verbs (<em>ask, know, wonder, see, check, find out</em>), <em>if</em> and <em>whether</em> are both fine. But <em>if</em> is also the conditional word, so English only lets it introduce a noun clause in that one safe seat — right after verbs like <em>ask, know</em> and <em>wonder</em> (or adjectives like <em>not sure</em>). In every other seat, <em>whether</em> is the only choice.',
           '<strong>Whether-only seats.</strong> (1) As the subject at the start: <em><strong>Whether</strong> the ban has worked is still unclear.</em> (2) After a preposition: <em>the debate about <strong>whether</strong> to act</em>, <em>depends on <strong>whether</strong> it rains</em>. (3) Before a to-infinitive: <em>deciding <strong>whether</strong> to apply</em>. (4) Directly before <em>or not</em>: <em><strong>whether or not</strong> it works</em> (you can say <em>if it works or not</em>, but never <em>if or not</em>).',
           '<strong>Whether … or not as a linker.</strong> TCAS69 closed a passage with <em>___ they are effective, exams still…</em> — the key was <em>Whether or not</em>. Here the clause is not a noun at all; it means “it doesn’t matter if…”: <em><strong>Whether</strong> governments act <strong>or not</strong>, families will need their own rules.</em> <em>If</em> cannot do this job, and <em>Unless</em> or <em>Although</em> change the logic.',
           '<strong>Procedure.</strong> Step 1: is the meaning “yes or no?” (not a condition)? Step 2: where is the clause — right after <em>ask/know/wonder</em>? Then either word. At the start, after a preposition, before <em>to</em> or <em>or not</em>? Then <em>whether</em>. Step 3: if the clause means “it doesn’t matter”, look for <em>Whether … or not</em>.'
@@ -872,13 +872,13 @@ T10.levels.push({
         { id: 't10l3s3-2', type: 'cloze', tag: 'nc-it', level: 'C1', passage: T10_P_SLEEP, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
           options: ['of', 'for', 'that', 'with'], answer: 1,
-          hint: 'The pattern is It is + adjective + ___ + person + to-infinitive.',
+          hint: 'Thai students are the ones who do the sleeping. Which small word introduces the doer here?',
           why: 'To name who does the action in the pattern “It is + adjective + to-infinitive”, English uses <em>for</em>: it is common <em>for</em> Thai students to sleep less. “That” would need a full clause (that Thai students sleep less), and “of” is used only with adjectives describing a person’s character (It is kind of you to help).' },
 
         { id: 't10l3s3-3', type: 'cloze', tag: 'nc-it', level: 'C1', passage: T10_P_SLEEP, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
           options: ['keep', 'to keep', 'keeping', 'that keeps'], answer: 1,
-          hint: 'After “it is essential”, what can follow: a to-form, or that + a full clause?',
+          hint: 'After “It is + adjective”, check each option: does it have a subject, and is the verb form possible?',
           why: 'After “It is + adjective”, we use a to-infinitive: it is essential <em>to keep</em> the same wake-up time. “That keeps” has no subject after “that”, so it is not a full clause. “Keep” and “keeping” cannot follow the adjective directly — the same pattern TCAS67 tested with “It is essential to maintain a balance”.' },
 
         { id: 't10l3s3-4', type: 'equiv', tag: 'nc-it', level: 'C1+',
@@ -886,18 +886,18 @@ T10.levels.push({
           stem: 'Which sentence is closest in meaning?',
           options: [
             'The new screen-time app believes it reduced students’ phone use last term.',
-            'The new screen-time app is believed to have reduced students’ phone use last term.',
+            'The new screen-time app is believed reducing students’ phone use last term.',
             'The new screen-time app is believed to reduce students’ phone use last term.',
-            'The new screen-time app is believed reducing students’ phone use last term.'
-          ], answer: 1,
+            'The new screen-time app is believed to have reduced students’ phone use last term.'
+          ], answer: 3,
           hint: 'The reducing happened last term, before the believing. Which infinitive shows an earlier action?',
-          why: 'In the personal passive, an action that happened before the time of believing needs the perfect infinitive: <em>is believed to have reduced</em>. “Is believed to reduce” refers to a present or general action and clashes with “last term”. “Is believed reducing” is not a pattern, and the first option says the app itself believes something.' },
+          why: 'In the personal passive, an action that happened before the time of believing needs the perfect infinitive: <em>is believed to have reduced</em>. “Is believed to reduce” refers to a present or general action and clashes with “last term”. “Is believed reducing” is not a pattern, and “the app believes it reduced” says the app itself believes something.' },
 
         { id: 't10l3s3-5', type: 'spot', tag: 'nc-it', level: 'C1',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['It is essential', 'that every student', 'to revise', 'a little every day.'],
           answer: 2, fix: 'revise (or: It is essential for every student to revise)',
-          hint: 'After “that”, the clause needs a subject and a verb. Is the verb in the right form?',
+          hint: 'Check what may follow “It is essential that …”. Is every part grammatical?',
           why: 'A that-clause needs a full clause: subject + verb. So after “that every student” we need the base form <em>revise</em> (It is essential that every student revise), not a to-infinitive. If you want the to-infinitive, change “that” to “for”: It is essential for every student to revise.' }
       ]
     }
@@ -915,9 +915,9 @@ T10.levels.push({
       why: 'This is dummy “It” pointing to the that-clause, and the believers are not named, so the reporting verb must be passive: It <em>is believed</em> that students who use chatbots learn less. “Believes” and “has believed” would make “It” the believer, and “is believing” is active and uses a stative verb in the continuous.' },
     { id: 't10l3ck-3', type: 'cloze', tag: 'nc-embedded', level: 'C1+', passage: T10_P_AICLASS, blank: '(3)',
       stem: 'Choose the best option for blank (3).',
-      options: ['how the problem can solve', 'how can the problem solve', 'how can the problem be solved', 'how the problem can be solved'], answer: 3,
+      options: ['how this problem can solve', 'how can this problem solve', 'how can this problem be solved', 'how this problem can be solved'], answer: 3,
       hint: 'Two checks: is the order a statement or a question, and can a problem solve anything itself?',
-      why: 'After “sure”, the question is embedded, so it needs statement order (subject before “can”), and a problem does not solve anything — it is solved: few teachers are sure <em>how the problem can be solved</em>. “How can the problem be solved” keeps question order, and the two options with active “solve” have the wrong voice.' },
+      why: 'After “sure”, the question is embedded, so it needs statement order (subject before “can”), and a problem does not solve anything — it is solved: few teachers are sure <em>how this problem can be solved</em>. “How can this problem be solved” keeps question order, and the two options with active “solve” have the wrong voice.' },
     { id: 't10l3ck-4', type: 'cloze', tag: 'nc-whether', level: 'C1+', passage: T10_P_AICLASS, blank: '(4)',
       stem: 'Choose the best option for blank (4).',
       options: ['If', 'Unless', 'Whether', 'Although'], answer: 2,

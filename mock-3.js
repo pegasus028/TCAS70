@@ -349,7 +349,7 @@ MOCKS.push({
         { id: 'm3-26', type: 'read', passage: '', ad: M3_AD2, tag: 'ad-fineprint', level: 'C1',
           stem: 'Pim and her best friend sign up for the LIVE course together. Pim decides to quit after her third lesson. Which of the following is true?',
           options: ['She pays ฿6,900 but gets a full refund.', 'She pays ฿6,400 and cannot get a refund.', 'She pays ฿4,000 and gets half of it back.', 'She pays ฿6,400 and is refunded for unused lessons.'], answer: 1,
-          why: 'LIVE costs ฿6,900 and signing up with a friend saves ฿500 (valid for LIVE), so Pim pays ฿6,400. Fees are “non-refundable after the second lesson” and she leaves after the third, so she gets nothing back; the last option has the right price but ignores this condition.' }
+          why: 'LIVE costs ฿6,900 and signing up with a friend saves ฿500 (valid for LIVE), so Pim pays ฿6,400. Fees are “non-refundable after the second lesson” and she leaves after the third, so she gets nothing back; <em>She pays ฿6,400 and is refunded for unused lessons</em> has the right price but ignores this condition.' }
       ] },
 
     /* ============================================ II-2 Review 27–32 */
@@ -428,7 +428,7 @@ MOCKS.push({
       items: [
         { id: 'm3-39', type: 'read', passage: '', visual: M3_V1, tag: 'vs-trend', level: 'B2',
           stem: 'Which statement best describes the trend for Chiang Mai?',
-          options: ['It stayed above Bangkok’s level in every month shown.', 'It peaked in January and then levelled off until June.', 'It climbed steadily to a peak in March, then fell sharply.', 'It fluctuated widely but ended the period higher than it began.'], answer: 2,
+          options: ['It stayed above Bangkok’s level in every month shown.', 'It peaked in January and then levelled off until June.', 'It rose every month to a peak in March, then fell sharply.', 'It fluctuated widely but ended the period higher than it began.'], answer: 2,
           why: 'Chiang Mai rises every month from 22 (Nov) to 96 (Mar) and then drops to 74, 28 and 12. It was below Bangkok from November to January, its January figure (41) is not the peak, and it ended (12) lower than it began (22).' },
 
         { id: 'm3-40', type: 'read', passage: '', visual: M3_V1, tag: 'vs-math', level: 'B2',
@@ -509,7 +509,7 @@ MOCKS.push({
         { id: 'm3-54', type: 'read', passage: M3_ART2, source: 'Adapted for TCAS70 practice', tag: 'rd-infer', level: 'C1',
           stem: 'What can be inferred from the finding that “very confident” students performed no better than unsure ones?',
           options: ['Most teenagers underestimate their ability to spot fakes.', 'Confident students were shown easier items than the others.', 'Unsure students spent more time checking each video carefully.', 'Feeling sure about a judgement is not a reliable sign of being right.'], answer: 3,
-          why: 'If confident and unsure students scored the same, confidence tells us nothing about accuracy. The first option is the reverse trap: the confident students overestimated themselves rather than underestimating, and the study says nothing about easier items or checking time.' },
+          why: 'If confident and unsure students scored the same, confidence tells us nothing about accuracy. <em>Most teenagers underestimate their ability to spot fakes</em> is the reverse trap: the confident students overestimated themselves rather than underestimating, and the study says nothing about easier items or checking time.' },
 
         { id: 'm3-55', type: 'read', passage: M3_ART2, source: 'Adapted for TCAS70 practice', tag: 'vc-adjs', level: 'B2',
           stem: 'The word “credible” in paragraph 4 can be best replaced by ______.',
@@ -554,7 +554,7 @@ MOCKS.push({
         { id: 'm3-62', type: 'cloze', passage: M3_TC1, blank: '(62)', tag: 'nc-it', level: 'B2+',
           stem: 'Choose the best option for blank (62).',
           options: ['also claims', 'is also claimed', 'has also claimed', 'is also claiming'], answer: 1,
-          why: 'This is the impersonal pattern <em>It + passive + that</em> (“It is also claimed that …” = people also claim that …). With an active verb, <em>it</em> would have to be a speaker, but <em>it</em> here refers to the uniform, which cannot claim anything.' },
+          why: 'This is the impersonal pattern <em>It + passive + that</em> (“It is also claimed that …” = people also claim that …). With an active verb such as <em>also claims</em>, <em>it</em> would refer back to the uniform, and a uniform cannot claim anything; in the passive <em>It is also claimed that …</em>, <em>it</em> is an empty subject meaning ‘people also claim’.' },
 
         { id: 'm3-63', type: 'cloze', passage: M3_TC1, blank: '(63)', tag: 'lk-contrast', level: 'B2',
           stem: 'Choose the best option for blank (63).',
@@ -564,7 +564,7 @@ MOCKS.push({
         { id: 'm3-64', type: 'cloze', passage: M3_TC1, blank: '(64)', tag: 'wo-adjorder', level: 'C1',
           stem: 'Choose the best option for blank (64).',
           options: ['dark-blue thick woollen', 'woollen thick dark-blue', 'thick woollen dark-blue', 'thick dark-blue woollen'], answer: 3,
-          why: 'English adjectives follow the order opinion–size/physical quality–age–shape–colour–origin–material–purpose, so <em>thick</em> (quality) comes before <em>dark-blue</em> (colour), which comes before <em>woollen</em> (material). The material adjective sits closest to the noun, which rules out every other order.' },
+          why: 'English adjectives follow the order opinion–size/physical quality–age–shape–colour–origin–material–purpose, so <em>thick</em> (quality) comes before <em>dark-blue</em> (colour), which comes before <em>woollen</em> (material). <em>Dark-blue thick woollen</em> keeps the material next to the noun but puts colour before quality, and the other two orders separate <em>woollen</em> from the noun, so only <em>thick dark-blue woollen</em> is correct.' },
 
         { id: 'm3-65', type: 'cloze', passage: M3_TC1, blank: '(65)', tag: 'vm-subj', level: 'C1',
           stem: 'Choose the best option for blank (65).',
@@ -584,7 +584,7 @@ MOCKS.push({
         { id: 'm3-68', type: 'cloze', passage: M3_TC2, blank: '(68)', tag: 'nc-embedded', level: 'B2+',
           stem: 'Choose the best option for blank (68).',
           options: ['how a sugar pill reduces pain', 'how does a sugar pill reduce pain', 'how is a sugar pill reducing pain', 'how a sugar pill does it reduce pain'], answer: 0,
-          why: 'After <em>debating</em>, the question becomes an embedded noun clause, which uses statement word order: <em>how + subject + verb</em>. Question word order (<em>does a sugar pill reduce</em>, <em>is a sugar pill reducing</em>) is only used in direct questions, and the last option adds an extra subject.' },
+          why: 'After <em>debating</em>, the question becomes an embedded noun clause, which uses statement word order: <em>how + subject + verb</em>. Question word order (<em>does a sugar pill reduce</em>, <em>is a sugar pill reducing</em>) is only used in direct questions, and <em>how a sugar pill does it reduce pain</em> adds an extra subject.' },
 
         { id: 'm3-69', type: 'cloze', passage: M3_TC2, blank: '(69)', tag: 'wo-np', level: 'C1',
           stem: 'Choose the best option for blank (69).',
@@ -599,7 +599,7 @@ MOCKS.push({
         { id: 'm3-71', type: 'cloze', passage: M3_TC3, blank: '(71)', tag: 'ac-reduced', level: 'B2+',
           stem: 'Choose the best option for blank (71).',
           options: ['Return', 'Returned', 'Returning', 'Being returned'], answer: 2,
-          why: 'This is a reduced adverbial clause (= <em>When she returns</em> to the hive). The bee does the action herself, so the active participle <em>Returning</em> is needed. <em>Returned</em> and <em>Being returned</em> are passive and would mean someone else carries her back to the hive.' },
+          why: 'This is a reduced adverbial clause (= <em>When she returns</em> to the hive). The bee does the action herself, so the active participle <em>Returning</em> is needed. <em>Returned</em> cannot describe an action the bee is in the middle of doing (that would need <em>Having returned</em>), and <em>Being returned</em> is passive, meaning someone else carries her back to the hive.' },
 
         { id: 'm3-72', type: 'cloze', passage: M3_TC3, blank: '(72)', tag: 'pl-correl', level: 'B2',
           stem: 'Choose the best option for blank (72).',

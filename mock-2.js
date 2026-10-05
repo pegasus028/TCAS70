@@ -21,7 +21,7 @@ var M2_C2 = [
   { who:'Fah', text:'OK, the motion is “This House would ban phones in schools,” and we’re the opposition. ___(5)___' },
   { who:'Pun', text:'Easy. Phones are useful. Done!' },
   { who:'Fah', text:'That’s a slogan, Pun, not an argument. We need evidence — for example, some teachers use phones for quizzes and research in class.' },
-  { who:'Pun', text:'Fine. ___(6)___ they can be a real distraction. Last week I saw three people scrolling through TikTok during chemistry.' },
+  { who:'Pun', text:'Fine, phones can be useful. ___(6)___ they can also be a real distraction. Last week I saw three people scrolling through TikTok during chemistry.' },
   { who:'Fah', text:'I’m not saying phones are never a problem. ___(7)___ What matters is how they’re used, not the device itself. Clear classroom rules would work better.' },
   { who:'Pun', text:'So we argue for rules, not a ban. I actually see eye to eye with you on that.' },
   { who:'Fah', text:'Great. Now go and write your three-minute speech.' },
@@ -89,7 +89,7 @@ var M2_REVIEW = 'Review: Baan Lanna Loft, a boutique hostel in Chiang Mai\n\n' +
 var M2_NEWS = '(1) Australia’s under-16 social media ban: millions of accounts gone, but most teens still online\n\n' +
 '(2) By Nattaya Srisuk, The Bangkok Chronicle\n\n' +
 '(3) When Australia’s ban on social media for children under 16 took effect in December 2025, supporters hailed it as a turning point for a generation raised on screens. Almost a year later, the picture is more complicated.\n\n' +
-'(4) By January 2026, about 4.7 million accounts had been removed, a figure that supporters of the law pointed to as proof that the law had teeth.\n\n' +
+'(4) By January 2026, about 4.7 million accounts had been removed, a figure that the law’s supporters pointed to as proof that it had teeth.\n\n' +
 '(5) But a report released in 2026 by the country’s online safety regulator found that more than 80 percent of under-16s were still using social media three months after the ban began.\n\n' +
 '(6) So how are so many young people slipping through? Here are some of the questions being asked.\n\n' +
 '(7) Parents say many teenagers simply opened new accounts with false birthdays or borrowed an older sibling’s login. “My 14-year-old had a new account within an afternoon,” said a Sydney mother of two. “The ban lasted about as long as her homework does.”\n\n' +
@@ -116,7 +116,7 @@ var M2_VIS2 = { kind:'pie', title:'How Thai university students mainly use AI to
 var M2_ART1 = 'El Niño explained: why early 2027 may be hot and dry\n\n' +
 '(1) It may seem strange to worry about drought only weeks after floods affected all 50 of Bangkok’s districts. Yet forecasters are warning that the coming months could bring the opposite problem. A strong El Niño — some scientists have even called it a potential “super” El Niño — is expected to develop in the Pacific Ocean, and for Thailand that usually means a hotter, drier start to 2027.\n\n' +
 '(2) El Niño is a natural climate pattern centered on the tropical Pacific. In a normal year, steady trade winds blow from east to west along the equator, pushing warm surface water toward Indonesia and northern Australia. This warm pool heats the air above it, which rises, cools and falls as heavy rain over Southeast Asia. Meanwhile, colder water wells up from the deep ocean off the coast of South America.\n\n' +
-'(3) Every two to seven years, however, this system falters. The trade winds weaken, and in some cases even reverse, allowing the warm water to drift eastward across the Pacific. The rain clouds follow it. As a result, countries on the western side of the ocean, including Thailand, receive less rain than usual, while parts of South America can be hit by floods. An El Niño typically lasts nine to twelve months and usually peaks around the end of the calendar year, which is why its effects on Thailand tend to be felt most keenly during the following dry season.\n\n' +
+'(3) Every two to seven years, however, this system falters. The trade winds lose strength, and in some cases even reverse, allowing the warm water to drift eastward across the Pacific. The rain clouds follow it. As a result, countries on the western side of the ocean, including Thailand, receive less rain than usual, while parts of South America can be hit by floods. An El Niño typically lasts nine to twelve months and usually peaks around the end of the calendar year, which is why its effects on Thailand tend to be felt most keenly during the following dry season.\n\n' +
 '(4) For farmers, the consequences can be severe. Most Thai rice is grown in the rainy season, but many farmers in the Central Plains also plant a second, off-season crop that depends on water released from large reservoirs. In a strong El Niño year, those reservoirs may not be refilled, and authorities often ask farmers to delay or skip the second crop. Those who ignore the advice risk watching their fields dry out before harvest. Some agricultural experts urge farmers to switch to crops that need far less water, such as maize or beans, until conditions improve.\n\n' +
 '(5) El Niño can also exacerbate air pollution. PM2.5 — particles small enough to enter the lungs and even the bloodstream — is already a serious problem in the dry season, when smoke from crop burning and forest fires builds up in still air. Rain normally helps to wash these particles out of the atmosphere; with less of it, the haze lingers longer. A hotter, drier landscape also makes fires easier to start and harder to control.\n\n' +
 '(6) None of this is set in stone. Forecasts of an El Niño’s strength become more reliable only as it develops, and no two events affect Thailand in exactly the same way. Other factors, such as conditions in the Indian Ocean, also shape rainfall in the region. Climate scientists add that El Niño now arrives on top of long-term global warming, so each event pushes temperatures into record territory more easily than it did a generation ago.\n\n' +
@@ -128,7 +128,7 @@ var M2_ART2 = 'Upskill or reskill? Work in the age of AI\n\n' +
 '(3) The distinction matters because the two call for different kinds of support. Upskilling can often happen on the job, through short online courses or a few hours of training a month. Reskilling usually takes longer, costs more and carries more risk, since the learner is starting again in an unfamiliar field, often while still paying the bills. Employers are generally keen to fund the first; the second frequently falls to governments or to workers themselves.\n\n' +
 '(4) Technical knowledge is only part of the story. As AI takes over routine tasks, employers increasingly prize the skills that machines struggle with: critical thinking, creativity, communication and the ability to collaborate with people from different backgrounds. These so-called soft skills are hard to automate precisely because they depend on judgment and empathy. A chatbot can draft a customer email in seconds; deciding whether that email will calm an angry client or make things worse still requires a human who understands people.\n\n' +
 '(5) Nor is learning a one-off event. The half-life of technical skills — the time it takes for half of what you know to become outdated — is shrinking. A degree earned at 22 was once expected to last a whole career; today it is better seen as a foundation on which workers will keep building for decades. This is the idea behind lifelong learning, and it applies as much to a 50-year-old office manager as to a 17-year-old choosing a university course.\n\n' +
-'(6) Critics warn against treating training as a magic cure. Not every worker has the time, money or confidence to retrain, and a certificate is worth little if there are no jobs at the end of it. Some economists argue that the burden should not fall on individuals alone: companies that profit from automation, they say, should share the cost of helping the staff it replaces to adapt.\n\n' +
+'(6) Critics warn against treating training as a magic cure. Not every worker has the time, money or confidence to retrain, and a certificate is worth little if there are no jobs at the end of it. Some economists argue that the burden should not fall on individuals alone: companies that profit from automation, they say, should share the cost of helping the staff that automation replaces to adapt.\n\n' +
 '(7) So, upskill or reskill? For most people, the answer will be both, at different moments in their lives. The workers who thrive in the age of AI are unlikely to be those who know the most today, but rather those who are most willing to keep learning tomorrow. Having said that, willingness is not enough on its own: it must be matched by opportunities that are fair, affordable and open to everyone.';
 
 var M2_P1 = 'A digital detox — a period in which a person deliberately stays away from phones, computers and social media — has become a common goal among students who feel overwhelmed by constant notifications. The idea is not new, but its ___(61)___ has grown sharply in recent years. The number of hours that the average teenager spends on screens each day ___(62)___ many schools to introduce “phone-free weeks.”\n\n' +
@@ -164,7 +164,7 @@ var M2_S1 = [
     stem:'Choose the best option for blank (4).',
     options:['I’d cut down, though.','Three should be just right.','Have all three before the tablet.','It will make the tablet work faster.'],
     answer:0,
-    why:'Nan answers, “Fair enough. One cup … then,” so the pharmacist must have advised her to drink less coffee. “Three should be just right” approves of three cups, which gives Nan no reason to reduce to one. The last option contradicts “Coffee won’t affect the tablet.”' },
+    why:'Nan answers, “Fair enough. One cup … then,” so the pharmacist must have advised her to drink less coffee. “Three should be just right” approves of three cups, which gives Nan no reason to reduce to one. “It will make the tablet work faster” contradicts “Coffee won’t affect the tablet,” and “Have all three before the tablet” still means three cups.' },
 
   { id:'m2-5', type:'gap', blank:'(5)', lines:M2_C2, tag:'cv-next', level:'B2',
     stem:'Choose the best option for blank (5).',
@@ -176,7 +176,7 @@ var M2_S1 = [
     stem:'Choose the best option for blank (6).',
     options:['What’s more,','To illustrate,','Having said that,','To put it another way,'],
     answer:2,
-    why:'Pun first accepts Fah’s point (“Fine”) and then turns to the other side: phones “can be a real distraction.” <em>Having said that</em> introduces a contrasting point after a concession. <em>What’s more</em> would add another point in favor of phones, <em>To illustrate</em> needs an example of the same idea, and <em>To put it another way</em> would restate it.' },
+    why:'Pun first accepts Fah’s point (“Fine, phones can be useful”) and then turns to the other side: they “can also be a real distraction.” <em>Having said that</em> introduces a contrasting point after a concession. <em>What’s more</em> would add another point in favor of phones, <em>To illustrate</em> needs an example of the same idea, and <em>To put it another way</em> would restate it.' },
 
   { id:'m2-7', type:'gap', blank:'(7)', lines:M2_C2, tag:'cv-agree', level:'B2+',
     stem:'Choose the best option for blank (7).',
@@ -216,7 +216,7 @@ var M2_S1 = [
 
   { id:'m2-13', type:'gap', blank:'(13)', lines:M2_LONG, tag:'dm-frame', level:'C1',
     stem:'Choose the best option for blank (13).',
-    options:['By the way,','On the other hand,','Without further ado,','To put it another way,'],
+    options:['by the way,','on the other hand,','without further ado,','to put it another way,'],
     answer:2,
     why:'The chef is opening the class and wants to begin at once because everyone is hungry. <em>Without further ado</em> means “without any more delay” and is used just before starting something. <em>By the way</em> introduces a side topic, <em>On the other hand</em> needs a contrast, and <em>To put it another way</em> needs an earlier idea to restate.' },
 
@@ -350,7 +350,7 @@ var M2_S2 = [
     why:'Paragraph 5 says “more than 80 percent of under-16s were still using social media three months after the ban began,” and 80 percent is four in five. The 4.7 million figure refers to accounts removed by January 2026, not children deleting their own accounts, and nothing is said about platforms stopping removals.' },
 
   { id:'m2-35', type:'read', passage:M2_NEWS, source:'Adapted for TCAS70 practice', tag:'rd-expression', level:'C1',
-    stem:'In paragraph 4, the expression “the law had teeth” suggests that the law ______.',
+    stem:'In paragraph 4, the expression “had teeth” suggests that the law ______.',
     options:['was having a real effect','was too harsh on children','was popular with teenagers','was difficult to understand'],
     answer:0,
     why:'A law that “has teeth” has real power to be enforced and to produce results; supporters used the 4.7 million removed accounts “as proof” of this. “Too harsh” is the trap — teeth can bite — but the idiom is about effectiveness, not cruelty.' },
@@ -398,10 +398,10 @@ var M2_S2 = [
     why:'Brainstorming is 22% and writing whole assignments is 12%, so 22 + 12 = 34%. The distractors come from adding the wrong slices: 43% is summarizing + writing, and 53% is summarizing + brainstorming.' },
 
   { id:'m2-43', type:'read', passage:'', visual:M2_VIS2, tag:'vs-trap', level:'B2+',
-    stem:'Among the whole sample, what is the percentage difference between female and male students who mainly use AI for checking grammar and translating?',
-    options:['4%','7%','11%','18%'],
+    stem:'Among the whole sample, what is the difference, in percentage points, between female and male students who mainly use AI for checking grammar and translating?',
+    options:['4','7','11','18'],
     answer:0,
-    why:'The note splits the 18% slice into 11% female and 7% male, so the difference is 11 − 7 = 4 percentage points. 7% and 11% are the two groups themselves, and 18% is the whole slice.' },
+    why:'The note splits the 18% slice into 11% female and 7% male, so the difference is 11 − 7 = 4 percentage points. 7 and 11 are the two groups themselves, and 18 is the whole slice.' },
 
   { id:'m2-44', type:'read', passage:'', visual:M2_VIS2, tag:'vs-pie', level:'B2+',
     stem:'How many of the 1,200 students surveyed mainly use AI to summarize readings and lecture notes?',
@@ -420,15 +420,15 @@ var M2_S3 = [
 
   { id:'m2-46', type:'read', passage:M2_ART1, source:'Adapted for TCAS70 practice', tag:'wk-climate', level:'B2+',
     stem:'According to the article, which of the following starts the chain of events that leads to an El Niño?',
-    options:['The trade winds weaken.','Rain clouds move over Thailand.','Warm water moves west toward Indonesia.','Cold water rises off the coast of South America.'],
+    options:['The trade winds lose strength.','Rain clouds move over Thailand.','Warm water moves west toward Indonesia.','Cold water rises off the coast of South America.'],
     answer:0,
-    why:'Paragraph 3 gives the sequence: “The trade winds weaken … allowing the warm water to drift eastward … The rain clouds follow it.” Warm water moving toward Indonesia and cold water rising near South America describe a <em>normal</em> year in paragraph 2, not the start of an El Niño.' },
+    why:'Paragraph 3 gives the sequence: “The trade winds lose strength … allowing the warm water to drift eastward … The rain clouds follow it.” Warm water moving toward Indonesia and cold water rising near South America describe a <em>normal</em> year in paragraph 2, not the start of an El Niño.' },
 
   { id:'m2-47', type:'read', passage:M2_ART1, source:'Adapted for TCAS70 practice', tag:'vc-verbs', level:'C1',
     stem:'The word “falters” in paragraph 3 is closest in meaning to ______.',
     options:['repeats','weakens','reverses','intensifies'],
     answer:1,
-    why:'The next sentence shows what “falters” means here: “The trade winds weaken.” <em>Reverses</em> is the near-miss, but the text says the winds reverse only “in some cases,” so it is not the general meaning. <em>Intensifies</em> is the opposite, and <em>repeats</em> does not describe a system that is failing.' },
+    why:'The next sentence shows what “falters” means here: “The trade winds lose strength,” so the system is becoming weaker. <em>Reverses</em> is the near-miss, but the text says the winds reverse only “in some cases,” so it is not the general meaning. <em>Intensifies</em> is the opposite, and <em>repeats</em> does not describe a system that is failing.' },
 
   { id:'m2-48', type:'read', passage:M2_ART1, source:'Adapted for TCAS70 practice', tag:'vc-closest', level:'C1',
     stem:'The word “exacerbate” in paragraph 5 can be best replaced by ______.',
@@ -440,7 +440,7 @@ var M2_S3 = [
     stem:'The sentence “None of this is set in stone” in paragraph 6 means that ______.',
     options:['the predictions could still change','the damage will be impossible to repair','the effects described are certain to happen','scientists have no reliable forecasts at all'],
     answer:0,
-    why:'<em>Set in stone</em> means fixed and impossible to change, so the sentence means the forecasts may change; the writer adds that forecasts “become more reliable only as it develops.” The last option goes too far — the forecasts are uncertain, not useless — and “certain to happen” is the opposite meaning.' },
+    why:'<em>Set in stone</em> means fixed and impossible to change, so the sentence means the forecasts may change; the writer adds that forecasts “become more reliable only as it develops.” “Scientists have no reliable forecasts at all” goes too far — the forecasts are uncertain, not useless — and “certain to happen” is the opposite meaning.' },
 
   { id:'m2-50', type:'read', passage:M2_ART1, source:'Adapted for TCAS70 practice', tag:'rd-reference', level:'B2+',
     stem:'The word “Those” in “Those who ignore the advice” (paragraph 4) refers to ______.',
@@ -482,7 +482,7 @@ var M2_S3 = [
     stem:'The phrase “the half-life of technical skills” in paragraph 5 refers to ______.',
     options:['the age at which most people stop learning','the number of skills a worker loses every year','the time before half of what one knows becomes outdated','the half of a working career that is spent on learning new technical skills'],
     answer:2,
-    why:'The writer defines the phrase between the dashes: “the time it takes for half of what you know to become outdated.” The last option takes “half” literally as half of a career, but the phrase measures how quickly knowledge ages, not how a career is divided.' },
+    why:'The writer defines the phrase between the dashes: “the time it takes for half of what you know to become outdated.” “The half of a working career that is spent on learning” takes “half” literally as half of a career, but the phrase measures how quickly knowledge ages, not how a career is divided.' },
 
   { id:'m2-57', type:'read', passage:M2_ART2, source:'Adapted for TCAS70 practice', tag:'rd-org', level:'B2+',
     stem:'How is paragraph 2 organized?',
@@ -506,7 +506,7 @@ var M2_S3 = [
     stem:'Which statement best reflects the writer’s conclusion?',
     options:['Willingness to learn needs fair opportunities too.','Most people will need to upskill only once in their careers.','Governments should decide whether workers upskill or reskill.','Those who know the most today will be the safest in the age of AI.'],
     answer:0,
-    why:'The last paragraph says that thriving workers will be those “most willing to keep learning,” then adds: “willingness is not enough on its own: it must be matched by opportunities that are fair, affordable and open to everyone.” The last option reverses the claim that it is not those “who know the most today,” and the article presents learning as lifelong, not one-off.' }
+    why:'The last paragraph says that thriving workers will be those “most willing to keep learning,” then adds: “willingness is not enough on its own: it must be matched by opportunities that are fair, affordable and open to everyone.” “Those who know the most today will be the safest” reverses the writer’s claim that it is <em>not</em> those “who know the most today,” and the article presents learning as lifelong, not one-off, so “only once” is wrong too.' }
 ];
 
 /* ------------------------------------------------ SECTION III, items 61–80 */

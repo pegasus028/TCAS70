@@ -16,9 +16,9 @@ var T12 = {
 /* ---------------------------------------------------------------- shared passages */
 var T12_P11 = 'Some Thai schools now collect students’ phones at the gate each morning. ___(1)___ the rule is unpopular with some students, teachers report calmer classrooms and fewer missing assignments. Reactions differ: some students say they feel anxious without their devices, ___(2)___ others admit that they now talk to their friends more at lunch.';
 
-var T12_P12 = 'In late September 2026, parts of Bangkok received more than 300 mm of rain in just 48 hours. ___(1)___ the downpour and the water flowing south from the North, floodwater blocked traffic at 37 locations. Warnings were sent to phones by cell broadcast ___(2)___ residents could move their cars to higher ground. The city said draining would take two to three days after the rain stopped; ___(3)___, residents were told to expect several more days of disruption.';
+var T12_P12 = 'In late September 2026, parts of Bangkok received more than 300 mm of rain in just 48 hours. ___(1)___ the downpour and the water flowing south from the North, floodwater blocked traffic at 37 locations. Warnings were sent to phones by cell broadcast ___(2)___ residents could move their cars to higher ground. The city said draining would take two to three days after the rain stopped; ___(3)___, many schools in the worst-hit districts stayed closed until the following week.';
 
-var T12_P13 = 'Fast-fashion brands release new styles almost every week. The clothes are cheap and fun to buy, but they create huge amounts of textile waste ___(1)___ serious water pollution. ___(2)___, the low prices hide the real cost paid by the workers who make them. Some young shoppers are now turning to second-hand options ___(3)___ online swap groups and weekend flea markets.';
+var T12_P13 = 'Fast-fashion brands release new styles almost every week. The clothes are cheap and fun to buy, but they create huge amounts of textile waste ___(1)___ serious water pollution. ___(2)___, the low prices hide the real cost paid by the workers who make the clothes. Some young shoppers are now turning to second-hand options ___(3)___ online swap groups and weekend flea markets.';
 
 var T12_PL1 = 'Sleep scientists have long warned that teenagers need eight to ten hours of sleep a night. ___(1)___ this advice, a survey of 1,200 Bangkok students found that most slept fewer than seven hours on school nights, largely ___(2)___ late-night scrolling. ___(3)___ the researchers, bright screens and endless feeds keep the brain alert long after the lights go out. Short sleep does more than cause yawning in first period. It weakens memory and mood, ___(4)___ raising the risk of weight gain. Some schools have responded by starting classes thirty minutes later ___(5)___ students can get the extra sleep their bodies need. Early results look promising. ___(6)___, a few parents worry that a later start will simply lead to later bedtimes.';
 
@@ -86,7 +86,7 @@ T12.levels.push({
           stem: '______ popular belief, drinking coffee late at night does not help most students remember more; it simply keeps them awake.',
           options: ['Unlike', 'Owing to', 'Instead of', 'Contrary to'],
           answer: 3,
-          hint: 'The sentence corrects an idea many people hold. Which linker partners with “belief”?',
+          hint: 'The sentence corrects something many people believe. Does the blank compare two things, give a cause, or do another job?',
           why: 'The sentence says a common belief is wrong, and the fixed partner for ideas people hold is <em>contrary to</em>: <em>contrary to popular belief / expectations</em>. <em>Unlike</em> is the near miss, but it compares two things of the same kind (<em>Unlike tea, coffee…</em>), not a fact with a belief. <em>Owing to</em> gives a cause, and <em>Instead of</em> means “in place of”.' },
 
         { id: 't12l1s1-4', type: 'sort', tag: 'lk-contrast', level: 'B2',
@@ -180,14 +180,14 @@ T12.levels.push({
           stem: 'Choose the best option for blank (3).',
           options: ['because', 'however', 'therefore', 'nevertheless'],
           answer: 2,
-          hint: 'Put an arrow between the slow draining and the days of disruption. Which way does it point?',
-          why: 'Slow draining → more days of disruption: the second idea is the <em>result</em>, and the linker sits after a semicolon with a comma, so <em>therefore</em> fits. <em>However</em> and <em>nevertheless</em> fit the punctuation but signal a contrast that is not there. <em>Because</em> points the arrow backwards and cannot follow a semicolon with a comma.' },
+          hint: 'Put an arrow between the slow draining and the school closures. Which way does it point?',
+          why: 'Slow draining → schools stayed closed: the second idea is the <em>result</em>, and the linker sits after a semicolon with a comma, so <em>therefore</em> fits. <em>However</em> and <em>nevertheless</em> fit the punctuation but signal a contrast that is not there — the closures follow naturally from the slow draining. <em>Because</em> points the arrow backwards and cannot follow a semicolon with a comma.' },
 
         { id: 't12l1s2-4', type: 'build', tag: 'lk-cause', level: 'B2',
           stem: 'Join the ideas with a cause linker that takes a noun: “Sports day was cancelled.” + “the dangerous PM2.5 level”.',
           tiles: ['Sports day', 'was cancelled', 'owing to', 'the dangerous', 'PM2.5 level'],
           solution: 'Sports day was cancelled owing to the dangerous PM2.5 level',
-          alt: [],
+          alt: ['Owing to the dangerous PM2.5 level sports day was cancelled'],
           hint: 'The result comes first; the cause linker goes directly in front of the noun phrase.',
           why: 'The result (<em>Sports day was cancelled</em>) comes first and the cause follows as a noun phrase, so the preposition-type linker <em>owing to</em> goes directly in front of it. <em>Because</em> would need a clause: <em>because the PM2.5 level was dangerous</em>.' },
 
@@ -251,14 +251,14 @@ T12.levels.push({
           options: ['Moreover', 'As well as', 'In contrast', 'For example'],
           answer: 0,
           hint: 'Is the sentence about workers a new problem, an example of waste, or an opposite idea?',
-          why: 'The writer has listed two problems (waste and pollution) and now adds a third, different one — the hidden cost to workers — in a new sentence with a comma: <em>Moreover</em>. <em>For example</em> is the near miss, but low wages are not an example of waste or pollution. <em>In contrast</em> would need an opposite idea, and <em>As well as</em> needs a noun or -ing, not a clause.' },
+          why: 'The writer has listed two problems (waste and pollution) and now adds a third, different one — the hidden cost to workers — in a new sentence with a comma: <em>Moreover</em>. <em>For example</em> is the near miss, but the hidden cost to workers is not an example of waste or pollution. <em>In contrast</em> would need an opposite idea, and <em>As well as</em> needs a noun or -ing, not a clause.' },
 
         { id: 't12l1s3-3', type: 'cloze', passage: T12_P13, blank: '(3)', tag: 'lk-add', level: 'B2+',
           stem: 'Choose the best option for blank (3).',
-          options: ['such as', 'as well', 'as a result', 'in addition'],
+          options: ['such as', 'for example', 'as a result', 'in addition'],
           answer: 0,
-          hint: 'Are swap groups and flea markets extra items, results, or examples of the options just mentioned?',
-          why: 'Swap groups and flea markets are <em>examples</em> of the second-hand options just mentioned, and they follow directly as nouns, so <em>such as</em> fits. <em>As well</em> goes at the end of a clause and cannot introduce nouns; <em>in addition</em> would need <em>to</em>; <em>as a result</em> signals a consequence and needs a new clause.' },
+          hint: 'Are swap groups and flea markets extra items, results, or examples of the options just mentioned? Check the punctuation too.',
+          why: 'Swap groups and flea markets are <em>examples</em> of the second-hand options just mentioned, and they follow directly as nouns, so <em>such as</em> fits. <em>For example</em> is the near miss: it has the right meaning, but it needs commas or a new sentence (<em>…options, for example, online swap groups</em>) and cannot sit bare before a list of nouns. <em>In addition</em> would need <em>to</em>; <em>as a result</em> signals a consequence and needs a new clause.' },
 
         { id: 't12l1s3-4', type: 'choose', tag: 'lk-add', level: 'B2+',
           stem: '______ the school nurse, the number of students reporting headaches doubled during the PM2.5 season.',
@@ -311,7 +311,7 @@ T12.levels.push({
       stem: 'Choose the best option for blank (3).',
       options: ['Unlike', 'Owing to', 'Instead of', 'According to'],
       answer: 3,
-      hint: 'The researchers are not causing or replacing anything. What role do they play in this sentence?',
+      hint: 'All four take a noun. What are the researchers here: a cause, a thing being compared, or something else?',
       why: 'The sentence reports the researchers’ explanation, so they are the <em>source</em>: <em>According to</em>. <em>Owing to</em> would make the researchers the cause of alert brains; <em>Unlike</em> would compare the researchers with screens; <em>Instead of</em> would mean the screens replace the researchers. All four take a noun, so only meaning decides.' },
 
     { id: 't12l1ck-4', type: 'cloze', passage: T12_PL1, blank: '(4)', tag: 'lk-add', level: 'B2+',
@@ -402,14 +402,14 @@ T12.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['other', 'others', 'another', 'the other'],
           answer: 1,
-          hint: 'No noun follows the blank, and the sentence began with “Some visitors”. Later, the writer says “they built”.',
+          hint: 'Is there a noun after the blank? And how many visitors does the second group contain?',
           why: 'The pattern <em>Some visitors …; others …</em> contrasts two parts of a group, and nothing follows the blank, so we need the plural pronoun <em>others</em> (= other visitors). <em>Other</em> must have a noun after it. <em>Another</em> and <em>the other</em> are singular, but the next words say <em>they built … with their hosts</em>.' },
 
         { id: 't12l2s1-3', type: 'cloze', passage: T12_P21, blank: '(3)', tag: 'dt-other', level: 'B2',
           stem: 'Choose the best option for blank (3).',
           options: ['other', 'others', 'another', 'the others'],
           answer: 2,
-          hint: 'The noun is plural, but it is a number + a period of time. How do we say “six more months”?',
+          hint: 'The noun is plural, but “six months” is one amount of time. Which option can sit before a number?',
           why: 'With a number + plural noun that works as one amount (<em>six months</em> = one period), English uses <em>another</em>: <em>another six months</em>, like <em>another 20 baht</em>. <em>Other</em> is the near miss because <em>months</em> is plural, but <em>other six months</em> is not English. <em>Others</em> and <em>the others</em> are pronouns and cannot stand before a noun.' },
 
         { id: 't12l2s1-4', type: 'sort', tag: 'dt-other', level: 'B2',
@@ -638,7 +638,7 @@ T12.levels.push({
       stem: 'Choose the best option for blank (4).',
       options: ['Both', 'Each', 'Either', 'Neither'],
       answer: 3,
-      hint: 'There are two sides. Does either of them really want no protection? Notice “however”.',
+      hint: 'Two sides. Read what the supporters and the critics each want. Is the sentence positive or negative for them?',
       why: 'Supporters want bans and critics doubt them, but no one argues for zero protection, so the meaning is negative for both sides: <em>Neither side … believes</em>. <em>Each</em> and <em>Either</em> fit the grammar (singular noun, singular verb) but would say that one or both sides want children unprotected, which the passage never suggests. <em>Both</em> needs a plural noun (<em>both sides</em>).' },
 
     { id: 't12l2ck-5', type: 'cloze', passage: T12_PL2, blank: '(5)', tag: 'dt-quant', level: 'C1',
@@ -664,7 +664,7 @@ var T12_P32 = 'Many students join the debate club ___(1)___ to win trophies but 
 
 var T12_P33 = 'On the morning of the storm, many families in Hat Yai carried their furniture upstairs, ___(1)___ the radio had warned that the canals were rising fast. Older residents did not panic, ___(2)___ did they rush to leave their homes. They had lived through high water many times, ___(3)___ they trusted their own experience. ___(4)___ this time, experience was no match for the rain. The floods of late November 2025 were later described in the media as a “once-in-300-years” event.';
 
-var T12_PL3 = 'Chatbots have changed the way students study. Used well, they can explain a hard idea, suggest a plan for an essay and ___(1)___ a student’s grammar. Used badly, they do the thinking for you, ___(2)___ you learn nothing. Teachers at one Bangkok school decided ___(3)___ to ban the tools nor to ignore them. Instead, students must now hand in both their chatbot conversation and ___(4)___. The rule seems strict, ___(5)___ most students say it has made them more honest. As one M.6 student put it, the aim is not to hide the chatbot but ___(6)___ it wisely.';
+var T12_PL3 = 'Chatbots have changed the way students study. Used well, they can explain a hard idea, suggest a plan for an essay and ___(1)___ your grammar. Used badly, they do the thinking for you, ___(2)___ you learn nothing. Teachers at one Bangkok school decided ___(3)___ to ban the tools nor to ignore them. Instead, students must now hand in both their chatbot conversation and ___(4)___. The rule seems strict, ___(5)___ most students say it has made them more honest. As one M.6 student put it, the aim is not to hide the chatbot but ___(6)___ it wisely.';
 
 /* ============================================================== LEVEL 3 */
 T12.levels.push({
@@ -739,7 +739,7 @@ T12.levels.push({
           stem: 'Build a balanced sentence: the new canteen rule has three aims.',
           tiles: ['The new rule aims to', 'cut sugar,', 'save money', 'and', 'reduce plastic waste'],
           solution: 'The new rule aims to cut sugar, save money and reduce plastic waste',
-          alt: [],
+          alt: ['The new rule aims to cut sugar, reduce plastic waste and save money'],
           hint: '“Aims to” is shared by all three items. What form must each item take after it?',
           why: 'The shared start <em>aims to</em> is followed by three base verbs in the same shape: <em>cut …, save … and reduce …</em>. Each item reads correctly on its own after the shared start (<em>aims to cut, aims to save, aims to reduce</em>), which is the test for parallel structure.' },
 
@@ -837,7 +837,7 @@ T12.levels.push({
         key: 'Two full sentences can be joined by a comma + a <strong>FANBOYS</strong> word (for, and, nor, but, or, yet, so) — never by a comma alone — and each coordinator has a precise meaning: <em>for</em> = because, <em>yet</em> = but surprisingly, <em>nor</em> = and not (+ question order).',
         body: [
           'An independent clause is a complete sentence. You can join two of them in only three correct ways: a full stop, a semicolon, or a comma + one of the seven coordinators, <strong>F-A-N-B-O-Y-S</strong>: <em>for, and, nor, but, or, yet, so</em>. A comma on its own is too weak — <em>The rain stopped at noon, the water kept rising</em> is a <u>comma splice</u>. Sentence linkers like <em>however</em> and <em>therefore</em> are not coordinators, so they cannot do the job after a comma either: <em>…at noon; however, the water kept rising</em>.',
-          'Each coordinator carries a relation. <em>And</em> adds; <em>but</em> contrasts; <em>yet</em> contrasts with surprise, and — unlike <em>but</em> — it can open a sentence in formal writing (<em>Yet this pride often comes with pressure</em>). <em>So</em> gives a result (the arrow points forward); <em>for</em> gives a reason (the arrow points backward) and is formal: it must follow a comma and a complete clause, and it cannot open a sentence as a reason word. <em>Or</em> gives an alternative. <em>Nor</em> adds a second negative and uses question order: <em>They did not panic, <u>nor did they</u> rush to leave.</em>',
+          'Each coordinator carries a relation. <em>And</em> adds; <em>but</em> contrasts; <em>yet</em> contrasts with surprise and, like <em>but</em>, can open a sentence (<em>Yet this pride often comes with pressure</em>). <em>So</em> gives a result (the arrow points forward); <em>for</em> gives a reason (the arrow points backward) and is formal: it must follow a comma and a complete clause, and it cannot open a sentence as a reason word. <em>Or</em> gives an alternative. <em>Nor</em> adds a second negative and uses question order: <em>They did not panic, <u>nor did they</u> rush to leave.</em>',
           '<strong>The procedure.</strong> Step 1 — check both sides: are they both full clauses? Step 2 — name the relation: extra, contrast, surprise, result, reason, alternative, second negative? Step 3 — check the shape after the coordinator: <em>nor</em> needs auxiliary + subject; <em>for</em> needs a reason that really explains the first clause. The most useful test for <em>so</em> vs <em>for</em>: swap the clauses and put <em>because</em> in — the one that makes sense tells you the direction.'
         ],
         simple: [
@@ -873,7 +873,7 @@ T12.levels.push({
           stem: 'Choose the best option for blank (1).',
           options: ['so', 'for', 'nor', 'yet'],
           answer: 1,
-          hint: 'Is the radio warning the reason for carrying the furniture, or what happened after it?',
+          hint: 'Does the radio warning explain why the families acted, or describe what happened next?',
           why: 'The radio warning explains <em>why</em> families carried their furniture upstairs, so the coordinator must give a reason: <em>for</em> (= because). <em>So</em> is the near miss — it links cause and result too, but points the other way (the furniture did not cause the warning). <em>Yet</em> needs a surprising contrast, and <em>nor</em> needs a negative first clause.' },
 
         { id: 't12l3s3-2', type: 'cloze', passage: T12_P33, blank: '(2)', tag: 'pl-coord', level: 'C1',
@@ -899,9 +899,9 @@ T12.levels.push({
 
         { id: 't12l3s3-5', type: 'spot', tag: 'pl-coord', level: 'C1',
           stem: 'One part is wrong. Find it.',
-          words: ['The rain stopped at noon,', 'however the water', 'kept rising', 'until late evening.'],
+          words: ['The rain stopped', 'at noon, however', 'the water kept rising', 'until late evening.'],
           answer: 1,
-          fix: 'but the water (or: noon; however, the water)',
+          fix: 'at noon, but',
           hint: 'Are there two full sentences here? What is joining them?',
           why: '<em>The rain stopped at noon</em> and <em>the water kept rising</em> are two full sentences, and <em>however</em> is not a coordinator, so a comma before it makes a comma splice. Use a coordinator (<em>…at noon, but the water…</em>) or a semicolon with <em>however</em> (<em>…at noon; however, the water…</em>).' }
       ]

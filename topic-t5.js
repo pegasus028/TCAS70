@@ -47,7 +47,7 @@ var T5_P_CON2 =
 var T5_P_CK1 =
 'Seeing Is No Longer Believing\n' +
 '\n' +
-'(1) During the floods in late September, a thirty-second clip of a crocodile swimming past a convenience store on a flooded Bangkok street was shared more than two million times in a single weekend. Rescue volunteers received dozens of calls from frightened residents. The crocodile had never existed. The clip had been produced in under a minute by someone who typed a single sentence into a text-to-video app.\n' +
+'(1) During a recent flood, a thirty-second clip of a crocodile swimming past a convenience store on a flooded Bangkok street was shared more than two million times in a single weekend. Rescue volunteers received dozens of calls from frightened residents. The crocodile had never existed. The clip had been produced in under a minute by someone who typed a single sentence into a text-to-video app.\n' +
 '\n' +
 '(2) Such apps are a gift to comedians and a headache for everyone else. For more than a century, a photograph or a film was treated as a record of something that had really happened. Photos lost that status years ago, once editing software became common. Video held on longer, because faking it required expensive equipment and hours of skilled work. That protection is now gone.\n' +
 '\n' +
@@ -82,7 +82,7 @@ var T5_P_ATT4 =
 'Forecasters expect a strong El Niño to develop over the coming months, and for Thailand that usually means a hotter, drier start to the year. Farmers in the North-East have heard such warnings before, and many have learned to plant crops that survive with less water. Cities have less experience. A drier dry season is likely to mean more burning in the countryside and worse PM2.5 in Bangkok and Chiang Mai, just as students sit their final exams. Hospitals in the North already see more patients with breathing problems in a normal dry season. None of this is cause for panic. It is, however, a good reason for schools to check their air purifiers and order spare filters now, rather than in February, when every shop has sold out.';
 
 var T5_P_FO1 =
-'Bangkok’s street-food stalls serve thousands of meals every night, and this year one district office opened four new “food streets” with running water, shared seating and waste bins. The new food streets are, without question, the most sensible thing the district has done for vendors in a decade. Vendors pay a monthly fee of 500 baht for a place, and the office says every place was taken within a month. Each food street is open from 5 p.m. to midnight and is cleaned by district staff every morning, and customers can pay by QR code at every stall. Several vendors say business has improved. Some older customers say they miss the old pavement stalls. Still, cleaner cooking areas are surely worth a little lost charm.';
+'Bangkok’s street-food stalls serve thousands of meals every night, and this year one district office opened four new “food streets” with running water, shared seating and waste bins. The new food streets are, without question, the most sensible thing the district has done for vendors in a decade. Vendors pay a monthly fee of 500 baht for a place, and the office says every place was taken within a month. Each food street is open from 5 p.m. to midnight and is cleaned by district staff every morning. Customers can pay by QR code at every stall. Several vendors say business has improved. Some older customers say they miss the old pavement stalls. Still, cleaner cooking areas are surely worth a little lost charm.';
 
 var T5_P_FO2 =
 '(1) Adults who regularly sleep fewer than six hours a night are more likely to develop high blood pressure, according to a 2026 review of 40 studies by researchers at the Andaman Medical College. (2) The review, which covered more than 900,000 people in 12 countries, is the largest of its kind so far. (3) Frankly, it is alarming that so many adults still treat sleep as a luxury. (4) The authors recommend that employers stop sending work messages after 9 p.m. (5) That advice is long overdue, and every company in Thailand should follow it. (6) Until then, the rest of us might start by putting our own phones away at bedtime. (7) The full review is available free of charge on the college’s website.';
@@ -94,7 +94,7 @@ var T5_P_CK2 =
 '\n' +
 '(2) She is far from alone. A 2026 survey of 3,000 Thai secondary students by the Green Campus Foundation found that the average respondent bought 38 new items of clothing a year and wore each of them fewer than seven times.\n' +
 '\n' +
-'(3) The environmental cost is well documented. Most ultra-cheap clothing is made from polyester, which is produced from oil and releases microplastic fibres in every wash. Unwanted garments are often shipped abroad or burned, and many of the workers who sew them earn wages that would not cover a week’s rent in Bangkok.\n' +
+'(3) The environmental cost is well documented. Most ultra-cheap clothing is made from polyester, which is produced from oil and releases microplastic fibres in every wash. Unwanted garments are often shipped abroad or burned, and many of the workers who sew them earn a monthly wage that would not cover a week’s rent in Bangkok.\n' +
 '\n' +
 '(4) It would be easy to blame teenagers for all this, and some commentators do, calling young shoppers “selfish” and “addicted”. That is unfair. Fashion apps are designed by some of the cleverest engineers in the world to make buying feel like a game, with countdown timers, daily “lucky draws” and an endless scroll. Asking a sixteen-year-old to resist all that on her own is like asking her to win a chess match against a computer.\n' +
 '\n' +
@@ -117,7 +117,7 @@ var T5_P_MEN1 =
 'Classrooms tend to reward the students who speak first and loudest. Participation marks, group presentations and debates all favour the quick talker. Yet speaking first is not the same as thinking best. In one experiment at a Bangkok secondary school, teachers asked students to spend one minute writing down their answer before anyone was allowed to speak. The number of students who contributed to the discussion rose from about a quarter of the class to more than half, and teachers rated the quality of the ideas as higher. Admittedly, the extra minute made lessons slightly slower, and some confident students found the wait frustrating. But one minute is a small price for hearing from the other half of the room.';
 
 var T5_P_MEN2 =
-'Governments have long tried to spread their culture abroad through official channels: embassies, festivals and language institutes. The results are often modest. Soft power, it seems, travels best when nobody appears to be pushing it. When a young Thai singer ate a plate of som tam during a live stream watched by eight million fans last year, several Thai restaurants in Seoul and Singapore reported that orders for the salad stayed high for weeks. No advertising campaign could have bought that kind of attention. This does not mean that official support is useless. Training chefs, protecting the quality of food exports and funding young film-makers all help to make sure that when the world’s attention arrives, there is something worth finding.';
+'Governments have long tried to spread their culture abroad through official channels: embassies, festivals and language institutes. The results are often modest. Soft power, it seems, travels best when nobody appears to be pushing it. When a young Thai singer ate a plate of som tam during a live stream watched by eight million fans last year, several Thai restaurants in Seoul and Singapore reported that orders for the salad jumped and stayed high for weeks. No advertising campaign could have bought that kind of attention. This does not mean that official support is useless. Training chefs, protecting the quality of food exports and funding young film-makers all help to make sure that when the world’s attention arrives, there is something worth finding.';
 
 var T5_P_NX1 =
 'Ask a group of M5 students how much they slept last night, and the answers will rarely reach eight hours. Most of us assume that we lose sleep because we stay up too late. For many Thai teenagers, however, the bigger thief is the alarm clock: early school starts, long journeys across the city and weekend tutoring sessions cut sleep from the other end. A student who sleeps six hours instead of eight on school nights loses ten hours in a single week. Over a school term, the missing hours add up to what researchers call “sleep debt”. Unlike a debt of money, however, it cannot simply be paid back with one long lie-in at the weekend, and the reasons for this are surprising.';
@@ -152,7 +152,7 @@ var T5_P_CK3 =
 '\n' +
 '(1) Every culture has a way of saying “hello” without words, and each carries rules that local people follow without thinking. In Thailand, the wai, with palms pressed together and head slightly bowed, signals respect, and the height of the hands shows how much. In much of Europe and the Americas, a firm handshake is expected in business meetings, while in parts of East Asia a light bow may be preferred.\n' +
 '\n' +
-'(2) These differences matter most when people are under pressure. In a 2026 study at the Andaman International University, 180 students from 20 countries rated job candidates from short, silent video clips. Candidates who greeted the interviewer in a way the viewer considered “normal” were rated as more confident and more trustworthy, even though the viewers heard nothing the candidates said. Admittedly, the clips lasted only ten seconds, and a real interview is far longer. Still, as the lead researcher, Dr Malee Prasertsak, put it, “Ten seconds is enough to decide whether you are going to listen with an open mind.”\n' +
+'(2) These differences matter most when people are under pressure. In a 2026 study at Andaman International University, 180 students from 20 countries rated job candidates from short, silent video clips. Candidates who greeted the interviewer in a way the viewers considered “normal” were rated as more confident and more trustworthy, even though the viewers heard nothing the candidates said. Admittedly, the clips lasted only ten seconds, and a real interview is far longer. Still, as the lead researcher, Dr Malee Prasertsak, put it, “Ten seconds is enough to decide whether you are going to listen with an open mind.”\n' +
 '\n' +
 '(3) The pandemic years added a new layer of confusion. Handshakes were replaced by elbow bumps, fist bumps and awkward waves, and many people are still unsure which greeting to offer. Younger people, in particular, seem to have developed a mixed system of their own, choosing a greeting according to whom they are meeting and where.\n' +
 '\n' +
@@ -309,7 +309,7 @@ T5.levels.push({
             'Most of them bought their T-shirts online.',
             'They owned more T-shirts than most adults do.',
             'Many of the T-shirts they owned were rarely worn.',
-            'They were not aware of the cost of making cotton.'
+            'They were not aware of the cost of making a T-shirt.'
           ],
           answer:2,
           hint:'Compare the two numbers in the last sentence of paragraph 1.',
@@ -330,12 +330,12 @@ T5.levels.push({
             { text:'More than 600 items changed hands in one afternoon.', bin:'stated' },
             { text:'The leftover clothes were given to a local charity.', bin:'stated' },
             { text:'The organisers were pleased with the first swap shop.', bin:'infer' },
-            { text:'Not every item brought to the swap shop found a new owner.', bin:'infer' },
+            { text:'The swap shop saved students the cost of new party outfits.', bin:'infer' },
             { text:'The students will never buy fast fashion again.', bin:'far' },
             { text:'The school hall was too small for the event.', bin:'far' }
           ],
           hint:'For each statement, find the words that prove it. Are they in the text, or in your imagination?',
-          why:'“600 items” and “charity” are written in the text. Planning to hold the event every term shows the organisers were pleased, and “the few that nobody took” shows not every item found an owner: both are one-step inferences. Nothing supports “never again” or a crowded hall; those are stories, not inferences.'
+          why:'“600 items” and “charity” are written in the text. Planning to hold the event every term shows the organisers were pleased, and swapping “instead of buying new outfits” means the students saved that money: both are one-step inferences. Nothing supports “never again” or a crowded hall; those are stories, not inferences.'
         }
       ]
     },
@@ -455,14 +455,14 @@ T5.levels.push({
           source:'Adapted for TCAS70 practice',
           stem:'The writer describes the speed of memes as “a double-edged sword” because ________.',
           options:[
-            'people share memes too quickly to find them funny',
+            'fast sharing makes memes funnier but less useful',
             'it makes memes harder for teachers to use in class',
             'memes are more effective than paragraphs at changing minds',
             'the quality that makes memes useful can also spread false claims'
           ],
           answer:3,
           hint:'Find the good thing about speed and the bad thing about speed in the same paragraph.',
-          why:'Speed lets a meme “say in one second what a paragraph cannot” (the good edge), but “the same format” can carry a false claim “just as fast” (the bad edge). One quality, two effects: that is a double-edged sword. Teachers are using memes successfully, so the first option contradicts the text, and the other two misread the paragraph.'
+          why:'Speed lets a meme “say in one second what a paragraph cannot” (the good edge), but “the same format” can carry a false claim “just as fast” (the bad edge). One quality, two effects: that is a double-edged sword. Teachers are using memes successfully, so the option about memes being harder for teachers to use contradicts the text; nothing says that speed makes memes less useful or that they change minds better than paragraphs do.'
         },
         {
           id:'t5l1s2-4',
@@ -592,7 +592,7 @@ T5.levels.push({
           ],
           answer:2,
           hint:'Reread her quotation. What role does she want the AI to play?',
-          why:'Dr Siriporn says that when students start with a blank page, “the AI then becomes an editor, not an author”: it helps after the student has found an idea. She is “careful not to claim” the results apply to science reports, and her study found the reverse of the third option. The idea page is used by one school; she never says every school should use it.'
+          why:'Dr Siriporn says that when students start with a blank page, “the AI then becomes an editor, not an author”: it helps after the student has found an idea. She is “careful not to claim” the results apply to science reports, and her study found the reverse of the claim that students who used AI from the start wrote better stories. The idea page is used by one school; she never says every school should use it.'
         },
         {
           id:'t5l1s3-3',
@@ -670,14 +670,14 @@ T5.levels.push({
         source:'Adapted for TCAS70 practice',
         stem:'The sentence “Such apps are a gift to comedians and a headache for everyone else” means that the apps ________.',
         options:[
+          'give comedians a way to earn money from videos',
           'were designed mainly for people who make comedy',
           'please entertainers but cause problems for most people',
-          'give comedians a free way to earn money from their videos',
           'were first popular with comedians but are now causing problems'
         ],
-        answer:1,
+        answer:2,
         hint:'Two groups, two reactions, at the same time. Which option keeps both?',
-        why:'A gift = something welcome; a headache = a problem. Comedians benefit, everyone else suffers, both now. The third option adds a time change (“first… but are now”), the same trick as TCAS69’s “used to be fun, but has become dangerous”. Nothing says the apps were designed for comedians or pay them.'
+        why:'A gift = something welcome; a headache = a problem. Comedians benefit, everyone else suffers, both now. The option “were first popular with comedians but are now causing problems” adds a time change, the same trick as TCAS69’s “used to be fun, but has become dangerous”. Nothing says the apps were designed for comedians or pay them.'
       },
       {
         id:'t5l1ck-3',
@@ -743,12 +743,12 @@ T5.levels.push({
         stem:'Dr Nattapong would most likely agree that ________.',
         options:[
           'building detectors is a waste of time and money',
+          'all AI-generated videos should carry a watermark',
           'good habits are a more durable defence than detectors',
-          'every AI-generated video should carry a hidden watermark',
           'young people are better than adults at recognising fake videos'
         ],
-        answer:1,
-        hint:'Build his profile from paragraphs 3 and 4: what does he say about detectors, and what does he believe in more?',
+        answer:2,
+        hint:'Use paragraphs 3–4: what does he say about detectors, and what does he trust more?',
         why:'He calls detection an arms race and says the “more durable defence lies with viewers themselves”, then shows that habits reduced sharing. “Durable” = longer-lasting. But he never calls detectors a waste; that is an exaggeration of his view. Watermarks are proposed by other researchers, and he never compares young people with adults.'
       }
     ]
@@ -771,7 +771,7 @@ T5.levels.push({
       theory:{
         key:'Every tone word sits on <strong>two dials</strong>: direction (positive, neutral, negative) and strength (mild or strong). Find the direction first, then choose the word with the <strong>same strength</strong> as the writer’s language.',
         body:[
-          'Tone is the feeling in the writer’s voice, and it leaves evidence in word choice. <em>Disappointing, unfortunately, fails to</em> push the needle negative; <em>genuinely good, to be fair, deserves</em> push it positive; numbers, dates and reporting verbs (<em>said, found</em>) keep it neutral. TCAS asks <em>“What is the tone of the passage/review?”</em> (TCAS66, 67, 68) with one-word options such as <em>critical, informative, humorous, sarcastic, nostalgic</em>.',
+          'Tone is the feeling in the writer’s voice, and it leaves evidence in word choice. Words such as <em>disappointing</em>, <em>unfortunately</em> and <em>fails to</em> push the needle towards negative; <em>genuinely good</em>, <em>to be fair</em> and <em>deserves</em> push it towards positive; numbers, dates and reporting verbs (<em>said, found</em>) keep it neutral. TCAS asks <em>“What is the tone of the passage/review?”</em> (TCAS66, 67, 68) with one-word options such as <em>critical, informative, humorous, sarcastic, nostalgic</em>.',
           'Picture a ladder. <strong>Strongly negative</strong>: hostile, scathing, outraged, fearful, bitter. <strong>Mildly negative</strong>: critical, concerned, skeptical, disappointed, cautionary. <strong>Neutral</strong>: objective, informative, neutral, factual. <strong>Mildly positive</strong>: approving, hopeful, optimistic, sympathetic. <strong>Strongly positive</strong>: enthusiastic, admiring, glowing. Some tones sit off the ladder because they are about <em>how</em> the writer speaks: <strong>sarcastic</strong> (saying the opposite to mock), <strong>humorous</strong>, <strong>nostalgic</strong> (warm longing for the past), <strong>sentimental</strong>.',
           'Here is how the distractors are built: they <strong>keep the direction and change the strength</strong>. A reviewer who says the café is loud but admits the Wi-Fi, staff and pastries are good is <em>critical</em>, not <em>hostile</em>. A writer who says “None of this is cause for panic” is <em>concerned</em>, not <em>fearful</em>. The strength test: hostile writers do not say “to be fair”; fearful writers do not say “no cause for panic”.',
           '<strong>Sarcasm check.</strong> If the words are positive but the facts are terrible (“after a <em>mere</em> six years”, “a <em>generous</em> seven seconds”), the tone is sarcastic. Words and facts pointing in opposite directions is the fingerprint.'
@@ -877,10 +877,10 @@ T5.levels.push({
           passage:T5_P_TONE1,
           source:'Adapted for TCAS70 practice',
           stem:'The writer’s tone when discussing phone use at lunchtime is best described as ________.',
-          options:['deeply fearful', 'openly hostile', 'mildly concerned', 'completely indifferent'],
+          options:['fearful', 'hostile', 'concerned', 'indifferent'],
           answer:2,
           hint:'Find the sentences where the writer softens the claims about phones.',
-          why:'The writer is worried (“It is worth asking what this habit costs them”) but keeps turning the volume down: the evidence “is not yet conclusive”, some effects are “small”, phones are not “evil”. That is mild concern. “Deeply fearful” and “openly hostile” are too strong for a writer who suggests only a “term-long experiment”, and a writer who raises the question is not indifferent.'
+          why:'The writer is worried (“It is worth asking what this habit costs them”) but keeps turning the volume down: the evidence “is not yet conclusive”, some effects are “small”, phones are not “evil”. That is concern, kept mild. “Fearful” and “hostile” are too strong for a writer who suggests only a “term-long experiment”, and a writer who raises the question is not indifferent.'
         },
         {
           id:'t5l2s1-5',
@@ -1575,7 +1575,7 @@ T5.levels.push({
           ],
           answer:2,
           hint:'Find the general claim in the sentence just before the example.',
-          why:'The sentence before says soft power “travels best when nobody appears to be pushing it”; the live stream is an example of exactly that, and “No advertising campaign could have bought that kind of attention” confirms it. The final paragraph says official support is not useless, which rules out the last option. Korean food and restaurant advertising are not discussed.'
+          why:'The sentence before says soft power “travels best when nobody appears to be pushing it”; the live stream is an example of exactly that, and “No advertising campaign could have bought that kind of attention” confirms it. The passage then says official support is not useless, which rules out the option about official campaigns being completely useless. Korean food and restaurant advertising are not discussed.'
         },
         {
           id:'t5l3s2-4',
@@ -1801,7 +1801,7 @@ T5.levels.push({
           'To explain why the viewers could not hear the candidates'
         ],
         answer:0,
-        hint:'Look at the word before it and the word that begins the next sentence.',
+        hint:'What does the writer do with this detail before continuing with Dr Malee’s view?',
         why:'“Admittedly… a real interview is far longer” is a concession: the writer admits a weakness of the study, then continues with “Still,” and the researcher’s quotation. The clips were silent by design, not because they were short; the text says real interviews are “far longer”; and nothing suggests first impressions are always wrong.'
       },
       {

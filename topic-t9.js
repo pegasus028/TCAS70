@@ -9,17 +9,17 @@
 /* ---------------------------------------------------------- shared passages */
 var T9_P_HAZE = 'Every dry season, a grey haze settles over Chiang Mai. Much of it is PM2.5, dust so fine that it can pass through the lungs and into the blood. Long-term ___(1)___ to this kind of air has been linked to heart and lung disease. On the worst days, the air can become ___(2)___ polluted, especially in the early morning before the wind picks up. Masks cannot protect children completely, but a well-fitted one offers a ___(3)___ level of protection, and many schools now keep students indoors when the air quality index passes 100.';
 
-var T9_P_AIVIDEO = 'Text-to-video apps can now produce clips that look ___(1)___ real. For many viewers, the ___(2)___ between a filmed event and a generated one has almost disappeared. Researchers warn that this could seriously ___(3)___ public trust in all video, including genuine footage of floods and earthquakes. Some platforms now add labels to AI content, but the labels are easy to remove and are applied ___(4)___ : one app may label a clip while another shows the same clip with no warning at all. Media-literacy teachers argue that the most ___(5)___ defence is a simple habit: pause, check the source, and ask who benefits before you share.';
+var T9_P_AIVIDEO = 'Text-to-video apps can now produce clips that look ___(1)___ real. For many viewers, the ___(2)___ between a filmed event and a generated one has almost disappeared. Researchers warn that this could seriously ___(3)___ public trust in all video, including genuine footage of floods and earthquakes. Some platforms now add labels to AI content, but the labels are easy to remove and are applied ___(4)___: one app may label a clip while another shows the same clip with no warning at all. Media-literacy teachers argue that the most ___(5)___ defence is a simple habit: pause, check the source, and ask who benefits before you share.';
 
-var T9_P_WALK = 'Researchers at Chao Phraya University tracked more than a thousand ___(1)___ through their first year of secondary school. Students who took a ___(2)___ walk before class concentrated better than those who went straight to their desks. They also reported lower levels of smartphone ___(3)___ , perhaps because they spent those minutes talking to friends instead of scrolling.';
+var T9_P_WALK = 'Researchers at Chao Phraya University tracked more than a thousand ___(1)___ through their first year of secondary school. Students who took a ___(2)___ walk before class concentrated better than those who went straight to their desks. They also reported lower levels of smartphone ___(3)___, perhaps because they spent those minutes talking to friends instead of scrolling.';
 
-var T9_P_FLOOD = 'In late September 2026, more than 300 millimetres of rain fell on parts of Bangkok in just ___(1)___ . Warnings reached residents through a ___(2)___ system called cell broadcast, which sends one message to every phone in an area at the same time. Emergency planners stress that a flood warning ___(3)___ a message but the start of a countdown. The problem is that many people ___(4)___ read alerts from senders they do not recognise, so the system works only if the public learns to trust it. The city said draining would take two to three days after the rain stopped, and the ___(5)___ barriers in eastern districts were reinforced.';
+var T9_P_FLOOD = 'In late September 2026, more than 300 millimetres of rain fell on parts of Bangkok in just ___(1)___. Warnings reached residents through a ___(2)___ system called cell broadcast, which sends one message to every phone in an area at the same time. Emergency planners stress that a flood warning ___(3)___ a message but the start of a countdown. The problem is that many people ___(4)___ read alerts from senders they do not recognise, so the system works only if the public learns to trust it. The city said draining would take two to three days after the rain stopped, and ___(5)___ barriers were reinforced in several districts.';
 
-var T9_P_SURVEY = 'When a survey of 2,000 students at a group of Bangkok schools was published, many teachers were ___(1)___ : almost half of the students questioned admitted using chatbots to write assignments. Yet the students themselves seemed ___(2)___ relaxed. “We use it like a dictionary,” one Grade 11 student explained, looking ___(3)___ at the reporter, as if the question itself were strange.';
+var T9_P_SURVEY = 'When a survey of 2,000 students at a group of Bangkok schools was published, many teachers were ___(1)___: almost half of the students questioned admitted using chatbots to write assignments. Yet the students themselves seemed ___(2)___ relaxed. “We use it like a dictionary,” one Grade 11 student explained, looking ___(3)___ at the reporter, as if the question itself were strange.';
 
 var T9_P_RAIN = 'More than 300 millimetres of rain fell on parts of Bangkok in 48 hours in late September 2026. Rarely ___(1)___ so much water arrive so quickly, and ___(2)___ the drains that traffic was blocked at 37 locations across the city. Only when the rain finally stopped ___(3)___ to fall, and even then officials warned that draining would take two to three days.';
 
-var T9_P_PHONE = 'A phone does not have to ring to distract you. In one experiment at Chao Phraya University, students who kept their phones on the desk, even switched off and face down, performed ___(1)___ on memory tests than students who left their phones in another room. The researchers were ___(2)___ by how large the gap was. Not only ___(3)___ lower, but they were also unaware that anything had affected them. It seems that ___(4)___ the phone is, the more attention it quietly steals. At the end of the session, the students whose phones were out of sight even looked ___(5)___ than the others.';
+var T9_P_PHONE = 'A phone does not have to ring to distract you. In one experiment at Chao Phraya University, students who kept their phones on the desk, even switched off and face down, performed ___(1)___ on memory tests than students who left their phones in another room. The researchers were ___(2)___ by how large the gap was. Not only ___(3)___ lower, but they were also unaware that anything had affected them. It seems that ___(4)___ the phone is to you, the more attention it quietly steals. At the end of the session, the students whose phones were out of sight even looked ___(5)___ than the others.';
 
 var T9 = {
   id: 't9', n: 9, code: 'System 09', art: 'layers',
@@ -41,7 +41,7 @@ T9.levels.push({
       theory: {
         key: 'Before you read the options, read the <strong>slot</strong>: the words on each side of the gap tell you whether it needs a noun, an adjective, an adverb or a verb.',
         body: [
-          'When TCAS prints four forms of one word (<em>efficient / efficiency / effective / effectively</em>), all four mean roughly the same thing. Meaning cannot separate them; <strong>grammar position</strong> can. Every English sentence is a row of seats, and each seat only takes one kind of word. So the fastest method is to ignore the options at first and ask: <em>what kind of word does this seat need?</em>',
+          'When TCAS prints four forms of one word (<em>effect / effective / effectively / effectiveness</em>), all four share one root and one core meaning. Meaning cannot separate them; <strong>grammar position</strong> can. Every English sentence is a row of seats, and each seat only takes one kind of word. So the fastest method is to ignore the options at first and ask: <em>what kind of word does this seat need?</em>',
           '<strong>The five slot rules.</strong> (1) <em>a / the / his / adjective</em> + ___ + <em>of / verb / full stop</em> → <strong>noun</strong> (<em>raised concerns about its ___</em> → efficiency). (2) <em>a / the</em> + ___ + <em>noun</em> → <strong>adjective</strong> (<em>a ___ level</em> → reasonable). (3) ___ + <em>adjective</em> → <strong>adverb</strong> (<em>stand out as ___ unusual</em> → truly). (4) <em>verb (+ object)</em> + ___, or ___ + <em>verb</em> → <strong>adverb</strong> (<em>can ___ affect their study</em> → negatively). (5) <em>can / will / to</em> + ___ → <strong>base verb</strong>.',
           '<strong>The procedure.</strong> Step 1: cover the options. Step 2: read three words left and three words right of the gap. Step 3: name the slot (N, Adj, Adv, V). Step 4: uncover the options and delete every form that does not fit. Usually one survives. If two survive (two nouns, say), Step 5: choose by meaning — <em>creation</em> is a thing you made, <em>creativity</em> is the ability to make things.',
           'The skill TCAS rewards is noticing <strong>which word the gap is really attached to</strong>. In “people think and remember ___ when their phones are nearby”, the gap is not describing “when”; it describes <em>how they think and remember</em>, so it needs an adverb. Always find the gap’s partner, even when it is three words away.'
@@ -136,7 +136,7 @@ T9.levels.push({
           'English builds families from one root: <em>identity, identical, identically, identify, identification</em>. The root carries the meaning; the <strong>suffix</strong> tells you the job. Noun labels: <em>-tion/-sion, -ment, -ness, -ity, -ance/-ence, -ism, -ship, -er/-or/-ist</em>. Adjective labels: <em>-al, -ous, -ive, -ful, -less, -able/-ible, -ic, -ent/-ant, -y</em>. Verb labels: <em>-ise/-ize, -ify, -en, -ate</em>. Adverb label: <em>-ly</em> added to an adjective (<em>careful → carefully</em>).',
           '<strong>Prefixes are different</strong>: <em>un-, in-, im-, dis-, mis-, ir-</em> change the <em>meaning</em> (often to the opposite) but not the job. That is why TCAS likes a pair such as <em>consistent / inconsistent</em>: both fit the seat, so only the context decides. The exception is <em>en-</em>, which makes verbs: <em>danger → endanger, able → enable, large → enlarge</em>.',
           '<strong>How TCAS tests it.</strong> The four options are usually one family, printed shortest to longest (<em>identity / identical / identically / identification</em>). Slot analysis removes two. The last two often share a label: two nouns (<em>identity</em> = who you are; <em>identification</em> = the act of identifying, or an ID card), or an adjective with and without a negative prefix. Step 5 of slot analysis — meaning — does the rest.',
-          '<strong>Two -ly traps.</strong> Some -ly words are adjectives, not adverbs: <em>friendly, lovely, costly, lonely, likely, elderly</em> (<em>a costly mistake</em>). And a few adjectives change spelling before -ly: <em>true → truly, whole → wholly, full → fully, public → publicly</em>.'
+          '<strong>Two -ly traps.</strong> Some -ly words are adjectives, not adverbs: <em>friendly, lovely, costly, lonely, likely, elderly</em> (<em>a costly mistake</em>). And a few adjectives change spelling before -ly: <em>true → truly, whole → wholly, full → fully</em>; adjectives in -ic add -ally (<em>basic → basically</em>), with the one famous exception <em>publicly</em>.'
         ],
         simple: [
           'The end of a word tells you its job. <em>-tion, -ment, -ness, -ity</em> = noun. <em>-al, -ous, -ive, -able</em> = adjective. <em>-ise, -ify, -en</em> = verb. <em>-ly</em> = usually adverb.',
@@ -170,14 +170,14 @@ T9.levels.push({
           passage: 'Teachers across the region are asking what happens when students let chatbots write every essay. The worry is not only about cheating. If a machine does all the imagining, students’ own ___(1)___ may slowly weaken, like a muscle that is never used.',
           blank: '(1)', stem: 'Choose the best option for blank (1).',
           options: ['creative', 'creation', 'creativity', 'creatively'], answer: 2,
-          hint: 'Two options are nouns. Which one is an ability that can weaken like a muscle?',
+          hint: 'Name the seat from its neighbours first. If two options survive, let the muscle comparison decide the meaning.',
           why: 'After “students’ own” and before the verb “may weaken”, we need a noun. Both <em>creation</em> and <em>creativity</em> are nouns, but a creation is a thing someone has made; the ability to imagine, which can weaken “like a muscle”, is <em>creativity</em>. “Creative” is an adjective and “creatively” an adverb.' },
 
         { id: 't9l1s2-2', type: 'cloze', tag: 'wf-family', level: 'B2',
           passage: 'Last term, a Bangkok school tested an AI detector on 300 essays. The tool wrongly flagged 40 honest essays as machine-written, and parents soon began to question the ___(1)___ of the tool.',
           blank: '(1)', stem: 'Choose the best option for blank (1).',
           options: ['reliance', 'reliable', 'reliably', 'reliability'], answer: 3,
-          hint: 'After “the” and before “of” is a noun seat. Which noun means “how far you can trust it”?',
+          hint: 'The seat is “the ___ of”, a noun seat. Two options are nouns: what exactly are the parents doubting?',
           why: 'The seat “the ___ of” needs a noun, and parents are doubting how trustworthy the detector is: its <em>reliability</em>. “Reliance” is also a noun but means dependence (“our reliance on phones”), which does not fit. “Reliable” is an adjective and “reliably” an adverb.' },
 
         { id: 't9l1s2-3', type: 'cloze', tag: 'wf-family', level: 'B2',
@@ -426,7 +426,7 @@ T9.levels.push({
           'Why is there an order at all? The closer an adjective is to the noun, the more it is part of <em>what the thing is</em>. <em>Purpose</em> and <em>material</em> almost define the object (a <em>running</em> shoe, a <em>silk</em> scarf), so they sit next to the noun. <em>Opinion</em> is just what you think today, so it goes furthest away. Native speakers feel this without knowing the list; you can learn the list.',
           '<strong>O-S-A-Sh-C-O-M-P:</strong> Opinion (<em>lovely, ugly</em>) → Size (<em>small, huge</em>) → Age (<em>old, brand-new</em>) → Shape (<em>round, square</em>) → Colour (<em>blue, navy</em>) → Origin (<em>Japanese, Thai</em>) → Material (<em>silk, plastic</em>) → Purpose (<em>fishing, sports, water</em>) → NOUN. Words that say how a thing was made, such as <em>handmade</em> or <em>hand-painted</em>, usually come just before origin: TCAS68’s key was <em>a small blue handmade Japanese ceramic dish</em>.',
           '<strong>How TCAS tests it:</strong> one blank, four orders of the same three or four adjectives. The options are the same length, so you cannot guess by length. Label each adjective with its letter (O, S, A, C…) and choose the option whose letters run in list order. You rarely need more than the first two words: once the opinion or size word is in the wrong place, the option is dead.',
-          '<strong>Commas:</strong> adjectives from <em>different</em> categories take no commas (<em>a small blue dish</em>). Two adjectives from the <em>same</em> category can take a comma or <em>and</em> (<em>a long, boring lecture</em>; <em>a cherished, delicate keepsake</em>).'
+          '<strong>Commas:</strong> adjectives from <em>different</em> categories take no commas (<em>a small blue dish</em>). Two adjectives from the <em>same</em> category can take a comma or <em>and</em> (<em>a warm, friendly teacher</em>; <em>a cheap and cheerful café</em>).'
         ],
         simple: [
           'The order is: opinion, size, age, shape, colour, country, material, what it is for, then the noun.',
@@ -472,15 +472,15 @@ T9.levels.push({
           blank: '(1)', stem: 'Choose the best option for blank (1).',
           options: ['beautiful long red Thai silk', 'long beautiful red Thai silk', 'beautiful red long Thai silk', 'Thai beautiful long red silk'], answer: 0,
           hint: 'Give each word a label: opinion, size, colour, origin, material. Which option keeps the labels in order?',
-          why: 'The order is opinion (beautiful) – size (long) – colour (red) – origin (Thai) – material (silk): <em>a beautiful long red Thai silk scarf</em>. The second option puts size before opinion, the third puts colour before size, and the fourth puts origin first, as if it were an opinion.' },
+          why: 'The order is opinion (beautiful) – size (long) – colour (red) – origin (Thai) – material (silk): <em>a beautiful long red Thai silk scarf</em>. “Long beautiful red…” puts size before opinion, “beautiful red long…” puts colour before size, and “Thai beautiful…” puts origin first, as if it were an opinion.' },
         { id: 't9l2s2-2', type: 'cloze', tag: 'wo-adjorder', level: 'B2+',
           passage: 'After six seasons, Krit finally replaced his ___(1)___ bag, the one he had carried to every football match since M1. His mother said it smelled like a changing room even after washing.',
           blank: '(1)', stem: 'Choose the best option for blank (1).',
           options: ['black ugly old sports', 'old ugly black sports', 'ugly black old sports', 'ugly old black sports'], answer: 3,
           hint: 'Find the opinion word and the purpose word first. Where must each one stand?',
-          why: 'Opinion (ugly) – age (old) – colour (black) – purpose (sports): <em>an ugly old black sports bag</em>. “Sports” tells us what the bag is for, so it hugs the noun. The other options put colour or age before the opinion word, or colour before age.' },
+          why: 'Opinion (ugly) – age (old) – colour (black) – purpose (sports): his <em>ugly old black sports</em> bag. “Sports” tells us what the bag is for, so it hugs the noun. The other options put colour or age before the opinion word, or colour before age.' },
         { id: 't9l2s2-3', type: 'build', tag: 'wo-adjorder', level: 'B2+',
-          stem: 'After the floods, shops sold out of these. Put the words in the natural order.',
+          stem: 'After the floods, shops quickly sold out of this item. Put the words in the natural order.',
           tiles: ['a', 'huge', 'round', 'white', 'plastic', 'water', 'tank'],
           solution: 'a huge round white plastic water tank', alt: [],
           hint: 'Size, shape, colour, material, purpose — then the noun.',
@@ -514,7 +514,7 @@ T9.levels.push({
           stem: 'Which phrase follows the natural order of adjectives?',
           options: ['a new stylish Korean skincare brand', 'a stylish new Korean skincare brand', 'a stylish Korean new skincare brand', 'a stylish new skincare Korean brand'], answer: 1,
           hint: 'Label the words: opinion, age, origin, purpose. Then check the order.',
-          why: 'Opinion (stylish) – age (new) – origin (Korean) – purpose/type (skincare) + noun: <em>a stylish new Korean skincare brand</em>. The first option puts age before opinion, the third puts origin before age, and the last separates “skincare” from the noun it defines.' }
+          why: 'Opinion (stylish) – age (new) – origin (Korean) – purpose/type (skincare) + noun: <em>a stylish new Korean skincare brand</em>. “A new stylish…” puts age before opinion, “stylish Korean new…” puts origin before age, and “skincare Korean brand” separates “skincare” from the noun it defines.' }
       ]
     },
 
@@ -802,7 +802,7 @@ T9.levels.push({
         key: 'When a <strong>negative or limiting</strong> word (Rarely, Not only, Only when, Little, No sooner) is moved to the front, the next clause switches to <strong>question order</strong>: auxiliary + subject + verb.',
         body: [
           '<strong>Why inversion?</strong> Fronting a negative word is a spotlight: the writer wants you to feel the “rarely” or the “little” before anything else. English marks that spotlight by flipping the subject and auxiliary, exactly as in a question: <em>Rarely <u>has the city</u> seen so much rain.</em> If there is no auxiliary, bring in <em>do/does/did</em>: <em>Not only <u>does screen use</u> harm sleep, but it also…</em>',
-          '<strong>The triggers.</strong> <em>Rarely, Seldom, Never, Hardly ever</em> · <em>Not only … but (also)</em> · <em>Little</em> (= not at all): <em>Little did we know…</em> · <em>No sooner had … than</em>, <em>Hardly/Scarcely had … when</em> · <em>Under no circumstances / On no account should…</em> · <em>Only when / Only after / Only if / Not until</em> + clause → the inversion is in the <strong>main</strong> clause, not in the time clause: <em>Only when the rain stopped <u>did the water</u> begin to fall.</em>',
+          '<strong>The triggers.</strong> <em>Rarely, Seldom, Never, Hardly ever</em> · <em>Not only … but (also)</em> · <em>Little</em> (= not at all): <em>Little did we know…</em> · <em>No sooner had … than</em>, <em>Hardly/Scarcely had … when</em> · <em>Under no circumstances / On no account should…</em> · <em>Only when / Only after / Only if / Not until</em> + clause → the inversion is in the <strong>main</strong> clause, not in the time clause: <em>Only when the rain stopped <u>did the water levels</u> begin to fall.</em>',
           '<strong>Emphatic fronting without negatives.</strong> <em>Such was the pressure on the drains that…</em> (Such + be + noun phrase + that). <em>So strong was the wind that…</em> (So + adjective + be + subject + that). Note: <em>so</em> goes with an adjective, <em>such</em> with a noun phrase.',
           '<strong>No inversion when…</strong> <em>only</em> or <em>not only</em> simply modifies the subject or sits mid-sentence: <em>Only Mint passed</em>; <em>She not only sings but also dances</em>. In TCAS text completion, check the options for an auxiliary in front of the subject — if the sentence begins with a trigger, that is almost always the key.'
         ],
@@ -815,7 +815,7 @@ T9.levels.push({
         examples: [
           { s: 'Rarely <strong>has the city seen</strong> so much rain in two days.', g: 'Rarely + has + subject + participle.' },
           { s: 'Not only <strong>does poor sleep harm</strong> memory, but it also weakens immunity.', g: 'no auxiliary → add does.' },
-          { s: 'Only when the rain stopped <strong>did the water begin</strong> to fall.', g: 'inversion in the main clause.' },
+          { s: 'Only when the rain stopped <strong>did the water levels begin</strong> to fall.', g: 'inversion in the main clause.' },
           { s: '<strong>Such was the pressure</strong> on the drains that roads flooded.', g: 'Such + be + noun phrase + that.' },
           { s: 'No sooner <strong>had we arrived</strong> than the storm began.', g: 'No sooner had … than (not when).' }
         ],
@@ -824,7 +824,7 @@ T9.levels.push({
         map: { center: 'Inversion', branches: [
           { label: 'Negative triggers', leaves: ['Rarely / Seldom / Never', 'Little did…', 'Under no circumstances'] },
           { label: 'Time triggers', leaves: ['No sooner had … than', 'Hardly had … when', 'Not until … did'] },
-          { label: 'Only + clause', leaves: ['Only when …, did …', 'Only if …, will …', 'invert main clause'] },
+          { label: 'Only + clause', leaves: ['Only when … did …', 'Only if … will …', 'invert main clause'] },
           { label: 'Emphasis', leaves: ['Such was the + noun', 'So + adj + was + subject'] }
         ] },
         moves: [
@@ -865,7 +865,7 @@ T9.levels.push({
             'No sooner did we arrived than the storm began.'
           ], answer: 0,
           hint: 'Two things to check: the order after “No sooner”, and the small word that joins the second part.',
-          why: '<em>No sooner</em> needs inversion with the past perfect (<em>had we arrived</em>) and is completed by <em>than</em>. The second option keeps normal order, the third uses “when”, which belongs to “Hardly had … when”, and the fourth wrongly uses a past form after “did”.' }
+          why: '<em>No sooner</em> needs inversion with the past perfect (<em>had we arrived</em>) and is completed by <em>than</em>. “No sooner we had arrived” keeps normal order, “had we arrived when” uses “when”, which belongs to “Hardly had … when”, and “did we arrived” wrongly uses a past form after “did”.' }
       ]
     }
   ],
@@ -889,7 +889,7 @@ T9.levels.push({
       stem: 'Choose the best option for blank (4).',
       options: ['closer', 'the closer', 'the closest', 'the more close'], answer: 1,
       hint: 'The second half of the sentence begins “the more attention…”. What must the first half look like?',
-      why: 'The second half is “the more attention it steals”, so the first half must mirror it with <em>the</em> + comparative: <em>the closer</em> the phone is. “Closer” lacks “the”, “the closest” is a superlative, and “the more close” uses “more” with a one-syllable adjective that takes -er.' },
+      why: 'The second half is “the more attention it steals”, so the first half must mirror it with <em>the</em> + comparative: <em>the closer</em> the phone is to you. “Closer” lacks “the”, “the closest” is a superlative, and “the more close” uses “more” with a one-syllable adjective that takes -er.' },
     { id: 't9l3ck-5', type: 'cloze', tag: 'wf-edIng', level: 'C1', passage: T9_P_PHONE, blank: '(5)',
       stem: 'Choose the best option for blank (5).',
       options: ['calmer', 'calmly', 'calmest', 'more calmly'], answer: 0,
@@ -904,7 +904,7 @@ T9.levels.push({
         'Only if do you revise daily, you will pass.'
       ], answer: 0,
       hint: 'With “Only if”, one clause keeps normal order and one inverts. Which one?',
-      why: 'After <em>Only if</em> + a condition clause, the <em>main</em> clause is inverted: Only if you revise daily <em>will you pass</em>. The second option keeps normal order in the main clause, and the last two wrongly invert the “if” clause instead.' }
+      why: 'After <em>Only if</em> + a condition clause, the <em>main</em> clause is inverted: Only if you revise daily <em>will you pass</em>. “Only if you revise daily, you will pass” keeps normal order in the main clause, and both sentences with “Only if do you revise” wrongly invert the “if” clause instead.' }
   ] }
 });
 

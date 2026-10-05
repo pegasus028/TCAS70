@@ -162,8 +162,8 @@ var T1_L_REPAIR = [
   { who: 'Staff', text: 'Oh dear. ___(2)___' },
   { who: 'Beam', text: 'About two days ago. I put it in a bag of rice, but nothing happened.' },
   { who: 'Staff', text: 'Rice doesn\'t really work, I\'m afraid. ___(3)___' },
-  { who: 'Beam', text: 'Yes, I do. It\'s under my student ID number.' },
-  { who: 'Staff', text: 'Great. Then the repair is free. It\'ll take about three days.' },
+  { who: 'Beam', text: 'Yes, I do. It\'s under my mobile number.' },
+  { who: 'Staff', text: 'Great. Then the repair is covered. It\'ll take about three days.' },
   { who: 'Beam', text: '___(4)___' },
   { who: 'Staff', text: 'I\'m afraid not. We have to send it to our main service centre in Bang Na.' }
 ];
@@ -207,7 +207,7 @@ var T1_L_SINGER = [
   { who: 'Manager', text: 'I\'m the manager tonight, sir. How can I help?' },
   { who: 'Customer', text: 'It\'s about the singer. ___(2)___ I can\'t even hear my wife across the table.' },
   { who: 'Manager', text: '___(3)___ He\'s new, and I\'m afraid he gets a bit excited when there\'s a full house.' },
-  { who: 'Customer', text: 'New? I\'m not surprised. He\'s singing every song in the wrong key, and he keeps waving at a table of university students by the door.' },
+  { who: 'Customer', text: 'New? I\'m not surprised. I can\'t see him from this corner without my glasses, but I can certainly hear him. Every song is in the wrong key, and my wife says he keeps waving at a table of university students by the door.' },
   { who: 'Manager', text: 'I\'ll have a word with him at the break. ___(4)___' },
   { who: 'Customer', text: 'That\'s kind, but what I\'d really like is some peace and quiet. By the way, what\'s the singer\'s name?' },
   { who: 'Manager', text: 'It\'s Tee. Tee Wongsakul. He\'s an engineering student, and he sings here at weekends.' },
@@ -340,13 +340,13 @@ T1.levels.push({
           stem: 'Choose the best option for blank (3).',
           options: [
             'Don\'t mention it.',
-            'Only with matcha KitKats!',
             'I\'m sorry to hear that, Ploy.',
+            'Only if you send matcha KitKats too!',
             'Thanks, but I don\'t collect postcards anymore.'
           ],
-          answer: 1,
+          answer: 2,
           hint: 'Ploy answers “Deal. One box a month.” What must Nan have asked for?',
-          why: '“Deal” accepts a condition, and “one box a month” shows Nan asked for something that comes in boxes: <em>Only with matcha KitKats!</em> (a playful “I\'ll accept your postcards if you send snacks too”). “Thanks, but I don\'t collect postcards” refuses the offer, so “Deal” makes no sense after it. “Don\'t mention it” answers thanks, and “I\'m sorry to hear that” treats a kind promise as bad news.'
+          why: '“Deal” accepts a condition, and “one box a month” shows Nan asked for something that comes in boxes: <em>Only if you send matcha KitKats too!</em> (a playful “I\'ll accept your postcards if you send snacks too”). “Thanks, but I don\'t collect postcards” refuses the offer, so “Deal” makes no sense after it. “Don\'t mention it” answers thanks, and “I\'m sorry to hear that” treats a kind promise as bad news.'
         },
         {
           id: 't1l1s1-4',
@@ -396,22 +396,22 @@ T1.levels.push({
       theory: {
         key: 'Agreement is a volume dial, not a switch — <em>You can say that again</em> → <em>I suppose so</em> → <em>I see your point, but…</em> → <em>I\'m afraid I disagree</em> — and to agree with a <strong>negative</strong> you say <strong>Neither do I</strong>, never <em>So do I</em>.',
         body: [
-          '<strong>The dial.</strong> Full agreement: <em>Absolutely. / Exactly. / You can say that again. / Tell me about it. / I couldn\'t agree more.</em> (Careful: <em>couldn\'t agree more</em> is the <em>strongest</em> yes, not a no.) Partial agreement: <em>I suppose so. / Fair enough. / That\'s true, but… / I see what you mean, but…</em> Polite disagreement: <em>I\'m not so sure. / I\'m afraid I don\'t agree. / Speak for yourself.</em> Blunt disagreement: <em>No way! / That\'s nonsense.</em> (fine between close friends, rude to a teacher).',
-          '<strong>Polarity: the reply must mirror the sentence.</strong> Agreeing with a positive: “I love K-dramas.” — “<em>So do I / Me too.</em>” Agreeing with a negative: “I don\'t like horror films.” — “<em>Neither do I / Me neither / Nor do I.</em>” Disagreeing flips it: “Oh, I do!” / “Really? I don\'t.” With <strong>negative questions and tags</strong>, English answers the <em>fact</em>, not the question: “Isn\'t the test on Friday?” — “<em>Yes, it is</em>” (it IS on Friday). Thai answers the question (“ไม่ใช่”, meaning “your idea is wrong”), which is why Thai students choose the wrong one.',
+          '<strong>The dial.</strong> Full agreement: <em>Absolutely. / Exactly. / You can say that again. / Tell me about it. / I couldn\'t agree more.</em> (Careful: <em>couldn\'t agree more</em> is the <em>strongest</em> yes, not a no.) Partial agreement: <em>I suppose so. / Fair enough. / That\'s true, but… / I see what you mean, but…</em> Polite disagreement: <em>I\'m not so sure. / I\'m afraid I don\'t agree.</em> Blunt or teasing disagreement: <em>No way! / Speak for yourself! / That\'s nonsense.</em> (fine between close friends, rude to a teacher).',
+          '<strong>Polarity: the reply must mirror the sentence.</strong> Agreeing with a positive: “I love K-dramas.” — “<em>So do I / Me too.</em>” Agreeing with a negative: “I don\'t like horror films.” — “<em>Neither do I / Me neither / Nor do I.</em>” Disagreeing flips it: “Oh, I do!” / “Really? I don\'t.” With <strong>negative questions, tags and statements</strong>, English answers the <em>fact</em>, not the speaker\'s idea: “Isn\'t the test on Friday?” — “<em>Yes, it is</em>” (it IS on Friday); “So you\'re not coming?” — “<em>No, I\'m not</em>” (I am NOT coming). The second kind is the Thai trap: in Thai you agree with the idea first (“ใช่ ไม่ไป” = “right, I\'m not going”), so students translate it as “Yes” — and in English “Yes” means “Yes, I AM coming”.',
           '<strong>How TCAS tests it.</strong> The line after the blank reveals the dial position. If it starts with <em>But…</em>, the blank usually agreed only partly (“Fair enough. <em>But</em> for the whole day?”). If the next speaker keeps arguing, the blank disagreed. In TCAS67 two friends at a restaurant entrance: one says “OK, forget it. We\'ll try another place.” The other replies ___, and the first answers “<em>But</em> what if we order something we don\'t like?” That “But” shows the blank <em>pushed back</em> (“No, no. Be brave…”); the tempting option that agrees (“Agreed. We might end up getting something we can\'t eat”) is perfect English and completely wrong.'
         ],
         simple: [
           'Agreement can be strong (Absolutely!), half (I suppose so, but…) or polite no (I\'m not so sure).',
           'If your friend says something negative (“I don\'t like it”), agree with “Neither do I” or “Me neither”.',
-          'For “Isn\'t it on Friday?” say “Yes, it is” if it IS on Friday.'
+          'Answer the fact, not the idea: “Isn\'t it on Friday?” → “Yes, it is” if it IS on Friday. “You\'re not coming?” → “No, I\'m not” if you are NOT coming (not “Yes”).'
         ],
-        thai: 'การเห็นด้วยและไม่เห็นด้วยมีหลายระดับ ตั้งแต่ Absolutely! / You can say that again (เห็นด้วยเต็มที่) ไปจนถึง I suppose so / I see your point, but… (เห็นด้วยบางส่วน) และ I\'m afraid I disagree (ไม่เห็นด้วยอย่างสุภาพ) ถ้าอีกฝ่ายพูดประโยคปฏิเสธ เช่น I don\'t like horror films. ต้องตอบว่า Neither do I / Me neither ไม่ใช่ So do I ส่วนคำถามปฏิเสธ เช่น Isn\'t it on Saturday? ภาษาอังกฤษตอบตามข้อเท็จจริง ถ้าจัดวันเสาร์จริงให้ตอบ Yes, it is. ไม่ใช่ตอบตามความคิดแบบไทยว่า “ไม่ใช่” กับดักสำคัญคือคำว่า But ในบรรทัดถัดไป ซึ่งมักบอกว่าช่องว่างเป็นการเห็นด้วยเพียงบางส่วนหรือเป็นการแย้ง',
+        thai: 'การเห็นด้วยและไม่เห็นด้วยมีหลายระดับ ตั้งแต่ Absolutely! / You can say that again (เห็นด้วยเต็มที่) ไปจนถึง I suppose so / I see your point, but… (เห็นด้วยบางส่วน) และ I\'m afraid I disagree (ไม่เห็นด้วยอย่างสุภาพ) ถ้าอีกฝ่ายพูดประโยคปฏิเสธ เช่น I don\'t like horror films. ต้องตอบว่า Neither do I / Me neither ไม่ใช่ So do I ส่วนคำถามหรือประโยคปฏิเสธ ภาษาอังกฤษตอบตาม “ข้อเท็จจริง” ไม่ได้ตอบว่าเห็นด้วยกับผู้ถามหรือไม่ เช่น Isn\'t it on Saturday? ถ้าจัดวันเสาร์จริงให้ตอบ Yes, it is. และ So you\'re not coming? ถ้าไม่ไปจริงต้องตอบ No, I\'m not. (คนไทยมักตอบว่า “ใช่ ไม่ไป” แล้วแปลเป็น Yes ซึ่งในภาษาอังกฤษจะแปลว่า “ไปสิ”) กับดักสำคัญคือคำว่า But ในบรรทัดถัดไป ซึ่งมักบอกว่าช่องว่างเป็นการเห็นด้วยเพียงบางส่วนหรือเป็นการแย้ง',
         examples: [
           { s: '“This homework is endless.” — “<strong>You can say that again.</strong>”', g: 'Full-volume agreement (I agree so much you could repeat it).' },
           { s: '“I don\'t trust that website.” — “<strong>Neither do I.</strong>”', g: 'Agreeing with a negative → neither / nor / me neither.' },
           { s: '“Exams are useful.” — “<strong>I suppose so.</strong> But not every week!”', g: 'Partial agreement, then “But”.' },
-          { s: '“Isn\'t the café closed on Mondays?” — “<strong>Yes, it is.</strong> Let\'s go on Tuesday.”', g: 'Negative question → answer the fact: it IS closed.' },
-          { s: '“The quiz was easy.” — “<strong>Speak for yourself!</strong> I got 3 out of 10.”', g: 'Polite-humorous disagreement: that\'s true for you, not me.' }
+          { s: '“So you\'re not entering the competition?” — “<strong>No, I\'m not.</strong> Not this year.”', g: 'Negative statement → answer the fact: I am NOT entering (Thai “ใช่” here is not “Yes”).' },
+          { s: '“The quiz was easy.” — “<strong>Speak for yourself!</strong> I got 3 out of 10.”', g: 'Casual, teasing disagreement (friends only): that\'s true for you, not me.' }
         ],
         trap: 'The polarity trap: after a negative (“I don\'t think it would work”), <em>So do I</em> looks like agreement but actually agrees with a positive sentence nobody said. Dodge: check whether the first speaker\'s verb is negative; if it is, only <em>Neither / Nor / Me neither</em> agree. And with negative questions, answer the fact, not the grammar.',
         analogy: {
@@ -431,11 +431,11 @@ T1.levels.push({
             },
             {
               label: 'Disagreement',
-              leaves: ['I\'m not so sure', 'Speak for yourself', 'I\'m afraid I disagree']
+              leaves: ['I\'m not so sure', 'I\'m afraid I disagree', 'Speak for yourself! (friends only)']
             },
             {
               label: 'Polarity',
-              leaves: ['+ So do I / Me too', '− Neither do I / Me neither', 'Isn\'t it…? Yes, it is']
+              leaves: ['+ So do I / Me too', '− Neither do I / Me neither', 'Isn\'t it…? → Yes, it is (if it is)', 'You\'re not…? → No, I\'m not (if not)']
             }
           ]
         },
@@ -707,10 +707,10 @@ T1.levels.push({
         lines: T1_L_RESULTS,
         blank: '(3)',
         stem: 'Choose the best option for blank (3).',
-        options: ['Maybe not yet.', 'Yes, it\'s your best.', 'I\'m afraid I disagree.', 'You can say that again.'],
-        answer: 0,
+        options: ['Neither is mine.', 'Of course it is!', 'Well, maybe not yet.', 'I\'m afraid I disagree.'],
+        answer: 2,
         hint: 'Mint wants to be honest but kind. Which reply agrees gently and fits the “But…” that follows?',
-        why: 'Mint agrees softly that physics is not Pun\'s subject yet, and “But that\'s what the resit is for” turns to hope: <em>Maybe not yet.</em> “You can say that again” also agrees, but at full volume, which is unkind to a friend who has just failed twice: right meaning, wrong tone. “Yes, it\'s your best” and “I\'m afraid I disagree” claim physics IS his subject, which his two failures contradict.'
+        why: 'Mint agrees softly that physics is not Pun\'s subject yet, and “But that\'s what the resit is for” turns to hope: <em>Well, maybe not yet.</em> “Neither is mine” is the near miss: it agrees with a negative correctly, but it changes the subject to Mint, so “But that\'s what the resit is for” no longer follows, and she then offers to help him revise it. “Of course it is!” and “I\'m afraid I disagree” claim physics IS his subject, which his two failures contradict.'
       },
       {
         id: 't1l1ck-4',
@@ -746,10 +746,10 @@ T1.levels.push({
         lines: T1_L_CORRIDOR,
         blank: '(6)',
         stem: 'Choose the best option for blank (6).',
-        options: ['Yes, it is.', 'No, it isn\'t.', 'No, it\'s on a Monday.', 'Yes, from Monday to Friday.'],
+        options: ['Yes, it is.', 'No, it isn\'t.', 'No, it\'s on a Friday.', 'Yes, it\'s on a Monday.'],
         answer: 0,
         hint: 'Ms Kate says Aom “won\'t miss a thing”. So when is the round, and how does English answer a negative question?',
-        why: '“Then you won\'t miss a thing” means the round is not on a school day, so it IS on a Saturday. English answers a negative question by the fact: <em>Yes, it is.</em> “No, it isn\'t” is the Thai-logic trap (“ไม่ใช่” = “you are wrong”) and would mean the round is not on Saturday. The two weekday answers contradict Ms Kate\'s conclusion.'
+        why: '“Then you won\'t miss a thing” means the round is not on a school day, so it IS on a Saturday. English answers a negative question by the fact: <em>Yes, it is.</em> “No, it isn\'t” would mean the round is NOT on Saturday, which contradicts “Then you won\'t miss a thing”. “No, it\'s on a Friday” and “Yes, it\'s on a Monday” both put the round on a school day, so Aom would miss classes after all.'
       }
     ]
   }
@@ -785,7 +785,7 @@ T1.levels.push({
           { s: '“Would you mind if I opened the window?” — “<strong>Go ahead.</strong>”', g: 'Permission with if + past; answer = yes, you may.' },
           { s: '“Shall I carry that for you?” — “<strong>Thanks, that\'s kind of you.</strong>”', g: 'An offer is accepted with thanks, not “Go ahead”.' },
           { s: '“We\'re making a TikTok about the flood drill. Want to join?” — “<strong>Count me in!</strong>”', g: 'Invitation accepted (include me).' },
-          { s: '“Are you free on Saturday?” — “<strong>I\'d love to come, but</strong> I\'ve got tutoring.”', g: 'Polite refusal: warm start + reason.' }
+          { s: '“Do you want to come to my party on Saturday?” — “<strong>I\'d love to, but</strong> I\'ve got tutoring.”', g: 'Polite refusal: warm start + reason.' }
         ],
         trap: '<em>Would you mind…?</em> answered with <em>Yes, of course!</em> Students translate “yes = OK”, but <em>Yes</em> means “Yes, I mind”. TCAS also swaps jobs: an option that answers an <em>offer</em> (“That\'s kind of you”) placed after a <em>request</em>. Dodge: ask “who is going to do the action?” before you choose the reply.',
         analogy: {
@@ -1129,7 +1129,7 @@ T1.levels.push({
           ],
           answer: 3,
           hint: 'Mint\'s reply begins “Every night?” What must Fah have suggested?',
-          why: 'Mint echoes the advice (“Every night? … it\'s worth a try”), so Fah suggested a nightly routine: <em>Why don\'t you do one timed article every night?</em> “You should have started last year” only criticises the past and could not be “worth a try”. “How about taking a break” is advice, but not something done every night.'
+          why: 'Mint echoes the advice (“Every night? … it\'s worth a try”), so Fah suggested a nightly routine: <em>Why don\'t you do one timed article every night?</em> “You should have started last year” only criticises the past and could not be “worth a try”. “How about a break from reading?” is advice, but not something done every night.'
         },
         {
           id: 't1l2s3-2',
@@ -1214,13 +1214,13 @@ T1.levels.push({
         stem: 'Choose the best option for blank (1).',
         options: [
           'I\'d like to order som tam.',
-          'I\'m calling about an order.',
+          'I\'m calling about my order.',
           'Thanks for the fast delivery.',
           'Can you recommend a good dish?'
         ],
         answer: 1,
         hint: 'Read what Nan says right after the gap. Why is she calling?',
-        why: 'Nan goes on to report a missing dish, so her opener introduces a complaint: <em>I\'m calling about an order.</em> “I\'d like to order som tam” is the near miss: it mentions the right dish but makes a new order, and she has called customer service, not the restaurant. Thanking for fast delivery and asking for a recommendation do not lead into a complaint.'
+        why: 'Nan goes on to report a missing dish, so her opener introduces a complaint: <em>I\'m calling about my order.</em> “I\'d like to order som tam” is the near miss: it mentions the right dish but makes a new order, and she has called customer service, not the restaurant. Thanking for fast delivery and asking for a recommendation do not lead into a complaint.'
       },
       {
         id: 't1l2ck-2',
@@ -1297,10 +1297,10 @@ T1.levels.push({
         lines: T1_L_ANKLE,
         blank: '(6)',
         stem: 'Choose the best option for blank (6).',
-        options: ['Count me in, let\'s go!', 'Thanks, but I can manage.', 'I wish I could, but I can\'t.', 'Sure, what time should I meet you?'],
+        options: ['Count me in, let\'s go!', 'Thanks, but I can manage.', 'I\'d love to, but I\'ve got maths.', 'Sure, what time should I meet you?'],
         answer: 2,
         hint: 'Krit answers “No worries. I\'ll ask Mint instead.” Did Pun agree to go?',
-        why: '“I\'ll ask Mint instead” shows Pun refused, and “No worries” shows he refused politely: <em>I wish I could, but I can\'t.</em> “Count me in” and “Sure, what time…?” accept, so Krit would not need Mint. “Thanks, but I can manage” is how you refuse an <em>offer</em> of help, but here Krit is the one asking for help.'
+        why: '“I\'ll ask Mint instead” shows Pun refused, and “No worries” shows he refused politely, with a reason: <em>I\'d love to, but I\'ve got maths.</em> “Count me in” and “Sure, what time…?” accept, so Krit would not need Mint. “Thanks, but I can manage” is how you refuse an <em>offer</em> of help, but here Krit is the one asking for help.'
       }
     ]
   }
@@ -1340,7 +1340,7 @@ T1.levels.push({
           { s: 'A: ___ &nbsp; B: <strong>I\'m afraid not.</strong> We\'re fully booked.', g: 'A request hoping for yes (Do you have a table for two?).' },
           { s: 'A: ___ &nbsp; B: <strong>Medium, usually.</strong>', g: 'What size…? (the answer\'s shape gives it away).' }
         ],
-        trap: 'The right-topic, wrong-shape option. After “Yes, I do. It\'s under my student ID”, TCAS will offer “What is your warranty number?” (right topic, but a wh-question cannot be answered “Yes, I do”) and “Would you like a warranty?” (right topic, wrong auxiliary). Dodge: match the <em>first two words</em> of the reply before you think about meaning.',
+        trap: 'The right-topic, wrong-shape option. After “Yes, I do. It\'s under my mobile number”, TCAS will offer “What is your insurance number?” (right topic, but a wh-question cannot be answered “Yes, I do”) and “Would you like insurance?” (right topic, wrong auxiliary). Dodge: match the <em>first two words</em> of the reply before you think about meaning.',
         analogy: {
           title: 'The jigsaw edge',
           text: 'A missing jigsaw piece has two edges to match, but one edge usually has the strange bump that only one piece fits. In a TCAS dialogue that bump is the line after the blank. Find the piece that clicks into that edge, then check that the other side fits too.'
@@ -1408,10 +1408,10 @@ T1.levels.push({
           lines: T1_L_REPAIR,
           blank: '(3)',
           stem: 'Choose the best option for blank (3).',
-          options: ['Did you buy it here?', 'Do you have a warranty?', 'What is your warranty number?', 'Would you like to buy a warranty?'],
+          options: ['Did you buy it here?', 'Do you have phone insurance?', 'What is your insurance number?', 'Would you like to buy insurance?'],
           answer: 1,
           hint: 'Look at the first three words of Beam\'s reply. Which auxiliary must the question use?',
-          why: 'The reply “Yes, I <strong>do</strong>” echoes a <em>Do</em>-question: <em>Do you have a warranty?</em> “Did you buy it here?” would get “Yes, I did”. “Would you like to buy a warranty?” would get “Yes, I would” and makes no sense with “It\'s under my student ID number”. “What is your warranty number?” is a wh-question, so it cannot be answered with “Yes”.'
+          why: 'The reply “Yes, I <strong>do</strong>” echoes a <em>Do</em>-question: <em>Do you have phone insurance?</em> “Did you buy it here?” would get “Yes, I did”. “Would you like to buy insurance?” would get “Yes, I would” and makes no sense with “It\'s under my mobile number”. “What is your insurance number?” is a wh-question, so it cannot be answered with “Yes”.'
         },
         {
           id: 't1l3s1-4',
@@ -1429,7 +1429,7 @@ T1.levels.push({
           ],
           answer: 0,
           hint: 'The reply starts “I\'m afraid not.” What kind of question can be answered that way?',
-          why: '“I\'m afraid not” answers a yes/no question that hoped for yes, and the reason given (it goes to Bang Na) explains why it is slow: <em>Is there a faster option?</em> “Why does it take so long to fix?” is the near miss: the reason fits, but a why-question cannot be answered “I\'m afraid not”. The cost question was already answered (it is free), and “Who…?” needs a person.'
+          why: '“I\'m afraid not” answers a yes/no question that hoped for yes, and the reason given (it goes to Bang Na) explains why it is slow: <em>Is there a faster option?</em> “Why does it take so long to fix?” is the near miss: the reason fits, but a why-question cannot be answered “I\'m afraid not”. The cost question was already answered (the repair is covered), and “Who…?” needs a person.'
         },
         {
           id: 't1l3s1-5',
@@ -1562,10 +1562,10 @@ T1.levels.push({
           lines: T1_L_PROF,
           blank: '(3)',
           stem: 'Choose the best option for blank (3).',
-          options: ['Yes, I am.', 'Yes, you are.', 'No, it was me.', 'Whatever, I can\'t remember.'],
+          options: ['Yes, I am.', 'No, I\'m not.', 'No, that was my friend Pim.', 'Whatever, I can\'t remember.'],
           answer: 0,
           hint: 'The question tag is “aren\'t you?”, and Ploy then hopes her question wasn\'t silly. So did she ask it?',
-          why: 'Ploy did ask the question (she hopes “it wasn\'t a silly question”), so she confirms the tag “aren\'t you?” with <em>Yes, I am.</em> “Yes, you are” uses the wrong pronoun, and “No, it was me” contradicts itself. “Whatever, I can\'t remember” is far too rude for a professor and contradicts her next sentence.'
+          why: 'Ploy did ask the question (she hopes “it wasn\'t a silly question”), so she confirms the tag “aren\'t you?” with <em>Yes, I am.</em> “No, I\'m not” is the polarity trap: it is a correct short answer in form, but it denies asking the question, which clashes with “I hope it wasn\'t a silly question”. “No, that was my friend Pim” denies it too, and “Whatever, I can\'t remember” is far too rude for a professor.'
         },
         {
           id: 't1l3s2-4',
@@ -1817,10 +1817,10 @@ T1.levels.push({
         lines: T1_L_SINGER,
         blank: '(5)',
         stem: 'Choose the best option for blank (5).',
-        options: ['Then he\'s gifted.', 'Then that\'s my son.', 'Then give him a pay rise.', 'Then I\'d like his autograph.'],
+        options: ['He\'s very talented.', 'Wait, that\'s my son!', 'He deserves a pay rise.', 'I\'d love his autograph.'],
         answer: 1,
         hint: 'Read the rest of the customer\'s sentence: “He told his mother and me…”. Who is Tee?',
-        why: 'The customer recognises the family name, and “He told his mother and me he\'d be at the library” reveals the twist: <em>Then that\'s my son.</em> The complaining customer is the singer\'s father, and the “wife” he couldn\'t hear is Tee\'s mother. The other options react to a stranger\'s talent, which does not connect to “his mother and me”.'
+        why: 'The customer recognises the family name, and “He told his mother and me he\'d be at the library” reveals the twist: <em>Wait, that\'s my son!</em> The complaining customer is the singer\'s father, and the “wife” he couldn\'t hear is Tee\'s mother. The other options react to a stranger\'s talent, which does not connect to “his mother and me”.'
       },
       {
         id: 't1l3ck-6',

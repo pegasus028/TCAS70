@@ -194,11 +194,11 @@ var T6_V_WASTE = { kind:'table',
   source:T6_SRC };
 
 var T6_V_WEEK = { kind:'bar',
-  title:'Food scraps collected from the school canteen, September 2026',
+  title:'Food scraps collected from the school canteen, 31 August–25 September 2026',
   unit:'kg',
   labels:['Week 1','Week 2','Week 3','Week 4*'],
   series:[{ name:'Food scraps', values:[210, 196, 204, 118] }],
-  note:'Weeks 1–3 had five school days each. *Week 4 had only three school days because the school closed during the late-September floods. Illustrative data for practice.',
+  note:'Weeks 1–3 had five school days each. *Week 4 (21–25 September) had only three school days because the school closed on 24–25 September during the floods. Illustrative data for practice.',
   source:T6_SRC };
 
 var T6 = {
@@ -310,7 +310,7 @@ T6.levels.push({
       theory:{
         key:'Turn every number question into one calculation — <strong>divide</strong> for “times as many”, <strong>add</strong> for “combined”, <strong>subtract</strong> for “difference” and “closest pair” — and work it out on paper, not in your head.',
         body:[
-          'TCAS69 asked three arithmetic questions on one table: <em>“Bangkok has approximately six times as many foreign tourists as which province?”</em>, <em>“Which pair of provinces showed the closest figures?”</em> and, on a pie chart, <em>“What is the combined percentage…?”</em> None of them needs advanced maths. They need you to recognise which operation the English words are asking for. <strong>Times as many</strong> = divide the big number by the small one. <strong>Combined / together / in total</strong> = add. <strong>Difference / how many more / gap</strong> = subtract. <strong>Closest pair</strong> = subtract inside each pair and choose the smallest result.',
+          'TCAS69 asked three arithmetic questions on its visuals: two on a table, <em>“Bangkok has approximately six times as many foreign tourists as which province?”</em> and <em>“Which pair of provinces showed the closest figures?”</em>, and one on a pie chart, <em>“What is the combined percentage…?”</em> None of them needs advanced maths. They need you to recognise which operation the English words are asking for. <strong>Times as many</strong> = divide the big number by the small one. <strong>Combined / together / in total</strong> = add. <strong>Difference / how many more / gap</strong> = subtract. <strong>Closest pair</strong> = subtract inside each pair and choose the smallest result.',
           '“Approximately” questions reward rounding. To test “Bangkok had approximately five times as many as…”, round first: Bangkok ≈ 5.4 million. Five times what is 5.4 million? About 1.1 million, so look for a province near 1.1 million: Chiang Mai (1,086,000). You do not need to divide every option exactly; you need a target number. Krabi (904,000) gives about six times, not five, so it is the near miss.',
           '<strong>Percent vs percentage points.</strong> If 40% of M6 students read weekly in 2024 and 29% did in 2026, the fall is <strong>11 percentage points</strong> (40 − 29). It is not “11 percent”: 11 is about 28% of 40. TCAS69 wrote “percentage difference” loosely, but the options were simple subtractions, so subtract unless the stem clearly asks for a ratio. And <strong>check the year</strong>: when a table has two years, distractors are built by subtracting across the wrong years.',
           '<strong>Multi-step questions</strong> hide two operations in one stem: <em>“How many more visitors did Bangkok receive than Phuket and Chonburi combined?”</em> First add (2,712,000 + 1,905,000 = 4,617,000), then subtract (5,436,000 − 4,617,000 = 819,000). Every wrong option is the result of stopping after one step or choosing the wrong operation, so write each step down.'
@@ -360,7 +360,7 @@ T6.levels.push({
           options:['Phuket – Chonburi','Krabi – Surat Thani','Phang Nga – Udon Thani','Phang Nga – Prachuap Khiri Khan'],
           answer:3,
           hint:'Subtract inside each pair. The smallest gap wins.',
-          why:'Phang Nga (297,000) and Prachuap Khiri Khan (318,000) are only 21,000 apart. Krabi and Surat Thani look close because they are next to each other in the table, but the gap is 33,000. Phang Nga – Udon Thani is 179,000 apart and Phuket – Chonburi 807,000.' },
+          why:'Phang Nga (297,000) and Prachuap Khiri Khan (318,000) are only 21,000 apart. Krabi and Surat Thani look close (904,000 vs 871,000), but the gap is 33,000. Phang Nga – Udon Thani is 179,000 apart and Phuket – Chonburi 807,000.' },
 
         { id:'t6l1s2-3', type:'judge', tag:'vs-math', level:'B2', visual:T6_V_TOUR,
           given:'Use the table of foreign visitors, January–June 2026.',
@@ -471,7 +471,7 @@ T6.levels.push({
           ],
           answer:1,
           hint:'Look at the bracket at the end of the title. What is the number a percentage of?',
-          why:'The title says the figures are “% of students in each grade”, so 38 means 38% of the M5 students surveyed. It is not 38 people, not minutes, and not a share of all weekly readers; that last option is the near miss because it keeps the % but changes the group.' },
+          why:'The title says the figures are “% of students in each grade”, so 38 means 38% of the M5 students surveyed. It is not 38 people, not minutes, and not a share of all weekly readers; “38% of all the students who read weekly” is the near miss because it keeps the % but changes the group.' },
 
         { id:'t6l1s3-5', type:'sort', tag:'vs-title', level:'B2', visual:T6_V_SLEEP,
           stem:'These are possible titles for the sleep chart. Put each one in the right bin.',
@@ -526,7 +526,7 @@ T6.levels.push({
       options:['Germany – Laos','South Korea – Russia','Japan – United States','United States – United Kingdom'],
       answer:1,
       hint:'Work out the gap inside each pair before choosing.',
-      why:'South Korea (1,050,000) and Russia (1,020,000) are only 30,000 apart. The United States and the United Kingdom are 40,000 apart, Germany and Laos 45,000, and Japan and the United States 130,000. Pairs that are next to each other in the ranking are not always the closest.' },
+      why:'South Korea (1,050,000) and Russia (1,020,000) are only 30,000 apart. The United States and the United Kingdom are 40,000 apart, Germany and Laos 45,000, and Japan and the United States 130,000. Every pair here is next to each other in the ranking, so only the subtraction tells you which gap is smallest.' },
 
     { id:'t6l1ck-5', type:'read', tag:'vs-math', level:'B2+', passage:'', visual:T6_V_ORIGIN,
       stem:'Visitors from Malaysia and India combined outnumbered visitors from China by ________.',
@@ -575,7 +575,7 @@ T6.levels.push({
         examples:[
           { s:'Short-video time <strong>surged</strong> between 2019 and 2021 (35 → 86 minutes).', g:'Big, fast rise.' },
           { s:'Short-video time <strong>levelled off</strong> from 2022 to 2026 (102 → 109).', g:'Same line, different span.' },
-          { s:'Online games <strong>peaked</strong> in 2020 and then <strong>fell steadily</strong>.', g:'78 minutes, then a similar step down every year.' },
+          { s:'Online games <strong>peaked</strong> in 2020 and then <strong>fell steadily</strong>.', g:'78 minutes, then down every single year to 41.' },
           { s:'Online reading <strong>fluctuated</strong> between 22 and 34 minutes.', g:'Up, down, up, down: no clear direction.' },
           { s:'Messaging time <strong>remained stable</strong> at about 70 minutes.', g:'Tiny ups and downs are not “large fluctuations”.' }
         ],
@@ -631,14 +631,14 @@ T6.levels.push({
           bins:[
             { key:'sv', label:'Short-video apps', hint:'the line that ends highest' },
             { key:'msg', label:'Messaging', hint:'the flattest line' },
-            { key:'game', label:'Online games', hint:'high in 2020' },
+            { key:'game', label:'Online games', hint:'the line that falls after 2020' },
             { key:'read', label:'Online reading', hint:'the zigzag' }
           ],
           items:[
             { text:'surged between 2019 and 2021, then levelled off', bin:'sv' },
             { text:'overtook messaging in 2021', bin:'sv' },
             { text:'remained roughly stable throughout', bin:'msg' },
-            { text:'reached a peak in 2020', bin:'game' },
+            { text:'reached a peak of 78 minutes in 2020', bin:'game' },
             { text:'declined steadily from 2020 to 2026', bin:'game' },
             { text:'fluctuated, rising and falling in alternate years', bin:'read' }
           ],
@@ -865,13 +865,13 @@ T6.levels.push({
       stem:'Which statement is supported by the pie chart?',
       options:[
         'Open burning caused over 60% of the PM2.5.',
-        'Neighbouring countries’ smoke added more than vehicles did.',
+        'Neighbouring countries contributed more smoke than vehicles did.',
         'Vehicles and industry together caused more than a quarter of it.',
         'Farm burning contributed more than smoke from neighbouring countries did.'
       ],
       answer:1,
       hint:'Check each statement with exact numbers, including the note.',
-      why:'Smoke from neighbouring countries (18%) is larger than vehicles (15%). Open burning is 55%, not over 60%; vehicles and industry together are 15 + 7 = 22%, less than a quarter; and farm burning (17% in the note) is just below neighbouring countries’ smoke (18%), which makes that last option the closest near miss.' }
+      why:'Smoke from neighbouring countries (18%) is larger than vehicles (15%). Open burning is 55%, not over 60%; vehicles and industry together are 15 + 7 = 22%, less than a quarter; and farm burning (17% in the note) is just below neighbouring countries’ smoke (18%), which makes the farm-burning statement the closest near miss.' }
   ] }
 });
 
@@ -937,7 +937,7 @@ T6.levels.push({
           stem:'If the student cannot answer simple questions, which of the following should NOT be done?',
           options:['Move them into the shade','Cool them with wet towels','Call the emergency hotline','Give them sips of cool water'],
           answer:3,
-          hint:'Follow the NO arrow from the first diamond and read every box on that side, including any warnings.',
+          hint:'Follow the NO arrow from the first diamond and read every box on that side.',
           why:'On the no-branch the chart says “Do not give them anything to drink”, so giving sips of water is wrong here, even though it is the right action on the yes-branch. Calling the hotline, moving them into the shade and cooling them with wet towels are all listed on the no-branch.' },
 
         { id:'t6l3s1-3', type:'read', tag:'vs-flow', level:'B2', passage:'', visual:T6_V_HEAT,
@@ -971,11 +971,11 @@ T6.levels.push({
             'Contacting the student’s parents',
             'Calling the emergency hotline at once',
             'Loosening the student’s tight clothing',
-            'Letting the student rest for the rest of the day'
+            'Keeping the student out of sport for the rest of the day'
           ],
           answer:0,
           hint:'Look for a box that every path through the chart must pass through.',
-          why:'The final box, “Record what happened and contact the student’s parents”, comes after both diamonds, so every path reaches it. A student who is awake and recovers never needs the hotline; loosening clothing is only on the yes-branch of the first diamond; and resting for the day is only for students who feel better.' }
+          why:'The final box, “Record what happened and contact the student’s parents”, comes after both diamonds, so every path reaches it. A student who is awake and recovers never needs the hotline; loosening clothing is only on the yes-branch of the first diamond; and staying out of sport for the day is only for students who feel better.' }
       ]
     },
 
@@ -1031,7 +1031,7 @@ T6.levels.push({
           ],
           answer:0,
           hint:'A good infographic title names the topic and the sections. Read the four headings again.',
-          why:'The infographic has four sections: sources, pathways, where microplastics end up and possible effects, so the title that names them covers the whole thing. “Proven to Damage Human Health” contradicts the heading “still being studied” and says long-term effects are not yet clear. The graphic gives no advice to families and does not classify household waste.' },
+          why:'The infographic has four sections: sources, pathways, where microplastics end up and possible effects, so the title that names them covers the whole thing. “Proven to Damage Human Health” contradicts the heading “still being studied” and the line saying that long-term effects on humans are not yet clear. The graphic gives no advice to families and does not classify household waste.' },
 
         { id:'t6l3s2-2', type:'choose', tag:'vs-diagram', level:'B2+', given:T6_G_MICRO,
           stem:'According to the infographic, which of the following is NOT a source of microplastics?',
@@ -1077,7 +1077,7 @@ T6.levels.push({
             'They are the same as the effects on animals.'
           ],
           answer:1,
-          hint:'Read the human line in the last section, and the words in the heading’s brackets.',
+          hint:'Find the section about effects and read only what it says about humans.',
           why:'The infographic says particles have been found in the body but that long-term effects are not yet clear, and the heading adds “still being studied”. So the effects are not yet fully understood. “Proven to be harmless” and “mainly damage the stomach and lungs” both claim knowledge the graphic says we do not have; blocked stomachs are listed for animals, not humans.' }
       ]
     },
@@ -1159,19 +1159,19 @@ T6.levels.push({
           given:'Use the recycling chart and its note.',
           stem:'True, False or Not given? <strong>The city’s recycling rate rose every year from 2021 to 2025.</strong>',
           answer:2,
-          hint:'Is the chart about an amount or about a rate? What would you need to know to find a rate?',
+          hint:'Check exactly what the chart measures, then compare it with the word in the statement.',
           why:'Not given. The chart shows the amount of plastic collected, which rose every year, but a recycling rate is the share of all plastic waste that is recycled. The chart does not tell us how much plastic waste the city produced, so the rate cannot be known. “True” is the trap for students who treat amount and rate as the same thing.' },
 
         { id:'t6l3s3-5', type:'read', tag:'vs-trap', level:'C1', passage:'', visual:T6_V_APPS,
           stem:'Which conclusion can NOT be drawn from the table?',
           options:[
-            'Fewer than one in eight use X almost every day.',
             'Instagram’s figure is nearly triple Facebook’s.',
             'About three in four students use TikTok almost daily.',
+            'Fewer than one in eight respondents use X almost every day.',
             'Every student who uses Instagram daily also uses LINE daily.'
           ],
           answer:3,
-          hint:'Read the note. Can the table tell you which students chose two apps together?',
+          hint:'Read the note under the table, then test each statement against the numbers.',
           why:'The note says respondents could choose more than one app, so the table shows each app separately and says nothing about overlap: we cannot know whether every Instagram user also uses LINE. The other three can be drawn: 12% is fewer than one in eight (12.5%), 64 is nearly three times 23, and 78% is about three in four.' }
       ]
     }
@@ -1181,24 +1181,24 @@ T6.levels.push({
     { id:'t6l3ck-1', type:'read', tag:'vs-flow', level:'B2+', passage:'', visual:T6_V_CLIP,
       stem:'According to the flowchart, if no trusted news outlets have reported the event, you should ________.',
       options:[
+        'not share it yet',
         'share it with a warning',
         'report it to the platform',
-        'find out who first posted it',
-        'not share it and tell the group it is unverified'
+        'find out who first posted it'
       ],
-      answer:3,
+      answer:0,
       hint:'Find the second diamond and follow its NO arrow.',
-      why:'The no-branch of “Have at least two trusted news outlets reported the same event?” says “Do not share it” and “Tell the group that the clip has not been verified”. Reporting the clip is only for clips that seem designed to mislead, finding the first poster is the earlier question, and sharing with a warning is not in the chart.' },
+      why:'The no-branch of “Have at least two trusted news outlets reported the same event?” says “Do not share it” and “Tell the group that the clip has not been verified”, so for now you should not share it. Reporting the clip is only for clips that seem designed to mislead, finding the first poster is the earlier question, and sharing with a warning is not in the chart.' },
 
     { id:'t6l3ck-2', type:'read', tag:'vs-flow', level:'C1', passage:'', visual:T6_V_CLIP,
       stem:'Which statement is TRUE according to the flowchart?',
       options:[
-        'Untraced clips still face the second question.',
         'A clip reported by one trusted outlet may be shared.',
         'Every clip should be reported to the platform in the end.',
+        'A clip with no known first poster still reaches the second question.',
         'A clip from an official account can be shared without further checks.'
       ],
-      answer:0,
+      answer:2,
       hint:'Follow both branches of the first diamond. Where does each one go next?',
       why:'If you cannot find the first poster, the clip is treated as unverified, but the chart still leads on to the second question about trusted news outlets. A clip needs at least two trusted outlets, not one; an official source still goes through the second question; and only clips that seem designed to mislead are reported.' },
 
@@ -1240,10 +1240,10 @@ T6.levels.push({
 
     { id:'t6l3ck-6', type:'read', tag:'vs-trap', level:'B2+', passage:'', visual:T6_V_WEEK,
       stem:'On average, how many kilograms of food scraps were collected per school day in week 1?',
-      options:['30 kg','42 kg','52.5 kg','70 kg'],
-      answer:1,
+      options:['30 kg','40.8 kg','42 kg','70 kg'],
+      answer:2,
       hint:'The note tells you how many school days week 1 had.',
-      why:'Week 1 had five school days, so 210 ÷ 5 = 42 kg per school day. 30 kg divides by seven calendar days, 52.5 kg divides by the four weeks of the month, and 70 kg divides by three, the number of school days in week 4, not week 1.' }
+      why:'Week 1 had five school days, so 210 ÷ 5 = 42 kg per school day. 30 kg divides by seven calendar days instead of school days, 40.8 kg is week 3’s daily average (204 ÷ 5), the wrong week, and 70 kg divides by three, the number of school days in week 4, not week 1.' }
   ] }
 });
 

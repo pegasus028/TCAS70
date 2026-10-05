@@ -13,7 +13,7 @@
 /* ---------------------------------------------------------- shared passages */
 var T11_P_BAN = 'In December 2025, Australia ___(1)___ the first country to ban social media accounts for children under 16. Since then, several other governments ___(2)___ similar rules, including France, Denmark and Malaysia. The early results, however, are mixed. About 4.7 million accounts had been removed by January 2026, yet a report published three months after the ban found that more than 80 per cent of under-16s were still using social media. Britain, which plans its own under-16 ban for spring 2027, is watching closely. When that ban ___(3)___ effect, regulators there hope to avoid the same problems.';
 
-var T11_P_AIHW = 'The number of Thai students who use AI chatbots for homework ___(1)___ risen sharply since 2024. Pressure from parents and tutoring schools for top TCAS scores ___(2)___ some students to hand in work they did not write themselves. Teachers are responding. Each of the school’s new AI guidelines ___(3)___ a clear example of fair and unfair use, and students who break the rules lose marks.';
+var T11_P_AIHW = 'The number of Thai students who use AI chatbots for homework ___(1)___ risen sharply since 2024. Pressure from parents and tutoring schools for top TCAS scores ___(2)___ some students to hand in work they did not write themselves. Teachers are responding. At one Bangkok school, each of the new AI guidelines ___(3)___ a clear example of fair and unfair use, and students who break the rules lose marks.';
 
 var T11_P_SANDBAG = 'By the time the rain finally stopped on 27 September 2026, volunteers from our school ___(1)___ sandbags for three days with hardly a break. Since then, they ___(2)___ food and drinking water to families in the eastern districts, and they show no sign of stopping. The student club that organises them is small but ambitious: by the end of this year, its members ___(3)___ more than 2,000 hours of community service.';
 
@@ -23,7 +23,7 @@ var T11_P_FLOOD = 'Bangkok’s worst flooding in years began on 24 September 202
 
 var T11_P_DEEPFAKE = 'Since text-to-video apps spread in 2025, almost any event can ___(1)___ in minutes: a flood that never happened, a speech that was never given. Nobody likes ___(2)___ , yet millions of people share clips every day without checking where they came from. Media-literacy teachers now argue that every viral clip needs ___(3)___ before it is shared.';
 
-var T11_P_GRAD = 'Before graduation photos, Fah decided to have her hair ___(1)___ at a small salon in Siam Square. Pun’s problem was his phone: the screen was cracked, so he got his older brother ___(2)___ it, which saved him 1,500 baht. On the day, the photographer made everyone ___(3)___ the group shot three times because Pun kept blinking.';
+var T11_P_GRAD = 'Before her graduation photos, Fah decided to have her hair ___(1)___ at a small salon in Siam Square. Pun’s problem was his phone: the screen was cracked, so he got his older brother ___(2)___ it, which saved him 1,500 baht. On the day, the photographer made everyone ___(3)___ the group shot three times because Pun kept blinking.';
 
 var T11_P_CANTEEN = 'Last year, sugary drinks ___(1)___ from the canteens of several Bangkok schools. The change ___(2)___ by a student survey in which 70 per cent of respondents asked for healthier options. Some parents, however, complained that they ___(3)___ before the decision was made. To win back their trust, one school now has its menu ___(4)___ by a nutritionist every term, and students are given water bottles that can ___(5)___ free of charge at filling stations. The full results of the programme are expected ___(6)___ next year.';
 
@@ -33,7 +33,7 @@ var T11_P_RECIPE = 'My grandmother never measured anything; she cooked by smell 
 
 var T11_P_PHONES = 'A growing number of countries no longer allow students ___(1)___ phones during lessons. Supporters say the rules help students avoid ___(2)___ by notifications and push them to talk to each other at break time. Critics warn that schools risk ___(3)___ a tool that many students use for learning, and they point out that no rule can prevent a determined teenager ___(4)___ a second phone.';
 
-var T11_P_ELNINO = 'Forecasters expect a strong El Niño in 2026–27, which usually means a hotter, drier start to the year in Thailand. Farmers’ groups have urged the government ___(1)___ now rather than wait for the dry season. Some experts have even recommended that rice farmers ___(2)___ drought-resistant varieties this year. The concern is real: if the rains had arrived on time last year, many reservoirs ___(3)___ much fuller now. Water-saving methods, ___(4)___ early, can greatly reduce crop losses, but officials must also discourage farmers ___(5)___ too much groundwater. As one water planner put it, “It is essential that these warnings ___(6)___ seriously before the first field dries out.”';
+var T11_P_ELNINO = 'Forecasters expect a strong El Niño in 2026–27, which usually means a hotter, drier start to the year in Thailand. Farmers’ groups have urged the government ___(1)___ now rather than wait for the dry season. Some experts have even recommended that rice farmers ___(2)___ drought-resistant varieties this year. The concern is real: if more of last year’s rain had been stored, many reservoirs ___(3)___ much fuller now. Water-saving methods, ___(4)___ early, can greatly reduce crop losses, but officials must also discourage farmers ___(5)___ too much groundwater. As one water planner put it, “It is essential that these warnings ___(6)___ seriously before the first field dries out.”';
 
 var T11 = {
   id: 't11', n: 11, code: 'System 11', art: 'clock',
@@ -292,7 +292,7 @@ T11.levels.push({
     { id: 't11l1ck-2', type: 'cloze', tag: 'vt-sva', level: 'B2+', passage: T11_P_SLEEP, blank: '(2)',
       stem: 'Choose the best option for blank (2).',
       options: ['is', 'are', 'were', 'have been'], answer: 0,
-      hint: 'Put brackets around the “according to …” phrase. What is the first noun of the sentence?',
+      hint: 'Bracket the “according to …” phrase. Which noun opens the sentence? Singular or plural?',
       why: 'The subject is “The main cause”; the phrase “according to Dr Pimchanok Wattanasiri of Chao Phraya University” is only extra information. One main cause → singular, and the passage is in the present: the main cause <em>is</em> not homework but screens. “Are” is the trap, because the plural “screens” comes after the verb, but the verb agrees with the subject before it.' },
     { id: 't11l1ck-3', type: 'cloze', tag: 'vt-sva', level: 'B2+', passage: T11_P_SLEEP, blank: '(3)',
       stem: 'Choose the best option for blank (3).',
@@ -376,7 +376,7 @@ T11.levels.push({
         { id: 't11l2s1-2', type: 'cloze', tag: 'vp-passive', level: 'B2', passage: T11_P_FLOOD, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
           options: ['sent', 'had sent', 'were sent', 'were sending'], answer: 2,
-          hint: 'Do warnings send things, or are they sent? The words after the gap tell you where they went.',
+          hint: 'Look at what comes straight after the gap. Is there an object, or only a place and a method?',
           why: 'Warnings do not send anything; someone sends them, and the passage says where they went (“to phones … by cell broadcast”). So the passive past is needed: warnings <em>were sent</em>. “Sent” and “had sent” are active and would need an object such as “messages”, and “were sending” makes the warnings the doers.' },
 
         { id: 't11l2s1-3', type: 'cloze', tag: 'vp-passive', level: 'B2', passage: T11_P_FLOOD, blank: '(3)',
@@ -467,7 +467,7 @@ T11.levels.push({
         { id: 't11l2s2-5', type: 'build', tag: 'vp-passinf', level: 'B2+',
           stem: 'Build the sentence: people expect that someone will announce the new rule next week.',
           tiles: ['The new rule', 'is', 'expected', 'to be', 'announced', 'next week.'],
-          solution: 'The new rule is expected to be announced next week.', alt: [],
+          solution: 'The new rule is expected to be announced next week.', alt: ['Next week the new rule is expected to be announced.'],
           hint: 'Two passives are hidden here: people expect it, and someone announces it.',
           why: 'People expect it, so “The new rule is expected”; someone will announce it, so the infinitive is passive too: <em>to be announced</em>. The pattern “is expected / said / thought + to be + V3” is very common in news writing.' }
       ]
@@ -491,7 +491,7 @@ T11.levels.push({
         ],
         thai: 'Causative คือให้คนอื่นทำให้ เช่น I had my hair cut = ไปให้ช่างตัดผมให้ (ไม่ได้ตัดเอง) ดูว่าหลัง have / get เป็น “สิ่งของ” หรือ “คน”: ถ้าเป็นสิ่งของที่ถูกกระทำ ใช้ V3 (have it styled, get my phone repaired) ถ้าเป็นคน ใช้ have / make / let + คน + V1 แต่ get + คน + to + V1 กับดักคือตัวเลือกที่ใส่ to ผิดที่ (have it to style) และการสลับลำดับคำ เช่น have tested my eyes ซึ่งกลายเป็น present perfect',
         examples: [
-          { s: 'Fah decided to <strong>have her hair trimmed</strong> before graduation photos.', g: 'have + thing + V3: the hairdresser trims it.' },
+          { s: 'Fah decided to <strong>have her hair trimmed</strong> before her graduation photos.', g: 'have + thing + V3: the hairdresser trims it.' },
           { s: 'Pun <strong>got his older brother to fix</strong> the screen.', g: 'get + person + to + verb (he persuaded him).' },
           { s: 'The photographer <strong>made everyone retake</strong> the shot.', g: 'make + person + base verb (no “to”).' },
           { s: 'We <strong>were made to retake</strong> it three times.', g: 'Passive of make → “to” comes back.' },
@@ -523,9 +523,9 @@ T11.levels.push({
 
         { id: 't11l2s3-2', type: 'cloze', tag: 'vp-causative', level: 'B2+', passage: T11_P_GRAD, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['fix', 'fixed', 'to fix', 'to fixing'], answer: 2,
+          options: ['fix', 'fixed', 'fixing', 'to fix'], answer: 3,
           hint: 'The object after “got” is a person this time, not a thing. Which verb is it, and what does it need?',
-          why: 'After “got” the object is a person, “his older brother”, who does the work, and <em>get + person</em> is followed by a to-infinitive: got his older brother <em>to fix</em> it. “Fix” is the near miss, because it is correct after <em>have</em> or <em>make</em> (had his brother fix it) but not after <em>get</em>. “Fixed” would need a thing as the object, and “to fixing” is not a verb form.' },
+          why: 'After “got” the object is a person, “his older brother”, who does the work, and <em>get + person</em> is followed by a to-infinitive: got his older brother <em>to fix</em> it. “Fix” is the near miss, because it is correct after <em>have</em> or <em>make</em> (had his brother fix it) but not after <em>get</em>. “Fixed” would need a thing as the object, and “fixing” does not follow get + person here.' },
 
         { id: 't11l2s3-3', type: 'cloze', tag: 'vp-causative', level: 'B2+', passage: T11_P_GRAD, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
@@ -535,15 +535,15 @@ T11.levels.push({
 
         { id: 't11l2s3-4', type: 'choose', tag: 'vp-causative', level: 'B2+',
           stem: 'Mint’s mother wants her to ______ before she starts wearing contact lenses.',
-          options: ['get her eyes test', 'have her eyes tested', 'have her eyes to test', 'have her eyes testing'], answer: 1,
+          options: ['have her eyes test', 'have her eyes tested', 'have her eyes to test', 'have her eyes testing'], answer: 1,
           hint: 'An optician does the testing. After “have + thing”, what form does the verb take?',
-          why: 'An optician will test Mint’s eyes, so this is <em>have + thing + V3</em>: have her eyes <em>tested</em>. “Get her eyes test” uses the base form where a V3 is needed. “Have her eyes to test” and “have her eyes testing” also break the pattern: after a thing that receives the action, only the past participle fits.' },
+          why: 'An optician will test Mint’s eyes, so this is <em>have + thing + V3</em>: have her eyes <em>tested</em>. “Have her eyes test” uses the base form where a V3 is needed. “Have her eyes to test” and “have her eyes testing” also break the pattern: after a thing that receives the action, only the past participle fits.' },
 
         { id: 't11l2s3-5', type: 'spot', tag: 'vp-causative', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Krit', 'had his football boots', 'repair', 'before the final.'],
           answer: 2, fix: 'repaired',
-          hint: 'Do the boots repair something, or are they repaired by someone?',
+          hint: 'After “had” + a thing, who does the work: Krit or someone else? Check the form of each verb.',
           why: 'The object after “had” is a thing, “his football boots”, which receives the action, so the verb must be the past participle: had his boots <em>repaired</em>. The base form “repair” is used only when a person follows “have” (had the shop repair them).' }
       ]
     }
@@ -553,7 +553,7 @@ T11.levels.push({
     { id: 't11l2ck-1', type: 'cloze', tag: 'vp-passive', level: 'C1', passage: T11_P_CANTEEN, blank: '(1)',
       stem: 'Choose the best option for blank (1).',
       options: ['removed', 'had removed', 'were removed', 'were removing'], answer: 2,
-      hint: 'Drinks do not remove anything. What follows the gap: an object or a place?',
+      hint: 'What follows the gap: an object, or a phrase telling you where from? Then check the time phrase at the start.',
       why: 'Sugary drinks cannot remove anything; schools removed them, and the gap is followed by “from the canteens”, not an object. With “Last year” (finished past) we need the past passive: drinks <em>were removed</em>. “Removed” and “had removed” are active and need an object, and “were removing” makes the drinks the doers.' },
     { id: 't11l2ck-2', type: 'cloze', tag: 'vp-passive', level: 'C1', passage: T11_P_CANTEEN, blank: '(2)',
       stem: 'Choose the best option for blank (2).',
@@ -641,7 +641,7 @@ T11.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['limited', 'be limited', 'to be limited', 'being limited'], answer: 1,
           hint: 'Two steps: which form follows “insisted that” when it gives an instruction? Does the rule limit something, or is it limited?',
-          why: 'The teachers are saying what should happen (a demand), so the clause after “insisted that” takes the base form, and the rule receives the action, so it is passive: that the rule <em>be limited</em>. “Limited” alone has no verb before it, so the clause has no finite verb. “To be limited” and “being limited” cannot follow “that + subject”.' },
+          why: 'The teachers are saying what should happen (a demand), so the clause after “insisted that” takes the base form, and the rule receives the action, so it is passive: that the rule <em>be limited</em>. “Limited” alone would be an active past verb (the rule limited something), which needs an object and is not the base form required after “insisted that”. “To be limited” and “being limited” cannot follow “that + subject”.' },
 
         { id: 't11l3s1-3', type: 'cloze', tag: 'vm-subj', level: 'B2+', passage: T11_P_COUNCIL, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
@@ -658,7 +658,7 @@ T11.levels.push({
         { id: 't11l3s1-5', type: 'build', tag: 'vm-subj', level: 'B2+',
           stem: 'Build the doctor’s advice to Mint as one formal sentence.',
           tiles: ['The doctor', 'suggested', 'that', 'Mint', 'get', 'more sleep', 'before the exam.'],
-          solution: 'The doctor suggested that Mint get more sleep before the exam.', alt: [],
+          solution: 'The doctor suggested that Mint get more sleep before the exam.', alt: ['Before the exam the doctor suggested that Mint get more sleep.'],
           hint: 'The trigger verb comes before “that”. Why is there no -s on the second verb?',
           why: '“Suggested that” introduces advice, not a fact, so the verb in the that-clause is the bare base form: that Mint <em>get</em> more sleep, not “gets” or “got”. The past tense of “suggested” does not change the base form.' }
       ]
@@ -691,7 +691,7 @@ T11.levels.push({
         trap: 'The if-clause is clearly past, so students automatically build a type 3 result (<em>would have known</em>) and ignore <em>today</em> or <em>now</em> in the result clause. Dodge: read to the end of the sentence and underline the time word in the result clause before you choose; each half obeys its own clock.',
         analogy: { title: 'The save file', text: 'In a game, a choice you made three levels ago (past) decides what weapons you have right now (present). “If I hadn’t sold the sword in Level 2, I would have it now.” The save file is the past clause; the screen in front of you is the present result. A mixed conditional is just a game with a long memory.' },
         map: { center: 'Two clocks', branches: [
-          { label: 'Mixed', leaves: ['had + V3 → would + base', 'look for today / now', 'past → would + base'] },
+          { label: 'Mixed', leaves: ['had + V3 → would + base', 'look for today / now', 'present state → would have + V3'] },
           { label: 'Reduced', leaves: ['if not prepared correctly', 'if necessary / if possible', 'receives → V3'] },
           { label: 'Inverted', leaves: ['Had I known', 'Should you need', 'Were it not for'] },
           { label: 'Traps', leaves: ['would have + today', 'if not correct prepared', 'unless + noun'] }
@@ -716,14 +716,14 @@ T11.levels.push({
 
         { id: 't11l3s2-2', type: 'cloze', tag: 'vm-cond', level: 'C1', passage: T11_P_RECIPE, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
-          options: ['if not properly store', 'if not stored properly', 'if not storing properly', 'if they not store properly'], answer: 1,
-          hint: 'Rebuild the full clause: “if they are not …”. Do the dishes store something, or are they stored?',
-          why: 'The full clause is “if they are not stored properly”; the subject (the dishes) and “are” are dropped because the subject is the same as in the main clause. The dishes receive the action, so the V3 is needed: <em>if not stored properly</em>. “If not storing properly” makes the dishes the storers. “If not properly store” and “if they not store properly” are not grammatical.' },
+          options: ['if stored properly', 'if not stored properly', 'if not storing properly', 'unless not stored properly'], answer: 1,
+          hint: 'Rebuild the full clause with the dishes as the subject. Who does the storing?',
+          why: 'The full clause is “if they are not stored properly”; the subject (the dishes) and “are” are dropped because the subject is the same as in the main clause. The dishes receive the action, so the V3 is needed: <em>if not stored properly</em>. “If not storing properly” makes the dishes the storers. “If stored properly” has the opposite meaning (good storage would make them dangerous), and “unless not stored properly” is a double negative that also reverses the meaning.' },
 
         { id: 't11l3s2-3', type: 'cloze', tag: 'vm-cond', level: 'C1+', passage: T11_P_RECIPE, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
           options: ['Unless', 'Even if', 'Had it not been', 'Were it not for'], answer: 3,
-          hint: 'The gap is followed by a noun (“my aunt”), and the main clause says “would know”. Which option can be followed by a noun?',
+          hint: 'The main clause says “would know”. Which option is a formal way of saying “without my aunt”?',
           why: '<em>Were it not for</em> + noun is an inverted conditional meaning “if it were not for (without) my aunt”, and it matches the result “would know none of these dishes”. “Had it not been” is the near miss: it needs “for” before the noun (had it not been for my aunt). “Unless” and “even if” must be followed by a clause with a verb, not just a noun.' },
 
         { id: 't11l3s2-4', type: 'gap', tag: 'vm-cond', level: 'C1', blank: '(1)',
@@ -802,9 +802,9 @@ T11.levels.push({
 
         { id: 't11l3s3-3', type: 'cloze', tag: 'vm-pattern', level: 'C1', passage: T11_P_PHONES, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
-          options: ['lose', 'losing', 'to lose', 'to losing'], answer: 1,
+          options: ['lose', 'losing', 'to lose', 'to have lost'], answer: 1,
           hint: 'The verb before the gap is “risk”. Which family does it belong to?',
-          why: '<em>Risk</em> belongs to the -ing family (like avoid and consider): schools risk <em>losing</em> a useful tool. “To lose” is the near miss, since many verbs of possibility take “to”, but not <em>risk</em>. “Lose” cannot follow “risk” directly, and “to losing” is not a verb pattern.' },
+          why: '<em>Risk</em> belongs to the -ing family (like avoid and consider): schools risk <em>losing</em> a useful tool. “To lose” is the near miss, since many verbs of possibility take “to”, but not <em>risk</em>. “Lose” cannot follow “risk” directly, and “to have lost” uses the to-pattern, which risk never takes.' },
 
         { id: 't11l3s3-4', type: 'cloze', tag: 'vm-pattern', level: 'C1', passage: T11_P_PHONES, blank: '(4)',
           stem: 'Choose the best option for blank (4).',
@@ -817,8 +817,8 @@ T11.levels.push({
           bins: [
             { key: 'ing', label: '+ -ing', hint: 'avoid doing' },
             { key: 'to', label: '+ to', hint: 'fail to do' },
-            { key: 'objto', label: '+ person + to', hint: 'allow someone to do' },
-            { key: 'from', label: '+ person + from -ing', hint: 'ban someone from doing' }
+            { key: 'objto', label: '+ object + to', hint: 'allow someone to do' },
+            { key: 'from', label: '+ object + from -ing', hint: 'ban someone from doing' }
           ],
           items: [
             { text: 'Fah is considering ___ (apply) to Thammasat.', bin: 'ing' },
@@ -851,11 +851,11 @@ T11.levels.push({
       stem: 'Choose the best option for blank (3).',
       options: ['will be', 'would be', 'had been', 'would have been'], answer: 1,
       hint: 'The if-clause is about last year. Now find the time word at the end of the result clause.',
-      why: 'The condition is an unreal past (“if the rains had arrived on time last year”), but the result is about the present (“now”), so this is a mixed conditional: reservoirs <em>would be</em> much fuller now. “Would have been” is the type 3 trap, which ignores “now”. “Will be” is for real conditions, and “had been” cannot be the result.' },
+      why: 'The condition is an unreal past (“if more of last year’s rain had been stored”), but the result is about the present (“now”), so this is a mixed conditional: reservoirs <em>would be</em> much fuller now. “Would have been” is the type 3 trap, which ignores “now”. “Will be” is for real conditions, and “had been” cannot be the result.' },
     { id: 't11l3ck-4', type: 'cloze', tag: 'vm-cond', level: 'C1', passage: T11_P_ELNINO, blank: '(4)',
       stem: 'Choose the best option for blank (4).',
       options: ['if adopted', 'if adopting', 'if they adopt', 'if being adopted'], answer: 0,
-      hint: 'Rebuild the full clause with the subject “water-saving methods”. Do methods adopt something, or are they adopted?',
+      hint: 'Rebuild the full clause with the subject “water-saving methods”. Who does the adopting?',
       why: 'The full clause is “if they (the methods) are adopted early”; the subject and “are” are dropped, leaving the reduced conditional <em>if adopted</em>. Methods are adopted by farmers, so the V3 is needed. “If adopting” and “if they adopt” make the methods the doers, and “if being adopted” is not a reduced conditional form.' },
     { id: 't11l3ck-5', type: 'cloze', tag: 'vm-pattern', level: 'C1', passage: T11_P_ELNINO, blank: '(5)',
       stem: 'Choose the best option for blank (5).',

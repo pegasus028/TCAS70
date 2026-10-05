@@ -99,7 +99,7 @@ T2.levels.push({
         key: 'A reaction idiom is a <strong>move</strong> in the conversation: decide what the speaker is doing (listening, agreeing, joining in, worrying, keeping a secret), then pick the idiom with that job, not the one that shares a word with the story.',
         body: [
           'An idiom is a chunk whose meaning is not the sum of its words. <em>I’m all ears</em> has nothing to do with ears; it means <em>I’m ready to listen, tell me</em>. In a dialogue, a reaction idiom is not decoration: it is a <strong>move</strong>, like a pass in football. Some moves invite the other person to keep talking (<em>I’m all ears / Go on / Fire away</em>), some agree strongly (<em>You can say that again / Tell me about it</em>), some join or refuse a plan (<em>Count me in / Count me out / I’ll pass</em>), some show concern (<em>That sounds serious</em>), some wish luck (<em>Fingers crossed / Break a leg</em>) and some promise secrecy (<em>My lips are sealed</em>).',
-          '<strong>How TCAS tests it.</strong> The examiners love a <strong>family trap</strong>: four real idioms built on the same word. In TCAS69, a stressed friend says she needs someone to talk to, and the reply is “Sure, ___ What’s up?” All four options contain <em>ear</em>: <em>I’m all ears</em> (I’m listening: correct), <em>lend me your ear</em> (YOU listen to ME: wrong direction), <em>I’m up to my ears</em> (I’m too busy: it rejects her), <em>my ears are ringing</em> (a noise, or people are talking about me). Because the shared word gives no clue, only the <strong>job</strong> can decide.',
+          '<strong>How TCAS tests it.</strong> The examiners love a <strong>family trap</strong>: four real idioms built on the same word. In TCAS69, a stressed friend says she needs someone to talk to, and the reply is “Sure, ___ What’s up?” All four options contain <em>ear</em>: <em>I’m all ears</em> (I’m listening: correct), <em>lend me your ear</em> (YOU listen to ME: wrong direction), <em>I’m up to my ears</em> (I’m too busy: it rejects her), <em>my ears are ringing</em> (I can still hear a loud noise; the idiom for “people are talking about me” is <em>my ears are burning</em>). Because the shared word gives no clue, only the <strong>job</strong> can decide.',
           '<strong>The procedure.</strong> Step 1: read the line before the blank. What just happened: news, an invitation, a complaint, a secret? Step 2: read the line after the blank. Does the speaker keep talking (you invited her), explain something, or change the plan? Step 3: name the job in two words (“invite talk”, “agree strongly”, “join plan”). Step 4: translate each option into plain English and test it against both lines. The option that makes BOTH neighbours sound natural wins.',
           'Watch the idioms that <strong>look</strong> like their literal meaning. <em>Tell me about it</em> after a complaint does NOT mean “please explain”; it means “I know exactly, I’ve suffered the same”, so the next line is usually the speaker’s own story. <em>Beats me</em> means “I have no idea”, not that someone hit you.'
         ],
@@ -233,7 +233,7 @@ T2.levels.push({
         { id: 't2l1s2-2', type: 'gap', tag: 'id-situation', level: 'B2', lines: T2_L_KHAOYAI, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
           options: ['draw the line', 'get cold feet', 'break the ice', 'see eye to eye'], answer: 0,
-          hint: 'Krit accepts one thing but refuses another. Notice the preposition right after the gap.',
+          hint: 'Krit says yes to one thing and no to another. Name that move before you look at the options.',
           why: 'Krit accepts sharing a tent but refuses a wet one, so he is setting a limit: <em>I draw the line at</em> sleeping in a wet one. The preposition “at” is part of the idiom. “Get cold feet” means becoming nervous before doing something, “break the ice” means helping people relax, and “see eye to eye” means agreeing; none of them takes “at + -ing” here.' },
 
         { id: 't2l1s2-3', type: 'gap', tag: 'id-situation', level: 'B2', lines: T2_L_TGAT, blank: '(3)',
@@ -246,7 +246,7 @@ T2.levels.push({
           given: 'The call from the university came <strong>out of the blue</strong>, just as Pim was leaving for school.',
           stem: 'The phrase in bold is closest in meaning to ________.',
           options: ['at last', 'as usual', 'very rarely', 'without warning'], answer: 3,
-          hint: 'Picture a clear blue sky. What does it mean if something suddenly drops out of it?',
+          hint: 'This idiom belongs to the colour family, which has two ‘blue’ idioms. Check which one is in bold.',
           why: '<em>Out of the blue</em> means suddenly and unexpectedly, so “without warning” is closest. “Very rarely” is the meaning of the look-alike “once in a blue moon”. “At last” suggests Pim had been waiting for the call, and “as usual” suggests it happens regularly, but the idiom says the call was a complete surprise.' },
 
         { id: 't2l1s2-5', type: 'judge', tag: 'id-situation', level: 'B2',
@@ -264,7 +264,7 @@ T2.levels.push({
       theory: {
         key: 'A proverb sums up the <strong>shape</strong> of the whole story (troubles pile up, bad turns good, effort pays, words vs actions): find the shape first, and ignore the option that merely shares a picture (rain, clouds) with the story.',
         body: [
-          'A proverb is a tiny story with a moral. When a TCAS speaker says “It’s like the saying: ___”, the saying must summarise <strong>everything</strong> that has happened, so you need the shape of the whole story, not one detail. Common shapes: <strong>pile-up</strong> (bad + bad + bad): <em>When it rains, it pours</em>. <strong>Bad turns good</strong>: <em>Every cloud has a silver lining / A blessing in disguise / Look on the bright side</em>. <strong>Effort pays</strong>: <em>No pain, no gain / Practice makes perfect / Hard work pays off / Rome wasn’t built in a day</em>. <strong>Risk</strong>: <em>No risk, no reward</em> vs its opposite <em>Better safe than sorry</em>. <strong>Timing</strong>: <em>The early bird catches the worm / Better late than never / Don’t count your chickens before they hatch</em>. <strong>Judging people</strong>: <em>Actions speak louder than words / Don’t judge a book by its cover</em>. <strong>Money</strong>: <em>Easy come, easy go / Save for a rainy day</em>.',
+          'A proverb is a tiny story with a moral. When a TCAS speaker says “It’s like the saying: ___”, the saying must summarise <strong>everything</strong> that has happened, so you need the shape of the whole story, not one detail. Common shapes: <strong>pile-up</strong> (bad + bad + bad): <em>When it rains, it pours</em>. <strong>Bad turns good</strong>: <em>Every cloud has a silver lining / A blessing in disguise / Look on the bright side</em>. <strong>Effort pays</strong>: <em>No pain, no gain / Practice makes perfect / Hard work pays off</em>. <strong>Risk</strong>: <em>No risk, no reward</em> vs its opposite <em>Better safe than sorry</em>. <strong>Timing & patience</strong>: <em>The early bird catches the worm / Better late than never / Don’t count your chickens before they hatch / Rome wasn’t built in a day / Good things come to those who wait</em>. <strong>Judging people</strong>: <em>Actions speak louder than words / Don’t judge a book by its cover</em>. <strong>Money</strong>: <em>Easy come, easy go / Save for a rainy day</em>.',
           '<strong>How TCAS tests it.</strong> In TCAS69, Pam oversleeps, gets soaked in the rain, finds school closed and is then dumped by text. Her friend says “It’s like the saying: ___”. The options were four rain sayings: <em>Save for a rainy day</em> (keep money for hard times), <em>When it rains, it pours</em> (troubles come together: correct), <em>It’s raining cats and dogs</em> (it is raining very heavily: a literal trap, because Pam really did get wet!) and <em>Every cloud has a silver lining</em> (there is good in every bad thing: but nothing good has happened). TCAS67 used <em>no risk, no reward</em>; TCAS66 used <em>easy come, easy go</em>.',
           '<strong>The procedure.</strong> Step 1: list the events in the story as + or − (− − − = pile-up; − then + = silver lining; hard work then + = no pain, no gain). Step 2: translate each proverb into its shape. Step 3: match shapes. Step 4: if one option copies a <em>picture</em> from the story (rain, a book, money) but not its <em>shape</em>, it is almost certainly the trap.'
         ],
@@ -286,8 +286,8 @@ T2.levels.push({
         map: { center: 'Proverb shapes', branches: [
           { label: 'Pile-up (− − −)', leaves: ['When it rains, it pours', 'It never rains but it pours'] },
           { label: 'Bad turns good (− +)', leaves: ['Every cloud has a silver lining', 'A blessing in disguise', 'Look on the bright side'] },
-          { label: 'Effort pays', leaves: ['No pain, no gain', 'Practice makes perfect', 'Rome wasn’t built in a day'] },
-          { label: 'Risk & timing', leaves: ['No risk, no reward', 'Better safe than sorry', 'Don’t count your chickens'] },
+          { label: 'Effort pays', leaves: ['No pain, no gain', 'Practice makes perfect', 'Hard work pays off'] },
+          { label: 'Risk & timing', leaves: ['No risk, no reward', 'Better safe than sorry', 'Don’t count your chickens', 'Rome wasn’t built in a day'] },
           { label: 'People & money', leaves: ['Actions speak louder than words', 'Don’t judge a book by its cover', 'Easy come, easy go'] }
         ] },
         chant: { title: 'What’s the Shape?', beat: 'stomp-stomp-clap (4/4)', lines: [
@@ -341,11 +341,11 @@ T2.levels.push({
             { text: 'It was a blessing in disguise.', bin: 'turn' },
             { text: 'No pain, no gain.', bin: 'effort' },
             { text: 'Practice makes perfect.', bin: 'effort' },
-            { text: 'Rome wasn’t built in a day.', bin: 'wait' },
+            { text: 'Good things come to those who wait.', bin: 'wait' },
             { text: 'Don’t count your chickens before they hatch.', bin: 'wait' }
           ],
           hint: 'Ignore the pictures (rain, clouds, chickens). Ask what lesson each saying teaches.',
-          why: 'The two rain sayings both mean that troubles come together. A silver lining and a blessing in disguise are good things hidden in bad ones. “No pain, no gain” and “Practice makes perfect” say effort brings success. “Rome wasn’t built in a day” (big things take time) and “Don’t count your chickens before they hatch” (don’t celebrate too early) are about patience and timing.' }
+          why: 'The two rain sayings both mean that troubles come together. A silver lining and a blessing in disguise are good things hidden in bad ones. “No pain, no gain” and “Practice makes perfect” say effort brings success. “Good things come to those who wait” (patience is rewarded) and “Don’t count your chickens before they hatch” (don’t celebrate too early) are about patience and timing.' }
       ]
     }
   ],
@@ -401,7 +401,7 @@ var T2_L_PROJECT = [
 var T2_L_KHAOSOI = [
   { who: 'Situation', text: 'A tour guide and a tourist in Chiang Mai' },
   { who: 'Tourist', text: 'Is it true that people here eat khao soi for breakfast?' },
-  { who: 'Guide', text: 'Some do, but it’s more of a lunch dish. ___(3)___ my grandmother has sold khao soi near Wat Chedi Luang for forty years, so I’ve eaten more bowls than I can count!' },
+  { who: 'Guide', text: 'Some do, but it’s more of a lunch dish. ___(3)___ my grandmother has been selling khao soi near Wat Chedi Luang for forty years, so I’ve eaten more bowls than I can count!' },
   { who: 'Tourist', text: 'Then you’re the perfect person to tell me where to go.' }
 ];
 
@@ -430,7 +430,7 @@ var T2_L_TRIP = [
 var T2_L_ESSAY = [
   { who: 'Situation', text: 'A student asking her teacher about an essay' },
   { who: 'Bow', text: 'T.Chris, what did you think of my essay?' },
-  { who: 'T.Chris', text: 'Your ideas are strong, but your paragraphs jump from one topic to another without any link. ___(1)___ the reader gets lost.' },
+  { who: 'T.Chris', text: 'Your ideas are strong, but your paragraphs jump from one topic to another without any link. ___(1)___ there’s no clear path from one idea to the next.' },
   { who: 'Bow', text: 'So should I rewrite the whole thing?' },
   { who: 'T.Chris', text: 'No. There are a few grammar slips and one weak example, but the argument is clear and original. ___(2)___ it’s a good essay that needs better organisation.' }
 ];
@@ -447,7 +447,7 @@ var T2_L_HUAHIN = [
   { who: 'Dad', text: 'Bad news. The weather app says it will rain all weekend in Hua Hin. ___(1)___ the hotel has just emailed to say the pool is closed for repairs.' },
   { who: 'Mum', text: 'That’s a pity. ___(2)___ the hotel is right on the beach, and it hardly ever rains all day in Hua Hin.' },
   { who: 'Fah', text: 'I don’t mind rain. I only want to eat seafood and sleep. ___(3)___ I’m happy anywhere that sells grilled squid.' },
-  { who: 'Dad', text: 'Well, we can’t cancel now, the beach is close and Fah will be happy with squid. ___(4)___ I think we should still go.' },
+  { who: 'Dad', text: 'Well, it’s too late to cancel, the hotel is right on the beach, and Fah will be happy with squid. ___(4)___ I think we should still go.' },
   { who: 'Mum', text: 'I agree. ___(5)___ I’ve just checked another app, and it says it will be sunny all weekend.' },
   { who: 'Fah', text: 'Wait. Is Dad’s app the same one that said it would snow in Bangkok last week?' },
   { who: 'Dad', text: '…Yes.' },
@@ -511,14 +511,14 @@ T2.levels.push({
         { id: 't2l2s1-2', type: 'gap', tag: 'dm-add', level: 'B2+', lines: T2_L_PROJECT, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
           options: ['By the way,', 'In other words,', 'Needless to say,', 'On the other hand,'], answer: 2,
-          hint: 'No backup and two lost pages. Could Pim guess what Tee did next?',
+          hint: 'No backup and two lost pages. Read what Tee did next: is it neutral, worse, expected or surprising?',
           why: 'With no backup, the lost pages had to be rewritten, so staying up all night is an obvious, predictable result: <em>Needless to say</em>. “In other words” would restate the same idea, but rewriting all night is a new event. “By the way” starts a side topic, and “On the other hand” needs a contrast.' },
 
         { id: 't2l2s1-3', type: 'gap', tag: 'dm-add', level: 'B2+', lines: T2_L_KHAOSOI, blank: '(3)',
           stem: 'Choose the best option for blank (3).',
           options: ['Even so,', 'Needless to say,', 'As a matter of fact,', 'To make matters worse,'], answer: 2,
-          hint: 'The tourist could not have guessed the next fact. Is it good, bad or surprising?',
-          why: 'The guide adds a surprising personal fact that makes him an expert on the dish: <em>As a matter of fact</em>, his grandmother has sold khao soi for forty years. “Needless to say” fails because the tourist could not have predicted this. “To make matters worse” needs a bad situation, and “Even so” needs a contrast with the previous sentence.' },
+          hint: 'Read the guide’s next sentence. Which kind of extra is it: neutral, worse, expected or surprising?',
+          why: 'The guide adds a surprising personal fact that makes him an expert on the dish: <em>As a matter of fact</em>, his grandmother has been selling khao soi for forty years. “Needless to say” fails because the tourist could not have predicted this. “To make matters worse” needs a bad situation, and “Even so” needs a contrast with the previous sentence.' },
 
         { id: 't2l2s1-4', type: 'choose', tag: 'dm-add', level: 'B2+',
           stem: 'Choose the best option to complete the sentence.<br><em>My little brother can’t even tie his own shoes, ________ ride a bike without help.</em>',
@@ -592,7 +592,7 @@ T2.levels.push({
         { id: 't2l2s2-1', type: 'gap', tag: 'dm-contrast', level: 'C1', lines: T2_L_UNI, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
           options: ['In other words,', 'Needless to say,', 'Having said that,', 'To make matters worse,'], answer: 2,
-          hint: 'Mint states a strong wish, then limits it. Which marker lets a speaker limit her own point?',
+          hint: 'Compare ‘Medicine at Chula’ with ‘any university’. Does Mint’s second sentence repeat, add to, or turn back on her first?',
           why: 'Mint gives a strong preference (Chula) and then a fair exception to it (she’d be happy anywhere she can study medicine). A speaker who limits her own previous point uses <em>Having said that</em>. “In other words” would repeat the same idea, but “any university” is not the same as “Chula”. “Needless to say” and “To make matters worse” continue in the same direction and do not allow this turn.' },
 
         { id: 't2l2s2-2', type: 'gap', tag: 'dm-contrast', level: 'C1', lines: T2_L_UNI, blank: '(2)',
@@ -618,7 +618,7 @@ T2.levels.push({
           stem: 'Fah has changed her mind and now thinks the phone is a bad buy.',
           answer: 1,
           hint: 'Does “Mind you” cancel everything before it, or add a limit to it?',
-          why: 'False. <em>Mind you</em> adds a small warning or exception to what the speaker has just said; it does not cancel it. Fah still praises the camera and screen; she simply adds that the battery is weak. Nothing in her words says she now thinks the phone is a bad buy.' }
+          why: 'False. <em>Mind you</em> adds a small warning or exception to what the speaker has just said; it does not cancel it. Fah still praises the camera and screen; she simply adds that the battery is weak. Because “Mind you” keeps her praise and only adds a limit, the statement that she has changed her mind contradicts the text, so it is False.' }
       ]
     },
 
@@ -640,7 +640,7 @@ T2.levels.push({
         thai: 'กลุ่มนี้มี 3 หน้าที่: พูดซ้ำด้วยคำใหม่ (In other words, To put it another way — ห้ามมีข้อมูลใหม่), สรุปย่อ (In a nutshell, In short) และตัดสินสุดท้าย (All things considered = เมื่อชั่งข้อดีข้อเสียแล้ว, At the end of the day = สิ่งที่สำคัญที่สุดท้ายที่สุดคือ) กับดักคือเลือก In other words ทั้งที่ประโยคหลังช่องว่างมีข้อมูลใหม่ และสับสน At the end of the day (เรื่องความสำคัญ) กับ In the end (เรื่องเวลา)',
         examples: [
           { s: 'The flight is fully booked. <strong>In other words</strong>, there are no seats left.', g: 'Rephrase: same fact, simpler words.' },
-          { s: 'Late nights, no breakfast, too much caffeine… <strong>In a nutshell</strong>, look after yourself.', g: 'Shrink a long list into one line.' },
+          { s: 'Late nights, no breakfast, too much caffeine… <strong>In a nutshell</strong>, you’re not looking after yourself.', g: 'Shrink a long list into one line.' },
           { s: 'It rained, but the food and the people were great. <strong>All things considered</strong>, it was a good trip.', g: 'Verdict after weighing good and bad.' },
           { s: 'Grades matter, but <strong>at the end of the day</strong>, you need to enjoy what you study.', g: 'What matters most.' }
         ],
@@ -668,8 +668,8 @@ T2.levels.push({
         { id: 't2l2s3-1', type: 'gap', tag: 'dm-rephrase', level: 'C1', lines: T2_L_ESSAY, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
           options: ['Mind you,', 'In other words,', 'Having said that,', 'On the other hand,'], answer: 1,
-          hint: 'Is “the reader gets lost” a new idea, or the same problem described in a simpler way?',
-          why: 'Paragraphs that “jump from one topic to another without any link” and “the reader gets lost” describe the same problem from two angles, so T.Chris is rephrasing: <em>In other words</em>. “Mind you” and “Having said that” add an exception, and “On the other hand” introduces another side, but the second sentence simply continues the same criticism.' },
+          hint: 'Compare the sentence after the blank with the one before it. Is anything new?',
+          why: 'Paragraphs that “jump from one topic to another without any link” and “no clear path from one idea to the next” describe the same problem in different words, so T.Chris is rephrasing: <em>In other words</em>. “Mind you” and “Having said that” add an exception, and “On the other hand” introduces another side, but the second sentence simply continues the same criticism.' },
 
         { id: 't2l2s3-2', type: 'gap', tag: 'dm-rephrase', level: 'C1', lines: T2_L_ESSAY, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
@@ -687,7 +687,7 @@ T2.levels.push({
           given: 'The film was three hours long, the seats were uncomfortable and the ending made no sense. <strong>In a nutshell</strong>, I wouldn’t recommend it.',
           stem: 'The phrase in bold can be best replaced by ________.',
           options: ['In short', 'In contrast', 'In addition', 'In particular'], answer: 0,
-          hint: 'The speaker reduces three complaints to one final line. Which option does that?',
+          hint: 'Compare the three details before the bold phrase with the sentence after it. What does that sentence do?',
           why: '<em>In a nutshell</em> compresses a long explanation into a short summary, so <em>In short</em> is the best replacement. “In particular” would focus on one detail, “In addition” would add another complaint, and “In contrast” would introduce the opposite view.' },
 
         { id: 't2l2s3-5', type: 'sort', tag: 'dm-rephrase', level: 'C1',
@@ -733,15 +733,15 @@ T2.levels.push({
 
     { id: 't2l2ck-4', type: 'gap', tag: 'dm-rephrase', level: 'C1', lines: T2_L_HUAHIN, blank: '(4)',
       stem: 'Choose the best option for blank (4).',
-      options: ['Mind you,', 'On the other hand,', 'All things considered,', 'To make matters worse,'], answer: 2,
+      options: ['All things considered,', 'On the other hand,', 'As a matter of fact,', 'To make matters worse,'], answer: 0,
       hint: 'Dad lists three reasons in the first sentence. What does he do with them in the second?',
-      why: 'Dad weighs everything the family has said (no refund, the beach, Fah’s squid) and gives his overall decision, so <em>All things considered</em> fits. “Mind you” and “On the other hand” would introduce a limit or another side, but his decision agrees with his reasons. “To make matters worse” would need another problem.' },
+      why: 'Dad weighs everything the family has said (it’s too late to cancel, the beach, Fah’s squid) and gives his overall decision, so <em>All things considered</em> fits. “On the other hand” would introduce another side, but his decision agrees with his reasons. “As a matter of fact” would add a surprising new fact, and “To make matters worse” would need another problem.' },
 
     { id: 't2l2ck-5', type: 'gap', tag: 'dm-add', level: 'C1', lines: T2_L_HUAHIN, blank: '(5)',
       stem: 'Choose the best option for blank (5).',
-      options: ['Even so,', 'In other words,', 'Needless to say,', 'As a matter of fact,'], answer: 3,
-      hint: 'Mum adds new information that nobody expected. Could the family have guessed it?',
-      why: 'Mum adds a new, surprising fact that makes going even easier: another app says it will be sunny. <em>As a matter of fact</em> introduces a surprising, stronger fact in the same direction. “Needless to say” would mean the family could have predicted the sunny forecast, but the last forecast said rain. “In other words” would repeat an idea, and “Even so” needs a contrast with “I agree”.' },
+      options: ['As a matter of fact,', 'Needless to say,', 'On the other hand,', 'To make matters worse,'], answer: 0,
+      hint: 'Mum says ‘I agree’. Does her next sentence turn against that, or add to it? What kind of extra?',
+      why: 'Mum adds a new, surprising fact that makes going even easier: another app says it will be sunny. <em>As a matter of fact</em> introduces a surprising, stronger fact in the same direction. “Needless to say” would mean the family could have predicted the sunny forecast, but the last forecast said rain. “On the other hand” needs a second side, but Mum has just said “I agree”, and “To make matters worse” would need bad news.' },
 
     { id: 't2l2ck-6', type: 'gap', tag: 'dm-rephrase', level: 'C1', lines: T2_L_HUAHIN, blank: '(6)',
       stem: 'Choose the best option for blank (6).',
@@ -816,7 +816,7 @@ var T2_L_WEBINAR = [
   { who: 'Ploy', text: 'Excuse me, Dr Nattaya. Do interviewers ask about our hobbies?' },
   { who: 'Dr Nattaya', text: '___(3)___ most faculties do, yes, but I can’t speak for every university.' },
   { who: 'Ploy', text: 'My hobby is collecting bottle caps. I have over three thousand.' },
-  { who: 'Dr Nattaya', text: '___(4)___ that’s one of the most memorable hobbies I’ve ever heard. Interviewers love a detail like that.' },
+  { who: 'Dr Nattaya', text: '___(4)___ that’s one of the most memorable hobbies I’ve ever heard of. Interviewers love a detail like that.' },
   { who: 'Ploy', text: 'Thank you! And what should I do if I don’t know the answer to a question?' },
   { who: 'Dr Nattaya', text: 'Don’t panic, and don’t talk for five minutes about something unrelated. ___(5)___ is the fastest way to lose an interviewer’s attention.' },
   { who: 'Ploy', text: 'One last question. This is the webinar for the Faculty of Medicine, right?' },
@@ -859,7 +859,8 @@ T2.levels.push({
           { label: 'Start', leaves: ['Without further ado', 'First things first', 'Let’s get started'] },
           { label: 'Side topic', leaves: ['By the way', 'Speaking of + noun', 'Before I forget'] },
           { label: 'React to news', leaves: ['In that case', 'If so', 'Then'] },
-          { label: 'Join clauses', leaves: ['Now that = because now', 'As long as = only if', 'Otherwise = if not'] }
+          { label: 'Join clauses', leaves: ['Now that = because now', 'As long as = only if'] },
+          { label: 'Start a sentence (adverbs)', leaves: ['Otherwise = if not', 'In that case', 'By the way'] }
         ] },
         story: { title: 'Nong Bot Hosts English Day', panels: [
           { who: 'Nong Bot', text: 'Welcome to English Day! Before we begin, here are all 347 rules of the school hall. Rule one: the hall is a hall…' },
@@ -891,9 +892,9 @@ T2.levels.push({
 
         { id: 't2l3s1-4', type: 'gap', tag: 'dm-frame', level: 'C1', lines: T2_L_MANGO, blank: '(4)',
           stem: 'Choose the best option for blank (4).',
-          options: ['Due to', 'Now that', 'Instead of', 'Speaking of'], answer: 3,
-          hint: 'Mint uses a word Fah has just said to jump to a new story. Which phrase does that?',
-          why: 'Mint picks up the word “mangoes” from Fah and uses it to jump to a related story, which is exactly what <em>Speaking of</em> + noun does. “Now that” must be followed by a full clause, not just a noun. “Instead of mangoes” and “Due to mangoes” make no sense before a question about T.Chris’s tree.' },
+          options: ['Now that', 'Instead of', 'Speaking of', 'According to'], answer: 2,
+          hint: 'Which word in Fah’s line does Mint repeat, and is her question about the same thing as Fah’s line?',
+          why: 'Mint picks up the word “mangoes” from Fah and uses it to jump to a related story, which is exactly what <em>Speaking of</em> + noun does. “Now that” must be followed by a full clause, not just a noun. “According to” needs a source of information (a person, a report), and “Instead of mangoes” makes no sense before a question about T.Chris’s tree.' },
 
         { id: 't2l3s1-5', type: 'sort', tag: 'dm-frame', level: 'C1',
           stem: 'What does each marker do in a conversation? Sort them.',
@@ -947,7 +948,8 @@ T2.levels.push({
           { label: 'Limited knowledge', leaves: ['As far as I know', 'As far as I can tell'] },
           { label: 'Heard it', leaves: ['Apparently', 'I hear that', 'Rumour has it'] },
           { label: 'Polite doubt', leaves: ['If I’m not mistaken', 'If I remember correctly'] },
-          { label: 'Real feeling', leaves: ['To be honest', 'Frankly', 'As you can imagine'] },
+          { label: 'Real feeling', leaves: ['To be honest', 'Frankly', 'Honestly'] },
+          { label: 'Shared expectation', leaves: ['As you can imagine', 'As you might expect'] },
           { label: 'Look-alikes', leaves: ['far as I know ≠ I’m concerned', 'apparently ≠ obviously'] }
         ] },
         moves: [
@@ -980,7 +982,7 @@ T2.levels.push({
         { id: 't2l3s2-4', type: 'gap', tag: 'dm-stance', level: 'C1', lines: T2_L_FLOOD, blank: '(4)',
           stem: 'Choose the best option for blank (4).',
           options: ['nevertheless,', 'as you can imagine,', 'if I’m not mistaken,', 'more often than not,'], answer: 1,
-          hint: 'After knee-deep water and moving furniture at 2 a.m., could T.Chris guess how the week went?',
+          hint: 'Read Pim’s flood story again. Is the sentence after ‘But’ a surprise, a doubt, or a result of the story?',
           why: 'After a flood at 2 a.m., anyone could guess that the family slept badly, so Pim uses <em>as you can imagine</em> (= you can guess this). “Nevertheless” signals a contrast, but poor sleep is the expected result, not a surprise. “More often than not” means “usually”, but she is describing one week, and “if I’m not mistaken” would make her sound unsure about her own family.' },
 
         { id: 't2l3s2-5', type: 'judge', tag: 'dm-stance', level: 'C1',
@@ -998,7 +1000,7 @@ T2.levels.push({
       theory: {
         key: 'Meta-markers name the <strong>thinking move</strong> the speaker is about to make: compare to something familiar (to make an analogy), give an example (to illustrate), separate two ideas (to make a distinction), say it very plainly (to spell it out), or leave the main topic (to go off on a tangent). Match the name to the move that follows.',
         body: [
-          'Lecturers and debaters often announce what their next sentence will DO. These are meta-markers: talk about the talk. <em>To make an analogy</em> announces a comparison with something familiar, and the next line almost always contains <em>like</em> or <em>as if</em>. <em>To illustrate / To give you an example</em> announce a real case. <em>To make a distinction (between A and B)</em> announces that two things will be separated, so the next line shows how they DIFFER. <em>To spell it out</em> means “to say it so plainly that nobody can miss it”, often after hints have failed. <em>To put it bluntly</em> is similar but emphasises rudeness. <em>To go off on a tangent</em> means to wander away from the main topic, and speakers usually say they DON’T want to do it. <em>For the sake of argument / To play devil’s advocate</em> announce a position the speaker may not really hold.',
+          'Lecturers and debaters often announce what their next sentence will DO. These are meta-markers: talk about the talk. <em>To make an analogy</em> announces a comparison with something familiar, and the next line almost always contains <em>like</em> or <em>as if</em>. <em>To illustrate / To give you an example</em> announce a real case. <em>To make a distinction (between A and B)</em> announces that two things will be separated, so the next line shows how they DIFFER. <em>To spell it out</em> means “to say it so plainly that nobody can miss it”, often after hints have failed. <em>To put it bluntly</em> is similar but warns that the plain truth may sound harsh. <em>To go off on a tangent</em> means to wander away from the main topic, and speakers usually say they DON’T want to do it. <em>For the sake of argument / To play devil’s advocate</em> announce a position the speaker may not really hold.',
           '<strong>How TCAS tests it.</strong> TCAS69’s professor says “___ it’s like walking into a room without knowing where you are!” and the options were <em>To make an analogy / To make a distinction / To compare and contrast / To summarize my main point</em>. The word <em>like</em> gives the analogy away. In the same paper, Pam’s story used <em>to spell it out / to put it another way / to go off on a tangent / to make matters worse</em> as options: three meta-markers as distractors for an adding marker. So the first question is not “which meta-marker?” but “<strong>is the next line a thinking move at all?</strong>”',
           '<strong>The procedure.</strong> Step 1: read the line after the blank and name what it does (compares, gives an example, separates, states bluntly, wanders, returns). Step 2: check for signal words (<em>like</em> → analogy; <em>between… and…</em> + differences → distinction; a warning with no hints → spell it out). Step 3: if the line simply tells the next event of a story, no meta-marker fits.'
         ],
@@ -1038,7 +1040,7 @@ T2.levels.push({
         { id: 't2l3s3-1', type: 'gap', tag: 'dm-meta', level: 'C1+', lines: T2_L_LECTURE, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
           options: ['To make an analogy,', 'To make a distinction,', 'To go off on a tangent,', 'To summarise my main point,'], answer: 0,
-          hint: 'Look for a small word after the blank that compares greenhouse gases to something from everyday life.',
+          hint: 'Read the sentence after the blank and name its move before you look at the options.',
           why: 'The lecturer explains greenhouse gases through a familiar picture (“they work like a thick blanket on a hot night”), so she is making an analogy. “To make a distinction” would separate two things, but here two things are being connected. “To summarise my main point” fails because this is a new explanation, not a summary, and “To go off on a tangent” means leaving the topic.' },
 
         { id: 't2l3s3-2', type: 'gap', tag: 'dm-meta', level: 'C1+', lines: T2_L_LECTURE, blank: '(2)',
@@ -1103,7 +1105,7 @@ T2.levels.push({
 
     { id: 't2l3ck-4', type: 'gap', tag: 'dm-stance', level: 'C1+', lines: T2_L_WEBINAR, blank: '(4)',
       stem: 'Choose the best option for blank (4).',
-      options: ['Apparently,', 'To be honest,', 'More often than not,', 'If I’m not mistaken,'], answer: 1,
+      options: ['To be honest,', 'Apparently,', 'More often than not,', 'If I’m not mistaken,'], answer: 0,
       hint: 'Is Dr Nattaya reporting what someone told her, or giving her own sincere reaction?',
       why: 'Dr Nattaya gives her own sincere reaction to Ploy’s hobby, so <em>To be honest</em> fits: it introduces a real personal feeling. “Apparently” would mean someone else told her the hobby is memorable, but she has only just heard about it. “If I’m not mistaken” adds doubt about a fact, and “More often than not” (usually) cannot describe one hobby.' },
 

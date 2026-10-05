@@ -103,7 +103,7 @@ var M4_REVIEW = 'Review: FreshCrate Meal Kits — Three Months in My Kitchen\n\n
 
 /* ------------------------------------------------ SECTION II news */
 var M4_NEWS = '(1) Cracks, checklists and a city that learned to look up: Bangkok’s building-safety lessons\nBy Chronicle reporter Napat Sornsuwan\n\n' +
-'(2) When a magnitude 7.7 earthquake struck Myanmar on 28 March 2025, few people in Bangkok, hundreds of kilometres away, expected to feel it.\n\n' +
+'(2) When a magnitude 7.7 earthquake struck Myanmar on 28 March 2025, few people in Bangkok, around 1,000 kilometres away, expected to feel it.\n\n' +
 '(3) Yet within seconds, tall buildings across the capital began to sway, and office workers hurried down emergency stairs into the streets.\n\n' +
 '(4) Most shocking of all, a high-rise that was still under construction collapsed — a sight that stunned a city which had long considered itself safely distant from earthquake zones.\n\n' +
 '(5) More than a year on, engineers, residents and officials are still asking what the disaster revealed, and what has changed since.\n\n' +
@@ -224,7 +224,7 @@ MOCKS.push({
 
     { id:'m4-9', type:'gap', tag:'dm-stance', level:'B2+', lines:M4_C3, blank:'(9)',
       stem:'Choose the best option for blank (9).',
-      options:['Apparently, it’s serious this time.','Luckily, the rain has already stopped.','As far as I know, it’s just a false alarm.','If I’m not mistaken, it was sent to us by mistake.'],
+      options:['Apparently, it’s serious this time.','Luckily, the rain has already stopped.','As far as I know, it’s just a false alarm.','If I’m not mistaken, it was sent out in error.'],
       answer:0,
       why:'Krit goes on to report that the manager wants every car moved out of the basement, so he must be treating the warning as real: <em>Apparently</em> introduces what he has heard. The other options play the danger down or say the rain has stopped, which would make moving the cars pointless — and Aom said the rain is expected tonight.' },
 
@@ -324,13 +324,13 @@ MOCKS.push({
       stem:'Advertisement 2: Which of the following is FALSE about Ad A?',
       options:['It weighs less than its predecessor.','It can be used with Android and iOS phones.','Not every buyer will receive the free extra strap.','Its blood-oxygen readings can be used to diagnose illness.'],
       answer:3,
-      why:'The fine print says blood-oxygen readings “are not intended for medical diagnosis,” so option 4 is false. The watch is “30% lighter than its predecessor,” works with Android and iOS, and the free strap goes only to the first 500 buyers — all true.' },
+      why:'The fine print says blood-oxygen readings “are not intended for medical diagnosis,” so <em>Its blood-oxygen readings can be used to diagnose illness</em> is false. The watch is “30% lighter than its predecessor,” works with Android and iOS, and the free strap goes only to the first 500 buyers — all true.' },
 
     { id:'m4-25', type:'read', tag:'ad-fineprint', level:'B2+', passage:'', ad:M4_AD2,
       stem:'Advertisement 2: Which of the following is FALSE about Ad B?',
       options:['iPhone users cannot use it.','Its warranty is twice as long as Ad A’s.','The AI Coach is free for as long as you own the watch.','Buyers can spread the cost over ten months without paying interest.'],
       answer:2,
-      why:'The fine print says the AI Coach needs a 99-baht monthly subscription after a free three-month trial, so it is not free forever. It is Android-only, its two-year warranty is double Ad A’s one year, and “0% interest instalments over 10 months” confirms the last option.' },
+      why:'The fine print says the AI Coach needs a 99-baht monthly subscription after a free three-month trial, so it is not free forever. It is Android-only, its two-year warranty is double Ad A’s one year, and “0% interest instalments over 10 months” confirms that buyers can spread the cost without paying interest.' },
 
     { id:'m4-26', type:'read', tag:'ad-compare', level:'C1', passage:'', ad:M4_AD2,
       stem:'Advertisement 2: All of the following can be inferred from the two advertisements EXCEPT that ________.',
@@ -392,7 +392,7 @@ MOCKS.push({
       stem:'According to Dr Worawit, why did tall buildings in Bangkok shake so strongly?',
       options:['The soft clay under the city amplified distant waves.','Many of them were still under construction at the time.','They were built too close to the centre of the earthquake.','They had weaker foundations than the smaller buildings nearby.'],
       answer:0,
-      why:'Dr Worawit says Bangkok “sits on soft clay” and that “long, slow waves from a distant earthquake can be amplified.” The quake was hundreds of kilometres away, so the buildings were not close to its centre, and only one building was under construction.' },
+      why:'Dr Worawit says Bangkok “sits on soft clay” and that “long, slow waves from a distant earthquake can be amplified.” The quake was around 1,000 kilometres away, so the buildings were not close to its centre, and only one building was under construction.' },
 
     { id:'m4-35', type:'read', tag:'rd-detail', level:'C1', passage:M4_NEWS, source:M4_NEWS_SRC,
       stem:'What does paragraph 8 suggest about many of the cracks reported by residents?',
@@ -464,9 +464,9 @@ MOCKS.push({
 
     { id:'m4-45', type:'read', tag:'rd-main', level:'B2+', passage:M4_ART1, source:M4_ART_SRC,
       stem:'Article 1: What is the main idea of the article?',
-      options:['Its risks are real, but moderation beats total avoidance.','The NOVA system is the most accurate way to judge any food.','Food additives cause obesity and should be banned by the authorities.','Busy families should rely on ultra-processed food because it is cheap.'],
-      answer:0,
-      why:'The article presents the evidence of risk (paragraph 4), its limits (paragraph 5) and then advises shifting “the balance rather than to chase perfection.” It says additives are approved and not necessarily dangerous, criticises NOVA, and calls ultra-processed food a lifeline, not something to rely on.' },
+      options:['The NOVA system is the most accurate way to judge any food.','Ultra-processed food is risky, but moderation beats total avoidance.','Food additives cause obesity and should be banned by the authorities.','Busy families should rely on ultra-processed food because it is cheap.'],
+      answer:1,
+      why:'The article presents the evidence of risk (paragraph 4), its limits (paragraph 5) and then advises shifting “the balance rather than to chase perfection.” It says additives are approved and not necessarily dangerous, criticises NOVA, and, although it calls such food a lifeline for busy families, it wants it kept “on the side of the plate,” not relied on as the main diet.' },
 
     { id:'m4-46', type:'read', tag:'rd-detail', level:'B2', passage:M4_ART1, source:M4_ART_SRC,
       stem:'Article 1: According to paragraph 2, how does NOVA differ from other ways of classifying food?',
@@ -602,7 +602,7 @@ MOCKS.push({
       stem:'Choose the best option for blank (67).',
       options:['reduce','reduced','reducing','reduction'],
       answer:0,
-      why:'<em>Help</em> is followed by a bare infinitive (or <em>to</em> + infinitive): the plants help <em>reduce</em> the heat. <em>Reducing</em> is the tempting form but <em>help</em> does not take -ing here; <em>reduced</em> and <em>reduction</em> are not verb forms that can follow <em>help</em>.' },
+      why:'<em>Help</em> is followed by a bare infinitive (or <em>to</em> + infinitive): the plants help <em>reduce</em> the heat. <em>Reducing</em> is the tempting form but <em>help</em> does not take -ing here; <em>reduced</em> (a past form) and <em>reduction</em> (a noun) cannot follow <em>help</em>.' },
 
     { id:'m4-68', type:'cloze', tag:'wo-front', level:'C1', passage:M4_TC2, blank:'(68)',
       stem:'Choose the best option for blank (68).',
@@ -672,13 +672,13 @@ MOCKS.push({
       stem:'<div class="orderblock"><p>A. This lack of rain leaves rice fields and reservoirs short of water, putting farmers’ incomes at risk.</p><p>B. Forecasters expect a strong El Niño to develop in 2026–27, bringing unusually warm and dry conditions to Thailand.</p><p>C. Dry conditions also allow smoke and dust to linger in the air, so the dry-season PM2.5 haze is likely to be worse than usual.</p><p>D. As a result, early 2027 is expected to bring less rainfall than normal to much of the country.</p></div>',
       options:['B-A-C-D','B-D-A-C','C-B-D-A','D-A-B-C'],
       answer:1,
-      why:'This is a cause–effect chain. B names the cause (El Niño), D gives its result (“As a result … less rainfall”), A follows with “This lack of rain” referring back to D, and C adds a second effect with “also.” In B-A-C-D, “This lack of rain” would have nothing to refer to.' },
+      why:'This is a cause–effect chain. B names the cause (El Niño), D gives its result (“As a result … less rainfall”), A follows with “This lack of rain” referring back to D, and C adds a second effect with “also.” In B-A-C-D, D’s “As a result … less rainfall than normal” would come after the effects of the drought and would wrongly present lower rainfall as a result of the haze.' },
 
     { id:'m4-79', type:'choose', tag:'po-ref', level:'C1',
-      stem:'<div class="orderblock"><p>A. This sensation, known as “phantom vibration syndrome,” is surprisingly common among heavy smartphone users.</p><p>B. Many people have felt their phone vibrate in their pocket, only to discover that it was not ringing at all.</p><p>C. Such false alarms are usually harmless, but researchers see them as a sign of how closely our brains have become tuned to our devices.</p><p>D. One study found that it was reported by the majority of hospital staff who carried a phone or pager at work.</p></div>',
+      stem:'<div class="orderblock"><p>A. This sensation, known as “phantom vibration syndrome,” is surprisingly common among heavy smartphone users.</p><p>B. Many people have felt their phone vibrate in their pocket, only to discover that it was not ringing at all.</p><p>C. Such findings suggest that, although these false alarms are harmless, our brains have become closely tuned to our devices.</p><p>D. One study found that it was reported by the majority of hospital staff who carried a phone or pager at work.</p></div>',
       options:['B-A-D-C','B-C-A-D','C-B-A-D','D-A-B-C'],
       answer:0,
-      why:'B describes the experience with no reference word, so it opens. “This sensation” (A) names it, “it was reported” (D) needs the syndrome from A, and “Such false alarms” (C) sums up and closes. In B-C-A-D, D’s “it” would wrongly point to “a sign” or “our devices.”' },
+      why:'B describes the experience with no reference word, so it opens. “This sensation” (A) names it, “it was reported” (D) needs the syndrome from A, and “Such findings” (C) draws a conclusion from the study in D and closes. In B-C-A-D, “Such findings” in C would come before any study has been mentioned.' },
 
     { id:'m4-80', type:'choose', tag:'po-signal', level:'B2+',
       stem:'<div class="orderblock"><p>A. Next, they should switch to timed practice papers, which reveal whether they can apply that knowledge under pressure.</p><p>B. Finally, in the last few days, they should reduce their workload and prioritize sleep so that the brain can consolidate what it has learned.</p><p>C. Experts recommend that students divide the final month before a major exam into three distinct stages.</p><p>D. First, students should review the topics they find hardest, making sure the basic ideas are clear.</p></div>',
