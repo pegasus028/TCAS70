@@ -160,7 +160,20 @@
         pw: hash('offline'), created: new Date().toISOString()
       };
     }
-    d.students[progress.studentId].progress = progress;
+    /* Same rule as save_ in Code.gs: a paper the teacher set (or a mock they
+       opened) after this device last saved is kept, and handed back. */
+    var res = { ok: true }, keep = progress, prev = d.students[progress.studentId].progress;
+    if (prev && prev.assignment && prev.assignment.assignmentId) {
+      var a2 = progress.assignment;
+      if (!a2 || !a2.assignmentId ||
+          (a2.assignmentId !== prev.assignment.assignmentId &&
+           String(prev.assignment.createdAt || '') > String(a2.createdAt || ''))) {
+        keep = JSON.parse(JSON.stringify(progress));
+        keep.assignment = prev.assignment;
+        res.assignment = prev.assignment;
+      }
+    }
+    d.students[progress.studentId].progress = keep;
     d.students[progress.studentId].name = progress.displayName;
     /* A finished simulation arrives as one summary row among the answers. The
        sheet puts it on its own tab; offline we keep the same separation, or the
@@ -172,7 +185,7 @@
     if (d.attempts.length > 8000) d.attempts = d.attempts.slice(-8000);
     if (d.mocks.length > 2000) d.mocks = d.mocks.slice(-2000);
     saveDb(d);
-    return { ok: true };
+    return res;
   }
   function localRoster() {
     var d = db();

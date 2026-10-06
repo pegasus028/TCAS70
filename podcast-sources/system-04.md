@@ -53,8 +53,8 @@ Each reading question asks you to do a particular job: find the whole point, fin
 - The trap: right opinion, wrong owner, or "linked" turned into "caused".
 
 **Which detail best supports.** Most options are true, so the question is whether a detail proves the exact key word in the claim. The analogy: a lawyer needs the photo from Friday, not a real photo from Tuesday.
-- Example 1: "The flooding affected the whole capital" is supported by "all 50 districts", not by "37 blocked roads".
-- Example 2: "The rain was extremely intense" is supported by "over 300 mm in 48 hours", not by "22 deaths" (severity) or "water from the North" (cause).
+- Example 1: "The flooding hit a huge number of people in Bangkok itself" is supported by "about 700,000 people in Bangkok", not by "2.6 million people nationwide" (wrong scale) or "37 blocked roads".
+- Example 2: "The rain was extremely intense" is supported by "over 300 mm in 48 hours", not by "23 deaths" (severity) or "water released from the dam upstream" (cause).
 - The trap: true but off target. Use the remove-it check.
 
 ## 60-second exam tactic

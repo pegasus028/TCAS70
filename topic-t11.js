@@ -11,15 +11,15 @@
    =========================================================================== */
 
 /* ---------------------------------------------------------- shared passages */
-var T11_P_BAN = 'In December 2025, Australia ___(1)___ the first country to ban social media accounts for children under 16. Since then, several other governments ___(2)___ similar rules, including France, Denmark and Malaysia. The early results, however, are mixed. About 4.7 million accounts had been removed by January 2026, yet a report published three months after the ban found that more than 80 per cent of under-16s were still using social media. Britain, which plans its own under-16 ban for spring 2027, is watching closely. When that ban ___(3)___ effect, regulators there hope to avoid the same problems.';
+var T11_P_BAN = 'In December 2025, Australia ___(1)___ a test case for the world when it banned social media accounts for children under 16. Since then, several other governments ___(2)___ similar rules, including France, Denmark and Malaysia. The early results, however, are mixed. About 4.7 million accounts had been removed by January 2026, yet a report published in August 2026 found that, three months after the ban, more than 80 per cent of under-16s were still using social media. Britain, which plans its own under-16 ban for 2027, is watching closely. When that ban ___(3)___ effect, regulators there hope to avoid the same problems.';
 
 var T11_P_AIHW = 'The number of Thai students who use AI chatbots for homework ___(1)___ risen sharply since 2024. Pressure from parents and tutoring schools for top TCAS scores ___(2)___ some students to hand in work they did not write themselves. Teachers are responding. At one Bangkok school, each of the new AI guidelines ___(3)___ a clear example of fair and unfair use, and students who break the rules lose marks.';
 
-var T11_P_SANDBAG = 'By the time the rain finally stopped on 27 September 2026, volunteers from our school ___(1)___ sandbags for three days with hardly a break. Since then, they ___(2)___ food and drinking water to families in the eastern districts, and they show no sign of stopping. The student club that organises them is small but ambitious: by the end of this year, its members ___(3)___ more than 2,000 hours of community service.';
+var T11_P_SANDBAG = 'By the time the rain finally stopped on 27 September 2026, volunteers from our school ___(1)___ sandbags for three days with hardly a break. Since then, they ___(2)___ food and drinking water to families in flooded districts, and they show no sign of stopping. The student club that organises them is small but ambitious: by the end of this year, its members ___(3)___ more than 2,000 hours of community service.';
 
-var T11_P_SLEEP = 'For more than a decade now, researchers ___(1)___ a steady fall in the amount of sleep that teenagers get. The main cause, according to Dr Pimchanok Wattanasiri of Chao Phraya University, ___(2)___ not homework but screens. In her study, teenagers who keep a phone beside the bed ___(3)___ about 40 minutes less sleep a night than those who leave it outside the room. By the time the study ended in 2025, its 600 volunteers ___(4)___ more than 90,000 nights of sleep data. Last month, her team ___(5)___ an even bigger project, this time with whole families. By the time the TCAS results come out next year, the researchers ___(6)___ data from over 500 homes.';
+var T11_P_SLEEP = 'For more than a decade now, researchers ___(1)___ a steady fall in the amount of sleep that teenagers get. The main cause, according to Dr Pimchanok Wattanasiri of Riverbank University, ___(2)___ not homework but screens. In her study, teenagers who keep a phone beside the bed ___(3)___ about 40 minutes less sleep a night than those who leave it outside the room. By the time the study ended in 2025, its 600 volunteers ___(4)___ more than 90,000 nights of sleep data. Last month, her team ___(5)___ an even bigger project, this time with whole families. By the time the TCAS results come out next year, the researchers ___(6)___ data from over 500 homes.';
 
-var T11_P_FLOOD = 'Bangkok’s worst flooding in years began on 24 September 2026, when more than 300 millimetres of rain fell on parts of the city in just 48 hours. Two days later, a flood disaster zone ___(1)___ , and warnings ___(2)___ to phones across the city by cell broadcast. The water came from two directions: heavy local rain and run-off flowing south from the North. Since the rain stopped, temporary flood barriers in the eastern districts ___(3)___ , but officials say draining will take another two to three days.';
+var T11_P_FLOOD = 'Bangkok’s flooding began on 24 September 2026, when more than 300 millimetres of rain fell on parts of the city in just 48 hours. Two days later, a flood disaster zone ___(1)___ , and warnings ___(2)___ to phones across the city by cell broadcast. The water came from two directions: heavy local rain and water released from the Chao Phraya Dam upstream. Since the rain stopped, temporary flood barriers in some districts ___(3)___ , but officials say draining will take another two to three days.';
 
 var T11_P_DEEPFAKE = 'Since text-to-video apps spread in 2025, almost any event can ___(1)___ in minutes: a flood that never happened, a speech that was never given. Nobody likes ___(2)___ , yet millions of people share clips every day without checking where they came from. Media-literacy teachers now argue that every viral clip needs ___(3)___ before it is shared.';
 
@@ -67,7 +67,7 @@ T11.levels.push({
         ],
         thai: 'ข้อ tense ใน TCAS ตัวเลือกทั้ง 4 เป็นรูปต่าง ๆ ของกริยาตัวเดียวกัน ให้หา “คำบอกเวลา” (time anchor) ก่อน เช่น in 2025, last month, ago ใช้ past simple ส่วน since, since then, for … now, so far, recently ใช้ present perfect กับดักสำคัญคือคำบอกเวลาอาจอยู่ไกลจากช่องว่างหรืออยู่ในประโยคก่อนหน้า และหลัง when / by the time / as soon as ที่พูดถึงอนาคต ต้องใช้ present simple ไม่ใช่ will',
         examples: [
-          { s: 'In December 2025, Australia <strong>became</strong> the first country to ban under-16 accounts.', g: 'A finished date → past simple, never “has become”.' },
+          { s: 'In December 2025, Australia <strong>became</strong> a test case when it banned under-16 accounts.', g: 'A finished date → past simple, never “has become”.' },
           { s: 'Since then, other governments <strong>have announced</strong> similar rules.', g: '“Since then” = from that point up to now → present perfect.' },
           { s: 'By the time the boats reached the village, the water <strong>had risen</strong> to chest height.', g: 'Earlier past before another past event → past perfect.' },
           { s: 'When the new rule <strong>takes</strong> effect next year, parents will get a letter.', g: 'Future time clause → present simple; the “will” goes in the main clause.' },
@@ -95,7 +95,7 @@ T11.levels.push({
           stem: 'Choose the best option for blank (1).',
           options: ['became', 'becomes', 'has become', 'had become'], answer: 0,
           hint: 'Underline the time phrase at the very start of the sentence. Is that box of time open or closed?',
-          why: '“In December 2025” is a finished point in time, so the past simple is needed: Australia <em>became</em> the first country. “Has become” is the near miss, but the present perfect cannot take a finished time like “in December 2025”. “Had become” would need a later past event to look back from, and “becomes” is present.' },
+          why: '“In December 2025” is a finished point in time, so the past simple is needed: Australia <em>became</em> a test case. “Has become” is the near miss, but the present perfect cannot take a finished time like “in December 2025”. “Had become” would need a later past event to look back from, and “becomes” is present.' },
 
         { id: 't11l1s1-2', type: 'cloze', tag: 'vt-tense', level: 'B2', passage: T11_P_BAN, blank: '(2)',
           stem: 'Choose the best option for blank (2).',
@@ -107,7 +107,7 @@ T11.levels.push({
           stem: 'Choose the best option for blank (3).',
           options: ['took', 'takes', 'will take', 'would take'], answer: 1,
           hint: 'The ban is planned for the future, but look at the word that opens this part of the sentence.',
-          why: 'The ban will start in spring 2027, but after the time word “When” we use the present simple for the future: when that ban <em>takes</em> effect. “Will take” is the classic trap, since the future meaning pulls students towards “will”, but the future belongs in the main clause, not the time clause. “Took” is past and “would take” does not match the present “hope”.' },
+          why: 'The ban is planned for 2027, but after the time word “When” we use the present simple for the future: when that ban <em>takes</em> effect. “Will take” is the classic trap, since the future meaning pulls students towards “will”, but the future belongs in the main clause, not the time clause. “Took” is past and “would take” does not match the present “hope”.' },
 
         { id: 't11l1s1-4', type: 'spot', tag: 'vt-tense', level: 'B2',
           stem: 'One of the four parts is wrong. Find it.',
@@ -293,7 +293,7 @@ T11.levels.push({
       stem: 'Choose the best option for blank (2).',
       options: ['is', 'are', 'were', 'have been'], answer: 0,
       hint: 'Bracket the “according to …” phrase. Which noun opens the sentence? Singular or plural?',
-      why: 'The subject is “The main cause”; the phrase “according to Dr Pimchanok Wattanasiri of Chao Phraya University” is only extra information. One main cause → singular, and the passage is in the present: the main cause <em>is</em> not homework but screens. “Are” is the trap, because the plural “screens” comes after the verb, but the verb agrees with the subject before it.' },
+      why: 'The subject is “The main cause”; the phrase “according to Dr Pimchanok Wattanasiri of Riverbank University” is only extra information. One main cause → singular, and the passage is in the present: the main cause <em>is</em> not homework but screens. “Are” is the trap, because the plural “screens” comes after the verb, but the verb agrees with the subject before it.' },
     { id: 't11l1ck-3', type: 'cloze', tag: 'vt-sva', level: 'B2+', passage: T11_P_SLEEP, blank: '(3)',
       stem: 'Choose the best option for blank (3).',
       options: ['get', 'gets', 'is getting', 'has gotten'], answer: 0,

@@ -71,12 +71,13 @@
        carried over: if the stored progress.assignment has an assignmentId the
        incoming copy lacks (or an older createdAt), the stored assignment wins.
        Without this, the student's next autosave would wipe a freshly set paper
-       because their in-memory copy pre-dates it.
+       because their in-memory copy pre-dates it. The response then carries
+       { assignment:<stored> } so the device adopts the paper (or the mock the
+       teacher opened) without waiting for a fresh sign-in.
      • If the server copy is kept but the incoming copy has completed the same
        assignment, the completion (done/score/completedAt) is copied across.
-   Note: the current student.js ignores the body of a save response (sync()
-   only uses r.ok), so a stale tab does not adopt the server copy until the
-   student signs in again — login always returns the stored progress.
+   student.js adopts r.progress when kept === 'server' and r.assignment when
+   it is present, except during a lesson run or a mock.
 
    ---------------------------------------------------------------------------
    TEACHER SIGN-IN
@@ -276,6 +277,7 @@ function save_(p) {
           (a2.assignmentId !== stored.assignment.assignmentId &&
            String(stored.assignment.createdAt || '') > String(a2.createdAt || ''))) {
         incoming.assignment = stored.assignment;
+        res.assignment = stored.assignment;
       }
     }
     if (incoming.displayName) incoming.displayName = cleanName_(incoming.displayName) || s.name;

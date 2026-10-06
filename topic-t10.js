@@ -13,15 +13,15 @@
 /* ---------------------------------------------------------- shared passages */
 var T10_P_SENSOR = 'The students ___(1)___ built the new flood sensors are all members of the school’s robotics club. They tested the sensors in a canal ___(2)___ their club adviser grew up. One team member, ___(3)___ grandmother lives beside that canal, says the text alerts have already helped her family move their motorbikes to higher ground before the water arrived.';
 
-var T10_P_BAN = 'Australia’s ban on social media for under-16s took effect in December 2025. About 4.7 million accounts had been removed by January 2026, ___(1)___ sounded like a clear success. The government safety regulator’s report, ___(2)___ in 2026, told a different story: more than 80% of under-16s were still using social media three months after the ban. France, ___(3)___ own limit covers under-15s, began enforcing its rules on 1 September 2026.';
+var T10_P_BAN = 'Australia’s ban on social media for under-16s took effect in December 2025. About 4.7 million accounts had been removed by January 2026, ___(1)___ sounded like a clear success. The government safety regulator’s report, ___(2)___ in August 2026, told a different story: more than 80% of under-16s were still using social media three months after the ban. France, ___(3)___ own limit covers under-15s, began blocking new accounts on 1 September 2026.';
 
 var T10_P_SWITCH = 'Code-switching, the habit of moving between two languages in one conversation, is a skill ___(1)___ many bilingual teenagers are quietly proud. A survey of 400 students in Bangkok, most ___(2)___ speak Thai at home and English at school, found that the extent ___(3)___ they switched depended on who was listening. With grandparents, they stayed in Thai; with classmates, they mixed freely.';
 
 var T10_P_FOOD = 'Thai food, ___(1)___ popularity has spread far beyond Asia, is one of the country’s strongest forms of soft power. Thai chefs, many ___(2)___ trained in Bangkok, now run kitchens in London, Tokyo and New York, ___(3)___ has made dishes such as khao soi familiar to millions of diners. Yet the flavours ___(4)___ foreigners fall in love with are not always the real thing: many restaurants cut the chilli by half, a choice ___(5)___ some Thai visitors loudly complain.';
 
-var T10_P_MICRO = 'Microplastics are tiny pieces of plastic ___(1)___ less than five millimetres across. Particles ___(2)___ by car tyres and washing machines reach rivers every time it rains. A study by Chao Phraya University, ___(3)___ in 2026, found microplastics in nine out of ten bottles of drinking water that its team tested.';
+var T10_P_MICRO = 'Microplastics are tiny pieces of plastic ___(1)___ less than five millimetres across. Particles ___(2)___ by car tyres and washing machines reach rivers every time it rains. A study by Riverbank University, ___(3)___ in 2026, found microplastics in nine out of ten bottles of drinking water that its team tested.';
 
-var T10_P_SCROLL = 'Doomscrolling, ___(1)___ endless bad news on a phone, has become a common late-night habit among teenagers. Dr Nattaya Srisuk, ___(2)___ at Chao Phraya University, says the habit is fed by the feed itself. Behind every app sits an algorithm, ___(3)___ which clips keep each user watching and then shows more of them.';
+var T10_P_SCROLL = 'Doomscrolling, ___(1)___ endless bad news on a phone, has become a common late-night habit among teenagers. Dr Nattaya Srisuk, ___(2)___ at Riverbank University, says the habit is fed by the feed itself. Behind every app sits an algorithm, ___(3)___ which clips keep each user watching and then shows more of them.';
 
 var T10_P_CAFFEINE = 'Caffeine can sharpen attention when ___(1)___ in small amounts. ___(2)___ late at night, however, it can delay sleep by an hour or more. While ___(3)___ for exams, many students reach for energy drinks without realising that the “boost” they feel at midnight is borrowed from the next morning.';
 
@@ -427,7 +427,7 @@ T10.levels.push({
             { text: 'The rules ___ last year ban phones in class. (introduce)', bin: 'ed' },
             { text: 'Anyone ___ a mask outdoors breathes in less PM2.5. (wear)', bin: 'ing' },
             { text: 'Clips ___ with AI often look perfectly real. (make)', bin: 'ed' },
-            { text: 'Water ___ south from the North raised river levels in Bangkok. (flow)', bin: 'ing' }
+            { text: 'Water ___ down the Chao Phraya from the dam raised river levels in Bangkok. (flow)', bin: 'ing' }
           ],
           hint: 'Put the noun in front of the verb as a subject. Does it make sense as an action it performs?',
           why: 'Tourists visit, anyone wears, water flows: the noun does the action, so -ing. Volunteers are trained, rules are introduced, clips are made (by someone else): the noun receives the action, so -ed/past participle. Time has nothing to do with it.' },
@@ -447,7 +447,7 @@ T10.levels.push({
       theory: {
         key: 'An appositive is a <strong>noun phrase that renames the noun next to it</strong> — <em>Dr Nattaya, a psychologist, …</em> — so it has <strong>no verb of its own</strong> and sits inside commas.',
         body: [
-          'An appositive is the smallest clause of all: a relative clause shrunk until only the noun phrase is left. <em>Dr Nattaya Srisuk, <s>who is</s> a psychologist at Chao Phraya University, says…</em> → <em>Dr Nattaya Srisuk, <strong>a psychologist at Chao Phraya University</strong>, says…</em>. The appositive can carry its own describers: a reduced relative (<em>a trend known as the Flynn Effect</em>), a full relative (<em>a system that learns</em>), a gerund phrase (<em>the habit of scrolling</em>).',
+          'An appositive is the smallest clause of all: a relative clause shrunk until only the noun phrase is left. <em>Dr Nattaya Srisuk, <s>who is</s> a psychologist at Riverbank University, says…</em> → <em>Dr Nattaya Srisuk, <strong>a psychologist at Riverbank University</strong>, says…</em>. The appositive can carry its own describers: a reduced relative (<em>a trend known as the Flynn Effect</em>), a full relative (<em>a system that learns</em>), a gerund phrase (<em>the habit of scrolling</em>).',
           '<strong>How TCAS tests it.</strong> TCAS69 wrote <em>IQ scores rose steadily, ___ as the “Flynn Effect”</em> with options <em>a trend known / a trend, known / a trend is known / a trend, is known</em>. The sentence already has its subject and verb (<em>IQ scores rose</em>), and <em>a trend …</em> sums up that whole idea. Any option containing <em>is</em> adds a second main verb, which turns the sentence into a comma splice. So step one is always the same: <strong>an appositive has no finite verb</strong>. Also watch for appositives that sum up a whole clause (<em>…rose steadily, a trend known as…</em>) — they work like sentence-level which.',
           '<strong>The commas.</strong> A non-defining appositive in the middle of a sentence needs <strong>two</strong> commas, one on each side, like brackets: <em>My cousin, Krit, plays football</em> (I have one cousin). Forgetting the second comma leaves the appositive swallowing the verb: <em>Krit, a keen footballer trains every day</em> ✗. A defining appositive has no commas: <em>my cousin Krit</em> (I have several cousins; this one).',
           '<strong>Procedure.</strong> Step 1: find the main subject and verb. Step 2: delete every option with a finite verb (<em>is, was, has</em>) or a pronoun + verb (<em>it is</em>). Step 3: check that the remaining option is a noun phrase that matches the noun it renames, and that any inner clause is complete (<em>a system that learns</em>).'
@@ -460,7 +460,7 @@ T10.levels.push({
         thai: 'appositive คือนามวลีที่วางต่อจากคำนามเพื่อเรียกหรืออธิบายสิ่งเดียวกันอีกชื่อหนึ่ง เช่น Dr Nattaya, a psychologist, says… ไม่มีกริยาแท้ของตัวเอง และถ้าอยู่กลางประโยคต้องมี comma ปิดหน้า–หลังเหมือนวงเล็บ กับดักของ TCAS คือตัวเลือกที่มี is หรือ it is ซึ่งทำให้ประโยคมีกริยาหลักสองตัว (comma splice) เช่นข้อ a trend, known as the Flynn Effect ตัวเลือกที่มี is ผิดทันที',
         examples: [
           { s: 'IQ scores rose steadily, <strong>a trend known as the Flynn Effect</strong>.', g: 'the appositive sums up the whole clause; no “is”.' },
-          { s: 'Dr Nattaya Srisuk, <strong>a psychologist at Chao Phraya University</strong>, studies sleep.', g: 'two commas; renames the person.' },
+          { s: 'Dr Nattaya Srisuk, <strong>a psychologist at Riverbank University</strong>, studies sleep.', g: 'two commas; renames the person.' },
           { s: 'Doomscrolling, <strong>the habit of scrolling through bad news</strong>, is spreading.', g: 'appositive with a gerund phrase inside.' },
           { s: 'Behind every app sits an algorithm, <strong>a system that learns</strong> what you watch.', g: 'appositive containing a full relative clause.' },
           { s: 'My friend <strong>Pun</strong> never revises.', g: 'defining appositive: no commas (I have several friends).' }
@@ -495,7 +495,7 @@ T10.levels.push({
           stem: 'Choose the best option for blank (2).',
           options: ['a psychologist', 'is a psychologist', 'she is a psychologist', 'that is a psychologist'], answer: 0,
           hint: 'Find the main verb that follows the second comma. Then check the punctuation before the gap.',
-          why: 'The main verb is “says”, so the gap is an appositive: Dr Nattaya Srisuk, <em>a psychologist</em> at Chao Phraya University, says… “Is a psychologist” and “she is a psychologist” both drop a second subject-and-verb into a sentence that already has one, and “that is a psychologist” puts “that” after a comma, which a non-defining clause never allows.' },
+          why: 'The main verb is “says”, so the gap is an appositive: Dr Nattaya Srisuk, <em>a psychologist</em> at Riverbank University, says… “Is a psychologist” and “she is a psychologist” both drop a second subject-and-verb into a sentence that already has one, and “that is a psychologist” puts “that” after a comma, which a non-defining clause never allows.' },
 
         { id: 't10l2s2-3', type: 'cloze', tag: 'rc-appos', level: 'C1', passage: T10_P_SCROLL, blank: '(3)',
           stem: 'Choose the best option for blank (3).',

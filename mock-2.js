@@ -87,7 +87,7 @@ var M2_REVIEW = 'Review: Baan Lanna Loft, a boutique hostel in Chiang Mai\n\n' +
 '(6) Overall, these are minor issues compared with everything the hostel gets right. For backpackers who value character, cleanliness and friendly service, Baan Lanna Loft is excellent value, and I have already booked again for next year’s Yi Peng.';
 
 var M2_NEWS = '(1) Australia’s under-16 social media ban: millions of accounts gone, but most teens still online\n\n' +
-'(2) By Nattaya Srisuk, The Bangkok Chronicle\n\n' +
+'(2) By Nattaya Srisuk, The Bangkok Lantern\n\n' +
 '(3) When Australia’s ban on social media for children under 16 took effect in December 2025, supporters hailed it as a turning point for a generation raised on screens. Almost a year later, the picture is more complicated.\n\n' +
 '(4) By January 2026, about 4.7 million accounts had been removed, a figure that the law’s supporters pointed to as proof that it had teeth.\n\n' +
 '(5) But a report released in 2026 by the country’s online safety regulator found that more than 80 percent of under-16s were still using social media three months after the ban began.\n\n' +

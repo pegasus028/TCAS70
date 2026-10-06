@@ -63,6 +63,17 @@
         paintHeader();
         if (!$('#view-plan').classList.contains('hidden')) paintPlan();
       }
+      /* The teacher has set a paper or opened a mock since this device last
+         saved. The server kept it; take it on board now rather than at the
+         next sign-in (students stay signed in for weeks). */
+      else if (r.ok && r.assignment && r.assignment.assignmentId && !S.run && !S.exam &&
+          (!S.p.assignment || S.p.assignment.assignmentId !== r.assignment.assignmentId)) {
+        S.p.assignment = r.assignment;
+        api.cacheProgress(S.p);
+        paintHeader();
+        if (!$('#view-plan').classList.contains('hidden')) paintPlan();
+        if (!$('#view-record').classList.contains('hidden')) paintRecord();
+      }
       return r;
     }).catch(function () { return { ok: false }; });
   }
@@ -327,18 +338,18 @@
      Leitner cycle, English on the front, meaning + Thai on the back.
      ===================================================================== */
   var SPRINTS = [
-    { key: 'conv', name: 'Conversation Sprint', n: 12, sec: 540, pre: ['cv-', 'id-', 'dm-'], types: ['gap'],
-      blurb: '12 dialogue blanks in 9 minutes: the pace for Part I & II (20 items ≈ 15 min).' },
-    { key: 'gram', name: 'Text-Completion Sprint', n: 15, sec: 630, pre: ['wf-', 'wo-', 'rc-', 'ac-', 'nc-', 'vt-', 'vp-', 'vm-', 'lk-', 'dt-', 'pl-', 'vc-colloc', 'vc-prep', 'vc-phrasal'], types: ['cloze', 'choose', 'equiv'],
-      blurb: '15 grammar blanks in 10½ minutes: exactly the Writing Part I budget.' },
-    { key: 'order', name: 'Paragraph-Order Sprint', n: 5, sec: 300, pre: ['po-'], types: ['choose'], orderOnly: true,
-      blurb: '5 four-sentence puzzles in 5 minutes. Decide the opener, halve the options, test one pair.' },
+    { key: 'conv', name: 'Conversation Sprint', n: 12, sec: 420, pre: ['cv-', 'id-', 'dm-'], types: ['gap'],
+      blurb: '12 dialogue blanks in 7 minutes: a little faster than the 8 minutes the real paper gives its 12 short-conversation items.' },
+    { key: 'gram', name: 'Text-Completion Sprint', n: 15, sec: 540, pre: ['wf-', 'wo-', 'rc-', 'ac-', 'nc-', 'vt-', 'vp-', 'vm-', 'lk-', 'dt-', 'pl-', 'vc-colloc', 'vc-prep', 'vc-phrasal'], types: ['cloze', 'choose', 'equiv'],
+      blurb: '15 grammar blanks in 9 minutes: just inside the 10 minutes text completion gets in the real paper.' },
+    { key: 'order', name: 'Paragraph-Order Sprint', n: 5, sec: 420, pre: ['po-'], types: ['choose'], orderOnly: true,
+      blurb: '5 four-sentence puzzles in 7 minutes. Find the opener, then test the one link where the options differ.' },
     { key: 'read', name: 'Reading Sprint', n: 8, sec: 600, pre: ['ad-', 'rv-', 'rd-', 'vs-'], types: ['read'],
       blurb: '8 reading questions in 10 minutes: ads, reviews, news, visuals and articles.' },
     { key: 'vocab', name: 'Vocab Blitz', n: 20, sec: 300, pre: ['vc-', 'wk-', 'id-'], types: ['choose', 'equiv', 'gap', 'cloze', 'read'],
       blurb: '20 word questions in 5 minutes: recognise meanings on sight.' },
     { key: 'mixed', name: 'Full-Pace 20', n: 20, sec: 1350, pre: [''], types: ['gap', 'cloze', 'read', 'choose', 'equiv'],
-      blurb: '20 mixed questions at the real paper’s average of 67 seconds each.' }
+      blurb: '20 mixed questions at the real paper’s overall pace: 90 minutes for 80 questions is about 67 seconds each.' }
   ];
   function sprintPool(sp) {
     var byTag = (S.p.stats && S.p.stats.byTag) || {};
@@ -454,7 +465,7 @@
     var rec = S.p.sprints || {};
     var html = '<div class="card speedlab">' + E.artBand('clock') +
       '<p class="kicker">Speed Lab</p><h3>Beat the clock before the clock beats you</h3>' +
-      '<p class="muted">The real paper gives you 90 minutes for 80 questions. A good split: <b>15 min</b> conversations · <b>50 min</b> reading · <b>18 min</b> writing · <b>7 min</b> to check your answer sheet. Sprints train each part at that pace.</p></div>';
+      '<p class="muted">The real paper gives you 90 minutes for 80 questions. The split that fits its reading load: <b>14 min</b> conversations (8 short + 6 long) · <b>46 min</b> reading (ads 5, review 6, news 7, visuals 6, articles 22) · <b>18 min</b> writing (text completion 10, paragraph order 8) · <b>12 min</b> to check your answer sheet. Sprints train each part a little faster than that.</p></div>';
     html += '<div class="sprint-grid">' + SPRINTS.map(function (sp) {
       var r = rec[sp.key];
       return '<div class="card sprint-card"><div class="sp-h"><b>' + esc(sp.name) + '</b><span class="pill">' + sp.n + ' Q · ' + mmss(sp.sec) + '</span></div>' +
@@ -959,23 +970,68 @@
     return plan.subs.filter(function (id) { return !subCleared(p, id); }).length;
   }
 
-  /* A paper opens when the one before it has been sat AND its checklist has
-     been cleared. A perfect paper makes no checklist, so it opens the next
-     one straight away. */
-  /* Every paper is open from the start. The checklist is still the order we
-     recommend, and the plan still says so — but with a day and a half left,
-     a locked paper is an obstacle rather than a guide. */
+  /* ---- the class calendar (MOCK_DATES and HOLD_TO_DATE in roster.js) ---- */
+  function mockDate(id) {
+    if (typeof MOCK_DATES === 'undefined' || !MOCK_DATES || !MOCK_DATES[id]) return null;
+    var d = new Date(MOCK_DATES[id]);
+    return isNaN(d) ? null : d;
+  }
+  function heldToDate(id) {
+    return typeof HOLD_TO_DATE !== 'undefined' && !!HOLD_TO_DATE && HOLD_TO_DATE.indexOf(id) >= 0;
+  }
+  /* Sitting dates are Bangkok dates, whatever time zone the device is set to. */
+  function dayWords(d) {
+    try { return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'Asia/Bangkok' }); }
+    catch (e) { return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }); }
+  }
+  function clockWords(d) {
+    try { return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Bangkok' }); }
+    catch (e) { return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }); }
+  }
+  /* Mock 1 carries 20 unscored triage extras (points 0) after its 80 scored
+     questions; every other paper is the plain 80. */
+  function scoredCount(m) {
+    var n = 0;
+    m.sections.forEach(function (s) { if (s.points) n += s.items.length; });
+    return n;
+  }
+  function extraCount(m) { return E.Bank.mockItems(m).length - scoredCount(m); }
+  function paperShape(m) {
+    var x = extraCount(m);
+    return scoredCount(m) + ' questions' + (x ? ' + ' + x + ' checklist extras' : '') + ' \u00b7 ' + m.minutes + ' minutes';
+  }
+
+  /* A paper opens when any of these is true:
+     - the teacher has opened it for this student (assignment.paper);
+     - the class sitting date in MOCK_DATES has arrived;
+     - it is the last fortnight before the exam (except papers in HOLD_TO_DATE:
+       the final rehearsal waits for its own date and time);
+     - the paper before it has been sat AND 80% of its checklist is cleared.
+       A perfect paper makes no checklist, so it opens the next one straight away. */
   function mockOpen(p, idx) {
     if (!idx) return true;
     if (typeof GATE_MOCKS !== 'undefined' && !GATE_MOCKS) return true;
     var papers = C.MOCKS, prev = papers[idx - 1], me = papers[idx];
     if (p.assignment && p.assignment.paper === me.id) return true;          /* teacher override */
+    var d = mockDate(me.id);
+    if (d && Date.now() >= d.getTime()) return true;                        /* the class sits it today */
+    if (heldToDate(me.id)) return false;                                    /* the rehearsal waits for its date */
     var h = hoursToExam(); if (h !== null && h <= 14 * 24) return true;     /* last fortnight: all open */
     if (!(p.mocks || {})[prev.id]) return false;
     var plan = planFor(p, prev.id);
     if (!plan || !plan.subs.length) return true;
     var done = plan.subs.filter(function (id) { return subCleared(p, id); }).length;
     return done / plan.subs.length >= 0.8;                                  /* 80% of the checklist cleared */
+  }
+  /* What a locked paper's row says. */
+  function lockWords(idx) {
+    var me = C.MOCKS[idx], d = mockDate(me.id);
+    if (d && heldToDate(me.id)) {
+      return 'Opens ' + dayWords(d) + ' at ' + clockWords(d) +
+        ' \u2014 the dress rehearsal, at the real exam time';
+    }
+    return 'Clear 80% of the checklist above to open this paper' +
+      (d ? ', or sit it with the class on ' + dayWords(d) : '');
   }
 
   /* =====================================================================
@@ -986,8 +1042,15 @@
      cannot be recognised, and the paper is multiple choice, so recognising
      one is enough to use it.
      ===================================================================== */
+  /* The paper runs 90 minutes; after that the countdown and the cram card stop. */
+  function examOver() {
+    if (typeof EXAM_AT === 'undefined' || !EXAM_AT) return false;
+    var then = new Date(EXAM_AT);
+    return !isNaN(then) && Date.now() > then.getTime() + 90 * 60000;
+  }
   function hoursToExam() {
     if (typeof EXAM_AT === 'undefined' || !EXAM_AT) return null;
+    if (examOver()) return null;
     var then = new Date(EXAM_AT);
     if (isNaN(then)) return null;
     var h = Math.round((then - Date.now()) / 3600000);
@@ -1098,7 +1161,7 @@
     var m = E.Bank.mock(mockId), rec = (S.p.mocks || {})[mockId];
     if (!m || !rec || !rec.pace) return;
     var html = '<p class="kicker">' + esc(m.name) + '</p>' +
-      '<h3 style="font-size:1.2rem">Where the 90 minutes went</h3>' +
+      '<h3 style="font-size:1.2rem">Where the ' + m.minutes + ' minutes went</h3>' +
       '<table class="sectable"><thead><tr><th>Section</th><th>You took</th><th>Budget</th></tr></thead><tbody>';
     rec.pace.forEach(function (q) {
       html += '<tr' + (q.used > q.budget * 1.25 ? ' class="low"' : '') + '>' +
@@ -1106,8 +1169,8 @@
         '<td class="n">' + mmss(q.used) + '</td><td class="n">' + mmss(q.budget) + '</td></tr>';
     });
     html += '</tbody></table>' +
-      '<p class="tiny">The budget is 67 seconds a question \u2014 80 questions in 90 minutes. ' +
-      'The reading is worth double, so it gets double the time.</p>' +
+      '<p class="tiny">Every question is worth the same 1.25 marks; the budget follows how much there is to read. ' +
+      'Conversations 14 minutes, reading 46 (the two articles alone 22), writing 18, and 12 minutes left to check your answer sheet.</p>' +
       '<button class="btn ghost wide" data-close>Close</button>';
     modal(html);
   }
@@ -1122,10 +1185,13 @@
       html += '<div class="gate">' + E.artBand('sim', 'gate-art') +
         '<h2>Start with the diagnostic</h2>' +
         '<p>One full paper tells us what you already know, so you only study what you need.</p>' +
-        '<p class="gate-sub">Eighty questions, three sections, 100 points, 90 minutes \u2014 the exact shape of ' +
-        'the A-Level English paper, with the clock running. Don\'t revise first and don\'t guess wildly: ' +
+        '<p class="gate-sub">Eighty questions, three sections, 100 points \u2014 the exact shape of ' +
+        'the A-Level English paper' + (extraCount(papers[0]) ? ', plus ' + extraCount(papers[0]) +
+        ' unscored extra questions that make your checklist more accurate' : '') + '. ' + papers[0].minutes +
+        ' minutes with the clock running. Don\'t revise first and don\'t guess wildly: ' +
         'answer the way you would on 14 March. Every question you miss adds a lesson to your checklist, ' +
-        'and when 80% of that checklist is cleared, Mock 2 opens.</p>' +
+        'and when 80% of that checklist is cleared, Mock 2 opens' +
+        (mockDate(papers[1] && papers[1].id) ? ' (the class sits it on ' + dayWords(mockDate(papers[1].id)) + ')' : '') + '.</p>' +
         '<button class="btn primary lg" data-sim="' + papers[0].id + '">Start the diagnostic</button>' +
         (mediaAvailable() ? '<p class="gate-alt"><button class="btn sm" data-go-pods>Podcasts</button>' +
         '<span>Not somewhere you can answer questions? Listen instead.</span></p>' : '') +
@@ -1155,8 +1221,8 @@
         '<span class="step-s">' +
           (rec ? 'Sat ' + esc(new Date(rec.at).toLocaleDateString()) + ' · ' + rec.marks + ' of ' + rec.total + ' marks' +
                  (rec.attempts > 1 ? ' · best ' + pct(rec.best) + '% over ' + rec.attempts + ' sittings' : '')
-               : open ? '80 questions · ' + m.minutes + ' minutes'
-               : 'Clear 80% of the checklist above to open this paper') +
+               : open ? paperShape(m)
+               : lockWords(idx)) +
         '</span></span>' +
         (rec ? '<span class="step-pct' + ((rec.first != null ? rec.first : rec.best) >= 0.7 ? ' good' : '') + '" title="First sitting">' +
                  pct(rec.first != null ? rec.first : rec.best) + '%</span>'
@@ -1167,7 +1233,7 @@
         html += '<div class="step-acts">' +
           (rec.review ? '<button class="btn sm" data-review="' + m.id + '">Read your answers</button>' +
                         '<button class="btn sm" data-errs="' + m.id + '">Examine errors</button>' : '') +
-          (rec.pace ? '<button class="btn sm" data-pace="' + m.id + '">Where the 90 minutes went</button>' : '') +
+          (rec.pace ? '<button class="btn sm" data-pace="' + m.id + '">Where the ' + m.minutes + ' minutes went</button>' : '') +
           '<button class="btn sm" data-sim="' + m.id + '">Sit it again</button></div>';
       }
 
@@ -1297,8 +1363,16 @@
      ===================================================================== */
   function nextAction(p) {
     if (p.assignment && !p.assignment.done) {
-      return { kind: 'set', label: 'Take the paper your teacher set',
-               sub: p.assignment.itemIds.length + ' questions' };
+      if (p.assignment.paper) {
+        /* The teacher opened a mock early for this student. */
+        var am = E.Bank.mock(p.assignment.paper);
+        if (am && !(p.mocks || {})[am.id]) {
+          return { kind: 'sim', id: am.id, label: 'Your teacher opened ' + am.name, sub: paperShape(am) };
+        }
+      } else {
+        return { kind: 'set', label: 'Take the paper your teacher set',
+                 sub: (p.assignment.itemIds || []).length + ' questions' };
+      }
     }
     /* Until the first paper has been sat, it is the whole recommendation.
        Eight systems is a lot to face without knowing which one is weakest. */
@@ -1308,7 +1382,7 @@
       if (!(p.mocks || {})[mk.id]) {
         if (!mockOpen(p, q)) break;
         return { kind: 'sim', id: mk.id, label: mk.name,
-                 sub: '80 questions \u00b7 90 minutes \u00b7 the shape of the real A-Level paper' };
+                 sub: paperShape(mk) + ' \u00b7 the shape of the real A-Level paper' };
       }
       var pl = planFor(p, mk.id);
       if (pl && pl.subs.length && !planDone(p, mk.id)) {
@@ -1340,7 +1414,7 @@
     if (due) return { kind: 'faults', label: 'Clear your fault list',
                       sub: due + (due === 1 ? ' question is' : ' questions are') + ' due' };
     var un = (C.MOCKS || []).filter(function (m) { return !(p.mocks || {})[m.id]; })[0];
-    if (un) return { kind: 'sim', id: un.id, label: un.name, sub: '80 questions · 90 minutes · the real shape of the A-Level paper' };
+    if (un) return { kind: 'sim', id: un.id, label: un.name, sub: paperShape(un) + ' · the real shape of the A-Level paper' };
     return null;
   }
 
@@ -2067,7 +2141,8 @@
     var m = E.Bank.mock(mockId), set = setFor(S.p, mockId);
     modal('<p class="kicker">Before you start</p>' +
       '<h3 style="font-size:1.25rem">' + esc(m.name) + (set === 2 ? ' \u00b7 Set 2' : '') + '</h3>' +
-      '<p style="color:var(--ink-2);font-size:.93rem">' + m.minutes + ' minutes for 80 questions. ' +
+      '<p style="color:var(--ink-2);font-size:.93rem">' + m.minutes + ' minutes for ' + scoredCount(m) + ' questions' +
+      (extraCount(m) ? ' and ' + extraCount(m) + ' unscored extras at the end, which only sharpen your checklist' : '') + '. ' +
       'The clock runs from the moment you press start and does not stop. You can move between questions freely, ' +
       'and the paper submits itself when the time is up.' +
       (set === 2 ? ' This is the Set 2 booklet: the same questions, with the options printed in the opposite order, as in the real exam.' : '') +
@@ -2192,33 +2267,42 @@
     x.onQ = now;
   }
 
-  /* Two minutes a mark is the budget the paper sets: thirty marks, sixty
-     minutes. Part C is worth double, so it earns double the time. */
-  function paceOf(x) {
-    var totalMarks = 0;
-    x.mock.sections.forEach(function (s) { totalMarks += s.points * s.items.length; });
-    var perMark = (x.mock.minutes * 60) / (totalMarks || 1);
-    var used = 0, budget = 0, k = 0;
-    x.mock.sections.forEach(function (sec) {
-      sec.items.forEach(function () {
-        if (x.answers[k] != null || k < x.i) budget += sec.points * perMark;
-        used += x.spent[k] || 0;
-        k++;
-      });
+  /* The time budget every part of the app uses. Every item is worth the same
+     1.25 marks; what differs is how much there is to read. Minutes per part
+     come from the measured reading load of TCAS68–69: Section I 14,
+     Section II 46, Section III 18, then 12 minutes to check and transfer
+     answers (78 + 12 = 90). A section may carry its own `budget` (minutes),
+     as the unscored triage extras in Mock 1 do. */
+  var PART_MIN = { 'I-1': 8, 'I-2': 6, 'II-1': 5, 'II-2': 6, 'II-3': 7, 'II-4': 6, 'II-5': 22, 'III-1': 10, 'III-2': 8 };
+  var CHECK_MIN = 12;
+  function secBudgetSec(sec) {
+    var m = sec.budget != null ? sec.budget : PART_MIN[sec.code];
+    if (m == null) m = sec.items.length * 67.5 / 60;
+    return Math.round(m * 60);
+  }
+  /* Seconds budgeted for each question, in paper order. */
+  function itemBudgets(mock) {
+    var out = [];
+    mock.sections.forEach(function (sec) {
+      var per = secBudgetSec(sec) / Math.max(1, sec.items.length);
+      sec.items.forEach(function () { out.push(per); });
     });
-    return { used: used, budget: budget, perMark: perMark };
+    return out;
   }
 
   /* How far ahead or behind the budget they are, right now. Said in minutes,
-     because "four minutes behind" is actionable and "83% pace" is not. */
+     because "four minutes behind" is actionable and "83% pace" is not. The
+     budget for the questions answered so far comes from the parts they sit
+     in, so a student who spends 22 minutes on the articles is on pace. */
   function paintPace() {
     var el = $('#exam-pace'), x = S.exam;
     if (!el || !x) return;
     var elapsed = Math.round((Date.now() - x.startedAt) / 1000);
     var answered = x.answers.filter(function (a) { return a != null; }).length;
     if (answered < 3) { el.textContent = ''; el.className = 'pace'; return; }
-    var perQ = (x.mock.minutes * 60) / x.items.length;
-    var should = answered * perQ;
+    var per = x.budgets || (x.budgets = itemBudgets(x.mock));
+    var should = 0;
+    x.answers.forEach(function (a, k) { if (a != null) should += per[k] || 0; });
     var diff = Math.round((should - elapsed) / 60);
     if (Math.abs(diff) < 2) { el.textContent = 'on pace'; el.className = 'pace ok'; return; }
     el.textContent = Math.abs(diff) + ' min ' + (diff > 0 ? 'ahead' : 'behind');
@@ -2262,7 +2346,7 @@
       '<div class="instr"><b>Instructions</b>' + esc(sec.instructions) + '</div>' +
       '<div class="card qcard">' +
         '<div class="qtype"><span>' + esc(E.TYPE_LABEL[item.type] || 'Question') + '</span>' +
-        '<span class="lv">' + (sec.points === 1 ? '1 mark' : sec.points + ' marks') + '</span></div>' +
+        '<span class="lv">' + (!sec.points ? 'not scored' : sec.points === 1 ? '1 mark' : sec.points + ' marks') + '</span></div>' +
         '<div id="qhost"></div>' +
         '<div class="qfoot">' +
           '<button class="btn sm" id="x-prev"' + (x.i === 0 ? ' disabled' : '') + '>← Back</button>' +
@@ -2341,7 +2425,7 @@
     Object.keys(x.flags).forEach(function (k) { flagged.push(+k + 1); });
     flagged.sort(function (a, b) { return a - b; });
     modal('<p class="kicker">Before you submit</p>' +
-      '<h3 style="font-size:1.2rem">' + (blank.length ? blank.length + ' unanswered' : 'All 80 answered') + '</h3>' +
+      '<h3 style="font-size:1.2rem">' + (blank.length ? blank.length + ' unanswered' : 'All ' + x.items.length + ' answered') + '</h3>' +
       '<p style="color:var(--ink-2);font-size:.92rem">' +
       (blank.length ? 'Questions ' + blank.slice(0, 14).join(', ') + (blank.length > 14 ? '…' : '') +
         ' are still blank. In the real paper there is no penalty for a guess.'
@@ -2375,16 +2459,13 @@
     chargeTime();
     var scored = P.scoreMock(x.mock, results);
     var durationSec = Math.round((Date.now() - x.startedAt) / 1000);
-    /* Seconds per section, against the two-minutes-a-mark budget the paper
-       sets. Kept on the record so the student can look at it later. */
-    var pace = [], qi = 0, totalMarks = 0;
-    x.mock.sections.forEach(function (sec) { totalMarks += sec.points * sec.items.length; });
-    var perMark = (x.mock.minutes * 60) / (totalMarks || 1);
+    /* Seconds per section, against the part budgets (PART_MIN). Kept on the
+       record so the student can look at it later. */
+    var pace = [], qi = 0;
     x.mock.sections.forEach(function (sec) {
       var used = 0;
       sec.items.forEach(function () { used += x.spent[qi] || 0; qi++; });
-      pace.push({ code: sec.code, title: sec.title,
-                  used: used, budget: Math.round(sec.points * sec.items.length * perMark) });
+      pace.push({ code: sec.code, title: sec.title, used: used, budget: secBudgetSec(sec) });
     });
     rows.push({
       kind: 'mock', ts: new Date().toISOString(), studentId: S.p.studentId,
@@ -2396,6 +2477,12 @@
     S.sessItems += x.items.length;
     S.sessCorrect += results.filter(function (r) { return r.correct; }).length;
     P.finishMock(S.p, x.mock.id, scored);
+    /* A mock the teacher opened early counts as the set paper, done. */
+    if (S.p.assignment && S.p.assignment.paper === x.mock.id && !S.p.assignment.done) {
+      S.p.assignment.done = true;
+      S.p.assignment.score = scored.pct;
+      S.p.assignment.completedAt = new Date().toISOString();
+    }
     buildPlan(S.p, x.mock.id, results);
     /* Keep the answers, not the questions: the bank already holds those, so a
        student who comes back a week later can still read the whole paper back. */
@@ -2430,19 +2517,20 @@
     html += '<table class="sectable"><thead><tr><th>Section</th><th>Marks</th><th>Correct</th><th>%</th></tr></thead><tbody>';
     order.forEach(function (o) {
       var p2 = o.b.total ? o.b.got / o.b.total : 0;
+      if (!o.s.points) p2 = o.b.n ? o.b.right / o.b.n : 0;
       html += '<tr' + (p2 < 0.6 ? ' class="low"' : '') + '><td>' + esc(o.s.part.replace('PART ', '')) + ' — ' + esc(o.s.title) + '</td>' +
-        '<td class="n">' + o.b.got + '/' + o.b.total + '</td>' +
+        '<td class="n">' + (o.s.points ? o.b.got + '/' + o.b.total : 'not scored') + '</td>' +
         '<td class="n">' + o.b.right + '/' + o.b.n + '</td>' +
         '<td class="n">' + pct(p2) + '%</td></tr>';
     });
     html += '</tbody></table>';
 
-    /* Where the 90 minutes went. The budget is two minutes a mark, which is what
-       thirty marks in sixty minutes works out at, and Part C earns double
-       because it is worth double. */
+    /* Where the time went, part by part, against the part budgets (PART_MIN):
+       conversations 14, reading 46, writing 18, and 12 minutes to check. */
     if (pace && pace.length) {
       var over = pace.filter(function (q) { return q.used > q.budget * 1.25; });
-      html += '<p class="kicker" style="align-self:flex-start;margin-top:10px">Where the 90 minutes went</p>';
+      var hurried = pace.filter(function (q) { return q.code !== 'T' && q.used < q.budget * 0.5; });
+      html += '<p class="kicker" style="align-self:flex-start;margin-top:10px">Where the ' + mock.minutes + ' minutes went</p>';
       html += '<table class="sectable"><thead><tr><th>Section</th><th>You took</th><th>Budget</th><th></th></tr></thead><tbody>';
       pace.forEach(function (q) {
         var late = q.used > q.budget * 1.25, early = q.used < q.budget * 0.5;
@@ -2455,8 +2543,11 @@
         ? 'The clock beat you. '
         : '') + (over.length
         ? 'You spent well over the budget on ' + over.map(function (q) { return q.code; }).join(' and ') +
-          '. In the real paper that time has to come from somewhere, and it comes from the reading at the end.'
-        : 'Your pacing is sound. Keep the reading section for last and give it the full twenty minutes.') + '</p>';
+          '. In the real paper that time has to come from somewhere: first from the 12 minutes you need to check your answer sheet, then from the articles.'
+        : hurried.length >= 3
+        ? 'You went through ' + hurried.map(function (q) { return q.code; }).join(', ') + ' in under half the budget. ' +
+          'You have time to spare, so use it: read the line after each blank and rule out every wrong option before you choose.'
+        : 'Your pacing is sound. Keep 22 minutes for the two articles and 12 at the end to check your answer sheet.') + '</p>';
     }
 
     if (wrong.length) {
@@ -2497,7 +2588,17 @@
       '<p style="color:var(--ink-2);font-size:.92rem;margin-top:4px">Where each of the thirteen systems stands, and what you have earned.</p></div>' +
       '<span class="pill gold">' + p.badges.length + ' of ' + C.BADGES.length + ' awards</span></div>';
 
-    if (a) {
+    var am = a && a.paper ? E.Bank.mock(a.paper) : null;
+    if (am) {
+      html += '<div class="card" style="padding:var(--pad);margin-bottom:16px;display:flex;flex-direction:column;gap:10px">' +
+        '<p class="kicker">Opened by your teacher</p>' +
+        (a.done || (p.mocks || {})[am.id]
+          ? '<h3 style="font-size:1.2rem">' + esc(am.name) + ' \u00b7 sat</h3><p class="tiny">Your result and checklist are on the plan.</p>'
+          : '<h3 style="font-size:1.2rem">' + esc(am.name) + ' is open for you</h3>' +
+            '<p style="color:var(--ink-2);font-size:.92rem">' + esc(paperShape(am)) + '. Sit it when you have the whole time free.</p>' +
+            '<button class="btn primary" id="set-mock" style="align-self:flex-start">Start</button>') +
+        '</div>';
+    } else if (a) {
       html += '<div class="card" style="padding:var(--pad);margin-bottom:16px;display:flex;flex-direction:column;gap:10px">' +
         '<p class="kicker">Set by your teacher</p>' +
         (a.done
@@ -2537,6 +2638,8 @@
     });
     html += '</div>';
     $('#view-record').innerHTML = html;
+    var gm = $('#set-mock');
+    if (gm) gm.addEventListener('click', function () { confirmSim(am.id); });
     var g = $('#set-go');
     if (g) g.addEventListener('click', function () {
       var items = S.p.assignment.itemIds.map(E.Bank.item).filter(Boolean);

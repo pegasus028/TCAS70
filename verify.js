@@ -1,17 +1,47 @@
 /* verify.js — structural checker for TCAS70 content files.
    usage: node verify.js mock-1.js   |   node verify.js topic-t4.js [--build-all]
-   Checks structure, hints that contain the key, option length order, mock key balance,
-   longest-key rate, positional wording in why, empty sort bins and build-item ambiguity. */
+          node verify.js mock-*.js --strict     (TCAS70 mock-profile findings become errors)
+   Checks structure, hints that contain the key, option length order, mock key balance and runs,
+   key length rank, paragraph-order opener splits, positional wording in why, empty sort bins,
+   build-item ambiguity, and the TCAS70 MOCK PROFILE (SPEC.md §1b), reported as PROFILE lines.
+   Every threshold lives in the constants block below (measured on TCAS66–69, Oct 2026). */
 const fs=require('fs'), vm=require('vm');
+
+/* ---------------------------------------------------------------- constants */
+const K={
+  SECTION_COUNTS:[12,8,6,6,6,6,16,15,5],      /* the nine scored parts */
+  TRIAGE_CODE:'T',                            /* optional unscored tenth section (Mock 1) */
+  KEY_PER_POSITION:[18,22],                   /* per position over the 80 scored items */
+  KEY_MAX_RUN:3,                              /* longest run of one key position seen in TCAS67–69 */
+  KEY_WINDOW:16,                              /* every position appears in any 16 consecutive items */
+  LEN_TOLERANCE:4,                            /* options shortest→longest within 4 characters */
+  UNIQ_LONGEST_MOCK:[0.15,0.27],              /* key uniquely longest: TCAS68–69 16%, TCAS67 27% */
+  UNIQ_LONGEST_TOPIC:[0.10,0.27],
+  /* the TCAS70 mock profile (SPEC.md §1b) */
+  NEG_TARGET:{m1:9,m2:5,m3:10,m4:6,m5:5}, NEG_TOL:1, NEG_ADS:[2,4], NEG_VISUALS:[1,3],
+  ARITH:[2,4],
+  SEC1:{functional:[8,11],idiom:[3,5],marker:[3,6]},
+  NEWS_WORDS:[250,430],
+  TC_ROWS:{WF:[2,3],PREP:[2,2],CONN:[2,2],REL:[1,2],PASS:[1,1],NC:[1,1],DET:[1,1],REST:[3,5]},
+  INVERSION_MOCK:'m4',
+  PO_MIN_NONALPHA:2
+};
+const TC_ROW_OF={'wf-pos':'WF','wf-family':'WF','wf-confuse':'WF','wf-compare':'WF','wf-edIng':'WF',
+  'vc-prep':'PREP','vc-colloc':'PREP','vc-phrasal':'PREP','lk-contrast':'CONN','lk-add':'CONN','lk-cause':'CONN','pl-coord':'CONN',
+  'rc-basic':'REL','rc-nondef':'REL','rc-prep':'REL','rc-reduced':'REL','rc-appos':'REL','ac-reduced':'REL',
+  'vp-passive':'PASS','vp-passinf':'PASS','nc-embedded':'NC','nc-whether':'NC','nc-it':'NC','dt-other':'DET','dt-quant':'DET','dt-pron':'DET'};
+const NEG_RE=/\b(NOT|EXCEPT|FALSE)\b/;
+const ARITH_RE=/approximately|times (as|that)|combined|in total|difference|closest|gap between|how many|percentage points|per cent of all|% of all/i;
+const DATED_RE=/\b(19|20)\d\d\b/;
 const TAGS=JSON.parse(fs.readFileSync(__dirname+'/tags.json','utf8'));
 const ARTS=['chat','signal','megaphone','news','bulb','chart','lexicon','globe','layers','stack','clock','chip','puzzle'];
 const LEVELS=['B1','B1+','B2','B2+','C1','C1+'];
 const MCQ=['choose','equiv','gap','cloze','read'];
 const ctx={MOCKS:[],TOPICS:[],REMEDIATION:{},console}; vm.createContext(ctx);
-let errs=[], warns=[];
-const ARGS=process.argv.slice(2); const BUILD_ALL=ARGS.includes('--build-all');
+let errs=[], warns=[], prof=[];
+const ARGS=process.argv.slice(2); const BUILD_ALL=ARGS.includes('--build-all'); const STRICT=ARGS.includes('--strict');
 const files=ARGS.filter(a=>!a.startsWith('--'));
-if(!files.length){ console.log('usage: node verify.js <content-file.js> [more files] [--build-all]'); process.exit(1); }
+if(!files.length){ console.log('usage: node verify.js <content-file.js> [more files] [--build-all] [--strict]'); process.exit(1); }
 const f=files.join(', ');
 files.forEach(fn=>{ try{ vm.runInContext(fs.readFileSync(fn,'utf8'),ctx,{filename:fn}); }catch(e){ console.log('PARSE/RUN ERROR',fn,e.message); process.exit(1); } });
 function strip(o){return String(o==null?'':o).replace(/<[^>]+>/g,'');}
@@ -34,11 +64,22 @@ function chkHint(it,w){
 function chkOrder(it,w){
   if(!Array.isArray(it.options)||it.options.length!==4) return;
   if(it.options.every(o=>ORDER_OPT.test(o.trim()))){
-    const srt=it.options.slice().sort(); if(srt.join()!==it.options.join()) warns.push(w+' paragraph-order options not alphabetical');
+    /* TCAS66–69 (20 sets): two shared openers (2+2) in 15, one shared opener (4x) in 4, four rotations in 1.
+       The true opener is never the only sequence that starts with its letter (rotation sets aside).
+       Alphabetical listing is a habit (12 of 20), not a rule, so it is not checked here. */
+    const ops=it.options.map(o=>o.trim()), first=ops.map(o=>o[0]);
+    const cnt={}; first.forEach(c=>cnt[c]=(cnt[c]||0)+1); const shape=Object.values(cnt).sort().join('+');
+    const rot=o=>o.replace(/-/g,''); const isRotation=shape==='1+1+1+1'&&ops.every(o=>{ const a=rot(ops[0]); return (a+a).includes(rot(o)); });
+    if(shape!=='2+2'&&shape!=='4'&&!isRotation) prof.push(w+' paragraph-order opener split '+shape+' (TCAS uses 2+2, one shared opener or four rotations)');
+    else if(Number.isInteger(it.answer)&&shape==='2+2'&&cnt[ops[it.answer][0]]!==2) errs.push(w+' true opener is not one of the shared openers');
+    return;
+  }
+  if(it.options.every(o=>/^[\d.,%\s]+$/.test(strip(o).trim()))){
+    const v=it.options.map(o=>parseFloat(strip(o).replace(/,/g,''))); for(let i=1;i<4;i++){ if(v[i]<v[i-1]){ errs.push(w+' numeric options not in numeric order'); return; } }
     return;
   }
   const L=it.options.map(len);
-  for(let i=1;i<4;i++){ if(L[i]<L[i-1]-4){ errs.push(w+' options not shortest→longest ('+L.join('/')+')'); return; } }
+  for(let i=1;i<4;i++){ if(L[i]<L[i-1]-K.LEN_TOLERANCE){ errs.push(w+' options not shortest→longest ('+L.join('/')+')'); return; } }
 }
 function chkWhy(it,w){
   const y=strip(it.why||'');
@@ -109,17 +150,69 @@ function chkItem(it,where,isMock){
 }
 const ids=new Set();
 function uniq(id){ if(ids.has(id)) errs.push('duplicate id '+id); ids.add(id); }
+function words(t){ return (strip(t).match(/[A-Za-z0-9’'\-]+/g)||[]).length; }
+function measurable(it){ return it.options && !it.options.every(o=>ORDER_OPT.test(o.trim())) && !it.options.every(o=>/^[\d.,%\s]+$/.test(strip(o).trim())); }
+function uniqLongest(it){ const L=it.options.map(len); const mx=Math.max(...L); return L[it.answer]===mx&&L.filter(x=>x===mx).length===1; }
+const tcSets={};   /* option sets in text completion, across every mock loaded */
+const phrasalMocks=new Set();
 if(ctx.MOCKS.length){
   ctx.MOCKS.forEach(m=>{
-    const counts=[12,8,6,6,6,6,16,15,5]; let q=0; const pos=[0,0,0,0]; let longestKey=0, mcq=0;
-    if(m.sections.length!==9) errs.push(m.id+' needs 9 sections');
-    m.sections.forEach((s,i)=>{ if(s.items.length!==counts[i]) errs.push(m.id+' section '+s.code+' has '+s.items.length+' items, need '+counts[i]);
+    let q=0; const pos=[0,0,0,0]; let longestKey=0, meas=0; const scored=[];
+    const main=m.sections.filter(s=>s.code!==K.TRIAGE_CODE), tri=m.sections.filter(s=>s.code===K.TRIAGE_CODE);
+    if(main.length!==9) errs.push(m.id+' needs 9 scored sections');
+    if(m.sections.length>10||(m.sections.length===10&&m.sections[9].code!==K.TRIAGE_CODE)) errs.push(m.id+' only one extra section is allowed, the triage section '+K.TRIAGE_CODE+', and it must come last');
+    tri.forEach(s=>{ if(s.points!==0) errs.push(m.id+' triage section must have points:0'); if(!(s.budget>0)) errs.push(m.id+' triage section needs budget (minutes)');
+      if(m.minutes<90+s.budget) errs.push(m.id+' minutes should be 90 + the triage budget'); });
+    m.sections.forEach((s,i)=>{
+      const isTri=s.code===K.TRIAGE_CODE;
+      if(!isTri&&s.items.length!==K.SECTION_COUNTS[i]) errs.push(m.id+' section '+s.code+' has '+s.items.length+' items, need '+K.SECTION_COUNTS[i]);
+      if(!isTri&&s.points!==1.25) errs.push(m.id+' section '+s.code+' must be worth 1.25 points an item');
       s.items.forEach(it=>{ q++; uniq(it.id); if(it.id!==m.id+'-'+q) errs.push('id '+it.id+' should be '+m.id+'-'+q); chkItem(it,m.id,true);
-        if(it.options){ mcq++; pos[it.answer]++; const L=it.options.map(len); if(L[it.answer]===Math.max(...L)&&L.filter(x=>x===Math.max(...L)).length===1) longestKey++; } }); });
-    pos.forEach((c,i)=>{ if(c<18||c>22) errs.push(m.id+' key position '+(i+1)+' is the key '+c+' times (need 18–22)'); });
-    if(mcq&&longestKey/mcq>0.25) warns.push(m.id+' key is uniquely longest in '+Math.round(100*longestKey/mcq)+'% of MCQs (>25%)');
-    console.log(m.id,'items',q,'key positions',pos.join('/'),'key uniquely longest',longestKey+'/'+mcq);
+        if(!isTri&&it.options){ scored.push(it); pos[it.answer]++; if(measurable(it)){ meas++; if(uniqLongest(it)) longestKey++; } } }); });
+    pos.forEach((c,i)=>{ if(c<K.KEY_PER_POSITION[0]||c>K.KEY_PER_POSITION[1]) errs.push(m.id+' key position '+(i+1)+' is the key '+c+' times (need '+K.KEY_PER_POSITION.join('–')+')'); });
+    /* runs and windows over the 80 scored items, in paper order */
+    const keys=scored.map(it=>it.answer); let run=1;
+    for(let i=1;i<keys.length;i++){ run=keys[i]===keys[i-1]?run+1:1; if(run===K.KEY_MAX_RUN+1) prof.push(m.id+' key position '+(keys[i]+1)+' runs '+(run)+'+ times ending at item '+(i+1)+' (max '+K.KEY_MAX_RUN+')'); }
+    for(let i=0;i+K.KEY_WINDOW<=keys.length;i++){ const win=new Set(keys.slice(i,i+K.KEY_WINDOW)); if(win.size<4){ prof.push(m.id+' a key position is missing from items '+(i+1)+'–'+(i+K.KEY_WINDOW)); break; } }
+    const ul=meas?longestKey/meas:0;
+    if(meas&&(ul<K.UNIQ_LONGEST_MOCK[0]||ul>K.UNIQ_LONGEST_MOCK[1])) warns.push(m.id+' key is uniquely longest in '+Math.round(100*ul)+'% of measurable items (aim '+K.UNIQ_LONGEST_MOCK.map(x=>Math.round(100*x)).join('–')+'%)');
+
+    /* ---- the TCAS70 mock profile (SPEC.md §1b) ---- */
+    const byQ=n=>scored[n-1]; const P=(msg)=>prof.push(m.id+' '+msg);
+    const neg=[],negAds=[],negVis=[];
+    for(let n=21;n<=60;n++){ const it=byQ(n); if(it&&NEG_RE.test(strip(it.stem))){ neg.push(n); if(n<=26) negAds.push(n); if(n>=39&&n<=44) negVis.push(n); } }
+    const tgt=K.NEG_TARGET[m.id];
+    if(tgt!=null&&Math.abs(neg.length-tgt)>K.NEG_TOL) P('NOT/EXCEPT/FALSE stems in Reading: '+neg.length+' (target '+tgt+'): '+neg.join(','));
+    if(negAds.length<K.NEG_ADS[0]||negAds.length>K.NEG_ADS[1]) P('negative stems in the ads: '+negAds.length+' (aim '+K.NEG_ADS.join('–')+')');
+    if(negVis.length<K.NEG_VISUALS[0]||negVis.length>K.NEG_VISUALS[1]) P('negative stems in the visuals: '+negVis.length+' (aim '+K.NEG_VISUALS.join('–')+')');
+    let ar=0; for(let n=39;n<=44;n++){ const it=byQ(n); if(it&&(it.tag==='vs-math'||ARITH_RE.test(strip(it.stem)))) ar++; }
+    if(ar<K.ARITH[0]||ar>K.ARITH[1]) P('visual arithmetic items: '+ar+' (aim '+K.ARITH.join('–')+')');
+    const s1={functional:0,idiom:0,marker:0};
+    for(let n=1;n<=20;n++){ const t=(byQ(n)||{}).tag||''; if(t.startsWith('id-')) s1.idiom++; else if(t.startsWith('dm-')) s1.marker++; else s1.functional++; }
+    Object.keys(s1).forEach(k=>{ const b=K.SEC1[k]; if(s1[k]<b[0]||s1[k]>b[1]) P('Section I '+k+' keys: '+s1[k]+' (aim '+b.join('–')+')'); });
+    const news=byQ(33); if(news&&news.passage){ const wc=words(news.passage); if(wc<K.NEWS_WORDS[0]||wc>K.NEWS_WORDS[1]) P('news report is '+wc+' words (aim '+K.NEWS_WORDS.join('–')+')');
+      if(!/\n\s*By\b/.test(news.passage)) P('news report has no by-line'); }
+    const rows={WF:0,PREP:0,CONN:0,REL:0,PASS:0,NC:0,DET:0,REST:0}; let inv=0;
+    for(let n=61;n<=75;n++){ const it=byQ(n); if(!it) continue; rows[TC_ROW_OF[it.tag]||'REST']++; if(it.tag==='wo-front') inv++; if(it.tag==='vc-phrasal') phrasalMocks.add(m.id);
+      const sig=it.options.map(o=>norm(o)).sort().join('|'); (tcSets[sig]=tcSets[sig]||[]).push(it.id); }
+    Object.keys(K.TC_ROWS).forEach(r=>{ const b=K.TC_ROWS[r]; if(rows[r]<b[0]||rows[r]>b[1]) P('text completion '+r+': '+rows[r]+' (aim '+(b[0]===b[1]?b[0]:b.join('–'))+')'); });
+    if(inv>(m.id===K.INVERSION_MOCK?1:0)) P('text completion has '+inv+' inversion item(s); only '+K.INVERSION_MOCK+' may have one');
+    let nonAlpha=0; for(let n=76;n<=80;n++){ const it=byQ(n); if(it&&it.options.slice().sort().join()!==it.options.join()) nonAlpha++; }
+    if(nonAlpha<K.PO_MIN_NONALPHA) P('paragraph-order sets out of alphabetical order: '+nonAlpha+' (aim '+K.PO_MIN_NONALPHA+'+)');
+    const seenTxt=new Set();
+    scored.concat(...tri.map(s=>s.items)).forEach(it=>{
+      const srcs=[]; if(it.passage&&it.type==='read'){ srcs.push(['passage',it.passage,it.source]); }
+      if(it.ad){ (Array.isArray(it.ad)?it.ad:[it.ad]).forEach(a=>srcs.push(['ad',a.brand,a.source])); }
+      if(it.visual) srcs.push(['visual',it.visual.title,it.visual.source]);
+      srcs.forEach(([k,txt,src])=>{ const sig=k+String(txt).slice(0,60); if(seenTxt.has(sig)) return; seenTxt.add(sig);
+        if(!src||!DATED_RE.test(src)) P(k+' "'+strip(txt).replace(/\s+/g,' ').slice(0,40)+'…" has no dated source line'); });
+    });
+    console.log(m.id,'items',q,'key positions',pos.join('/'),'key uniquely longest',longestKey+'/'+meas,'negatives',neg.length,'arithmetic',ar,'Section I',s1.functional+'/'+s1.idiom+'/'+s1.marker);
   });
+  if(ctx.MOCKS.length>1){
+    Object.keys(tcSets).forEach(k=>{ const ids=tcSets[k]; const ms=new Set(ids.map(i=>i.split('-')[0])); if(ms.size>1) prof.push('option set reused across mocks: '+ids.join(', ')); });
+    if(ctx.MOCKS.length===5&&phrasalMocks.size<3) prof.push('phrasal-verb option sets in only '+phrasalMocks.size+' mocks (aim 3+)');
+  }
 }
 if(ctx.TOPICS.length){
   ctx.TOPICS.forEach(T=>{
@@ -148,10 +241,11 @@ if(ctx.TOPICS.length){
     const own=[]; T.levels.forEach(L=>L.subs.forEach(S=>{ const t=S.items.map(i=>i.tag); const top=t.sort((a,b)=>t.filter(x=>x===b).length-t.filter(x=>x===a).length)[0]; own.push(top); }));
     const missingRem=TAGS.filter(t=>own.includes(t)&&!ctx.REMEDIATION[t]); if(missingRem.length) errs.push('REMEDIATION missing for '+missingRem.join(','));
     Object.keys(ctx.REMEDIATION).forEach(k=>{ const r=ctx.REMEDIATION[k]; if(!r.name||!r.principle||!r.reteach||!Array.isArray(r.activities)) errs.push('REMEDIATION '+k+' incomplete'); });
-    if(mcq&&longestKey/mcq>0.25) warns.push(T.id+' key is uniquely longest in '+Math.round(100*longestKey/mcq)+'% of MCQs (>25%)');
+    if(mcq&&(longestKey/mcq<K.UNIQ_LONGEST_TOPIC[0]||longestKey/mcq>K.UNIQ_LONGEST_TOPIC[1])) warns.push(T.id+' key is uniquely longest in '+Math.round(100*longestKey/mcq)+'% of MCQs (aim '+K.UNIQ_LONGEST_TOPIC.map(x=>Math.round(100*x)).join('–')+'%)');
     pos.forEach((c,i)=>{ const pct=c/mcq; if(mcq&&(pct<0.18||pct>0.32)) warns.push(T.id+' key position '+(i+1)+' is the key '+Math.round(100*pct)+'% of the time (aim 20–30%)'); });
     console.log(T.id,'items',n,'key positions',pos.join('/'),'key uniquely longest',longestKey+'/'+mcq,'sub owner tags',own.join(' '));
   });
 }
-warns.forEach(x=>console.log('WARN',x)); errs.forEach(x=>console.log('ERR',x));
+warns.forEach(x=>console.log('WARN',x)); prof.forEach(x=>console.log('PROFILE',x)); errs.forEach(x=>console.log('ERR',x));
+if(STRICT) errs=errs.concat(prof);
 console.log(errs.length?('FAIL '+errs.length+' errors'):'PASS');

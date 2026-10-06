@@ -1110,12 +1110,13 @@
     if (score >= PASS_CHECK) p.xp += XP_CHECK;
   }
 
-  /* A mock is marked the way the real paper is: by points, not by item count,
-     because Part C is worth twice what Part B is. */
+  /* A mock is marked the way the real paper is: by points (1.25 an item, 100
+     for the paper). A section worth 0 points (Mock 1's triage extras) is
+     counted for the checklist but not for the score. */
   function scoreMock(mock, results) {
     var got = 0, total = 0, bySection = {};
     results.forEach(function (r) {
-      var pts = r.item._points || 1;
+      var pts = r.item._points != null ? r.item._points : 1;
       var sec = r.item._section || '?';
       var b = bySection[sec] || (bySection[sec] = { got: 0, total: 0, right: 0, n: 0 });
       total += pts; b.total += pts; b.n++;

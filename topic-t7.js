@@ -10,7 +10,7 @@
 /* ---------------------------------------------------------- shared passages */
 var T7_P_PHONEBAN = 'Supporters of phone-free schools argue that keeping smartphones out of classrooms can ___(1)___ concentration and ___(2)___ real, face-to-face friendships. Break times, they say, become noisy again: students play, argue and talk instead of scrolling in silence. Critics, however, worry that a total ban may ___(3)___ students’ digital skills, which they will need at university and at work, and make it harder for parents to reach their children in an emergency.';
 
-var T7_P_GLASSES = 'When a clip of a student apparently reading exam answers through a pair of smart glasses went viral, Chao Phraya University came under intense ___(1)___. Parents and journalists asked how such a device could go unnoticed in a hall with six invigilators. After two long meetings, the university council reached a ___(2)___ : from next semester, all smart glasses and watches will be collected at the door. Students who need prescription glasses will have their frames checked by staff before they sit down.';
+var T7_P_GLASSES = 'When a clip of a student apparently reading exam answers through a pair of smart glasses went viral, Riverbank University came under intense ___(1)___. Parents and journalists asked how such a device could go unnoticed in a hall with six invigilators. After two long meetings, the university council reached a ___(2)___ : from next semester, all smart glasses and watches will be collected at the door. Students who need prescription glasses will have their frames checked by staff before they sit down.';
 
 var T7_P_HEAT = 'Extreme heat is not just uncomfortable; it can ___(1)___ a serious risk to health, especially for young children and the elderly. Doctors say that sleep ___(2)___ a key role in helping the body recover after a hot day, yet many people in crowded city flats struggle to sleep when night-time temperatures stay above 28°C. Public health officials have ___(3)___ concerns that a strong El Niño could make early 2027 even hotter than usual, and they are urging schools to ___(4)___ the heat index into account when planning sports days.';
 
@@ -319,7 +319,7 @@ T7.levels.push({
       why: 'The next sentence lists what El Niño brings — “weeks without rain, falling river levels and cracked, dusty fields” — an example clue that restates the idea, and villages are rationing water: <em>very dry</em>. “Very hot” is the near miss, because El Niño often brings heat too, but every clue in the passage is about the lack of water, not temperature. Wind and uncertainty are not mentioned.' },
 
     { id: 't7l1ck-3', type: 'equiv', tag: 'vc-closest', level: 'B2+',
-      given: 'Flooded underpasses and stalled cars <strong>hampered</strong> rescue teams trying to reach families in the eastern districts, but by midnight every family had been reached.',
+      given: 'Flooded underpasses and stalled cars <strong>hampered</strong> rescue teams trying to reach families in flooded districts, but by midnight every family had been reached.',
       stem: 'The word in bold is closest in meaning to ________.',
       options: ['guided', 'slowed down', 'endangered', 'stopped completely'], answer: 1,
       hint: 'Read the end of the sentence. Did the rescue teams get there in the end?',
@@ -400,11 +400,11 @@ T7.levels.push({
       },
       items: [
         { id: 't7l2s1-1', type: 'read', tag: 'vc-verbs', level: 'B2+',
-          passage: 'The September floods could not be prevented, but the city worked hard to mitigate their effects. Extra pumps were installed at the worst-hit underpasses, temporary barriers in eastern districts were reinforced, and warnings were sent to every phone by cell broadcast.',
+          passage: 'The September floods could not be prevented, but the city worked hard to mitigate their effects. Warnings were sent to phones by cell broadcast, and temporary flood barriers were reportedly reinforced in some districts.',
           stem: 'The word “mitigate” is closest in meaning to ________.',
           options: ['study', 'reduce', 'prevent', 'measure'], answer: 1,
           hint: 'The first half of the sentence tells you what the city could NOT do.',
-          why: '“The floods could not be prevented”, so the city made their effects less severe with pumps, barriers and warnings: <em>reduce</em>. “Prevent” is the trap — the passage directly rules it out. “Study” and “measure” fit the grammar but describe research, not the practical steps listed.' },
+          why: '“The floods could not be prevented”, so the city made their effects less severe with warnings and stronger barriers: <em>reduce</em>. “Prevent” is the trap — the passage directly rules it out. “Study” and “measure” fit the grammar but describe research, not the practical steps listed.' },
 
         { id: 't7l2s1-2', type: 'cloze', tag: 'vc-verbs', level: 'B2+', passage: T7_P_PHONEBAN, blank: '(1)',
           stem: 'Choose the best option for blank (1).',
@@ -442,7 +442,7 @@ T7.levels.push({
           why: '<em>Enhance, foster, bolster</em> and <em>reinforce</em> strengthen or improve. <em>Undermine, exacerbate</em> and <em>erode</em> weaken or worsen. <em>Impede</em> and <em>hinder</em> slow things down, and <em>curb</em> limits or holds something back (curb plastic use = use less of it).' },
 
         { id: 't7l2s1-5', type: 'read', tag: 'vc-verbs', level: 'C1',
-          passage: 'Short-sightedness is rising fast among Thai schoolchildren. Eye specialists at Chao Phraya University attribute the increase to long hours of close-up screen time and, above all, too little time outdoors in daylight. They recommend at least two hours of outdoor play a day.',
+          passage: 'Short-sightedness is rising fast among Thai schoolchildren. Eye specialists at Riverbank University attribute the increase to long hours of close-up screen time and, above all, too little time outdoors in daylight. They recommend at least two hours of outdoor play a day.',
           stem: 'In the passage, the specialists “attribute the increase to” screen time and too little time outdoors. This means they ________.',
           options: ['compare the increase with these habits', 'say the increase is caused by these habits', 'hope these habits will reduce the increase', 'predict that the increase will cause these habits'], answer: 1,
           hint: 'Look at their recommendation in the last sentence. Why would they recommend more outdoor play?',
@@ -498,7 +498,7 @@ T7.levels.push({
           why: 'The colon introduces the evidence: from city noodle carts to country fruit sellers, “almost every vendor” uses QR codes, so it is <em>found everywhere</em>. “Popular” is the wrong-strength trap: something can be popular in one place without being everywhere. “Convenient” and “modern” may be true of QR payment, but they are not what the word means.' },
 
         { id: 't7l2s2-2', type: 'read', tag: 'vc-adjs', level: 'C1',
-          passage: 'Chao Phraya University’s open day drew an unprecedented 40,000 visitors this year, more than double the previous record. The organisers had planned for a big crowd, but the car parks were full by 8 a.m. and the campus shuttle buses ran non-stop until evening.',
+          passage: 'Riverbank University’s open day drew an unprecedented 40,000 visitors this year, more than double the previous record. The organisers had planned for a big crowd, but the car parks were full by 8 a.m. and the campus shuttle buses ran non-stop until evening.',
           stem: 'The word “unprecedented” can be best replaced by ________.',
           options: ['welcome', 'unexpected', 'disappointing', 'never seen before'], answer: 3,
           hint: 'Find the comparison with earlier years in the first sentence.',

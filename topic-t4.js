@@ -12,7 +12,7 @@ var T4_SRC = 'Adapted for TCAS70 practice';
 /* ---------------------------------------------------------------- LEVEL 1 PASSAGES */
 var T4_P_SLEEP =
 'Teenagers who keep their phones in the bedroom overnight sleep less and feel worse the next day — but a simple change of routine can make a real difference, a new study suggests.\n\n' +
-'Researchers at Chao Phraya University followed 420 secondary students in Bangkok for eight weeks. Half were asked to leave their phones charging in the kitchen from 10 p.m.; the rest kept their usual habits.\n\n' +
+'Researchers at Riverbank University followed 420 secondary students in Bangkok for eight weeks. Half were asked to leave their phones charging in the kitchen from 10 p.m.; the rest kept their usual habits.\n\n' +
 'By the end of the study, the “kitchen-charging” group was sleeping an average of 38 minutes longer per night. They also reported feeling less anxious and found it easier to concentrate in morning classes.\n\n' +
 'Interestingly, most of the extra sleep did not come from going to bed earlier. Instead, students woke up less often during the night because notifications no longer disturbed them.\n\n' +
 '“We did not ask anyone to give up their phone,” said Dr Ratchanee Boonsong, who led the study. “We only asked them to move it about ten metres.” The team now hopes schools will share the idea with parents before the exam season begins.';
@@ -31,36 +31,36 @@ var T4_P_COLUMN =
 
 var T4_P_LIMITS =
 'Governments agree that young teenagers face risks online, but they do not agree on where to draw the line.\n\n' +
-'Australia moved first: its ban on social media accounts for under-16s took effect in December 2025, and about 4.7 million accounts had been removed by January 2026. France chose a lower limit, under-15, starting from 1 September 2026, and Denmark has also settled on 15. Greece plans an under-15 rule from January 2027, while the UK is planning an under-16 limit for spring 2027. Closer to home, Malaysia has introduced an under-16 limit this year.\n\n' +
+'Australia’s ban on social media accounts for under-16s took effect in December 2025, and about 4.7 million accounts had been removed by January 2026. France chose a lower limit, under-15, with new accounts blocked from 1 September 2026, and Denmark is also planning an under-15 rule. Greece plans an under-15 rule from January 2027, while the UK is planning an under-16 limit for 2027. Closer to home, Malaysia has introduced an under-16 limit this year.\n\n' +
 'The rules differ in age and in timing, which is why researchers are watching closely to see which approach, if any, actually changes young people’s habits.';
 
 var T4_P_ALERTS =
-'(1) Phones buzz, streets flood: Bangkok’s alerts put to the test\nBy Chronicle reporter Siriporn Chaiyaporn\n\n' +
-'(2) Millions of phones across Bangkok sounded an emergency alarm last week as the capital faced some of the heaviest rain in its recent history.\n\n' +
+'(1) Phones buzz, streets flood: Bangkok’s alerts put to the test\nBy Lantern reporter Siriporn Chaiyaporn\n\n' +
+'(2) Phones across Bangkok sounded an emergency alarm last week as the capital faced two days of continuous heavy rain.\n\n' +
 '(3) Parts of the city received more than 300 millimetres of rain in 48 hours, and on 26 September the city declared a flood disaster zone.\n\n' +
 '(4) The warnings were sent by cell broadcast, a system that pushes a message to every phone connected in an area, without the need for an app or a phone number.\n\n' +
 '(5) “I’ve never heard my phone make that noise before,” said a 17-year-old student in Bang Kapi. “My mum read the message twice, then started carrying everything upstairs.”\n\n' +
 '(6) Floodwater blocked traffic at 37 locations, and city officials said draining would take two to three days after the rain stopped.\n\n' +
-'(7) Officials said the heavy rain had combined with water flowing south from the North. Temporary flood barriers were reinforced in eastern districts.\n\n' +
-'(8) Not everyone was reached in time. Some residents told the Chronicle that the alert arrived only after water had already entered their homes.\n\n' +
+'(7) Officials said the heavy rain had combined with water released from the Chao Phraya Dam upstream. Temporary flood barriers were reportedly reinforced in some districts.\n\n' +
+'(8) Not everyone was reached in time. Some residents told the Lantern that the alert arrived only after water had already entered their homes.\n\n' +
 '(9) Now the questions begin. Should alerts be sent earlier, even when forecasts are uncertain? And how can the city reach people who do not read or trust the messages?\n\n' +
-'(10) “A warning only works if people trust it and know what to do next,” said Dr Anan Rattanakorn, a disaster-communication researcher at Chao Phraya University. “The technology is the easy part.”';
+'(10) “A warning only works if people trust it and know what to do next,” said Dr Anan Rattanakorn, a disaster-communication researcher at Riverbank University. “The technology is the easy part.”';
 
 var T4_P_CK1 =
-'(1) Ban or no ban, most Australian teens are still scrolling\nBy Chronicle correspondent Nicha Thongdee\n\n' +
+'(1) Ban or no ban, most Australian teens are still scrolling\nBy Lantern correspondent Nicha Thongdee\n\n' +
 '(2) More than 80 percent of Australian children under 16 were still using social media three months after the country’s ban took effect, according to a report by the government’s online-safety regulator.\n\n' +
-'(3) The ban, which came into force in December 2025, was the first of its kind in the world. By January 2026, about 4.7 million accounts had been removed.\n\n' +
-'(4) Yet removing accounts, it seems, is not the same as removing users. Teenagers interviewed by the Chronicle in Sydney described opening new accounts with false birth dates or moving to apps they believed were not covered.\n\n' +
+'(3) The ban, which came into force in December 2025, covers ten platforms, and companies that break it face fines of up to A$49.5 million. By January 2026, about 4.7 million accounts had been removed.\n\n' +
+'(4) Yet removing accounts, it seems, is not the same as removing users. Teenagers interviewed by the Lantern in Sydney described opening new accounts with false birth dates or moving to apps they believed were not covered.\n\n' +
 '(5) “Everyone in my class just made a new account with a different birthday,” said one 15-year-old. “It took about two minutes.”\n\n' +
 '(6) Supporters of the ban say the figures are disappointing but not surprising. “Seatbelt laws weren’t obeyed overnight either,” said a parent who campaigned for the rule. “The point is that the law now tells families what is normal.”\n\n' +
 '(7) Critics see things differently. A digital-rights group argued that the ban has pushed young people towards less regulated corners of the internet, where it is harder for parents to see what they are doing.\n\n' +
-'(8) The results matter far beyond Australia. France’s under-15 rule began on 1 September, and the UK is planning an under-16 limit for spring 2027.\n\n' +
-'(9) “Other governments are watching this like a science experiment,” said Dr Kulthida Srisawat, a media researcher at Chao Phraya University. “The question is no longer whether a ban is possible, but whether it changes behaviour.”';
-var T4_SRC_CK1 = 'Adapted for TCAS70 practice (The Bangkok Chronicle, September 2026)';
+'(8) The results matter far beyond Australia. France began blocking new accounts for under-15s on 1 September, and the UK is planning an under-16 limit for 2027.\n\n' +
+'(9) “Other governments are watching this like a science experiment,” said Dr Kulthida Srisawat, a media researcher at Riverbank University. “The question is no longer whether a ban is possible, but whether it changes behaviour.”';
+var T4_SRC_CK1 = 'Adapted for TCAS70 practice (The Bangkok Lantern, September 2026)';
 
 /* ---------------------------------------------------------------- LEVEL 2 PASSAGES */
 var T4_P_ELNINO =
-'Farmers in Thailand’s Northeast are being urged to rethink their planting plans as forecasters warn that a strong El Niño could bring a hotter, drier start to 2027. Some forecasters have even described the coming event as a possible “super” El Niño.\n\n' +
+'Farmers in Thailand’s Northeast are being urged to rethink their planting plans as forecasters warn that El Niño could bring a hotter, drier start to 2027. In its update of 3 September, the World Meteorological Organization put the chance of El Niño lasting through February 2027 at close to 100 per cent, and expected it to become very strong, peaking towards the end of 2026.\n\n' +
 'For rice farmers in provinces such as Khon Kaen and Roi Et, the concern is simple: less rain means less water in reservoirs by the time the dry season arrives. Farm advisers are therefore encouraging them to reduce their second rice crop and to consider crops that need far less water, such as corn, beans or melons.\n\n' +
 'Not all farmers are convinced. “My father planted rice through every dry year I can remember,” said one farmer near Roi Et. “Changing crops means buying new seeds and learning new methods, and nobody pays us while we learn.”\n\n' +
 'Health experts have raised a second concern. Dry conditions usually worsen the PM2.5 season, as smoke and dust hang in still, dry air. City residents who think drought is a rural problem may find it arriving in their lungs.';
@@ -74,12 +74,12 @@ var T4_P_SCREEN =
 
 var T4_P_AIVIDEO =
 '(1) Until recently, a video clip was treated as strong evidence that something had really happened. Text-to-video apps have changed that. Since tools such as OpenAI’s Sora appeared in 2025, anyone with a phone can type a sentence and receive a realistic clip within minutes. Some commentators call this “the end of visual fact”.\n\n' +
-'(2) Researchers at Chao Phraya University wanted to know how well young people could spot such clips. They showed 60 short videos to two groups: university students and secondary students. Half of the videos were real; the rest had been made with AI. Surprisingly, both groups scored only slightly better than chance, and the older students were no more accurate than the younger ones.\n\n' +
+'(2) Researchers at Riverbank University wanted to know how well young people could spot such clips. They showed 60 short videos to two groups: university students and secondary students. Half of the videos were real; the rest had been made with AI. Surprisingly, both groups scored only slightly better than chance, and the older students were no more accurate than the younger ones.\n\n' +
 '(3) The researchers then gave a ten-minute lesson on checking sources — asking who first posted a clip and whether trusted news outlets had reported it. After it, the students’ scores improved sharply. Those who had been most confident at the start improved the least.\n\n' +
 '(4) The lesson did not teach students to look for visual mistakes, such as strange hands or flickering backgrounds. The team argues that these clues will soon disappear as the technology improves, so checking where a clip came from matters more than studying what it looks like.';
 
 var T4_P_CK2 =
-'(1) After the water: Hat Yai volunteers train the next wave of helpers\nBy Chronicle reporter Pattarawadee Kaewmanee\n\n' +
+'(1) After the water: Hat Yai volunteers train the next wave of helpers\nBy Lantern reporter Pattarawadee Kaewmanee\n\n' +
 '(2) When record rainfall hit Hat Yai in late November 2025 — an event some media described as “once-in-300-years” — homes and even hospitals were flooded, and lives were lost across southern Thailand and in neighbouring countries.\n\n' +
 '(3) Ten months later, a group of university volunteers in Songkhla is working to make sure the city’s young people are not caught unprepared again.\n\n' +
 '(4) Every Saturday, the group runs free workshops for secondary students. Participants learn how to read river-level warnings, pack an emergency bag and check on elderly neighbours who live alone.\n\n' +
@@ -88,7 +88,7 @@ var T4_P_CK2 =
 '(7) So far, around 1,200 students from 15 schools have taken part. Those who complete all four sessions receive a certificate and join a messaging group that shares official warnings during the rainy season.\n\n' +
 '(8) Some teachers would like the course to become part of the school timetable. Others worry that it could take time away from exam preparation, especially for M6 students.\n\n' +
 '(9) For now, the volunteers are focusing on what they can control. “We can’t stop the rain,” said another volunteer. “But we can make sure nobody is waiting alone for help that isn’t coming.”';
-var T4_SRC_CK2 = 'Adapted for TCAS70 practice (The Bangkok Chronicle, September 2026)';
+var T4_SRC_CK2 = 'Adapted for TCAS70 practice (The Bangkok Lantern, September 2026)';
 
 /* ---------------------------------------------------------------- LEVEL 3 PASSAGES */
 var T4_P_SMOKE =
@@ -102,22 +102,23 @@ var T4_P_DEBATE =
 'As more countries introduce age limits for social media — from Australia and Malaysia to France and Denmark — a question is being asked in Thai homes and classrooms: should Thailand follow?\n\n' +
 'Supporters of a limit point to sleep and attention. “My daughter used to scroll until two in the morning,” said a Bangkok mother who has joined an online campaign for an under-16 rule. “Parents cannot fight billion-dollar apps alone. We need the law on our side.”\n\n' +
 'Opponents are not convinced. A student-led group argues that a ban would punish teenagers instead of the companies that design addictive feeds. “Teach us how to use it safely,” said one of its members, an M5 student. “Don’t lock the door and pretend the house is empty.”\n\n' +
-'Researchers are more cautious than either side. Dr Wanida Charoenkul, who studies adolescent health at Chao Phraya University, admits that heavy use is linked to poorer sleep, but she points out that such links do not prove that phones cause the problem. She also notes that Australia’s early figures — more than 80 percent of under-16s still using social media three months after its ban — suggest that a law alone may change little.\n\n' +
+'Researchers are more cautious than either side. Dr Wanida Charoenkul, who studies adolescent health at Riverbank University, admits that heavy use is linked to poorer sleep, but she points out that such links do not prove that phones cause the problem. She also notes that Australia’s early figures — more than 80 percent of under-16s still using social media three months after its ban — suggest that a law alone may change little.\n\n' +
 'Even some supporters concede this point. The campaigning mother accepts that a ban “won’t work without parents”, but insists that it would still “draw a line that families can point to”.';
 
 var T4_P_NUMBERS =
 '(1) The rain that fell on Bangkok between 24 and 27 September 2026 will be remembered for years. Here is what the numbers tell us.\n\n' +
 '(2) In parts of the city, more than 300 millimetres of rain fell in just 48 hours. On 26 September, the city declared a flood disaster zone.\n\n' +
-'(3) The problem was not only the rain above the city. Water flowing south from the North added to the pressure on rivers and canals.\n\n' +
-'(4) Inside Bangkok, floodwater blocked traffic at 37 locations, and every one of the capital’s 50 districts was affected.\n\n' +
-'(5) Nationwide, about 2.6 million people in 29 provinces had been affected by 29 September, and roughly 940,000 households had been hit. Twenty-two people died.\n\n' +
-'(6) Warnings reached many residents through cell broadcast alerts on their phones, and temporary flood barriers were reinforced in the eastern districts.\n\n' +
-'(7) Even when the rain stopped, the city warned that draining the water would take another two to three days.';
+'(3) The problem was not only the rain above the city. Water released from the Chao Phraya Dam upstream, at 1,500 to 2,500 cubic metres per second, added to the pressure on rivers and canals.\n\n' +
+'(4) Inside Bangkok, floodwater blocked traffic at 37 locations, and about 700,000 people in 329,000 households were affected.\n\n' +
+'(5) Nationwide, by 29 September, 29 provinces as well as Bangkok were flooded, and about 2.6 million people in roughly 940,000 households had been affected. Twenty-three people had died.\n\n' +
+'(6) Warnings reached many residents through cell broadcast alerts on their phones, and temporary flood barriers were reportedly reinforced in some districts.\n\n' +
+'(7) Even when the rain stopped, the city warned that draining the water would take another two to three days.\n\n' +
+'(8) By 4 October, the water was falling in Bangkok but rising in the Central region, and the national figures had grown to almost 3.3 million people affected and 31 deaths.';
 
 var T4_P_CK3 =
-'(1) Pens return as university drops take-home essays\nBy Chronicle education reporter Thanawat Rungrueang\n\n' +
+'(1) Pens return as university drops take-home essays\nBy Lantern education reporter Thanawat Rungrueang\n\n' +
 '(2) A Bangkok university will replace most take-home essays in its first-year courses with handwritten, in-class writing from next semester, after lecturers reported a sharp rise in work they suspected had been produced by AI chatbots.\n\n' +
-'(3) The decision by Chao Phraya University’s Faculty of Arts affects around 900 first-year students.\n\n' +
+'(3) The decision by Riverbank University’s Faculty of Arts affects around 900 first-year students.\n\n' +
 '(4) Lecturers first raised concerns last year, when several essays in one course contained the same unusual examples and nearly identical conclusions. By the end of that semester, a faculty survey found that seven in ten lecturers believed AI misuse had become common.\n\n' +
 '(5) Detection software did not solve the problem. The faculty stopped using one tool after it wrongly flagged essays by students who had written every word themselves.\n\n' +
 '(6) “We were spending more time acting as detectives than as teachers,” said the faculty’s deputy dean, Dr Suda Phromma. “In-class writing lets us see students think.”\n\n' +
@@ -126,7 +127,7 @@ var T4_P_CK3 =
 '(9) Education researchers are divided. Dr Pakorn Sirisuk, who studies assessment at Siam Valley University, argues that the move is understandable but short-sighted. “Students will use AI at work,” he said. “Universities should be teaching them to use it honestly, not pretending it doesn’t exist.”\n\n' +
 '(10) The faculty says take-home work will not disappear entirely. Final-year students will still write long research papers, although they will now have to present their work in person and answer questions about it.\n\n' +
 '(11) Whether the change will spread to other faculties is still unclear. For now, stationery shops near the campus are reporting an unexpected rise in sales of pens.';
-var T4_SRC_CK3 = 'Adapted for TCAS70 practice (The Bangkok Chronicle, September 2026)';
+var T4_SRC_CK3 = 'Adapted for TCAS70 practice (The Bangkok Lantern, September 2026)';
 
 var T4 = {
   id:'t4', n:4, code:'System 04', art:'news',
@@ -362,7 +363,7 @@ T4.levels.push({
         body:[
           'Reporters write for readers who may stop at any moment, so the most important information goes first. The <strong>headline</strong> compresses the story (present simple for past events, dropped articles, a colon: <em>Phones buzz, streets flood</em>). The <strong>lead</strong> (first paragraph of text) answers who, what, when, where and often why. After that, each paragraph is less essential than the one before: <strong>key facts and numbers</strong>, <strong>background</strong> (how a system works, what happened before), <strong>reactions</strong> (quotes from residents, officials, supporters, critics), <strong>problems</strong>, and finally the <strong>aftermath</strong>: “Now the questions begin…”, “Some are calling for…”, an expert’s closing comment.',
           'TCAS prints the headline and reporter line as paragraph <strong>(1)</strong>. So in TCAS numbering, paragraph (2) is usually the lead. In TCAS69 the Texas flood report went: (1) headline, (2)–(3) the facts, (5) “Here are some of the key questions being asked”, then alerts, sirens, reactions, and an expert’s view at the end. The items followed that map: main idea (headline + lead), a detail about the alerts, an inference, the reason for no sirens, what meteorologists thought, and a “best supports” item.',
-          '<strong>Attribution</strong> is how news keeps facts and opinions apart: <em>said, according to, officials said, told the Chronicle, a report by…</em>. Always ask <strong>who</strong> says it. If an option says “The city admitted the alerts were late” but the text says “some residents told the Chronicle”, the option is wrong: right fact, wrong speaker.',
+          '<strong>Attribution</strong> is how news keeps facts and opinions apart: <em>said, according to, officials said, told the Lantern, a report by…</em>. Always ask <strong>who</strong> says it. If an option says “The city admitted the alerts were late” but the text says “some residents told the Lantern”, the option is wrong: right fact, wrong speaker.',
           '<strong>Procedure for a news passage.</strong> Step 1: headline + lead = main idea. Step 2: skim the first words of each paragraph and label its job (fact, background, reaction, problem, question). Step 3: when a question names a person or group, go straight to the paragraph where they speak.'
         ],
         simple:[
@@ -374,7 +375,7 @@ T4.levels.push({
         thai:'ข่าวเขียนแบบพีระมิดกลับหัว: พาดหัว (headline) และย่อหน้านำ (lead) บอกใคร ทำอะไร ที่ไหน เมื่อไร ทำไม จากนั้นเป็นตัวเลข ข้อมูลเบื้องหลัง (background) ความเห็นหรือปฏิกิริยาของคนต่าง ๆ (reactions) และคำถามว่าจะเกิดอะไรต่อไป (aftermath) ใน TCAS ย่อหน้า (1) คือพาดหัวกับชื่อผู้สื่อข่าว ดังนั้น lead มักเป็นย่อหน้า (2) กับดักคือ attribution ข้อมูลถูกแต่ “คนพูด” ผิด เช่น ในข่าวชาวบ้านพูด แต่ตัวเลือกบอกว่าเจ้าหน้าที่ยอมรับ',
         examples:[
           { s:'<strong>Headline:</strong> Phones buzz, streets flood: Bangkok’s alerts put to the test', g:'present simple, no articles, a colon' },
-          { s:'<strong>Lead:</strong> Millions of phones across Bangkok sounded an emergency alarm last week as…', g:'who, what, where, when in one sentence' },
+          { s:'<strong>Lead:</strong> Phones across Bangkok sounded an emergency alarm last week as…', g:'who, what, where, when in one sentence' },
           { s:'<strong>Attribution:</strong> …city officials <strong>said</strong> draining would take two to three days.', g:'the source of the fact' },
           { s:'<strong>Aftermath:</strong> Now the questions begin. Should alerts be sent earlier?', g:'the “what next?” paragraph TCAS loves to ask about' }
         ],
@@ -399,7 +400,7 @@ T4.levels.push({
           stem:'Which paragraph serves as the lead, giving the main who, what, when and where of the story?',
           options:['Paragraph 1','Paragraph 2','Paragraph 4','Paragraph 9'], answer:1,
           hint:'Paragraph 1 is the headline and reporter line. Where does the story itself begin?',
-          why:'Paragraph 2 is the first paragraph of the story and packs in who and what (millions of phones sounded an alarm), where (across Bangkok) and when (last week), plus why (the heaviest rain). Paragraph 1 is the headline, paragraph 4 is background on cell broadcast, and paragraph 9 raises the aftermath questions.' },
+          why:'Paragraph 2 is the first paragraph of the story and packs in who and what (phones sounded an alarm), where (across Bangkok) and when (last week), plus why (two days of heavy rain). Paragraph 1 is the headline, paragraph 4 is background on cell broadcast, and paragraph 9 raises the aftermath questions.' },
 
         { id:'t4l1s3-2', type:'read', tag:'rd-news', level:'B2', passage:T4_P_ALERTS, source:T4_SRC,
           stem:'What is the main purpose of paragraph 4?',
@@ -416,7 +417,7 @@ T4.levels.push({
           stem:'Put the building blocks of the Bangkok alerts report in the order they appear.',
           items:[
             'Headline and reporter line',
-            'Lead: phones across Bangkok sounded an alarm during some of the heaviest rain in years',
+            'Lead: phones across Bangkok sounded an alarm during two days of heavy rain',
             'Key facts: 300 mm in 48 hours and a disaster zone',
             'Background: how cell broadcast works',
             'Reaction: a student describes hearing the alarm',
@@ -480,11 +481,11 @@ T4.levels.push({
       options:[
         'a digital-rights group',
         'a government regulator’s report',
-        'a media researcher at Chao Phraya University',
-        'interviews carried out by the Chronicle in Sydney'
+        'a media researcher at Riverbank University',
+        'interviews carried out by the Lantern in Sydney'
       ], answer:1,
       hint:'Find the figure, then read to the end of that sentence for the attribution.',
-      why:'Paragraph 2 ends “according to a report by the government’s online-safety regulator”. The Chronicle’s interviews in Sydney are real (paragraph 4), which makes them the near miss, but they produced personal stories, not the percentage. The rights group and Dr Kulthida give opinions, not this figure.' },
+      why:'Paragraph 2 ends “according to a report by the government’s online-safety regulator”. The Lantern’s interviews in Sydney are real (paragraph 4), which makes them the near miss, but they produced personal stories, not the percentage. The rights group and Dr Kulthida give opinions, not this figure.' },
 
     { id:'t4l1ck-4', type:'read', tag:'rd-news', level:'C1', passage:T4_P_CK1, source:T4_SRC_CK1,
       stem:'Taken together, paragraphs 6 and 7 mainly serve to ________.',
@@ -603,11 +604,11 @@ T4.levels.push({
           why:'The sentence comes right after the point that dry conditions worsen PM2.5, so “arriving in their lungs” means drought affects city people through dirty air. The water-shortage option misses the lungs completely. The rural-versus-city comparison and the move to the countryside are never stated.' },
 
         { id:'t4l2s1-4', type:'judge', tag:'rd-detail', level:'B2',
-          given:'<em>Paragraph 1:</em> “Farmers in Thailand’s Northeast are being urged to rethink their planting plans as forecasters warn that a strong El Niño could bring a hotter, drier start to 2027. Some forecasters have even described the coming event as a possible ‘super’ El Niño.”',
-          stem:'True, False or Not given? <strong>All forecasters agree that the coming El Niño will be a “super” El Niño.</strong>',
+          given:'<em>Paragraph 1:</em> “Farmers in Thailand’s Northeast are being urged to rethink their planting plans as forecasters warn that El Niño could bring a hotter, drier start to 2027. In its update of 3 September, the World Meteorological Organization put the chance of El Niño lasting through February 2027 at close to 100 per cent, and expected it to become very strong, peaking towards the end of 2026.”',
+          stem:'True, False or Not given? <strong>The World Meteorological Organization expects El Niño to be over by the end of 2026.</strong>',
           answer:1,
-          hint:'Compare the small words: how many forecasters, and how certain?',
-          why:'False. Only “some forecasters” use the word “super”, and they call it “possible”. The statement changes <em>some</em> to <em>all</em> and <em>possible</em> to <em>will be</em>: two classic word-match changes.' },
+          hint:'Two time phrases appear. Which one tells you how long El Niño will last, and which one tells you when it will be strongest?',
+          why:'False. The WMO puts the chance of El Niño lasting “through February 2027” at close to 100 per cent. “The end of 2026” is when it is expected to <em>peak</em>, not when it ends: the statement borrows the passage’s words and changes the meaning, a classic word-match trap.' },
 
         { id:'t4l2s1-5', type:'sort', tag:'rd-detail', level:'B2+',
           stem:'Text: “Not all farmers are convinced. Changing crops means buying new seeds and learning new methods.” Which statements say the same thing, and which only borrow the words?',
@@ -1105,24 +1106,24 @@ T4.levels.push({
     {
       id:'t4l3s3', name:'Which detail best supports…?', cefr:'C1', tag:'rd-support',
       theory:{
-        key:'The best supporting detail proves <strong>the exact word</strong> in the claim (whole city, intense, beyond Bangkok); true details that prove a different point are the distractors.',
+        key:'The best supporting detail proves <strong>the exact word</strong> in the claim (in Bangkok itself, intense, beyond Bangkok); true details that prove a different point are the distractors.',
         body:[
           'A “best supports” question gives you a claim and four details. Usually <strong>all four are true</strong>, or at least three are. So “Is it in the text?” is not enough. The real question is: <strong>does this detail prove this particular claim?</strong> Each claim has a key word that sets the test: <em>widespread</em> needs evidence of reach, <em>intense</em> needs evidence of force or speed, <em>popular</em> needs evidence of people choosing it, <em>severe</em> needs evidence of harm.',
           'TCAS69 item 38 asked which detail best supports the idea that the Texas flood was “unusually severe”. The key was that it happened when many people were at camps and resorts, a detail the expert used to explain why it was a “worst-case scenario”. The distractors were details that would have made the disaster <em>less</em> severe (slow-rising water, tested equipment) and were not in the text.',
-          '<strong>Procedure.</strong> Step 1: underline the key word of the claim. Step 2: translate it into a test: “whole capital” → does the detail cover all of Bangkok? Step 3: check each option against the test, not just against the text. Step 4: the “remove it” check: if this detail were false, would the claim become weaker? If not, it is not support.',
-          '<strong>Near misses to watch:</strong> a detail about the right event but the wrong scale (nationwide figure for a claim about Bangkok), a cause offered as evidence of an effect (water from the North explains the flood but does not prove its size), and a response offered as proof of a problem (reinforcing barriers shows action, not damage).'
+          '<strong>Procedure.</strong> Step 1: underline the key word of the claim. Step 2: translate it into a test: “in Bangkok itself” → is the detail about the capital, not the whole country? Step 3: check each option against the test, not just against the text. Step 4: the “remove it” check: if this detail were false, would the claim become weaker? If not, it is not support.',
+          '<strong>Near misses to watch:</strong> a detail about the right event but the wrong scale (nationwide figure for a claim about Bangkok), a cause offered as evidence of an effect (water released from a dam upstream explains the flood but does not prove its size), and a response offered as proof of a problem (reinforcing barriers shows action, not damage).'
         ],
         simple:[
           'Find the most important word in the claim, for example “whole city” or “very intense”.',
           'Choose the detail that proves that word, not just a true detail.',
           'Ask: if this detail were not true, would the claim be weaker? If yes, it supports the claim.'
         ],
-        thai:'ข้อ “which detail best supports” ตัวเลือกส่วนใหญ่มักเป็นความจริงในเนื้อเรื่อง จึงต้องถามว่ารายละเอียดนั้น “พิสูจน์” คำสำคัญในข้อความอ้าง (claim) ได้หรือไม่ ให้ขีดเส้นใต้คำสำคัญ เช่น whole capital, intense, beyond Bangkok แล้วใช้เป็นเกณฑ์ตรวจทีละข้อ และลองถามว่า ถ้ารายละเอียดนี้ไม่จริง claim จะอ่อนลงไหม กับดักคือรายละเอียดจริงแต่พิสูจน์คนละประเด็น เช่น ตัวเลขทั้งประเทศใช้พิสูจน์เรื่องกรุงเทพฯ ไม่ได้ หรือสาเหตุของน้ำท่วมไม่ได้พิสูจน์ความรุนแรง',
+        thai:'ข้อ “which detail best supports” ตัวเลือกส่วนใหญ่มักเป็นความจริงในเนื้อเรื่อง จึงต้องถามว่ารายละเอียดนั้น “พิสูจน์” คำสำคัญในข้อความอ้าง (claim) ได้หรือไม่ ให้ขีดเส้นใต้คำสำคัญ เช่น in Bangkok itself, intense, beyond Bangkok แล้วใช้เป็นเกณฑ์ตรวจทีละข้อ และลองถามว่า ถ้ารายละเอียดนี้ไม่จริง claim จะอ่อนลงไหม กับดักคือรายละเอียดจริงแต่พิสูจน์คนละประเด็น เช่น ตัวเลขทั้งประเทศใช้พิสูจน์เรื่องกรุงเทพฯ ไม่ได้ หรือสาเหตุของน้ำท่วมไม่ได้พิสูจน์ความรุนแรง',
         examples:[
-          { s:'Claim: the flooding affected <strong>the whole capital</strong> → “every one of the capital’s 50 districts was affected”', g:'proves “whole”' },
+          { s:'Claim: the flooding hit <strong>a huge number of people in Bangkok itself</strong> → “about 700,000 people in 329,000 households” inside Bangkok', g:'proves number + place' },
           { s:'Claim: the rain was <strong>extremely intense</strong> → “more than 300 mm in 48 hours”', g:'amount + short time = intensity' },
-          { s:'Claim: the disaster reached <strong>far beyond Bangkok</strong> → “2.6 million people in 29 provinces”', g:'proves reach' },
-          { s:'Near miss: “water flowing south from the North”', g:'explains a cause; proves no claim about size' }
+          { s:'Claim: the disaster reached <strong>far beyond Bangkok</strong> → “29 provinces as well as Bangkok were flooded”', g:'proves reach' },
+          { s:'Near miss: “water released from the Chao Phraya Dam upstream”', g:'explains a cause; proves no claim about size' }
         ],
         trap:'The “true but off-target” trap: you check that the option is in the passage, find that it is, and stop. In a best-supports item that is only half the job. Dodge: say the claim’s key word out loud and ask, “Does this detail prove <em>that</em>?”',
         analogy:{ title:'The lawyer’s evidence', text:'A lawyer trying to prove that someone was in Chiang Mai on Friday does not show the judge a photo of them eating khao soi on Tuesday. The photo is real, and it is even in Chiang Mai, but it proves the wrong thing. Best-supports questions want the Friday photo.' },
@@ -1141,37 +1142,37 @@ T4.levels.push({
       },
       items:[
         { id:'t4l3s3-1', type:'read', tag:'rd-support', level:'B2+', passage:T4_P_NUMBERS, source:T4_SRC,
-          stem:'Which detail best supports the idea that the flooding affected the whole of Bangkok?',
+          stem:'Which detail best supports the idea that the flooding hit a very large number of people inside Bangkok itself?',
           options:[
-            'All 50 of the capital’s districts were affected.',
+            'About 700,000 people in Bangkok were affected.',
+            'About 2.6 million people were affected nationwide.',
             'Floodwater blocked traffic at 37 locations in the city.',
-            'The city declared a flood disaster zone on 26 September.',
-            'About 2.6 million people in 29 provinces were affected nationwide.'
+            'The city declared a flood disaster zone on 26 September.'
           ], answer:0,
-          hint:'The claim’s key word is “whole”. Use the remove-it check on each option.',
-          why:'“Every one of the capital’s 50 districts was affected” proves the key word “whole”. Thirty-seven blocked locations show serious disruption, but not that every area was hit. The disaster-zone declaration is an official response, and the 2.6 million figure is nationwide, so it is the wrong scale for a claim about Bangkok.' },
+          hint:'The claim has two key parts: a number of people, and a place. Use the remove-it check on each option.',
+          why:'Paragraph 4 says that inside Bangkok “about 700,000 people in 329,000 households were affected”, which proves both parts of the claim: many people, in the capital itself. The 2.6 million figure is the near miss: it counts people, but nationwide, so it is the wrong scale for a claim about Bangkok. Thirty-seven blocked locations show disruption, not how many people were hit, and the disaster-zone declaration is an official response.' },
 
         { id:'t4l3s3-2', type:'read', tag:'rd-support', level:'B2+', passage:T4_P_NUMBERS, source:T4_SRC,
           stem:'Which detail best supports the claim that the rain was extremely intense?',
           options:[
-            'Twenty-two people died.',
+            'Twenty-three people died.',
             'Over 300 mm fell in 48 hours.',
-            'Barriers were reinforced in the east.',
-            'Water flowed south from the North into the city’s rivers.'
+            'Barriers were reinforced in some districts.',
+            'Water was released from the Chao Phraya Dam upstream.'
           ], answer:1,
           hint:'Underline the claim’s key word. If each detail were false in turn, which loss would weaken the claim most?',
-          why:'Intensity is amount per time, and “more than 300 millimetres… in just 48 hours” gives both. Deaths show how serious the disaster was, not how hard it rained. Water from the North is a second cause of flooding, not a measure of the rain, and the barriers are a response.' },
+          why:'Intensity is amount per time, and “more than 300 millimetres… in just 48 hours” gives both. Deaths show how serious the disaster was, not how hard it rained. Water released from the dam upstream is a second cause of flooding, not a measure of the rain, and the barriers are a response.' },
 
         { id:'t4l3s3-3', type:'read', tag:'rd-support', level:'C1', passage:T4_P_NUMBERS, source:T4_SRC,
           stem:'Which detail best shows that the disaster reached far beyond Bangkok?',
           options:[
             'Traffic was blocked at 37 locations.',
-            'People in 29 provinces had been affected.',
-            'Every one of the capital’s 50 districts was affected.',
+            'Floods covered 29 provinces as well as Bangkok.',
+            'About 700,000 people in the capital were affected.',
             'Warnings reached residents through cell broadcast alerts.'
           ], answer:1,
           hint:'Underline the claim’s key words (“far beyond Bangkok”), then run the remove-it check on every option.',
-          why:'Twenty-nine provinces is evidence of reach beyond the capital. The 50 districts are the near miss: they show the disaster covered all of Bangkok, not that it went beyond it. The blocked roads are inside the city, and cell broadcast describes how warnings were sent, not how far the damage spread.' },
+          why:'Twenty-nine flooded provinces besides the capital is evidence of reach beyond Bangkok. The 700,000 people are the near miss: they show how many people in the capital were hit, not that the disaster went beyond it. The blocked roads are inside the city, and cell broadcast describes how warnings were sent, not how far the damage spread.' },
 
         { id:'t4l3s3-4', type:'read', tag:'rd-support', level:'C1', passage:T4_P_SCREEN, source:T4_SRC,
           stem:'Which detail best supports the claim that students found offline ways to spend their free time during Screen-Free Week?',
@@ -1192,14 +1193,14 @@ T4.levels.push({
           ],
           items:[
             { text:'Floodwater blocked traffic at 37 locations.', bin:'yes' },
-            { text:'All 50 districts of the capital were affected.', bin:'yes' },
+            { text:'About 700,000 people in Bangkok were affected.', bin:'yes' },
             { text:'Draining would take two to three days after the rain stopped.', bin:'yes' },
-            { text:'Water flowed south from the North.', bin:'no' },
+            { text:'Water was released from a dam upstream.', bin:'no' },
             { text:'Warnings were sent by cell broadcast.', bin:'no' },
-            { text:'Temporary barriers were reinforced in eastern districts.', bin:'no' }
+            { text:'Temporary barriers were reinforced in some districts.', bin:'no' }
           ],
           hint:'Use the remove-it check: if the detail were false, would the claim about disruption be weaker?',
-          why:'Blocked roads, every district affected and days of standing water all show daily life being disrupted. Water from the North is a cause of the flood, cell broadcast is how warnings were sent, and reinforcing barriers is a response: all true, but none proves disruption.' }
+          why:'Blocked roads, about 700,000 people affected in the city and days of standing water all show daily life being disrupted. Water released from the dam upstream is a cause of the flood, cell broadcast is how warnings were sent, and reinforcing barriers is a response: all true, but none proves disruption.' }
       ]
     }
   ],

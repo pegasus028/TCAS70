@@ -102,22 +102,22 @@ var M4_REVIEW = 'Review: FreshCrate Meal Kits — Three Months in My Kitchen\n\n
 '(6) So would I recommend FreshCrate? Surprisingly, yes — but not for the reason it advertises. It is not a sensible way to eat every night; it is an expensive but remarkably effective cooking course. Last weekend I cooked a three-course dinner for my parents without a single recipe card, and on Monday I cancelled our subscription. That, I think, is the best compliment I can pay it: it worked so well that I no longer need it.';
 
 /* ------------------------------------------------ SECTION II news */
-var M4_NEWS = '(1) Cracks, checklists and a city that learned to look up: Bangkok’s building-safety lessons\nBy Chronicle reporter Napat Sornsuwan\n\n' +
+var M4_NEWS = '(1) Cracks, checklists and a city that learned to look up: Bangkok’s building-safety lessons\nBy Lantern reporter Napat Sornsuwan\n\n' +
 '(2) When a magnitude 7.7 earthquake struck Myanmar on 28 March 2025, few people in Bangkok, around 1,000 kilometres away, expected to feel it.\n\n' +
 '(3) Yet within seconds, tall buildings across the capital began to sway, and office workers hurried down emergency stairs into the streets.\n\n' +
 '(4) Most shocking of all, a high-rise that was still under construction collapsed — a sight that stunned a city which had long considered itself safely distant from earthquake zones.\n\n' +
 '(5) More than a year on, engineers, residents and officials are still asking what the disaster revealed, and what has changed since.\n\n' +
-'(6) The first lesson, experts say, is that distance offers less protection than people assume. “Bangkok sits on soft clay, which behaves a little like jelly,” explained Dr Worawit Kaewmanee, a structural engineer at Chao Phraya University. “Long, slow waves from a distant earthquake can be amplified, and tall buildings are the ones that feel it most.”\n\n' +
+'(6) The first lesson, experts say, is that distance offers less protection than people assume. “Bangkok sits on soft clay, which behaves a little like jelly,” explained Dr Worawit Kaewmanee, a structural engineer at Riverbank University. “Long, slow waves from a distant earthquake can be amplified, and tall buildings are the ones that feel it most.”\n\n' +
 '(7) The second lesson concerns inspection. In the weeks after the quake, building managers were flooded with requests from residents worried about cracks in their walls.\n\n' +
 '(8) Many of those cracks turned out to be cosmetic: damage to plaster and partition walls rather than to the columns and beams that hold a building up. But telling the two apart requires a trained eye, and qualified inspectors were in short supply.\n\n' +
 '(9) “People photographed every hairline crack and posted it online,” said a condominium manager in the east of the city, who asked not to be named. “Some residents refused to go home for a week, even after an engineer had declared the building safe.”\n\n' +
-'(10) A Chronicle survey of 500 condominium residents this year found that 62 percent now know where their building’s emergency exits are, compared with 29 percent who said they had known before the earthquake.\n\n' +
+'(10) A Lantern survey of 500 condominium residents this year found that 62 percent now know where their building’s emergency exits are, compared with 29 percent who said they had known before the earthquake.\n\n' +
 '(11) Yet only one in five said they had ever taken part in an evacuation drill.\n\n' +
 '(12) Critics argue that awareness is not the same as preparedness. “Knowing where the stairs are is a start,” said Dr Worawit. “But in a real emergency, people follow habits, not posters. Drills build habits.”\n\n' +
 '(13) Engineers also warn against complacency now that the headlines have faded. Buildings designed before modern earthquake-resistant standards may need to be strengthened, a process known as retrofitting, which is costly and disruptive.\n\n' +
 '(14) Some owners, particularly of older mid-rise blocks, have postponed such work, arguing that another quake of that size may not happen for decades.\n\n' +
 '(15) “That is exactly the wrong conclusion to draw,” Dr Worawit said. “Earthquakes don’t make appointments. The best time to prepare was before 2025. The second-best time is now.”';
-var M4_NEWS_SRC = 'The Bangkok Chronicle (fictional) — adapted for TCAS70 practice';
+var M4_NEWS_SRC = 'The Bangkok Lantern (fictional) — adapted for TCAS70 practice';
 
 /* ------------------------------------------------ SECTION II visuals */
 var M4_VIS1 = { kind:'line', title:'Global average temperature compared with 1850–1900, 2015–2025 (selected years)', unit:'°C',

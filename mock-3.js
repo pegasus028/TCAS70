@@ -49,7 +49,7 @@ var M3_C3 = [
 ];
 
 var M3_LC = [
-  { who: 'Situation', text: 'Open day at the Faculty of Communication Arts, Chao Phraya University' },
+  { who: 'Situation', text: 'Open day at the Faculty of Communication Arts, Riverbank University' },
   { who: 'Mint', text: 'Excuse me, are you one of the student guides? I’m a bit lost.' },
   { who: 'Man', text: 'Well, I do show a lot of people around this building. How can I help?' },
   { who: 'Mint', text: 'I’m looking for the talk on the Communication Arts programme. And ___(13)___ is this faculty actually any good? My sister says the lecturers are a bit old-fashioned.' },
@@ -115,7 +115,7 @@ var M3_REVIEW =
 
 var M3_NEWS =
   'Northern schools switch to online classes as PM2.5 soars\n' +
-  'By Chronicle reporter Naree Suksawat\n\n' +
+  'By Lantern reporter Naree Suksawat\n\n' +
   '(1) Hundreds of schools across three northern provinces moved their lessons online this week after levels of fine dust particles, known as PM2.5, climbed to more than ten times the limit recommended by the World Health Organization.\n\n' +
   '(2) In Chiang Mai, provincial officials ordered more than 400 state and private schools to stop face-to-face teaching for at least five days, while neighboring Chiang Rai and Lampang issued similar instructions for schools in their worst-affected districts.\n\n' +
   '(3) On Tuesday morning, a thick gray haze hid Doi Suthep from the city center, and air-quality monitors in several districts recorded PM2.5 readings above 200 micrograms per cubic meter.\n\n' +
@@ -173,7 +173,7 @@ var M3_ART1 =
   '(4) Then there is the human cost. To keep prices low and new collections arriving every week, brands rely on factories in countries where labor is cheap. Garment workers, most of them women, often work long hours for wages that barely cover food and rent. Critics argue that as long as shoppers expect a new outfit for the price of a sandwich, someone further down the supply chain will pay the difference.\n\n' +
   '(5) In response, a growing movement is promoting what economists call a circular economy. In a traditional “linear” model, we take resources, make a product, and throw it away. A circular model aims to keep materials in use for as long as possible. For clothing, that means buying second-hand, repairing rather than replacing, renting outfits for one-off events, and designing garments that can be fully recycled. Resale apps have made pre-loved clothes fashionable among young shoppers, and some brands now offer free repairs for their own products. Renting a dress for a school dance, for instance, can cost a fraction of buying one that will be worn only once.\n\n' +
   '(6) However, not every green promise can be taken at face value. Some fast-fashion companies have launched “conscious” collections that contain only a small share of recycled material, while continuing to release thousands of new designs each year. Environmental groups call this greenwashing: using the language of sustainability to sell more of the very products that cause the problem. A recycling bin at the shop entrance, they point out, does little good if it simply helps customers feel less guilty about buying more.\n\n' +
-  '(7) Ultimately, experts agree that the most sustainable garment is the one already hanging in your closet. Fashion researcher Dr Anchalee Srisuk of Chao Phraya University puts it simply: “Recycling is the last resort, not the first. The real revolution is wearing what we own thirty times, not three.” For a generation that has grown up with endless online hauls, that may be the hardest trend of all to follow.';
+  '(7) Ultimately, experts agree that the most sustainable garment is the one already hanging in your closet. Fashion researcher Dr Anchalee Srisuk of Riverbank University puts it simply: “Recycling is the last resort, not the first. The real revolution is wearing what we own thirty times, not three.” For a generation that has grown up with endless online hauls, that may be the hardest trend of all to follow.';
 
 var M3_ART2 =
   'Seeing Isn’t Believing: Why Teenagers Struggle to Spot AI Fakes\n\n' +
@@ -391,32 +391,32 @@ MOCKS.push({
     { code: 'II-3', part: 'SECTION II: READING SKILL', title: 'Part III: News Report (Items 33–38)',
       instructions: 'Read the following news report and choose the best answer for each question.', points: 1.25,
       items: [
-        { id: 'm3-33', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Chronicle)', tag: 'rd-news', level: 'B2',
+        { id: 'm3-33', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Lantern)', tag: 'rd-news', level: 'B2',
           stem: 'What is the main idea of the news report?',
           options: ['Parents in Chiang Mai have protested against the closure of private schools.', 'Officials have banned all farming in the North to reduce dangerous PM2.5 levels.', 'Hospitals in the North are struggling to treat children made ill by forest fires.', 'Severe haze has pushed northern schools online, a decision that has drawn mixed reactions.'], answer: 3,
           why: 'The headline and lead report the school closures, and paragraphs 8–12 give the views of parents, teachers and experts who question them, hence “mixed reactions”. The hospital rise is only a supporting detail, parents complained but did not protest, and officials are fining illegal burning, not banning farming.' },
 
-        { id: 'm3-34', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Chronicle)', tag: 'rd-cause', level: 'B2',
+        { id: 'm3-34', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Lantern)', tag: 'rd-cause', level: 'B2',
           stem: 'According to paragraph 5, what keeps the smoke close to the ground?',
           options: ['Heavy traffic in the city', 'Factories across the border', 'Fires that start in people’s homes', 'Still weather conditions and a lack of rain'], answer: 3,
           why: 'Paragraph 5 says “Still air and a lack of rain trap the smoke close to the ground.” Neighbouring countries are mentioned as a place where burning happens, not as a source of factory smoke, and the fires are in forests and farmland, not homes; traffic is never mentioned.' },
 
-        { id: 'm3-35', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Chronicle)', tag: 'rd-detail', level: 'B2',
+        { id: 'm3-35', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Lantern)', tag: 'rd-detail', level: 'B2',
           stem: 'Which statement about the health effects of PM2.5 is TRUE according to the report?',
           options: ['Only people with asthma are harmed by the particles.', 'The particles can pass from the lungs into the blood.', 'A clinic treated half as many children as it did last year.', 'The particles are too large to get past the nose and throat.'], answer: 1,
           why: 'Paragraph 6 says the particles “can travel deep into the lungs and even enter the bloodstream”. The clinic treated “nearly twice as many” children, not half as many, and the report lists several groups at risk, not only people with asthma.' },
 
-        { id: 'm3-36', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Chronicle)', tag: 'rd-views', level: 'B2+',
+        { id: 'm3-36', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Lantern)', tag: 'rd-views', level: 'B2+',
           stem: 'What point does Dr Kittipong Rattanachai make in paragraph 11?',
           options: ['Filtered classrooms may be safer than many homes.', 'Schools should cancel exams until the burning season ends.', 'Online lessons are more effective than face-to-face lessons.', 'Children should be kept at home until the haze has fully cleared.'], answer: 0,
           why: 'He argues that a home with open windows “may be no cleaner than a classroom” and that sealed classrooms with filters “could actually be the safest place”. Keeping children at home is the officials’ policy, the very view he questions, so that option reverses his point.' },
 
-        { id: 'm3-37', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Chronicle)', tag: 'rd-infer', level: 'C1',
+        { id: 'm3-37', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Lantern)', tag: 'rd-infer', level: 'C1',
           stem: 'What can be inferred from paragraphs 8–10?',
           options: ['Parents want schools closed for longer.', 'The burden of the closures does not fall equally on all families.', 'Teachers have refused to teach online until every student has a laptop.', 'Online classes have been more popular in rural schools than in city schools.'], answer: 1,
           why: 'Working parents must take unpaid leave or leave children alone, and poorer students lack laptops and internet, so the closures hurt some families far more than others. Rural attendance actually dropped to about 60 percent, and teachers raised concerns but did not refuse to teach.' },
 
-        { id: 'm3-38', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Chronicle)', tag: 'rd-support', level: 'B2+',
+        { id: 'm3-38', type: 'read', passage: M3_NEWS, source: 'Adapted for TCAS70 practice (The Bangkok Lantern)', tag: 'rd-support', level: 'B2+',
           stem: 'Which detail best suggests that the pollution problem may continue for some time?',
           options: ['Officials will review the closures on Friday.', 'Drones are being used to find fires in remote areas.', 'One private school has turned its sports hall into a clean-air zone.', 'A weather pattern is expected to bring hotter, drier conditions in the months ahead.'], answer: 3,
           why: 'Paragraph 14 links the expected El Niño to fears that “this year’s smoke season could last longer than usual”. The Friday review is the near miss: it tells us when a decision will be made, not whether the haze will continue.' }

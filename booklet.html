@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TCAS70 Mock Paper — print</title>
-<link rel="stylesheet" href="theme.css?v=2026-10-06a">
+<link rel="stylesheet" href="theme.css?v=2026-10-06b">
 <style>
 :root{--pad:0}
 body{background:#fff;color:#111;font:11pt/1.45 "Sarabun","Figtree",system-ui,sans-serif;margin:0}
@@ -27,10 +27,10 @@ h1{font:700 20pt/1.2 var(--f-display);margin:0 0 4px}
 @media print{.noprint{display:none}.page{padding:0}}
 @page{size:A4;margin:16mm 15mm}
 </style></head><body><div class="page" id="out"></div>
-<script src="content.js?v=2026-10-06a"></script><script src="lexicon.js?v=2026-10-06a"></script><script src="topic-t1.js?v=2026-10-06a"></script><script src="topic-t2.js?v=2026-10-06a"></script><script src="topic-t3.js?v=2026-10-06a"></script><script src="topic-t4.js?v=2026-10-06a"></script><script src="topic-t5.js?v=2026-10-06a"></script><script src="topic-t6.js?v=2026-10-06a"></script><script src="topic-t7.js?v=2026-10-06a"></script><script src="topic-t8.js?v=2026-10-06a"></script><script src="topic-t9.js?v=2026-10-06a"></script><script src="topic-t10.js?v=2026-10-06a"></script><script src="topic-t11.js?v=2026-10-06a"></script><script src="topic-t12.js?v=2026-10-06a"></script><script src="topic-t13.js?v=2026-10-06a"></script>
-<script src="mock-1.js?v=2026-10-06a"></script><script src="mock-2.js?v=2026-10-06a"></script><script src="mock-3.js?v=2026-10-06a"></script><script src="mock-4.js?v=2026-10-06a"></script><script src="mock-5.js?v=2026-10-06a"></script>
+<script src="content.js?v=2026-10-06b"></script><script src="lexicon.js?v=2026-10-06b"></script><script src="topic-t1.js?v=2026-10-06b"></script><script src="topic-t2.js?v=2026-10-06b"></script><script src="topic-t3.js?v=2026-10-06b"></script><script src="topic-t4.js?v=2026-10-06b"></script><script src="topic-t5.js?v=2026-10-06b"></script><script src="topic-t6.js?v=2026-10-06b"></script><script src="topic-t7.js?v=2026-10-06b"></script><script src="topic-t8.js?v=2026-10-06b"></script><script src="topic-t9.js?v=2026-10-06b"></script><script src="topic-t10.js?v=2026-10-06b"></script><script src="topic-t11.js?v=2026-10-06b"></script><script src="topic-t12.js?v=2026-10-06b"></script><script src="topic-t13.js?v=2026-10-06b"></script>
+<script src="mock-1.js?v=2026-10-06b"></script><script src="mock-2.js?v=2026-10-06b"></script><script src="mock-3.js?v=2026-10-06b"></script><script src="mock-4.js?v=2026-10-06b"></script><script src="mock-5.js?v=2026-10-06b"></script>
 <script>window.CONTENT={CEFR:CEFR,RANKS:RANKS,BADGES:BADGES,REMEDIATION:REMEDIATION,TOPICS:TOPICS,MOCKS:MOCKS};</script>
-<script src="engine.js?v=2026-10-06a"></script>
+<script src="engine.js?v=2026-10-06b"></script>
 <script>
 (function(){
   var q=new URLSearchParams(location.search), id=q.get('m')||'m1', mode=q.get('key')||'both';
@@ -38,7 +38,8 @@ h1{font:700 20pt/1.2 var(--f-display);margin:0 0 4px}
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
   function gaps(t){return esc(t).replace(/___\((\d+)\)___/g,'<span class="gap">____(&#8203;$1)____</span>');}
   function ctxKey(it){return JSON.stringify([it.lines||0,it.passage||0,it.ad||0,it.visual||0,it.given||0]);}
-  var h=mode==='key'?'':'<h1>TCAS70 A-Level English · '+esc(m.name)+'</h1><div class="sub">80 items · 4 options · 90 minutes · 1.25 points each (100 points) · Practice paper written for TCAS70 Launchpad</div>';
+  var nAll=0,nScored=0;m.sections.forEach(function(s){nAll+=s.items.length;if(s.points)nScored+=s.items.length;});
+  var h=mode==='key'?'':'<h1>TCAS70 A-Level English · '+esc(m.name)+'</h1><div class="sub">'+nScored+' items · 4 options · 1.25 points each (100 points)'+(nAll>nScored?' + '+(nAll-nScored)+' unscored triage items':'')+' · '+m.minutes+' minutes · Practice paper written for TCAS70 Launchpad</div>';
   if(mode!=='key'){
     h+='<div class="rules">Choose the ONE best answer for each item and mark it on your answer sheet. Do not use a dictionary. Section I: 20 items (25 pts) · Section II: 40 items (50 pts) · Section III: 20 items (25 pts).</div>';
     var lastPart='', last='', n=0;
@@ -65,8 +66,9 @@ h1{font:700 20pt/1.2 var(--f-display);margin:0 0 4px}
   if(mode!=='paper'){
     h+='<div class="key"'+(mode==='key'?' style="break-before:auto"':'')+'><h1>Answer key · '+esc(m.name)+'</h1><table><tr>';
     var all=[];m.sections.forEach(function(s){all=all.concat(s.items);});
-    for(var c=0;c<4;c++){h+='<th>Item</th><th>Ans</th>';} h+='</tr>';
-    for(var r=0;r<20;r++){h+='<tr>';for(var c2=0;c2<4;c2++){var i=c2*20+r;h+='<td>'+(i+1)+'</td><td><b>'+(all[i].answer+1)+'</b></td>';}h+='</tr>';}
+    var cols=Math.ceil(all.length/20);
+    for(var c=0;c<cols;c++){h+='<th>Item</th><th>Ans</th>';} h+='</tr>';
+    for(var r=0;r<20;r++){h+='<tr>';for(var c2=0;c2<cols;c2++){var i=c2*20+r;h+=all[i]?'<td>'+(i+1)+'</td><td><b>'+(all[i].answer+1)+'</b></td>':'<td></td><td></td>';}h+='</tr>';}
     h+='</table><h2 style="font:700 13pt var(--f-display);margin-top:18px">Explanations</h2>';
     all.forEach(function(it,i){var rem=REMEDIATION[it.tag];h+='<div class="why"><b>'+(i+1)+'. ('+(it.answer+1)+')</b>'+it.why+' <span class="tag">['+esc(rem?rem.name:it.tag)+' · '+esc(it.level)+']</span></div>';});
     h+='</div>';

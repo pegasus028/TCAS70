@@ -8,12 +8,12 @@ Built on the Mission Control engine. Everything is static (GitHub Pages) plus an
 | | |
 |---|---|
 | Diagnostic → checklist | **Mock 1** is the triage paper. Every missed question puts the lesson that teaches it on the student's checklist. |
-| Gated mocks | Mock N+1 opens when Mock N is sat **and 80% of its checklist is cleared**, or when the teacher sets it. Everything opens in the last 14 days (`GATE_MOCKS` in `roster.js`). |
+| Gated mocks | Mock N+1 opens when Mock N is sat **and 80% of its checklist is cleared**, when the teacher opens it for a student (teacher console → Mock paper → Open for this student), or on its class sitting date (`MOCK_DATES` in `roster.js`). Everything opens in the last 14 days except the papers in `HOLD_TO_DATE`: Mock 5, the dress rehearsal, waits for Sunday 7 March at 11:00 (`GATE_MOCKS` turns gating off). |
 | 13 systems | 39 levels, 117 lessons, 819 practice items, 39 Systems Checks. Lessons cover conversations, idioms and markers, ads and reviews, news, inference/tone, visuals and numbers, vocabulary, world knowledge, word forms, clauses, verbs, linkers and paragraph order. |
 | Lesson lenses | Each lesson has tabs: Explain · Simple English · ภาษาไทย · Mind map · Story · Chant (with a built-in beat) · Moves. Each also includes an analogy and the exam trap. |
-| 5 mock papers | 400 items in the exact A-Level format: 80 items, 4 options, 90 min, options printed shortest→longest, balanced keys. |
+| 5 mock papers | 420 items in the A-Level format: 80 scored items, 4 options, 90 min, options printed shortest→longest, balanced keys. Mock 1 adds 20 unscored triage extras (100 min in all) so each checklist rests on more evidence. Papers are built to the TCAS70 profile in `SPEC.md` §1b. One time budget runs through the app: Part I 14 min · reading 46 · Part III 18 · 12 to check. |
 | Speed Lab | Six timed sprints at exam pace (Conversation, Text-Completion, Paragraph-Order, Reading, Vocab Blitz, Full-Pace 20). There are also Leitner flashcards for the 280-entry TCAS70 word bank (English → meaning + Thai + example). |
-| Teacher console | `teacher.html`: roster, weak tags, mock breakdowns, set a paper, CSV export. |
+| Teacher console | `teacher.html`: roster, weak tags, mock breakdowns, set a paper, open a mock early, CSV export. |
 | Print | `booklet.html?m=m1` (paper + key) · `&key=paper` · `&key=key`. |
 
 ## Deploy
@@ -36,6 +36,7 @@ Built on the Mission Control engine. Everything is static (GitHub Pages) plus an
 - The teacher console flags **sync stuck** for any student who has signed in more than a day after their last successful save (needs the `lastLogin` field, added to `Code.gs` in Oct 2026 — redeploy the script).
 - Retakes of a mock alternate Set 1 / Set 2 (options in reverse order, as in the real exam). The first sitting is kept as `first` and shown as the benchmark.
 - A module is cleared at 80% (4 of 5); "rules covered" counts only rules answered correctly.
+- A paper the teacher sets, or a mock they open early, reaches the student the next time their app saves; they do not have to sign out and in again. This needs the `Code.gs` from 6 Oct 2026 (the save reply now hands back the teacher's assignment), so redeploy the script as a new version.
 
 Storage keys are `tc70.*`, so this app never collides with Mission Control or Fine Tuning on the same `pegasus028.github.io` origin.
 
@@ -49,6 +50,7 @@ Storage keys are `tc70.*`, so this app never collides with Mission Control or Fi
 
 ## Editing content
 
-- Format rules are in `SPEC.md`. Run `node verify.js topic-t4.js` (or `mock-2.js`, or several files at once) after any edit; it must print `PASS`. Besides structure it checks: hints that contain the key, options not in shortest→longest order, mock key-position balance (18–22 each), the longest-option-is-key rate (≤25%), `why` texts that refer to an option by position, empty sort bins, and build items whose tiles allow other orderings (`--build-all` prints them all).
+- Format rules are in `SPEC.md`. Run `node verify.js topic-t4.js` (or `mock-2.js`, or several files at once) after any edit; it must print `PASS`. Besides structure it checks: hints that contain the key, options not in shortest→longest order, mock key-position balance (18–22 each), how often the key is the uniquely longest option (mocks 15–27%, topics 10–27%), `why` texts that refer to an option by position, empty sort bins, and build items whose tiles allow other orderings (`--build-all` prints them all).
+- `PROFILE` lines compare each mock with the TCAS70 profile in `SPEC.md` §1b (NOT/EXCEPT counts, visual arithmetic, the Section I mix, news length and by-line, Thai-anchored texts, the grammar-blank mix, paragraph-order openers, dated sources, topic repeats) and with the key-spread rules (no run longer than 3; every position within any 16 consecutive items). They are warnings by default; `node verify.js mock-1.js --strict` makes them errors. Mock 1 passes `--strict`; the findings for Mocks 2–5 are the to-do list for the next phases.
 - Each lesson owns one tag. Mock items carry the same tags, which is how a wrong answer finds its lesson.
 - Mock items must keep ids `mN-Q` (Q = question number).

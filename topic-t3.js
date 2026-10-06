@@ -515,7 +515,7 @@ T3.levels.push({ id:'t3l1', n:1, name:'Advertisements', cefr:'B1+–B2',
           { text:'Over 50,000 Bangkok students already use it.', bin:'band' },
           { text:'Thailand’s best-selling study app, three years running.', bin:'band' },
           { text:'Recommended by dermatologists.', bin:'exp' },
-          { text:'Designed with sports scientists at Chao Phraya University.', bin:'exp' },
+          { text:'Designed with sports scientists at Riverbank University.', bin:'exp' },
           { text:'Leave the noise behind. Breathe.', bin:'peace' },
           { text:'Your quiet corner in a busy city.', bin:'peace' }
         ],

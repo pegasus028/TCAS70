@@ -16,7 +16,7 @@ var T12 = {
 /* ---------------------------------------------------------------- shared passages */
 var T12_P11 = 'Some Thai schools now collect students’ phones at the gate each morning. ___(1)___ the rule is unpopular with some students, teachers report calmer classrooms and fewer missing assignments. Reactions differ: some students say they feel anxious without their devices, ___(2)___ others admit that they now talk to their friends more at lunch.';
 
-var T12_P12 = 'In late September 2026, parts of Bangkok received more than 300 mm of rain in just 48 hours. ___(1)___ the downpour and the water flowing south from the North, floodwater blocked traffic at 37 locations. Warnings were sent to phones by cell broadcast ___(2)___ residents could move their cars to higher ground. The city said draining would take two to three days after the rain stopped; ___(3)___, many schools in the worst-hit districts stayed closed until the following week.';
+var T12_P12 = 'In late September 2026, parts of Bangkok received more than 300 mm of rain in just 48 hours. ___(1)___ the downpour and the water released upstream along the Chao Phraya, floodwater blocked traffic at 37 locations. Warnings were sent to phones by cell broadcast ___(2)___ residents could move their cars to higher ground. The city said draining would take two to three days after the rain stopped; ___(3)___, many families could not start cleaning their homes until the water had gone.';
 
 var T12_P13 = 'Fast-fashion brands release new styles almost every week. The clothes are cheap and fun to buy, but they create huge amounts of textile waste ___(1)___ serious water pollution. ___(2)___, the low prices hide the real cost paid by the workers who make the clothes. Some young shoppers are now turning to second-hand options ___(3)___ online swap groups and weekend flea markets.';
 
@@ -167,7 +167,7 @@ T12.levels.push({
           options: ['Since', 'Because', 'Owing to', 'Therefore'],
           answer: 2,
           hint: 'Is the rain the cause or the result here? Then check: noun or clause after the blank?',
-          why: 'The rain and the water from the North are the <em>cause</em> of the blocked traffic, and a noun phrase follows (<em>the downpour and the water…</em>), so you need <em>Owing to</em>. <em>Because</em> is the near miss: it has the right meaning but needs <em>of</em> before a noun. <em>Since</em> + noun means “from that time”, and <em>Therefore</em> introduces a result, not a cause.' },
+          why: 'The rain and the water released upstream are the <em>cause</em> of the blocked traffic, and a noun phrase follows (<em>the downpour and the water…</em>), so you need <em>Owing to</em>. <em>Because</em> is the near miss: it has the right meaning but needs <em>of</em> before a noun. <em>Since</em> + noun means “from that time”, and <em>Therefore</em> introduces a result, not a cause.' },
 
         { id: 't12l1s2-2', type: 'cloze', passage: T12_P12, blank: '(2)', tag: 'lk-cause', level: 'B2',
           stem: 'Choose the best option for blank (2).',
@@ -180,8 +180,8 @@ T12.levels.push({
           stem: 'Choose the best option for blank (3).',
           options: ['because', 'however', 'therefore', 'nevertheless'],
           answer: 2,
-          hint: 'Put an arrow between the slow draining and the school closures. Which way does it point?',
-          why: 'Slow draining → schools stayed closed: the second idea is the <em>result</em>, and the linker sits after a semicolon with a comma, so <em>therefore</em> fits. <em>However</em> and <em>nevertheless</em> fit the punctuation but signal a contrast that is not there — the closures follow naturally from the slow draining. <em>Because</em> points the arrow backwards and cannot follow a semicolon with a comma.' },
+          hint: 'Put an arrow between the slow draining and the delay in cleaning homes. Which way does it point?',
+          why: 'Slow draining → families could not start cleaning: the second idea is the <em>result</em>, and the linker sits after a semicolon with a comma, so <em>therefore</em> fits. <em>However</em> and <em>nevertheless</em> fit the punctuation but signal a contrast that is not there — the delay follows naturally from the slow draining. <em>Because</em> points the arrow backwards and cannot follow a semicolon with a comma.' },
 
         { id: 't12l1s2-4', type: 'build', tag: 'lk-cause', level: 'B2',
           stem: 'Join the ideas with a cause linker that takes a noun: “Sports day was cancelled.” + “the dangerous PM2.5 level”.',
@@ -342,7 +342,7 @@ var T12_P21 = 'When twenty exchange students from Japan arrived at a school in C
 
 var T12_P22 = 'A new survey asked 800 Thai families how they use their phones at dinner. ___(1)___ family in the study kept a meal diary for two weeks. The results were mixed: in some homes, phones stayed on the table throughout the meal, while in others a “phone basket” waited by the door. ___(2)___ argue that such rules are unrealistic in a digital age, but the researchers disagree. Parents and teenagers ___(3)___ reported that meals felt longer and warmer without screens. However, ___(4)___ group was willing to give up phones completely: parents needed them for work messages, and teenagers needed them for homework chats.';
 
-var T12_P23 = 'Sirin Academy, a group of twelve private schools, has changed ___(1)___ rules on sugary drinks. From next term, soft drinks will disappear from the canteens, and each student will be given a refillable bottle with ___(2)___ name printed on it. The decision follows a study at Chao Phraya University which found that the sugar in a large bubble tea is almost double ___(3)___ in a can of cola. “Nobody is banning treats,” a spokesperson for the group said. “But one should know what ___(4)___ is drinking.”';
+var T12_P23 = 'Sirin Academy, a group of twelve private schools, has changed ___(1)___ rules on sugary drinks. From next term, soft drinks will disappear from the canteens, and each student will be given a refillable bottle with ___(2)___ name printed on it. The decision follows a study at Riverbank University which found that the sugar in a large bubble tea is almost double ___(3)___ in a can of cola. “Nobody is banning treats,” a spokesperson for the group said. “But one should know what ___(4)___ is drinking.”';
 
 var T12_PL2 = 'In December 2025, Australia banned social media accounts for under-16s. ___(1)___ countries soon followed, and France, Malaysia, Denmark and Greece have all announced age limits of ___(2)___ own. Supporters say the bans give children back time for sleep, sport and real conversations. Critics are less sure. A government report in 2026 found that more than 80% of under-16s were still using social media three months later. Some teenagers told reporters that they had simply borrowed older siblings’ accounts; ___(3)___ said they had never been asked their age at all. ___(4)___ side of the debate, however, believes that children should be left online with no protection at all. In Thailand, where there is no national ban, ___(5)___ school is free to set its own phone rules. One Bangkok school collects phones at the gate but hands them back for a “phone hour” at lunch. Like any new rule, the phone hour has ___(6)___ critics.';
 

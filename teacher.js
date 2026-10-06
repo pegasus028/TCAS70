@@ -333,9 +333,9 @@
           (mm ? mm.sections : []).forEach(function (s) {
             var b = bs[s.code];
             if (!b) return;
-            var q = b.total ? b.got / b.total : 0;
+            var q = s.points ? (b.total ? b.got / b.total : 0) : (b.n ? b.right / b.n : 0);
             h += '<tr' + (q < 0.6 ? ' class="low"' : '') + '><td>' + esc(s.part.replace('PART ', '')) + ' — ' + esc(s.title) + '</td>' +
-              '<td class="n">' + b.got + '/' + b.total + '</td>' +
+              '<td class="n">' + (s.points ? b.got + '/' + b.total : 'not scored') + '</td>' +
               '<td class="n">' + b.right + '/' + b.n + '</td>' +
               '<td class="n">' + pct(q) + '%</td></tr>';
           });
@@ -383,20 +383,34 @@
       }
 
       /* ---- set a paper ---- */
-      var a = p.assignment;
+      var a = p.assignment, am = a && a.paper ? E.Bank.mock(a.paper) : null;
       h += '<details class="disc"><summary>Set a paper<span class="count">' +
-        (a ? (a.done ? pct(a.score) + '% submitted' : 'set, not taken') : 'none set') + '</span></summary><div class="disc-body">' +
-        '<p class="tiny" style="padding:10px 0 12px">Builds a paper from the systems-check bank, weighted towards the tags this student is actually getting wrong. It appears on their console the next time they log in.</p>' +
+        (am ? (a.done ? esc(am.name) + ' sat' : esc(am.name) + ' opened') :
+         a ? (a.done ? pct(a.score) + '% submitted' : 'set, not taken') : 'none set') + '</span></summary><div class="disc-body">' +
+        '<p class="tiny" style="padding:10px 0 12px">Builds a paper from the systems-check bank, weighted towards the tags this student is actually getting wrong. It appears on their console the next time they open the app.</p>' +
         '<div style="display:flex;gap:9px;align-items:flex-end;flex-wrap:wrap">' +
         '<div class="field" style="max-width:220px"><label for="sysx">System</label>' +
-        '<select id="sysx"><option value="">All eight</option>' +
+        '<select id="sysx"><option value="">All thirteen</option>' +
         C.TOPICS.map(function (t) { return '<option value="' + t.id + '">' + esc(t.code + ' · ' + t.name) + '</option>'; }).join('') +
         '</select></div>' +
         '<div class="field" style="max-width:110px"><label for="nq">Questions</label>' +
         '<select id="nq"><option>8</option><option selected>12</option><option>16</option><option>20</option></select></div>' +
         '<button class="btn primary" id="assign">Set for this student</button>' +
-        '<button class="btn" id="printtest">Printable + answer key</button></div>';
-      if (a && a.done) {
+        '<button class="btn" id="printtest">Printable + answer key</button></div>' +
+        /* Opening a mock early: stored as the student's assignment with a
+           `paper` field, which the student app reads as an unlock. It replaces
+           any revision paper that is still waiting. */
+        '<p class="tiny" style="padding:14px 0 8px">Or open a mock paper early for this student, ahead of the class date. ' +
+        'It replaces any set paper that is still waiting.</p>' +
+        '<div style="display:flex;gap:9px;align-items:flex-end;flex-wrap:wrap">' +
+        '<div class="field" style="max-width:240px"><label for="mockx">Mock paper</label>' +
+        '<select id="mockx">' + (C.MOCKS || []).slice(1).map(function (m) {
+          return '<option value="' + m.id + '">' + esc(m.name) + '</option>'; }).join('') + '</select></div>' +
+        '<button class="btn" id="openmock">Open for this student</button></div>';
+      if (am) {
+        h += '<div style="margin-top:14px" class="rep-teach"><b>Mock opened</b>' + esc(am.name) +
+          (a.done ? ' \u2014 sat ' + esc(new Date(a.completedAt).toLocaleString()) + ', ' + pct(a.score) + '%.' : ' \u2014 not sat yet.') + '</div>';
+      } else if (a && a.done) {
         h += '<div style="margin-top:14px" class="rep-teach"><b>Result</b>Scored <strong>' + pct(a.score) + '%</strong> on a paper of ' +
           a.itemIds.length + ' questions, submitted ' + esc(new Date(a.completedAt).toLocaleString()) + '.</div>';
       }
@@ -449,6 +463,18 @@
         }).then(function (r) {
           if (r && r.ok) { toast('Paper set — ' + n + ' questions.'); load(); }
           else toast('Could not set the paper.');
+        });
+      });
+      $('#openmock').addEventListener('click', function () {
+        var mid = $('#mockx').value, mk2 = E.Bank.mock(mid);
+        if (!mk2) return;
+        api.assign(id, {
+          assignmentId: 'A' + Date.now().toString(36), paper: mid,
+          topicId: '', itemIds: [],
+          createdAt: new Date().toISOString(), done: false, score: 0, completedAt: ''
+        }).then(function (r) {
+          if (r && r.ok) { toast(mk2.name + ' is open for this student.'); load(); }
+          else toast('Could not open the paper.');
         });
       });
       $('#printtest').addEventListener('click', function () {

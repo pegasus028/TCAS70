@@ -11,7 +11,7 @@ var T9_P_HAZE = 'Every dry season, a grey haze settles over Chiang Mai. Much of 
 
 var T9_P_AIVIDEO = 'Text-to-video apps can now produce clips that look ___(1)___ real. For many viewers, the ___(2)___ between a filmed event and a generated one has almost disappeared. Researchers warn that this could seriously ___(3)___ public trust in all video, including genuine footage of floods and earthquakes. Some platforms now add labels to AI content, but the labels are easy to remove and are applied ___(4)___: one app may label a clip while another shows the same clip with no warning at all. Media-literacy teachers argue that the most ___(5)___ defence is a simple habit: pause, check the source, and ask who benefits before you share.';
 
-var T9_P_WALK = 'Researchers at Chao Phraya University tracked more than a thousand ___(1)___ through their first year of secondary school. Students who took a ___(2)___ walk before class concentrated better than those who went straight to their desks. They also reported lower levels of smartphone ___(3)___, perhaps because they spent those minutes talking to friends instead of scrolling.';
+var T9_P_WALK = 'Researchers at Riverbank University tracked more than a thousand ___(1)___ through their first year of secondary school. Students who took a ___(2)___ walk before class concentrated better than those who went straight to their desks. They also reported lower levels of smartphone ___(3)___, perhaps because they spent those minutes talking to friends instead of scrolling.';
 
 var T9_P_FLOOD = 'In late September 2026, more than 300 millimetres of rain fell on parts of Bangkok in just ___(1)___. Warnings reached residents through a ___(2)___ system called cell broadcast, which sends one message to every phone in an area at the same time. Emergency planners stress that a flood warning ___(3)___ a message but the start of a countdown. The problem is that many people ___(4)___ read alerts from senders they do not recognise, so the system works only if the public learns to trust it. The city said draining would take two to three days after the rain stopped, and ___(5)___ barriers were reinforced in several districts.';
 
@@ -19,7 +19,7 @@ var T9_P_SURVEY = 'When a survey of 2,000 students at a group of Bangkok schools
 
 var T9_P_RAIN = 'More than 300 millimetres of rain fell on parts of Bangkok in 48 hours in late September 2026. Rarely ___(1)___ so much water arrive so quickly, and ___(2)___ the drains that traffic was blocked at 37 locations across the city. Only when the rain finally stopped ___(3)___ to fall, and even then officials warned that draining would take two to three days.';
 
-var T9_P_PHONE = 'A phone does not have to ring to distract you. In one experiment at Chao Phraya University, students who kept their phones on the desk, even switched off and face down, performed ___(1)___ on memory tests than students who left their phones in another room. The researchers were ___(2)___ by how large the gap was. Not only ___(3)___ lower, but they were also unaware that anything had affected them. It seems that ___(4)___ the phone is to you, the more attention it quietly steals. At the end of the session, the students whose phones were out of sight even looked ___(5)___ than the others.';
+var T9_P_PHONE = 'A phone does not have to ring to distract you. In one experiment at Riverbank University, students who kept their phones on the desk, even switched off and face down, performed ___(1)___ on memory tests than students who left their phones in another room. The researchers were ___(2)___ by how large the gap was. Not only ___(3)___ lower, but they were also unaware that anything had affected them. It seems that ___(4)___ the phone is to you, the more attention it quietly steals. At the end of the session, the students whose phones were out of sight even looked ___(5)___ than the others.';
 
 var T9 = {
   id: 't9', n: 9, code: 'System 09', art: 'layers',
@@ -572,11 +572,11 @@ T9.levels.push({
           hint: 'Find the first auxiliary. Which comes next: a “sure/unsure” adverb or the negative?',
           why: 'The order is auxiliary ▸ <em>probably</em> ▸ <em>not</em> ▸ main verb: most students <em>will probably not notice</em>. “Probably” must come before a negative, so “will not probably” is wrong; “probably not will” puts the negative before the auxiliary, and “will notice probably not” pushes the negative to the end.' },
         { id: 't9l2s3-3', type: 'cloze', tag: 'wo-adverb', level: 'B2+',
-          passage: 'After the September floods, engineers admitted that some of the city’s temporary barriers were not ___(1)___ to hold back the water flowing south from the North.',
+          passage: 'Engineers warn that temporary flood barriers are not always ___(1)___ to hold back the water released from a dam upstream.',
           blank: '(1)', stem: 'Choose the best option for blank (1).',
           options: ['strong enough', 'enough strong', 'strongly enough', 'enough strongly'], answer: 0,
-          hint: 'After “were not” you need an adjective. Where does “enough” stand with an adjective?',
-          why: 'After the linking verb “were” we need an adjective, and <em>enough</em> follows an adjective: <em>strong enough</em> to hold back the water. “Enough strong” uses the order for nouns (enough time), and the “strongly” options put an adverb where an adjective is needed.' },
+          hint: 'After “are not always” you need an adjective. Where does “enough” stand with an adjective?',
+          why: 'After the linking verb “are” we need an adjective, and <em>enough</em> follows an adjective: <em>strong enough</em> to hold back the water. “Enough strong” uses the order for nouns (enough time), and the “strongly” options put an adverb where an adjective is needed.' },
         { id: 't9l2s3-4', type: 'spot', tag: 'wo-adverb', level: 'B2+',
           stem: 'One of the four parts is wrong. Find it.',
           words: ['Many Thai students', 'speak fluently English', 'but still feel nervous', 'in speaking exams.'],
